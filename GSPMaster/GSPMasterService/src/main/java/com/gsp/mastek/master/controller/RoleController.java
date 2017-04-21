@@ -29,13 +29,13 @@ public class RoleController {
 	private RoleService roleService ;
 	
 	@RequestMapping(value = "/saveRoles", method = RequestMethod.POST)
-	public String saveroles(@RequestBody RolesVO rolesVO) {	
+	public RolesVO saveroles(@RequestBody RolesVO rolesVO) {	
 		logger.info("rolesVO coming " + rolesVO);
 		logger.debug("This is debug log");
 		logger.info("mstenv is " + mstenv);
 		logger.info("myenv is " + myenv);
 		roleService.save(rolesVO);
-		return "Success";
+		return rolesVO;
 	}
 
 	

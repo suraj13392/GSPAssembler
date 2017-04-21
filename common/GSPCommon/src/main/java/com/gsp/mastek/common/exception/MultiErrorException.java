@@ -3,7 +3,7 @@ package com.gsp.mastek.common.exception;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gsp.mastek.common.vo.FieldErrorVO;
+import com.gsp.mastek.common.error.vo.FieldErrorVO;
 
 
 /**

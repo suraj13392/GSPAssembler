@@ -1,0 +1,685 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.gsp.mastek:GSPMasterService:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter:jar -> duplicate declaration of version (?) @ line 79, column 15
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for com.gsp.mastek:GSPInterfaceRestClient:jar:0.0.1-SNAPSHOT
+[WARNING] 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique: org.springframework.boot:spring-boot-starter:jar -> duplicate declaration of version (?) @ line 68, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] GSPCommonContract
+[INFO] GSPMasterService
+[INFO] AssemblerCommon
+[INFO] GSPAPIGateway
+[INFO] AssemblerAPIGateway
+[INFO] GSPMasterLiquibase
+[INFO] GSPMasterContract
+[INFO] GSPMasterService
+[INFO] AssemblerGSPMaster
+[INFO] GSPInterfaceContract
+[INFO] GSPInterfaceRestClient
+[INFO] AssemblerGSPInterface
+[INFO] Assembler
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPCommonContract 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPCommonContract ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\common\GSPCommonContract\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPCommonContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPCommonContract ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 5 source files to D:\Shiv\GSP\Code\gspassembler\common\GSPCommonContract\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPCommonContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPCommonContract ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GSPCommonContract ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ GSPCommonContract ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\common\GSPCommonContract\target\GSPCommonContract-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPCommonContract ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\common\GSPCommonContract\target\GSPCommonContract-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPCommonContract\0.0.1-SNAPSHOT\GSPCommonContract-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\common\GSPCommonContract\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPCommonContract\0.0.1-SNAPSHOT\GSPCommonContract-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPMasterService 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPCommon ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\target
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ GSPCommon ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPCommon ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPCommon ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 22 source files to D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPCommon ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPCommon ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GSPCommon ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ GSPCommon ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\target\GSPCommon-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPCommon ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\target\GSPCommon-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPCommon\0.0.1-SNAPSHOT\GSPCommon-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\common\GSPCommon\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPCommon\0.0.1-SNAPSHOT\GSPCommon-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AssemblerCommon 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ AssemblerCommon ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ AssemblerCommon ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\common\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\AssemblerCommon\0.0.1-SNAPSHOT\AssemblerCommon-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPAPIGateway 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ GSPAPIGateway ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPAPIGateway ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPAPIGateway ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPAPIGateway ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPAPIGateway ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ GSPAPIGateway ---
+[INFO] Surefire report directory: D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+14:39:26.421 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.428 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:39:26.438 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:39:26.454 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspapiGatewayApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:39:26.471 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspapiGatewayApplicationTests], using SpringBootContextLoader
+14:39:26.474 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: class path resource [com/gsp/mastek/GspapiGatewayApplicationTests-context.xml] does not exist
+14:39:26.474 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: class path resource [com/gsp/mastek/GspapiGatewayApplicationTestsContext.groovy] does not exist
+14:39:26.474 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:39:26.475 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: GspapiGatewayApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:39:26.524 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.532 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:26.534 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:26.535 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:26.548 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/gsp/mastek/] to resources [URL [file:/D:/Shiv/GSP/Code/gspassembler/APIGateway/GSPAPIGateway/target/test-classes/com/gsp/mastek/], URL [file:/D:/Shiv/GSP/Code/gspassembler/APIGateway/GSPAPIGateway/target/classes/com/gsp/mastek/]]
+14:39:26.549 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\test-classes\com\gsp\mastek]
+14:39:26.549 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\test-classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/APIGateway/GSPAPIGateway/target/test-classes/com/gsp/mastek/*.class]
+14:39:26.552 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\classes\com\gsp\mastek]
+14:39:26.552 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/APIGateway/GSPAPIGateway/target/classes/com/gsp/mastek/*.class]
+14:39:26.553 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/gsp/mastek/*.class] to resources [file [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\test-classes\com\gsp\mastek\GspapiGatewayApplicationTests.class], file [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\classes\com\gsp\mastek\GspapiGatewayApplication.class]]
+14:39:26.598 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\classes\com\gsp\mastek\GspapiGatewayApplication.class]
+14:39:26.602 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspapiGatewayApplication for test class com.gsp.mastek.GspapiGatewayApplicationTests
+14:39:26.610 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspapiGatewayApplicationTests]: using defaults.
+14:39:26.621 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:39:26.638 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+14:39:26.656 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+14:39:26.657 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@29ba4338, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@57175e74, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@7bb58ca3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@c540f5a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@770c2e6b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a052a00, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4d826d77, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@61009542, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@77e9807f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@448ff1a8]
+14:39:26.659 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.659 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspapiGatewayApplicationTests]
+Running com.gsp.mastek.GspapiGatewayApplicationTests
+14:39:26.661 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.661 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:39:26.661 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:39:26.662 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspapiGatewayApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:39:26.662 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspapiGatewayApplicationTests], using SpringBootContextLoader
+14:39:26.663 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: class path resource [com/gsp/mastek/GspapiGatewayApplicationTests-context.xml] does not exist
+14:39:26.663 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: class path resource [com/gsp/mastek/GspapiGatewayApplicationTestsContext.groovy] does not exist
+14:39:26.663 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:39:26.663 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspapiGatewayApplicationTests]: GspapiGatewayApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:39:26.675 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.675 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:26.675 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:26.675 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:26.675 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspapiGatewayApplication for test class com.gsp.mastek.GspapiGatewayApplicationTests
+14:39:26.677 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspapiGatewayApplicationTests]: using defaults.
+14:39:26.687 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:39:26.697 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+14:39:26.698 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+14:39:26.698 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@37e547da, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2b6856dd, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5db45159, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6107227e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7c417213, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@15761df8, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6ab7a896, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@327b636c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@45dd4eda, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@60611244]
+14:39:26.699 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.699 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.699 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.699 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.702 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2cbb3d47 testClass = GspapiGatewayApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@527e5409 testClass = GspapiGatewayApplicationTests, locations = '{}', classes = '{class com.gsp.mastek.GspapiGatewayApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@5faeada1, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@1563da5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1d8d30f7], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+14:39:26.703 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.703 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspapiGatewayApplicationTests]
+14:39:26.777 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:26.777 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:26.777 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:26.778 [main] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+14:39:26.783 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+14:39:26.783 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+2017-04-19 14:39:27.332  INFO 18884 --- [           main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@48bb62: startup date [Wed Apr 19 14:39:27 IST 2017]; root of context hierarchy
+2017-04-19 14:39:27.529  INFO 18884 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-19 14:39:27.603  INFO 18884 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$395ea18e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.2.RELEASE)
+
+2017-04-19 14:39:28.021  INFO 18884 --- [           main] c.g.m.GspapiGatewayApplicationTests      : No active profile set, falling back to default profiles: default
+2017-04-19 14:39:28.025  INFO 18884 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@76f7d241: startup date [Wed Apr 19 14:39:28 IST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@48bb62
+2017-04-19 14:39:28.747  WARN 18884 --- [           main] o.s.c.a.ConfigurationClassPostProcessor  : Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2017-04-19 14:39:28.892  INFO 18884 --- [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=e6f034c3-230d-3a40-8e88-a413304b291a
+2017-04-19 14:39:28.944  INFO 18884 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-04-19 14:39:29.041  INFO 18884 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$395ea18e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-19 14:39:29.514  INFO 18884 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@76f7d241: startup date [Wed Apr 19 14:39:28 IST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@48bb62
+2017-04-19 14:39:29.629  INFO 18884 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-19 14:39:29.630  INFO 18884 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-19 14:39:29.662  INFO 18884 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-19 14:39:29.662  INFO 18884 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-19 14:39:29.703  INFO 18884 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-19 14:39:30.362  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.363  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2017-04-19 14:39:30.364  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2017-04-19 14:39:30.365  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2017-04-19 14:39:30.365  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.366  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2017-04-19 14:39:30.366  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.367  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.367  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2017-04-19 14:39:30.369  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.369  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2017-04-19 14:39:30.370  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.371  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2017-04-19 14:39:30.371  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.372  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2017-04-19 14:39:30.372  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2017-04-19 14:39:30.372  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-04-19 14:39:30.373  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.373  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.374  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2017-04-19 14:39:30.374  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-04-19 14:39:30.375  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.376  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2017-04-19 14:39:30.377  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.378  INFO 18884 --- [           main] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2017-04-19 14:39:30.565  WARN 18884 --- [           main] o.s.c.n.a.ArchaiusAutoConfiguration      : No spring.application.name found, defaulting to 'application'
+2017-04-19 14:39:30.569  WARN 18884 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-04-19 14:39:30.569  INFO 18884 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-04-19 14:39:30.575  WARN 18884 --- [           main] c.n.c.sources.URLConfigurationSource     : No URLs will be polled as dynamic configuration sources.
+2017-04-19 14:39:30.575  INFO 18884 --- [           main] c.n.c.sources.URLConfigurationSource     : To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2017-04-19 14:39:30.757  INFO 18884 --- [           main] c.g.m.GspapiGatewayApplicationTests      : Started GspapiGatewayApplicationTests in 3.966 seconds (JVM running for 5.01)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.137 sec - in com.gsp.mastek.GspapiGatewayApplicationTests
+2017-04-19 14:39:30.799  INFO 18884 --- [       Thread-5] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@76f7d241: startup date [Wed Apr 19 14:39:28 IST 2017]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@48bb62
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ GSPAPIGateway ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\GSPAPIGateway-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.2.RELEASE:repackage (default) @ GSPAPIGateway ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ GSPAPIGateway ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\target\GSPAPIGateway-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPAPIGateway\0.0.1-SNAPSHOT\GSPAPIGateway-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\APIGateway\GSPAPIGateway\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPAPIGateway\0.0.1-SNAPSHOT\GSPAPIGateway-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AssemblerAPIGateway 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ AssemblerAPIGateway ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ AssemblerAPIGateway ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\APIGateway\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\AssemblerAPIGateway\0.0.1-SNAPSHOT\AssemblerAPIGateway-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPMasterLiquibase 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPMasterLiquibase ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPMasterLiquibase ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\src\main\resources
+[INFO] 
+[INFO] --- liquibase-maven-plugin:2.0.1:update (default) @ GSPMasterLiquibase ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Parsing Liquibase Properties File
+[INFO]   File: src/main/config/master_liquibase_local.properties
+[INFO] ------------------------------------------------------------------------
+[INFO] Executing on Database: jdbc:postgresql://localhost:5432/GSPMaster
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ GSPMasterLiquibase ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPMasterLiquibase ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ GSPMasterLiquibase ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GSPMasterLiquibase ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ GSPMasterLiquibase ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\target\GSPMasterLiquibase-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPMasterLiquibase ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\target\GSPMasterLiquibase-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterLiquibase\0.0.1-SNAPSHOT\GSPMasterLiquibase-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterLiquibase\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterLiquibase\0.0.1-SNAPSHOT\GSPMasterLiquibase-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPMasterContract 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPMasterContract ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterContract\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPMasterContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPMasterContract ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterContract\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPMasterContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPMasterContract ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GSPMasterContract ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ GSPMasterContract ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterContract\target\GSPMasterContract-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPMasterContract ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterContract\target\GSPMasterContract-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterContract\0.0.1-SNAPSHOT\GSPMasterContract-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterContract\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterContract\0.0.1-SNAPSHOT\GSPMasterContract-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPMasterService 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ GSPMasterService ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ GSPMasterService ---
+[WARNING] diagnostic: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\src\main\java\com\gsp\mastek\mapper\RolesMapper.java:15: warning: Unmapped target property: "createdBy".
+    RolesVO rolesToRolesVO(Roles roles);
+            ^
+[WARNING] diagnostic: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\src\main\java\com\gsp\mastek\mapper\RolesMapper.java:17: warning: Unmapped target properties: "createdByUser, creationDate, modifiedByUser, modificationDate".
+    Roles rolesVOToRoles(RolesVO rolesVO);
+          ^
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPMasterService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPMasterService ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 8 source files to D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPMasterService ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPMasterService ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ GSPMasterService ---
+[INFO] Surefire report directory: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+14:39:42.182 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.188 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:39:42.198 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:39:42.211 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspMasterServiceApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:39:42.226 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspMasterServiceApplicationTests], using SpringBootContextLoader
+14:39:42.229 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: class path resource [com/gsp/mastek/GspMasterServiceApplicationTests-context.xml] does not exist
+14:39:42.230 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: class path resource [com/gsp/mastek/GspMasterServiceApplicationTestsContext.groovy] does not exist
+14:39:42.230 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:39:42.230 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: GspMasterServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:39:42.279 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.287 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:42.289 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:42.290 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:42.305 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/gsp/mastek/] to resources [URL [file:/D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterService/target/test-classes/com/gsp/mastek/], URL [file:/D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterService/target/classes/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommonContract/target/GSPCommonContract-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterContract/target/GSPMasterContract-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/]]
+14:39:42.305 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\test-classes\com\gsp\mastek]
+14:39:42.305 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\test-classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterService/target/test-classes/com/gsp/mastek/*.class]
+14:39:42.309 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\classes\com\gsp\mastek]
+14:39:42.309 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterService/target/classes/com/gsp/mastek/*.class]
+14:39:42.311 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar]
+14:39:42.315 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommonContract/target/GSPCommonContract-0.0.1-SNAPSHOT.jar]
+14:39:42.316 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/GSPMaster/GSPMasterContract/target/GSPMasterContract-0.0.1-SNAPSHOT.jar]
+14:39:42.317 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/gsp/mastek/*.class] to resources [file [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\test-classes\com\gsp\mastek\GspMasterServiceApplicationTests.class], file [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\classes\com\gsp\mastek\GspMasterServiceApplication.class], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/BaseEnvironmentPropertyPlaceholderConfigurer.class]]
+14:39:42.362 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\classes\com\gsp\mastek\GspMasterServiceApplication.class]
+14:39:42.368 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspMasterServiceApplication for test class com.gsp.mastek.GspMasterServiceApplicationTests
+14:39:42.375 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspMasterServiceApplicationTests]: using defaults.
+14:39:42.388 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:39:42.417 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6b0c2d26, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3d3fcdb0, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@641147d0, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6e38921c, org.springframework.test.context.transaction.TransactionalTestExecutionListener@64d7f7e0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@27c6e487, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@49070868, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6385cb26, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@38364841, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@28c4711c, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@59717824, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@146044d7]
+14:39:42.420 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.420 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspMasterServiceApplicationTests]
+Running com.gsp.mastek.GspMasterServiceApplicationTests
+14:39:42.422 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.422 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:39:42.422 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:39:42.422 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspMasterServiceApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:39:42.423 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspMasterServiceApplicationTests], using SpringBootContextLoader
+14:39:42.423 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: class path resource [com/gsp/mastek/GspMasterServiceApplicationTests-context.xml] does not exist
+14:39:42.423 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: class path resource [com/gsp/mastek/GspMasterServiceApplicationTestsContext.groovy] does not exist
+14:39:42.423 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:39:42.424 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspMasterServiceApplicationTests]: GspMasterServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:39:42.433 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.433 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:42.433 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:42.433 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:42.433 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspMasterServiceApplication for test class com.gsp.mastek.GspMasterServiceApplicationTests
+14:39:42.435 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspMasterServiceApplicationTests]: using defaults.
+14:39:42.442 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:39:42.450 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6ee12bac, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55040f2f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@64c87930, org.springframework.test.context.support.DirtiesContextTestExecutionListener@400cff1a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@275710fc, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@525f1e4e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@75f9eccc, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@52aa2946, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4de5031f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@67e2d983, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5d47c63f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5ea434c8]
+14:39:42.450 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.450 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.451 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.451 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.454 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@482cd91f testClass = GspMasterServiceApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@123f1134 testClass = GspMasterServiceApplicationTests, locations = '{}', classes = '{class com.gsp.mastek.GspMasterServiceApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@6e0e048a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@23e028a9, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@67205a84], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+14:39:42.455 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.455 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspMasterServiceApplicationTests]
+14:39:42.520 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:39:42.520 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:39:42.520 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:39:42.521 [main] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+14:39:42.527 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+14:39:42.527 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.2.RELEASE)
+
+2017-04-19 14:39:42 INFO  c.g.m.GspMasterServiceApplicationTests - Starting GspMasterServiceApplicationTests on IND-MHP1DW70673 with PID 19660 (started by shivkumarg in D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService)
+2017-04-19 14:39:42 DEBUG c.g.m.GspMasterServiceApplicationTests - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+2017-04-19 14:39:42 INFO  c.g.m.GspMasterServiceApplicationTests - No active profile set, falling back to default profiles: default
+2017-04-19 14:39:52 DEBUG org.hibernate.SQL - drop table if exists roles cascade
+2017-04-19 14:39:52 DEBUG org.hibernate.SQL - drop sequence hibernate_sequence
+2017-04-19 14:39:52 DEBUG org.hibernate.SQL - create sequence hibernate_sequence start 1 increment 1
+2017-04-19 14:39:52 DEBUG org.hibernate.SQL - create table roles (id int8 not null, created_by_user varchar(255), creation_date timestamp, modification_date timestamp, modified_by_user varchar(255), role_name varchar(255), primary key (id))
+2017-04-19 14:39:54 INFO  c.g.m.GspMasterServiceApplicationTests - Started GspMasterServiceApplicationTests in 11.483 seconds (JVM running for 12.415)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.641 sec - in com.gsp.mastek.GspMasterServiceApplicationTests
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ GSPMasterService ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\GSPMasterService-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.2.RELEASE:repackage (default) @ GSPMasterService ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ GSPMasterService ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\target\GSPMasterService-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterService\0.0.1-SNAPSHOT\GSPMasterService-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\GSPMasterService\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPMasterService\0.0.1-SNAPSHOT\GSPMasterService-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AssemblerGSPMaster 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ AssemblerGSPMaster ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ AssemblerGSPMaster ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPMaster\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\AssemblerGSPMaster\0.0.1-SNAPSHOT\AssemblerGSPMaster-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPInterfaceContract 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPInterfaceContract ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceContract\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPInterfaceContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPInterfaceContract ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 6 source files to D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceContract\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPInterfaceContract ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPInterfaceContract ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ GSPInterfaceContract ---
+[INFO] 
+[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ GSPInterfaceContract ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceContract\target\GSPInterfaceContract-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPInterfaceContract ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceContract\target\GSPInterfaceContract-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPInterfaceContract\0.0.1-SNAPSHOT\GSPInterfaceContract-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceContract\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPInterfaceContract\0.0.1-SNAPSHOT\GSPInterfaceContract-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building GSPInterfaceRestClient 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.6.1:clean (default-clean) @ GSPInterfaceRestClient ---
+[INFO] Deleting D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target
+[INFO] 
+[INFO] --- maven-processor-plugin:2.2.4:process (process) @ GSPInterfaceRestClient ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ GSPInterfaceRestClient ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ GSPInterfaceRestClient ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 21 source files to D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\classes
+[WARNING] /D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/src/main/java/com/gsp/mastek/rest/client/otpreq/OTPRequestServiceInvoker.java: Some input files use unchecked or unsafe operations.
+[WARNING] /D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/src/main/java/com/gsp/mastek/rest/client/otpreq/OTPRequestServiceInvoker.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ GSPInterfaceRestClient ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ GSPInterfaceRestClient ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.18.1:test (default-test) @ GSPInterfaceRestClient ---
+[INFO] Surefire report directory: D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+14:40:02.761 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:02.768 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:40:02.779 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:40:02.795 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:40:02.815 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests], using SpringBootContextLoader
+14:40:02.819 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: class path resource [com/gsp/mastek/GspInterfaceRestClientApplicationTests-context.xml] does not exist
+14:40:02.819 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: class path resource [com/gsp/mastek/GspInterfaceRestClientApplicationTestsContext.groovy] does not exist
+14:40:02.819 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:40:02.820 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: GspInterfaceRestClientApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:40:02.874 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:02.883 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:40:02.885 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:40:02.885 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:40:02.900 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved classpath location [com/gsp/mastek/] to resources [URL [file:/D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/target/test-classes/com/gsp/mastek/], URL [file:/D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/target/classes/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommonContract/target/GSPCommonContract-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceContract/target/GSPInterfaceContract-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/]]
+14:40:02.901 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\test-classes\com\gsp\mastek]
+14:40:02.901 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\test-classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/target/test-classes/com/gsp/mastek/*.class]
+14:40:02.904 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in directory tree [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\classes\com\gsp\mastek]
+14:40:02.905 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Searching directory [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\classes\com\gsp\mastek] for files matching pattern [D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceRestClient/target/classes/com/gsp/mastek/*.class]
+14:40:02.907 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar]
+14:40:02.912 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommonContract/target/GSPCommonContract-0.0.1-SNAPSHOT.jar]
+14:40:02.913 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Looking for matching resources in jar file [file:/D:/Shiv/GSP/Code/gspassembler/GSPInterface/GSPInterfaceContract/target/GSPInterfaceContract-0.0.1-SNAPSHOT.jar]
+14:40:02.914 [main] DEBUG org.springframework.core.io.support.PathMatchingResourcePatternResolver - Resolved location pattern [classpath*:com/gsp/mastek/*.class] to resources [file [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\test-classes\com\gsp\mastek\GspInterfaceRestClientApplicationTests.class], file [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\classes\com\gsp\mastek\GspInterfaceRestClientApplication.class], URL [jar:file:/D:/Shiv/GSP/Code/gspassembler/common/GSPCommon/target/GSPCommon-0.0.1-SNAPSHOT.jar!/com/gsp/mastek/BaseEnvironmentPropertyPlaceholderConfigurer.class]]
+14:40:02.959 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\classes\com\gsp\mastek\GspInterfaceRestClientApplication.class]
+14:40:02.969 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspInterfaceRestClientApplication for test class com.gsp.mastek.GspInterfaceRestClientApplicationTests
+14:40:02.976 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: using defaults.
+14:40:02.985 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:40:03.014 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3c0a50da, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@646be2c3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@797badd3, org.springframework.test.context.support.DirtiesContextTestExecutionListener@77be656f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@19dc67c2, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@221af3c0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@62bd765, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@23a5fd2, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@78a2da20, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@dd3b207, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@551bdc27, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@58fdd99]
+14:40:03.016 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.017 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+Running com.gsp.mastek.GspInterfaceRestClientApplicationTests
+14:40:03.019 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.019 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+14:40:03.019 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+14:40:03.019 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+14:40:03.020 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests], using SpringBootContextLoader
+14:40:03.020 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: class path resource [com/gsp/mastek/GspInterfaceRestClientApplicationTests-context.xml] does not exist
+14:40:03.020 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: class path resource [com/gsp/mastek/GspInterfaceRestClientApplicationTestsContext.groovy] does not exist
+14:40:03.021 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+14:40:03.021 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: GspInterfaceRestClientApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:40:03.030 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.030 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:40:03.030 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:40:03.030 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:40:03.030 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.gsp.mastek.GspInterfaceRestClientApplication for test class com.gsp.mastek.GspInterfaceRestClientApplicationTests
+14:40:03.032 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]: using defaults.
+14:40:03.039 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+14:40:03.046 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@ca263c2, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@589b3632, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@45f45fa1, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4c6e276e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@534df152, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@52e677af, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@35083305, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@8e0379d, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@341b80b2, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@55a1c291, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2145433b, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2890c451]
+14:40:03.046 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.047 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.047 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.047 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.051 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@25a65b77 testClass = GspInterfaceRestClientApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@2ed0fbae testClass = GspInterfaceRestClientApplicationTests, locations = '{}', classes = '{class com.gsp.mastek.GspInterfaceRestClientApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@35d176f7, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6e6c3152, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7f13d6e], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+14:40:03.051 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.052 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.gsp.mastek.GspInterfaceRestClientApplicationTests]
+14:40:03.114 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+14:40:03.114 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+14:40:03.114 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+14:40:03.115 [main] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+14:40:03.121 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+14:40:03.121 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.2.RELEASE)
+
+2017-04-19 14:40:03 INFO  c.g.m.GspInterfaceRestClientApplicationTests - Starting GspInterfaceRestClientApplicationTests on IND-MHP1DW70673 with PID 19696 (started by shivkumarg in D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient)
+2017-04-19 14:40:03 DEBUG c.g.m.GspInterfaceRestClientApplicationTests - Running with Spring Boot v1.5.2.RELEASE, Spring v4.3.7.RELEASE
+2017-04-19 14:40:03 INFO  c.g.m.GspInterfaceRestClientApplicationTests - No active profile set, falling back to default profiles: default
+key gstn.credential.publickey.loc
+2017-04-19 14:40:14 INFO  c.g.m.GspInterfaceRestClientApplicationTests - Started GspInterfaceRestClientApplicationTests in 11.528 seconds (JVM running for 12.482)
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.684 sec - in com.gsp.mastek.GspInterfaceRestClientApplicationTests
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.6:jar (default-jar) @ GSPInterfaceRestClient ---
+[INFO] Building jar: D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\GSPInterfaceRestClient-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:1.5.2.RELEASE:repackage (default) @ GSPInterfaceRestClient ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ GSPInterfaceRestClient ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\target\GSPInterfaceRestClient-0.0.1-SNAPSHOT.jar to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPInterfaceRestClient\0.0.1-SNAPSHOT\GSPInterfaceRestClient-0.0.1-SNAPSHOT.jar
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPInterface\GSPInterfaceRestClient\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPInterfaceRestClient\0.0.1-SNAPSHOT\GSPInterfaceRestClient-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building AssemblerGSPInterface 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ AssemblerGSPInterface ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ AssemblerGSPInterface ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\GSPInterface\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\AssemblerGSPInterface\0.0.1-SNAPSHOT\AssemblerGSPInterface-0.0.1-SNAPSHOT.pom
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Assembler 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GSPAssembler ---
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ GSPAssembler ---
+[INFO] Installing D:\Shiv\GSP\Code\gspassembler\pom.xml to C:\Users\shivkumarg\.m2\repository\com\gsp\mastek\GSPAssembler\0.0.1-SNAPSHOT\GSPAssembler-0.0.1-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] GSPCommonContract .................................. SUCCESS [  3.107 s]
+[INFO] GSPMasterService ................................... SUCCESS [  4.164 s]
+[INFO] AssemblerCommon .................................... SUCCESS [  0.017 s]
+[INFO] GSPAPIGateway ...................................... SUCCESS [ 14.127 s]
+[INFO] AssemblerAPIGateway ................................ SUCCESS [  0.018 s]
+[INFO] GSPMasterLiquibase ................................. SUCCESS [  2.422 s]
+[INFO] GSPMasterContract .................................. SUCCESS [  0.358 s]
+[INFO] GSPMasterService ................................... SUCCESS [ 18.612 s]
+[INFO] AssemblerGSPMaster ................................. SUCCESS [  0.016 s]
+[INFO] GSPInterfaceContract ............................... SUCCESS [  0.559 s]
+[INFO] GSPInterfaceRestClient ............................. SUCCESS [ 20.122 s]
+[INFO] AssemblerGSPInterface .............................. SUCCESS [  0.029 s]
+[INFO] Assembler .......................................... SUCCESS [  0.019 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:04 min
+[INFO] Finished at: 2017-04-19T14:40:15+05:30
+[INFO] Final Memory: 58M/342M
+[INFO] ------------------------------------------------------------------------

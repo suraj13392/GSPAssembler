@@ -10,6 +10,7 @@
 		<module>common</module>
 		<module>APIGateway</module>
 		<module>GSPMaster</module>
+		<module>GSPInterface</module>
 	</modules>	
 	<build>
 		<plugins>
