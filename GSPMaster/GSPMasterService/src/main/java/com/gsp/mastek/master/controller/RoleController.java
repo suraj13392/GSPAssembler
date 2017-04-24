@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.gsp.mastek.common.log.Loggable;
 import com.gsp.mastek.master.service.RoleService;
 import com.gsp.mastek.master.vo.RolesVO;
 
-
+@Loggable
 @RestController
 public class RoleController {
 	
