@@ -1,0 +1,37 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"organization":[
+		{
+			"organizationId": "123",		
+			"goodsDetails":[
+				{
+					"goodsdtlsId": "123",
+					"goodsDescription": "Goods1",
+					"hsnCode": "hsn1232"
+
+				}
+			]
+		},
+		{
+			"organizationId": "123",		
+			"goodsDetails":[
+				{
+					"goodsdtlsId": "123",
+					"goodsDescription": "Goods1",
+					"hsnCode": "hsn1232"
+
+				}
+			]
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>AssemblerGSPMaster</name>
 	<modules>
-	    <module>GSPMasterLiquibase</module>	
+	    <!-- <module>GSPMasterLiquibase</module>	 -->
 	    <module>GSPMasterContract</module>
 		<module>GSPMasterService</module>		
 	</modules>

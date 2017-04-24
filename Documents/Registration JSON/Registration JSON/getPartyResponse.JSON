@@ -1,0 +1,316 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"party":[
+		{
+			"organizationDetails": {
+				 "organizationId": "123",
+				 "legalName": "ABC Ltd",
+				 "tradeName": "ABC Ltd",
+				 "panNumber": "ACSPT3646A",
+				 "commencementDt": "01/01/2002",
+				 "gstnRegistrationDt": "01/01/2017",
+				 "organizationStatus": "ACTIVE",	
+				"businessDetails":{
+					"businessdtlsId": "234",
+					 "stateCd": "MH",		
+					 "stateJurisdiction": "",		
+					 "wardCircleSectorNum": "", 	
+					 "centerJurisdiction": "",
+					 "rangeCd": "",
+					 "commissionarateCd": "", 		
+					 "divisionCd": ""
+				},
+				"gstnregistrationDtls":[
+					{
+						"gstnregistrationdtlsId": "1",
+						"stateCd": "MH",
+						"gstin": "GSTIN001" 	
+					},
+					{
+						"gstnregistrationdtlsId": "2",
+						"stateCd": "GJ",
+						"gstin": "GSTIN002" 	
+					}
+				],
+				"goodsDtls":[
+					{
+						 "goodsdtlsId": "1",
+						 "goodsDescription": "Good1", 	
+						 "hsnCode": "HSN001" 			
+					},
+					{
+						 "goodsdtlsId": "2",
+						 "goodsDescription": "Good2", 	
+						 "hsnCode": "HSN002" 			
+					}
+				],
+				"serviceDtls":[
+					{
+						 "servicedtlsId": "1",
+						 "serviceDescription": "Service1", 	
+						 "sacCode": "SAC001" 			
+					},
+					{
+						 "servicedtlsId": "2",
+						 "serviceDescription": "Service2", 	
+						 "sacCode": "SAC002" 			
+					}		
+				],
+				"address":[
+					{
+						"addressId": "12",
+						"buildingNumber": "8",
+						"floorNumber": "1", 	
+						"buildingName": "Om Tower",		
+						"street": "Saibaba Nagar",					
+						"locality": "Borivali", 				
+						"district": "Mumbai",		
+						"stateCd": "MH",	
+						"pinCode": "400092",	
+						"contactDetails":[
+							{
+								"contactId": "123", 	
+								"contactType": "Phone",	
+								"contactValue": "9821876475",
+								"contactPreference":[
+									{
+										"contactpreferenceId": "12",
+										"preferredDay": "Weekday",
+										"preferredTimefrom": "09:00AM",
+										"preferredTimeto": "05:00PM"
+									}
+								]
+								
+							},
+							{
+								"contactId": "456", 	
+								"contactType": "Email",	
+								"contactValue": "ashutosh.trasy@mastek.com"							
+							}
+						]
+					},
+					{
+						"addressId": "12",
+						"buildingNumber": "8",
+						"floorNumber": "1", 	
+						"buildingName": "Om Tower",		
+						"street": "Saibaba Nagar",					
+						"locality": "Borivali", 				
+						"district": "Mumbai",		
+						"stateCd": "MH",	
+						"pinCode": "400092",	
+						"contactDetails":[
+							{
+								"contactId": "123", 	
+								"contactType": "Phone",	
+								"contactValue": "9821876475",
+								"contactPreference":[
+									{
+										"contactpreferenceId": "12",
+										"preferredDay": "Weekday",
+										"preferredTimefrom": "09:00AM",
+										"preferredTimeto": "05:00PM"
+									}
+								]
+								
+							},
+							{
+								"contactId": "456", 	
+								"contactType": "Email",	
+								"contactValue": "ashutosh.trasy@mastek.com"							
+							}
+						]
+					}
+				],
+				"partyDetails": [
+					{
+						"partyId": "123",		
+						"partyType": "CEO",		
+						"firstName": "Jayesh",
+						"middleName": "R",
+						"lastName": "Joshi",
+						"fatherFirstName": "Rahul", 	
+						"fatherMiddleName": "", 	
+						"fatherLastName": "",		
+						"husbandFirstName": "", 	
+						"husbandMiddleName": "",	
+						"husbandLastName": "",	
+						"designation": "CEO", 			
+						"gender": "Male",				
+						"dateOfBirth": "01/09/1965",	
+						"isIndianCitizen": "Y",
+						"panNumber": "ASHJP3748A",
+						"passportNumber": "BHKK00393838",
+						"aadharNumber": "AAA239393",
+						"dinNumber": "",	
+						"partyStatus": "Active",
+						"address":[
+							{
+								"addressId": "12",
+								"buildingNumber": "8",
+								"floorNumber": "1", 	
+								"buildingName": "Om Tower",		
+								"street": "Saibaba Nagar",					
+								"locality": "Borivali", 				
+								"district": "Mumbai",		
+								"stateCd": "MH",	
+								"pinCode": "400092",	
+								"contactDetails":[
+									{
+										"contactId": "123", 	
+										"contactType": "Phone",	
+										"contactValue": "9821876475",
+										"contactPreference":[
+											{
+												"contactpreferenceId": "12",
+												"preferredDay": "Weekday",
+												"preferredTimefrom": "09:00AM",
+												"preferredTimeto": "05:00PM"
+											}
+										]
+										
+									},
+									{
+										"contactId": "456", 	
+										"contactType": "Email",	
+										"contactValue": "ashutosh.trasy@mastek.com"							
+									}
+								]
+							},
+							{
+								"addressId": "12",
+								"buildingNumber": "8",
+								"floorNumber": "1", 	
+								"buildingName": "Om Tower",		
+								"street": "Saibaba Nagar",					
+								"locality": "Borivali", 				
+								"district": "Mumbai",		
+								"stateCd": "MH",	
+								"pinCode": "400092",	
+								"contactDetails":[
+									{
+										"contactId": "123", 	
+										"contactType": "Phone",	
+										"contactValue": "9821876475",
+										"contactPreference":[
+											{
+												"contactpreferenceId": "12",
+												"preferredDay": "Weekday",
+												"preferredTimefrom": "09:00AM",
+												"preferredTimeto": "05:00PM"
+											}
+										]
+										
+									},
+									{
+										"contactId": "456", 	
+										"contactType": "Email",	
+										"contactValue": "ashutosh.trasy@mastek.com"							
+									}
+								]
+							}
+						]
+					},
+					{
+						"partyId": "123",		
+						"partyType": "CEO",		
+						"firstName": "Jayesh",
+						"middleName": "R",
+						"lastName": "Joshi",
+						"fatherFirstName": "Rahul", 	
+						"fatherMiddleName": "", 	
+						"fatherLastName": "",		
+						"husbandFirstName": "", 	
+						"husbandMiddleName": "",	
+						"husbandLastName": "",	
+						"designation": "CEO", 			
+						"gender": "Male",				
+						"dateOfBirth": "01/09/1965",	
+						"isIndianCitizen": "Y",
+						"panNumber": "ASHJP3748A",
+						"passportNumber": "BHKK00393838",
+						"aadharNumber": "AAA239393",
+						"dinNumber": "",	
+						"partyStatus": "Active",
+						"address":[
+							{
+								"addressId": "12",
+								"buildingNumber": "8",
+								"floorNumber": "1", 	
+								"buildingName": "Om Tower",		
+								"street": "Saibaba Nagar",					
+								"locality": "Borivali", 				
+								"district": "Mumbai",		
+								"stateCd": "MH",	
+								"pinCode": "400092",	
+								"contactDetails":[
+									{
+										"contactId": "123", 	
+										"contactType": "Phone",	
+										"contactValue": "9821876475",
+										"contactPreference":[
+											{
+												"contactpreferenceId": "12",
+												"preferredDay": "Weekday",
+												"preferredTimefrom": "09:00AM",
+												"preferredTimeto": "05:00PM"
+											}
+										]
+										
+									},
+									{
+										"contactId": "456", 	
+										"contactType": "Email",	
+										"contactValue": "ashutosh.trasy@mastek.com"							
+									}
+								]
+							},
+							{
+								"addressId": "12",
+								"buildingNumber": "8",
+								"floorNumber": "1", 	
+								"buildingName": "Om Tower",		
+								"street": "Saibaba Nagar",					
+								"locality": "Borivali", 				
+								"district": "Mumbai",		
+								"stateCd": "MH",	
+								"pinCode": "400092",	
+								"contactDetails":[
+									{
+										"contactId": "123", 	
+										"contactType": "Phone",	
+										"contactValue": "9821876475",
+										"contactPreference":[
+											{
+												"contactpreferenceId": "12",
+												"preferredDay": "Weekday",
+												"preferredTimefrom": "09:00AM",
+												"preferredTimeto": "05:00PM"
+											}
+										]
+										
+									},
+									{
+										"contactId": "456", 	
+										"contactType": "Email",	
+										"contactValue": "ashutosh.trasy@mastek.com"							
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

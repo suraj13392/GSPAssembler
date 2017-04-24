@@ -1,0 +1,1 @@
+INSERT INTO roles (id, created_by_user, creation_date, modification_date, modified_by_user, role_name) VALUES (1,'System','2017-01-23 20:23:23','2017-01-23 20:23:23',NULL,'role1');

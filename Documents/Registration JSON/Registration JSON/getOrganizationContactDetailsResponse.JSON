@@ -1,0 +1,63 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"organization":[
+		{
+			"organizationId": "123",		
+			"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+		},
+		{
+			"organizationId": "123",		
+			"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

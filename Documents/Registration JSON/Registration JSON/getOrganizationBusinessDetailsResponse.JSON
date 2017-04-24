@@ -1,0 +1,43 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"organization":[
+		{
+			"organizationId": "123",		
+			"businessDetails":
+			{
+				"businessdtlsId": "122",
+				"stateCd": "MH",
+				"stateJurisdiction": "MH",
+				"wardCircleSectorNum": "1",
+				"centerJurisdiction": "DL",
+				"rangeCd": "1",
+				"commissionarateCd": "CC",
+				"divisionCd": "DV"
+			}
+		},
+		{
+			"organizationId": "123",		
+			"businessDetails":
+			{
+				"businessdtlsId": "122",
+				"stateCd": "MH",
+				"stateJurisdiction": "MH",
+				"wardCircleSectorNum": "1",
+				"centerJurisdiction": "DL",
+				"rangeCd": "1",
+				"commissionarateCd": "CC",
+				"divisionCd": "DV"
+			}		
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

@@ -1,0 +1,35 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"organization":[
+		{
+			"organizationId": "123",		
+			"gstin":[
+				{
+					"gstnregistrationdtlsId": "123",
+					"stateCd": "MH",
+					"gstin": "gst123"
+				}
+			]
+		},
+		{
+			"organizationId": "123",		
+			"gstin":[
+				{
+					"gstnregistrationdtlsId": "123",
+					"stateCd": "MH",
+					"gstin": "gst123"
+				}
+			]
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

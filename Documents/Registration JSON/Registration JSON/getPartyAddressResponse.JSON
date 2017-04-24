@@ -1,0 +1,153 @@
+{
+	"organizationId": "",     
+	"gstin": "MH123949449A",
+	"partyId": "",
+	"aadharNumber": "",
+	"panNumber": "",
+	"userName": "",
+	"partyStatus": "",
+	"party":[
+		{
+			"partyId": "123",		
+			"address":[
+				{
+					"addressId": "12",
+					"buildingNumber": "8",
+					"floorNumber": "1", 	
+					"buildingName": "Om Tower",		
+					"street": "Saibaba Nagar",					
+					"locality": "Borivali", 				
+					"district": "Mumbai",		
+					"stateCd": "MH",	
+					"pinCode": "400092",	
+					"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+				},
+				{
+					"addressId": "12",
+					"buildingNumber": "8",
+					"floorNumber": "1", 	
+					"buildingName": "Om Tower",		
+					"street": "Saibaba Nagar",					
+					"locality": "Borivali", 				
+					"district": "Mumbai",		
+					"stateCd": "MH",	
+					"pinCode": "400092",	
+					"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+				}
+			]
+		},
+		{
+			"partyId": "123",		
+			"address":[
+				{
+					"addressId": "12",
+					"buildingNumber": "8",
+					"floorNumber": "1", 	
+					"buildingName": "Om Tower",		
+					"street": "Saibaba Nagar",					
+					"locality": "Borivali", 				
+					"district": "Mumbai",		
+					"stateCd": "MH",	
+					"pinCode": "400092",	
+					"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+				},
+				{
+					"addressId": "12",
+					"buildingNumber": "8",
+					"floorNumber": "1", 	
+					"buildingName": "Om Tower",		
+					"street": "Saibaba Nagar",					
+					"locality": "Borivali", 				
+					"district": "Mumbai",		
+					"stateCd": "MH",	
+					"pinCode": "400092",	
+					"contactDetails":[
+						{
+							"contactId": "123", 	
+							"contactType": "Phone",	
+							"contactValue": "9821876475",
+							"contactPreference":[
+								{
+									"contactpreferenceId": "12",
+									"preferredDay": "Weekday",
+									"preferredTimefrom": "09:00AM",
+									"preferredTimeto": "05:00PM"
+								}
+							]
+							
+						},
+						{
+							"contactId": "456", 	
+							"contactType": "Email",	
+							"contactValue": "ashutosh.trasy@mastek.com"							
+						}
+					]
+				}
+			]
+		}
+	],
+	 "status":{
+	 "statusCode":"OK",
+	 "statusDescription":"Party Details Fetched"
+	 }
+ }

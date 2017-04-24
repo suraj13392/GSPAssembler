@@ -2,18 +2,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.gsp.mastek</groupId>
-	<artifactId>GSPAssembler</artifactId>
+	<artifactId>AssemblerGSPRegistration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Assembler</name>
+	<name>AssemblerGSPRegistration</name>
 	<modules>
-		<module>common</module>
-		<module>APIGateway</module>
-		<module>GSPMaster</module>
-		<module>GSPInterface</module>
-		<module>GSPRegistration</module>
-		
-	</modules>	
+	    <!-- <module>GSPPartyRegistrationLiquibase</module>	 -->
+	    <module>GSPRegistrationContract</module>
+		<module>GSPRegistrationService</module>		
+	</modules>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -27,5 +25,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
