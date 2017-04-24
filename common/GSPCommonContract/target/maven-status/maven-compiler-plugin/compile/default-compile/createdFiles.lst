@@ -1,9 +1,0 @@
-com\gsp\mastek\common\vo\AdapterBaseDTO.class
-com\gsp\mastek\common\vo\BaseResponse.class
-com\gsp\mastek\common\vo\OutwardDTO.class
-com\gsp\mastek\common\vo\InwardDTO.class
-com\gsp\mastek\common\error\vo\FieldErrorVO.class
-com\gsp\mastek\common\error\vo\ErrorDTO.class
-com\gsp\mastek\common\vo\IBaseResponse.class
-com\gsp\mastek\common\enums\ResponseType.class
-com\gsp\mastek\common\vo\BaseVO.class

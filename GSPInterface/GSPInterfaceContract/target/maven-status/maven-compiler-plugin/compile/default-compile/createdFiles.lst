@@ -1,6 +1,0 @@
-com\gsp\mastek\common\basevo\Result.class
-com\gsp\mastek\rest\client\vo\OTPRequestVO.class
-com\gsp\mastek\rest\client\vo\GSTNAuthRequestVO.class
-com\gsp\mastek\common\basevo\Error.class
-com\gsp\mastek\rest\client\vo\GSTNAuthReqHeaderWrapper.class
-com\gsp\mastek\rest\client\vo\HeaderData.class
