@@ -51,15 +51,7 @@ public class PartyAddress extends BaseEntity {
 	public void setPartyaddressId(Long partyaddressId) {
 		this.partyaddressId = partyaddressId;
 	}
-
-	public Party getParty() {
-		return party;
-	}
-
-	public void setParty(Party party) {
-		this.party = party;
-	}
-
+	
 	public String getBuildingNumber() {
 		return buildingNumber;
 	}
@@ -143,7 +135,7 @@ public class PartyAddress extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "PartyAddress [partyaddressId=" + partyaddressId + ", party=" + party + ", buildingNumber="
+		return "PartyAddress [partyaddressId=" + partyaddressId  + ", buildingNumber="
 				+ buildingNumber + ", floorNumber=" + floorNumber + ", buildingName=" + buildingName + ", street="
 				+ street + ", locality=" + locality + ", district=" + district + ", stateCd=" + stateCd + ", pinCode="
 				+ pinCode + ", partyContacts=" + partyContacts + "]";
