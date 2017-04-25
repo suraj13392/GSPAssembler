@@ -6,12 +6,15 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import com.gsp.mastek.registration.enums.ContactType;
 
 import com.gsp.mastek.common.entity.BaseEntity;
 
@@ -24,7 +27,8 @@ public class OrganizationContact extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long organizationcontactId;
 	
-	private String contactType;
+	@Enumerated(EnumType.STRING)
+	private ContactType contactType;
 	
 	private String contactValue;
 	
@@ -40,13 +44,13 @@ public class OrganizationContact extends BaseEntity {
 
 	public void setOrganizationcontactId(Long organizationcontactId) {
 		this.organizationcontactId = organizationcontactId;
-	}
+	}	
 
-	public String getContactType() {
+	public ContactType getContactType() {
 		return contactType;
 	}
 
-	public void setContactType(String contactType) {
+	public void setContactType(ContactType contactType) {
 		this.contactType = contactType;
 	}
 

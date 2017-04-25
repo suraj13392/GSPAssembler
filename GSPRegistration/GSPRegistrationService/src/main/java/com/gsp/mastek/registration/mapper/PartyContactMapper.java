@@ -4,7 +4,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.gsp.mastek.registration.VO.PartyContactVO;
+import com.gsp.mastek.registration.vo.PartyContactVO;
 import com.gsp.mastek.registration.model.PartyContact;
 
 @Mapper(uses = { PartycontactPreferenceMapper.class } , componentModel = "spring")

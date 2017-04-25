@@ -1,4 +1,4 @@
-package com.gsp.mastek.registration.VO;
+package com.gsp.mastek.registration.vo;
 // Generated 24 Apr, 2017 3:18:39 PM by Hibernate Tools 5.2.1.Final
 
 import java.util.HashSet;

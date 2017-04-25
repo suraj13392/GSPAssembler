@@ -1,6 +1,8 @@
 package com.gsp.mastek.registration.model;
 // Generated 24 Apr, 2017 3:18:39 PM by Hibernate Tools 5.2.1.Final
 
+import java.math.BigDecimal;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,7 +29,7 @@ public class GoodsDtls extends BaseEntity {
 	
 	private String goodsDescription;
 	
-	private Long hsnCode;
+	private BigDecimal hsnCode;
 
 	public Long getGoodsdtlsId() {
 		return goodsdtlsId;
@@ -53,11 +55,11 @@ public class GoodsDtls extends BaseEntity {
 		this.goodsDescription = goodsDescription;
 	}
 
-	public Long getHsnCode() {
+	public BigDecimal getHsnCode() {
 		return hsnCode;
 	}
 
-	public void setHsnCode(Long hsnCode) {
+	public void setHsnCode(BigDecimal hsnCode) {
 		this.hsnCode = hsnCode;
 	}
 

@@ -4,8 +4,8 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.gsp.mastek.registration.VO.BusinessDtlsVO;
 import com.gsp.mastek.registration.model.BusinessDtls;
+import com.gsp.mastek.registration.vo.BusinessDtlsVO;
 
 @Mapper(componentModel = "spring")
 public interface BusinessDtlsMapper {

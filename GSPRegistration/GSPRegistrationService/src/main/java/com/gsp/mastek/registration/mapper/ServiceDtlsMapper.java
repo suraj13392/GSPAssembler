@@ -6,7 +6,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.gsp.mastek.registration.VO.ServiceDtlsVO;
+import com.gsp.mastek.registration.vo.ServiceDtlsVO;
 import com.gsp.mastek.registration.model.ServiceDtls;
 
 @Mapper(componentModel = "spring")

@@ -8,6 +8,8 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 //import javax.servlet.http.HttpServletRequest;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -29,14 +31,16 @@ public abstract class BaseEntity{
 
 	@Column(name = "created_dt", nullable = true)
 	@CreatedDate
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdDt;
 
 	@Column(name = "updated_by", nullable = true)
 	@LastModifiedBy
 	private String updatedBy;
 
-	@Column(name = "updated_date", nullable = true)
+	@Column(name = "updated_dt", nullable = true)
 	@LastModifiedDate
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date updatedDt;
 	
     private Long requestId;

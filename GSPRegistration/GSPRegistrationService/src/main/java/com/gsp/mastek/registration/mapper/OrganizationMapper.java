@@ -4,7 +4,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.gsp.mastek.registration.VO.OrganizationVO;
+import com.gsp.mastek.registration.vo.OrganizationVO;
 import com.gsp.mastek.registration.model.Organization;
 
 @Mapper(uses = { OrganizationAddressMapper.class, BusinessDtlsMapper.class, GoodsDtlsMapper.class,

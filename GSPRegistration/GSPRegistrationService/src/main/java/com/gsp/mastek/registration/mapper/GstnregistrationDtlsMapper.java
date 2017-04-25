@@ -6,8 +6,8 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.gsp.mastek.registration.VO.GstnregistrationDtlsVO;
 import com.gsp.mastek.registration.model.GstnregistrationDtls;
+import com.gsp.mastek.registration.vo.GstnregistrationDtlsVO;
 
 @Mapper(componentModel = "spring")
 public interface GstnregistrationDtlsMapper {

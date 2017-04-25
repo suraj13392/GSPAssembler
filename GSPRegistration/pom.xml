@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>AssemblerGSPRegistration</name>
 	<modules>
-	    <!-- <module>GSPPartyRegistrationLiquibase</module>	 -->
+	    <module>GSPRegistrationLiquibase</module>
 	    <module>GSPRegistrationContract</module>
 		<module>GSPRegistrationService</module>		
 	</modules>
