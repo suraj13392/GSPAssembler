@@ -23,34 +23,38 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @MappedSuperclass
 public abstract class BaseEntity{
 
-	@Column(name = "created_by_user", nullable = true)
+	@Column(name = "created_by", nullable = true)
 	@CreatedBy
-	private String createdByUser;
+	private String createdBy;
 
-	@Column(name = "creation_date", nullable = true)
+	@Column(name = "created_dt", nullable = true)
 	@CreatedDate
-	private Date creationDate;
+	private Date createdDt;
 
-	@Column(name = "modified_by_user", nullable = true)
+	@Column(name = "updated_by", nullable = true)
 	@LastModifiedBy
-	private String modifiedByUser;
+	private String updatedBy;
 
-	@Column(name = "modification_date", nullable = true)
+	@Column(name = "updated_date", nullable = true)
 	@LastModifiedDate
-	private Date modificationDate;
+	private Date updatedDt;
+	
+    private Long requestId;
+	
+	private Long activityId;
 
 	@PrePersist
 	public void prePersist() throws Exception {
-		this.createdByUser = getUsernameOfAuthenticatedUser();
+		this.createdBy = getUsernameOfAuthenticatedUser();
 		;
-		this.creationDate = new Date();
+		this.createdDt = new Date();
 	}
 
 	@PreUpdate
 	public void preUpdate() throws Exception {
-		this.modifiedByUser = getUsernameOfAuthenticatedUser();
+		this.updatedBy = getUsernameOfAuthenticatedUser();
 		;
-		this.modificationDate = new Date();
+		this.updatedDt = new Date();
 	}
 
 	private String getUsernameOfAuthenticatedUser() {
@@ -87,36 +91,58 @@ public abstract class BaseEntity{
 	}
 
 	@JsonIgnore
-	public Date getModificationDate() {
-		return modificationDate;
+	public Date getUpdatedDt() {
+		return updatedDt;
 	}
 
-	public String getCreatedByUser() {
-		return createdByUser;
+	public String getCreatedBy() {
+		return createdBy;
 	}
 
-	public void setCreatedByUser(String createdByUser) {
-		this.createdByUser = createdByUser;
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
 	}
 
-	public Date getCreationDate() {
-		return creationDate;
+	public Date getCreatedDt() {
+		return createdDt;
 	}
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
+	public void setCreatedDt(Date createdDt) {
+		this.createdDt = createdDt;
 	}
 
-	public String getModifiedByUser() {
-		return modifiedByUser;
+	public String getUpdatedBy() {
+		return updatedBy;
 	}
 
-	public void setModifiedByUser(String modifiedByUser) {
-		this.modifiedByUser = modifiedByUser;
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
 	}
 
-	public void setModificationDate(Date modificationDate) {
-		this.modificationDate = modificationDate;
+	public void setUpdatedDt(Date updatedDt) {
+		this.updatedDt = updatedDt;
+	}
+
+	public Long getRequestId() {
+		return requestId;
+	}
+
+	public void setRequestId(Long requestId) {
+		this.requestId = requestId;
+	}
+
+	public Long getActivityId() {
+		return activityId;
+	}
+
+	public void setActivityId(Long activityId) {
+		this.activityId = activityId;
+	}
+
+	@Override
+	public String toString() {
+		return "BaseEntity [createdBy=" + createdBy + ", createdDt=" + createdDt + ", updatedBy=" + updatedBy
+				+ ", updatedDt=" + updatedDt + ", requestId=" + requestId + ", activityId=" + activityId + "]";
 	}
 
 }

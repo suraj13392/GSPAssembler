@@ -1,4 +1,4 @@
-package com.gsp.mastek.Registration.controller;
+package com.gsp.mastek.registration.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestBody;
