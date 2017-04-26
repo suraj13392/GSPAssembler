@@ -15,6 +15,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.gsp.mastek.common.entity.BaseEntity;
 import com.gsp.mastek.registration.enums.Gender;
@@ -55,6 +57,7 @@ public class Party extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
+	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 	
 	private String isIndianCitizen;

@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import com.gsp.mastek.common.entity.BaseEntity;
 
@@ -34,8 +36,10 @@ public class Organization extends BaseEntity {
 	
 	private String panNumber;
 	
+	@Temporal(TemporalType.DATE)
 	private Date commencementDt;
 	
+	@Temporal(TemporalType.DATE)
 	private Date gstnRegistrationDt;
 	
 	private String organizationStatus;

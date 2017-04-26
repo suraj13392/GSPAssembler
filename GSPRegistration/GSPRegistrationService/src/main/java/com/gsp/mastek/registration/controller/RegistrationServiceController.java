@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gsp.mastek.common.log.Log;
 import com.gsp.mastek.common.log.Loggable;
-import com.gsp.mastek.registration.vo.OrganizationVO;
 import com.gsp.mastek.registration.service.RegistrationService;
+import com.gsp.mastek.registration.vo.OrganizationVO;
 
 @Loggable
 @RestController
