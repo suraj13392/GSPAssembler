@@ -29,7 +29,7 @@ public class GoodsDtls extends BaseEntity {
 	
 	private String goodsDescription;
 	
-	private BigDecimal hsnCode;
+	private String hsnCode;
 
 	public Long getGoodsdtlsId() {
 		return goodsdtlsId;
@@ -55,11 +55,11 @@ public class GoodsDtls extends BaseEntity {
 		this.goodsDescription = goodsDescription;
 	}
 
-	public BigDecimal getHsnCode() {
+	public String getHsnCode() {
 		return hsnCode;
 	}
 
-	public void setHsnCode(BigDecimal hsnCode) {
+	public void setHsnCode(String hsnCode) {
 		this.hsnCode = hsnCode;
 	}
 

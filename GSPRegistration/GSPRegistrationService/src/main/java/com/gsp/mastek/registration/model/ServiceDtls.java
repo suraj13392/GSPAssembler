@@ -27,7 +27,7 @@ public class ServiceDtls extends BaseEntity {
 	
 	private String serviceDescription;
 	
-	private Integer sacCode;
+	private String sacCode;
 
 	public Long getServicedtlsId() {
 		return servicedtlsId;
@@ -53,11 +53,11 @@ public class ServiceDtls extends BaseEntity {
 		this.serviceDescription = serviceDescription;
 	}
 
-	public Integer getSacCode() {
+	public String getSacCode() {
 		return sacCode;
 	}
 
-	public void setSacCode(Integer sacCode) {
+	public void setSacCode(String sacCode) {
 		this.sacCode = sacCode;
 	}
 

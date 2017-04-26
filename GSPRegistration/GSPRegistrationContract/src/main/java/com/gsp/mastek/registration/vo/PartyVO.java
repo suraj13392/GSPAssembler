@@ -29,7 +29,7 @@ public class PartyVO extends BaseVO {
 	private Long husbandLastName;
 	private String designation;
 	private Gender gender;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "IST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "IST")
 	private Date dateOfBirth;
 	private String isIndianCitizen;
 	private String panNumber;

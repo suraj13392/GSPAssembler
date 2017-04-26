@@ -12,7 +12,7 @@ public class PartycontactPreferenceVO extends BaseVO {
 	private Long partycontactpreferenceId;
 	private String preferredDay;
 	private String preferredTimefrom;
-	private Long preferredTimeto;
+	private String preferredTimeto;
 	
 	public Long getPartycontactpreferenceId() {
 		return partycontactpreferenceId;
@@ -32,10 +32,10 @@ public class PartycontactPreferenceVO extends BaseVO {
 	public void setPreferredTimefrom(String preferredTimefrom) {
 		this.preferredTimefrom = preferredTimefrom;
 	}
-	public Long getPreferredTimeto() {
+	public String getPreferredTimeto() {
 		return preferredTimeto;
 	}
-	public void setPreferredTimeto(Long preferredTimeto) {
+	public void setPreferredTimeto(String preferredTimeto) {
 		this.preferredTimeto = preferredTimeto;
 	}
 	@Override

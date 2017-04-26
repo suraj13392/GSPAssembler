@@ -11,7 +11,7 @@ public class ServiceDtlsVO extends BaseVO {
 
 	private Long servicedtlsId;
 	private String serviceDescription;
-	private Integer sacCode;
+	private String sacCode;
 	
 	public Long getServicedtlsId() {
 		return servicedtlsId;
@@ -25,10 +25,10 @@ public class ServiceDtlsVO extends BaseVO {
 	public void setServiceDescription(String serviceDescription) {
 		this.serviceDescription = serviceDescription;
 	}
-	public Integer getSacCode() {
+	public String getSacCode() {
 		return sacCode;
 	}
-	public void setSacCode(Integer sacCode) {
+	public void setSacCode(String sacCode) {
 		this.sacCode = sacCode;
 	}
 	

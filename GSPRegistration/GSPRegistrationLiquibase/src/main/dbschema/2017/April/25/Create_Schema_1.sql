@@ -6,9 +6,9 @@ Database: PostgreSQL 9.4
 */
 
 -- Create schemas section -------------------------------------------------
-
+/*
 CREATE SCHEMA "party"
-;
+; */
 
 -- Create tables section -------------------------------------------------
 
@@ -113,7 +113,7 @@ CREATE TABLE "party"."party_address"(
  "locality" Character varying(100),
  "district" Character varying(50),
  "state_cd" Character varying(50),
- "pin_code" Numeric(6,0),
+ "pin_code" Character varying(6),
  "request_id" Bigint NOT NULL,
  "activity_id" Bigint NOT NULL,
  "party_id" Bigint,
@@ -145,7 +145,7 @@ CREATE TABLE "party"."organization_address"(
  "locality" Character varying(100),
  "district" Character varying(50),
  "state_cd" Character varying(50),
- "pin_code" Numeric(6,0),
+ "pin_code" Character varying(6),
  "request_id" Bigint NOT NULL,
  "activity_id" Bigint NOT NULL,
  "organization_id" Bigint,
@@ -225,7 +225,7 @@ CREATE TABLE "party"."partycontact_preference"(
  "partycontactpreference_id" Bigint NOT NULL,
  "preferred_day" Character varying(50),
  "preferred_timefrom" Character varying(20) NOT NULL,
- "preferred_timeto" Bigint,
+ "preferred_timeto" Character varying(20) NOT NULL,
  "request_id" Bigint NOT NULL,
  "activity_id" Bigint NOT NULL,
  "partycontact_id" Bigint,
@@ -336,7 +336,7 @@ ALTER TABLE "party"."gstnregistration_dtls" ADD CONSTRAINT "pk_gstnregistrationd
 CREATE TABLE "party"."goods_dtls"(
  "goodsdtls_id" Bigint NOT NULL,
  "goods_description" Character varying(50),
- "hsn_code" Numeric(10,0),
+ "hsn_code" Character varying(10),
  "request_id" Bigint NOT NULL,
  "activity_id" Bigint NOT NULL,
  "created_dt" Timestamp NOT NULL,
@@ -362,7 +362,7 @@ ALTER TABLE "party"."goods_dtls" ADD CONSTRAINT "pk_goodsdtls_id" PRIMARY KEY ("
 CREATE TABLE "party"."service_dtls"(
  "servicedtls_id" Bigint NOT NULL,
  "service_description" Character varying(50),
- "sac_code" Numeric(8,0),
+ "sac_code" Character varying(8),
  "request_id" Bigint NOT NULL,
  "activity_id" Bigint NOT NULL,
  "organization_id" Bigint,

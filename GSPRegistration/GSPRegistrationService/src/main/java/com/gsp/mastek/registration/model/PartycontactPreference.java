@@ -21,7 +21,7 @@ public class PartycontactPreference extends BaseEntity {
 	
 	private String preferredTimefrom;
 	
-	private Long preferredTimeto;
+	private String preferredTimeto;
 
 	public Long getPartycontactpreferenceId() {
 		return partycontactpreferenceId;
@@ -47,11 +47,11 @@ public class PartycontactPreference extends BaseEntity {
 		this.preferredTimefrom = preferredTimefrom;
 	}
 
-	public Long getPreferredTimeto() {
+	public String getPreferredTimeto() {
 		return preferredTimeto;
 	}
 
-	public void setPreferredTimeto(Long preferredTimeto) {
+	public void setPreferredTimeto(String preferredTimeto) {
 		this.preferredTimeto = preferredTimeto;
 	}
 

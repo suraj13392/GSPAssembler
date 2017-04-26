@@ -1,5 +1,7 @@
 package com.gsp.mastek.registration.service.impl;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.collections.CollectionUtils;
@@ -69,7 +71,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 		if(CollectionUtils.isNotEmpty(gstnregistrationDtlsVOs)){
 			Set<GstnregistrationDtls> gstnregistrationDtlses = gstnregistrationDtlsMapper.toGstnregistrationDtlses(gstnregistrationDtlsVOs);
 			gstnregistrationDtlses.stream().forEach(o -> o.setOrganization(organization));
-			gstnregistrationDtlses = (Set<GstnregistrationDtls>) gstnregistrationDtlsRepository.save(gstnregistrationDtlses);
+			List<GstnregistrationDtls> gstnregistrationDtlsList = (List<GstnregistrationDtls>) gstnregistrationDtlsRepository.save(gstnregistrationDtlses);
+			gstnregistrationDtlses = new HashSet<>(gstnregistrationDtlsList);
 			Set<GstnregistrationDtlsVO> output = gstnregistrationDtlsMapper.fromGstnregistrationDtlses(gstnregistrationDtlses);
 			return output;
 		}
@@ -80,7 +83,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 		if (CollectionUtils.isNotEmpty(serviceDtlsVOs)) {
 			Set<ServiceDtls> serviceDtlses = serviceDtlsMapper.toServiceDtlses(serviceDtlsVOs);
 			serviceDtlses.stream().forEach(o -> o.setOrganization(organization));
-			serviceDtlses = (Set<ServiceDtls>)serviceDtlsRepository.save(serviceDtlses);
+			List<ServiceDtls> serviceDtlsList = (List<ServiceDtls>)serviceDtlsRepository.save(serviceDtlses);
+			serviceDtlses = new HashSet<>(serviceDtlsList);
 			Set<ServiceDtlsVO> output = serviceDtlsMapper.fromServiceDtlses(serviceDtlses);
 			return output;
 		}
@@ -91,7 +95,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 		if (CollectionUtils.isNotEmpty(goodsDtlsVOs)) {
 			Set<GoodsDtls> goodsDtlses = goodsDtlsMapper.toGoodsDtlses(goodsDtlsVOs);
 			goodsDtlses.stream().forEach(o -> o.setOrganization(organization));
-			goodsDtlses = (Set<GoodsDtls>) goodsDtlsRepository.save(goodsDtlses);
+			List<GoodsDtls> goodsDtlsList = (List<GoodsDtls>) goodsDtlsRepository.save(goodsDtlses);
+			goodsDtlses = new HashSet<>(goodsDtlsList);
 			Set<GoodsDtlsVO> output = goodsDtlsMapper.fromGoodsDtlses(goodsDtlses);
 			return output;
 		}

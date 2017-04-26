@@ -20,7 +20,7 @@ public class PartyAddressVO extends BaseVO {
 	private String locality;
 	private String district;
 	private String stateCd;
-	private Integer pinCode;
+	private String pinCode;
 	private Set<PartyContactVO> partyContacts = new HashSet<PartyContactVO>(0);
 	
 	public Long getPartyaddressId() {
@@ -71,10 +71,10 @@ public class PartyAddressVO extends BaseVO {
 	public void setStateCd(String stateCd) {
 		this.stateCd = stateCd;
 	}
-	public Integer getPinCode() {
+	public String getPinCode() {
 		return pinCode;
 	}
-	public void setPinCode(Integer pinCode) {
+	public void setPinCode(String pinCode) {
 		this.pinCode = pinCode;
 	}
 	public Set<PartyContactVO> getPartyContacts() {

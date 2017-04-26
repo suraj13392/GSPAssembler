@@ -11,7 +11,7 @@ public class GoodsDtlsVO extends BaseVO {
 
 	private Long goodsdtlsId;
 	private String goodsDescription;
-	private Long hsnCode;
+	private String hsnCode;
 	
 	public Long getGoodsdtlsId() {
 		return goodsdtlsId;
@@ -25,10 +25,10 @@ public class GoodsDtlsVO extends BaseVO {
 	public void setGoodsDescription(String goodsDescription) {
 		this.goodsDescription = goodsDescription;
 	}
-	public Long getHsnCode() {
+	public String getHsnCode() {
 		return hsnCode;
 	}
-	public void setHsnCode(Long hsnCode) {
+	public void setHsnCode(String hsnCode) {
 		this.hsnCode = hsnCode;
 	}
 	@Override

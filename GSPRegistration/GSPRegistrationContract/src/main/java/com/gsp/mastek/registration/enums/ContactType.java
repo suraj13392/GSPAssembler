@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.gsp.mastek.common.enums.EnumUtils;
 
 public enum ContactType {
-	FAX,PHONE,MOBILE;
+	FAX,PHONE,MOBILE,EMAIL;
 
 	@JsonCreator
 	public static ContactType fromValue(String value) {

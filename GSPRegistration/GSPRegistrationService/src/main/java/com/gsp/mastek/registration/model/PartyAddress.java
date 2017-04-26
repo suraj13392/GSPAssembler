@@ -1,6 +1,7 @@
 package com.gsp.mastek.registration.model;
 // Generated 24 Apr, 2017 3:18:39 PM by Hibernate Tools 5.2.1.Final
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -38,7 +39,7 @@ public class PartyAddress extends BaseEntity {
 	
 	private String stateCd;
 	
-	private Integer pinCode;
+	private String pinCode;
 	
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinColumn(name = "partyaddressId", referencedColumnName = "partyaddressId")
@@ -108,11 +109,11 @@ public class PartyAddress extends BaseEntity {
 		this.stateCd = stateCd;
 	}
 
-	public Integer getPinCode() {
+	public String getPinCode() {
 		return pinCode;
 	}
 
-	public void setPinCode(Integer pinCode) {
+	public void setPinCode(String pinCode) {
 		this.pinCode = pinCode;
 	}
 

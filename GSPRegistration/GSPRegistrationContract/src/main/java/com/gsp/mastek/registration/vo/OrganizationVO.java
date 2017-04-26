@@ -18,13 +18,13 @@ public class OrganizationVO extends BaseVO {
 	private String legalName;
 	private String tradeName;
 	private String panNumber;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "IST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "IST")
 	private Date commencementDt;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone = "IST")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "IST")
 	private Date gstnRegistrationDt;
 	private String organizationStatus;
 	private Set<PartyVO> parties = new HashSet<PartyVO>(0);
-	private Set<BusinessDtlsVO> businessDtlses = new HashSet<BusinessDtlsVO>(0);
+	private BusinessDtlsVO businessDtls ;
 	private Set<ServiceDtlsVO> serviceDtlses = new HashSet<ServiceDtlsVO>(0);
 	private Set<GstnregistrationDtlsVO> gstnregistrationDtlses = new HashSet<GstnregistrationDtlsVO>(0);
 	private Set<OrganizationAddressVO> organizationAddresses = new HashSet<OrganizationAddressVO>(0);
@@ -77,12 +77,13 @@ public class OrganizationVO extends BaseVO {
 	}
 	public void setParties(Set<PartyVO> parties) {
 		this.parties = parties;
+	}	
+	
+	public BusinessDtlsVO getBusinessDtls() {
+		return businessDtls;
 	}
-	public Set<BusinessDtlsVO> getBusinessDtlses() {
-		return businessDtlses;
-	}
-	public void setBusinessDtlses(Set<BusinessDtlsVO> businessDtlses) {
-		this.businessDtlses = businessDtlses;
+	public void setBusinessDtls(BusinessDtlsVO businessDtls) {
+		this.businessDtls = businessDtls;
 	}
 	public Set<ServiceDtlsVO> getServiceDtlses() {
 		return serviceDtlses;
@@ -114,7 +115,7 @@ public class OrganizationVO extends BaseVO {
 		return "OrganizationVO [organizationId=" + organizationId + ", legalName=" + legalName + ", tradeName="
 				+ tradeName + ", panNumber=" + panNumber + ", commencementDt=" + commencementDt
 				+ ", gstnRegistrationDt=" + gstnRegistrationDt + ", organizationStatus=" + organizationStatus
-				+ ", parties=" + parties + ", businessDtlses=" + businessDtlses + ", serviceDtlses=" + serviceDtlses
+				+ ", parties=" + parties + ", businessDtlses=" + businessDtls + ", serviceDtlses=" + serviceDtlses
 				+ ", gstnregistrationDtlses=" + gstnregistrationDtlses + ", organizationAddresses="
 				+ organizationAddresses + ", goodsDtlses=" + goodsDtlses + "]";
 	}
