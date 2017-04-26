@@ -11,8 +11,8 @@ import com.gsp.mastek.common.log.Log;
 import com.gsp.mastek.common.log.Loggable;
 import com.gsp.mastek.registration.service.RegistrationService;
 import com.gsp.mastek.registration.vo.OrganizationVO;
-import com.gsp.mastek.registration.vo.SavePartyRequestVO;
-import com.gsp.mastek.registration.vo.SavePartyResponseVO;
+import com.gsp.mastek.registration.vo.RegRequestVO;
+import com.gsp.mastek.registration.vo.RegResponseVO;
 
 @Loggable
 @RestController
@@ -24,10 +24,10 @@ public class RegistrationServiceController {
 	private RegistrationService registrationService;
 	
 	@RequestMapping(value = "/registration/saveParty", method = RequestMethod.POST)
-	public SavePartyResponseVO saveParty(@RequestBody SavePartyRequestVO savePartyRequestVO) {	
-		OrganizationVO vo = registrationService.saveOrganization(savePartyRequestVO.getOrganizationDetails());
-		SavePartyResponseVO reponse = new SavePartyResponseVO();
-		reponse.setOrganizationDetails(vo);
+	public RegResponseVO<OrganizationVO> saveParty(@RequestBody RegRequestVO<OrganizationVO> savePartyRequestVO) {	
+		OrganizationVO vo = registrationService.saveOrganization(savePartyRequestVO.getPayload());
+		RegResponseVO<OrganizationVO> reponse = new RegResponseVO<OrganizationVO>();
+		reponse.setPayload(vo);
 		return reponse;
 	}
 	
