@@ -52,6 +52,7 @@ public abstract class BaseEntity{
 		this.createdBy = getUsernameOfAuthenticatedUser();
 		;
 		this.createdDt = new Date();
+		this.requestId = 1L;
 	}
 
 	@PreUpdate
@@ -59,6 +60,7 @@ public abstract class BaseEntity{
 		this.updatedBy = getUsernameOfAuthenticatedUser();
 		;
 		this.updatedDt = new Date();
+		this.activityId = 1L;
 	}
 
 	private String getUsernameOfAuthenticatedUser() {

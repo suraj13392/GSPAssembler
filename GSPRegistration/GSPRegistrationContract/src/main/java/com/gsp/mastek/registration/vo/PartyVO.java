@@ -24,9 +24,9 @@ public class PartyVO extends BaseVO {
 	private String fatherFirstName;
 	private String fatherMiddleName;
 	private String fatherLastName;
-	private Long husbandFirstName;
-	private Long husbandMiddleName;
-	private Long husbandLastName;
+	private String husbandFirstName;
+	private String husbandMiddleName;
+	private String husbandLastName;
 	private String designation;
 	private Gender gender;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "IST")
@@ -104,27 +104,27 @@ public class PartyVO extends BaseVO {
 		this.fatherLastName = fatherLastName;
 	}
 
-	public Long getHusbandFirstName() {
+	public String getHusbandFirstName() {
 		return husbandFirstName;
 	}
 
-	public void setHusbandFirstName(Long husbandFirstName) {
+	public void setHusbandFirstName(String husbandFirstName) {
 		this.husbandFirstName = husbandFirstName;
 	}
 
-	public Long getHusbandMiddleName() {
+	public String getHusbandMiddleName() {
 		return husbandMiddleName;
 	}
 
-	public void setHusbandMiddleName(Long husbandMiddleName) {
+	public void setHusbandMiddleName(String husbandMiddleName) {
 		this.husbandMiddleName = husbandMiddleName;
 	}
 
-	public Long getHusbandLastName() {
+	public String getHusbandLastName() {
 		return husbandLastName;
 	}
 
-	public void setHusbandLastName(Long husbandLastName) {
+	public void setHusbandLastName(String husbandLastName) {
 		this.husbandLastName = husbandLastName;
 	}
 

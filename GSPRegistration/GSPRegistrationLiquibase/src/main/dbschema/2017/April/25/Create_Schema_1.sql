@@ -79,9 +79,9 @@ CREATE TABLE "party"."membership"(
  "membership_id" Bigint NOT NULL,
  "organization_id" Bigint,
  "party_id" Bigint,
- "request_id" Bigint NOT NULL,
- "activity_id" Bigint NOT NULL,
- "userprofile_id" Bigint NOT NULL,
+ "request_id" Bigint ,
+ "activity_id" Bigint ,
+ "userprofile_id" Bigint,
  "created_dt" Timestamp,
  "created_by" Character varying(50),
  "updated_dt" Timestamp,
@@ -420,6 +420,161 @@ ALTER TABLE "party"."goods_dtls" ADD CONSTRAINT "organization_goodsdtls" FOREIGN
 
 ALTER TABLE "party"."service_dtls" ADD CONSTRAINT "organization_servicedtls" FOREIGN KEY ("organization_id") REFERENCES "party"."organization" ("organization_id") ON DELETE NO ACTION ON UPDATE NO ACTION
 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE SEQUENCE "party"."business_dtls_businessdtls_id_seq"
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
+ALTER SEQUENCE "party"."business_dtls_businessdtls_id_seq" OWNED BY "party"."business_dtls"."businessdtls_id";
+	
+CREATE SEQUENCE "party"."goods_dtls_goodsdtls_id_seq"
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
+ALTER SEQUENCE "party"."goods_dtls_goodsdtls_id_seq" OWNED BY "party"."goods_dtls"."goodsdtls_id";
+
+CREATE SEQUENCE "party"."gstnregistration_dtls_gstnregistrationdtls_id_seq"
+START WITH 1
+INCREMENT BY 1
+NO MINVALUE
+NO MAXVALUE
+CACHE 1;
+
+ALTER SEQUENCE "party"."gstnregistration_dtls_gstnregistrationdtls_id_seq" OWNED BY "party"."gstnregistration_dtls"."gstnregistrationdtls_id";
+
+CREATE SEQUENCE "party"."organization_address_organizationaddress_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+    
+ALTER SEQUENCE "party"."organization_address_organizationaddress_id_seq" OWNED BY "party"."organization_address"."organizationaddress_id";
+
+CREATE SEQUENCE "party"."organization_contact_organizationcontact_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."organization_contact_organizationcontact_id_seq" OWNED BY "party"."organization_contact"."organizationcontact_id";
+
+CREATE SEQUENCE "party"."organization_contactpreferenc_organizationcontactpreference_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."organization_contactpreferenc_organizationcontactpreference_seq" OWNED BY "party"."organization_contactpreference"."organizationcontactpreference_id";
+
+CREATE SEQUENCE "party"."organization_organization_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."organization_organization_id_seq" OWNED BY "party"."organization"."organization_id";
+
+CREATE SEQUENCE "party"."party_address_partyaddress_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."party_address_partyaddress_id_seq" OWNED BY "party"."party_address"."partyaddress_id";
+
+CREATE SEQUENCE "party"."party_contact_partycontact_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."party_contact_partycontact_id_seq" OWNED BY "party"."party_contact"."partycontact_id";
+
+CREATE SEQUENCE "party"."party_party_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."party_party_id_seq" OWNED BY "party"."party"."party_id";
+
+CREATE SEQUENCE "party"."partycontact_preference_partycontactpreference_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."partycontact_preference_partycontactpreference_id_seq" OWNED BY "party"."partycontact_preference"."partycontactpreference_id";
+
+CREATE SEQUENCE "party"."service_dtls_servicedtls_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."service_dtls_servicedtls_id_seq" OWNED BY "party"."service_dtls"."servicedtls_id";
+
+CREATE SEQUENCE "party"."membership_membership_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER SEQUENCE "party"."membership_membership_id_seq" OWNED BY "party"."membership"."membership_id";
+
+
+ALTER TABLE ONLY  "party"."membership"  ALTER COLUMN "membership_id"  SET DEFAULT nextval('party.membership_membership_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."business_dtls"  ALTER COLUMN "businessdtls_id"  SET DEFAULT nextval('party.business_dtls_businessdtls_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."goods_dtls"  ALTER COLUMN "goodsdtls_id"  SET DEFAULT nextval('party.goods_dtls_goodsdtls_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."gstnregistration_dtls"  ALTER COLUMN "gstnregistrationdtls_id"  SET DEFAULT nextval('party.gstnregistration_dtls_gstnregistrationdtls_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."organization"  ALTER COLUMN "organization_id"  SET DEFAULT nextval('party.organization_organization_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."organization_address"  ALTER COLUMN "organizationaddress_id"  SET DEFAULT nextval('party.organization_address_organizationaddress_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."organization_contact"  ALTER COLUMN "organizationcontact_id"  SET DEFAULT nextval('party.organization_contact_organizationcontact_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."organization_contactpreference"  ALTER COLUMN "organizationcontactpreference_id"  SET DEFAULT nextval('party.organization_contactpreferenc_organizationcontactpreference_seq'::regclass);
+ALTER TABLE ONLY  "party"."party"  ALTER COLUMN "party_id"  SET DEFAULT nextval('party.party_party_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."party_address"  ALTER COLUMN "partyaddress_id"  SET DEFAULT nextval('party.party_address_partyaddress_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."party_contact"  ALTER COLUMN "partycontact_id"  SET DEFAULT nextval('party.party_contact_partycontact_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."partycontact_preference"  ALTER COLUMN "partycontactpreference_id"  SET DEFAULT nextval('party.partycontact_preference_partycontactpreference_id_seq'::regclass);
+ALTER TABLE ONLY  "party"."service_dtls"  ALTER COLUMN "servicedtls_id"  SET DEFAULT nextval('party.service_dtls_servicedtls_id_seq'::regclass);
 
 
 

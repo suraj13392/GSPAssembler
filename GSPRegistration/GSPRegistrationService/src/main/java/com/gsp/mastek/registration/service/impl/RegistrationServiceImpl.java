@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.transaction.Transactional;
+
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +53,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	/* (non-Javadoc)
 	 * @see com.gsp.mastek.registration.service.impl.RegistrationService#saveOrganization(com.gsp.mastek.registration.VO.OrganizationVO)
 	 */
+	@Transactional
 	@Override
 	public OrganizationVO saveOrganization(OrganizationVO organizationVO){
 		Organization organization = organizationMapper.toOrganization(organizationVO);
