@@ -52,6 +52,10 @@ public class Organization extends BaseEntity {
 	@JoinColumn(name = "organizationId", referencedColumnName = "organizationId")
 	private Set<OrganizationAddress> organizationAddresses;
 	
+	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
+	@JoinColumn(name = "organizationId", referencedColumnName = "organizationId")
+	private Set<GstnregistrationDtls> gstnregistrationDtlses;
+	
 	@ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
 	@JoinTable(name = "membership", joinColumns = @JoinColumn(name = "organizationId", referencedColumnName = "organizationId"), inverseJoinColumns = @JoinColumn(name = "partyId", referencedColumnName = "partyId", unique = false))
 	private Set<Party> parties;
@@ -153,13 +157,30 @@ public class Organization extends BaseEntity {
 			this.parties.add(party);
 		}
 	}
+	
+	public void GstnregistrationDtls(GstnregistrationDtls gstnregistrationDtls) {
+		if (this.gstnregistrationDtlses == null) {
+			this.gstnregistrationDtlses = new HashSet<GstnregistrationDtls>();
+			this.gstnregistrationDtlses.add(gstnregistrationDtls);
+		} else {
+			this.gstnregistrationDtlses.add(gstnregistrationDtls);
+		}
+	}
+
+	public Set<GstnregistrationDtls> getGstnregistrationDtlses() {
+		return gstnregistrationDtlses;
+	}
+
+	public void setGstnregistrationDtlses(Set<GstnregistrationDtls> gstnregistrationDtlses) {
+		this.gstnregistrationDtlses = gstnregistrationDtlses;
+	}
 
 	@Override
 	public String toString() {
 		return "Organization [organizationId=" + organizationId + ", legalName=" + legalName + ", tradeName="
 				+ tradeName + ", panNumber=" + panNumber + ", commencementDt=" + commencementDt
 				+ ", gstnRegistrationDt=" + gstnRegistrationDt + ", organizationStatus=" + organizationStatus
-				+ ", businessDtls=" + businessDtls + ", organizationAddresses=" + organizationAddresses + ", parties="
-				+ parties + "]";
-	}
+				+ ", businessDtls=" + businessDtls + ", organizationAddresses=" + organizationAddresses
+				+ ", gstnregistrationDtlses=" + gstnregistrationDtlses + ", parties=" + parties + "]";
+	}	
 }

@@ -21,9 +21,9 @@ public class GstnregistrationDtls extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long gstnregistrationdtlsId;
 	
-	@OneToOne(cascade = { CascadeType.DETACH }, fetch = FetchType.EAGER)
+	/*@OneToOne(cascade = { CascadeType.DETACH }, fetch = FetchType.EAGER)
 	@JoinColumn(name = "organizationId", referencedColumnName = "organizationId")
-	private Organization organization;
+	private Organization organization;*/
 	
 	private String stateCd;
 	
@@ -37,13 +37,13 @@ public class GstnregistrationDtls extends BaseEntity {
 		this.gstnregistrationdtlsId = gstnregistrationdtlsId;
 	}
 
-	public Organization getOrganization() {
+	/*public Organization getOrganization() {
 		return organization;
 	}
 
 	public void setOrganization(Organization organization) {
 		this.organization = organization;
-	}
+	}*/
 
 	public String getStateCd() {
 		return stateCd;
@@ -63,8 +63,8 @@ public class GstnregistrationDtls extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "GstnregistrationDtls [gstnregistrationdtlsId=" + gstnregistrationdtlsId + ", organization="
-				+ organization + ", stateCd=" + stateCd + ", gstin=" + gstin + "]";
+		return "GstnregistrationDtls [gstnregistrationdtlsId=" + gstnregistrationdtlsId /*+ ", organization="
+				+ organization*/ + ", stateCd=" + stateCd + ", gstin=" + gstin + "]";
 	}
 
 }

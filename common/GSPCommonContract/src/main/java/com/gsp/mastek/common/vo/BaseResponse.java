@@ -6,11 +6,13 @@ import java.util.List;
 import com.gsp.mastek.common.enums.ResponseType;
 import com.gsp.mastek.common.error.vo.ErrorDTO;
 
-public class BaseResponse<T> implements IBaseResponse{
+public class BaseResponse<X,Y> implements IBaseResponse{
 	
 	private String status;
 	
-	private T data;
+	private X data;
+	
+	private Y request; 
 	
 	private List<ErrorDTO> errors;	
 
@@ -22,11 +24,11 @@ public class BaseResponse<T> implements IBaseResponse{
 		this.status = status;
 	}
 
-	public T getData() {
+	public X getData() {
 		return data;
 	}
 
-	public void setData(T data) {
+	public void setData(X data) {
 		this.data = data;
 	}
 
@@ -44,8 +46,16 @@ public class BaseResponse<T> implements IBaseResponse{
 	
 	public void setStatusError() {
 		this.status = ResponseType.ERROR.toString();
-	}
+	}	
 	
+	public Y getRequest() {
+		return request;
+	}
+
+	public void setRequest(Y request) {
+		this.request = request;
+	}
+
 	public void addError(ErrorDTO error){
 		if(errors == null){
 			errors = new ArrayList<ErrorDTO>();
