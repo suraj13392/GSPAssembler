@@ -1,5 +1,6 @@
 package com.gsp.mastek.registration.mapper;
 
+import java.util.List;
 import java.util.Set;
 
 import org.mapstruct.InheritInverseConfiguration;
@@ -23,5 +24,6 @@ public interface GoodsDtlsMapper {
     
 	@InheritInverseConfiguration
 	Set<GoodsDtlsVO> fromGoodsDtlses(Set<GoodsDtls> goodsDtlses);
+	
     
 }
