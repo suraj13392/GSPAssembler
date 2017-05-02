@@ -29,6 +29,7 @@ import com.gsp.mastek.registration.repository.GoodsDtlsRepository;
 import com.gsp.mastek.registration.repository.OrganizationRepository;
 import com.gsp.mastek.registration.repository.ServiceDtlsRepository;
 import com.gsp.mastek.registration.service.RegistrationService;
+import com.gsp.mastek.registration.specification.OrganizationSpecs;
 import com.gsp.mastek.registration.vo.BusinessDtlsVO;
 import com.gsp.mastek.registration.vo.GoodsDtlsVO;
 import com.gsp.mastek.registration.vo.GstnregistrationDtlsVO;
@@ -49,8 +50,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Autowired
 	private GoodsDtlsRepository goodsDtlsRepository;
 	@Autowired
-	private ServiceDtlsRepository serviceDtlsRepository;
-	
+	private ServiceDtlsRepository serviceDtlsRepository;	
 	@Autowired
 	private OrganizationMapper organizationMapper;
 	@Autowired
@@ -114,13 +114,14 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public OrganizationContactResponseVO getOrganizationContactDetails(
 			SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
 
-		Organization organization = organizationRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
 		List<OrganizationContact> allContacts = new ArrayList<OrganizationContact>();
-		if (organization != null) {
-			if (organization.getOrganizationAddresses() != null) {
-				for (OrganizationAddress oa : organization.getOrganizationAddresses()) {
-					if (oa.getOrganizationContacts() != null) {
-						allContacts.addAll(oa.getOrganizationContacts());
+		if(organization != null){
+			if(organization.getOrganizationAddresses() != null){				
+				for( OrganizationAddress oa :organization.getOrganizationAddresses()){
+					if(oa.getOrganizationContacts() != null) {
+					 allContacts.addAll(oa.getOrganizationContacts());
 					}
 				}
 			}
