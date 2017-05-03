@@ -200,16 +200,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 		}
 	
 		OrganizationDetailsResponseVO response=organizationDetailsMapper.fromOrganization(organization);
-	/*	List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
-		response.setAddressDetails(allAddressVOs);*/
-		/*response.setLegalName(organization.getLegalName());
-		response.setOrganizationId(organization.getOrganizationId());
-		response.setOrganizationStatus(organization.getOrganizationStatus());
-		response.setPanNumber(organization.getPanNumber());
-		response.setTradeName(organization.getTradeName());
-		response.setCommencementDt(organization.getCommencementDt());
-		response.setGstnRegistrationDt(organization.getGstnRegistrationDt());*/
-		
+		List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
+		response.setAddressDetails(allAddressVOs);		
 		return response;
 	}
 	
