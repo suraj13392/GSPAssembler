@@ -10,3 +10,10 @@
 # Or you can do:
 target/
 # which matches 'target' in any sub folder
+# Eclipse artifacts, including WTP generated manifests
+.classpath
+.project
+.settings
+*/.classpath
+*/.project
+*/.settings
