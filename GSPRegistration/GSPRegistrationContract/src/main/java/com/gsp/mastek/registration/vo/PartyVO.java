@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gsp.mastek.common.vo.BaseVO;
 import com.gsp.mastek.registration.enums.Gender;
 import com.gsp.mastek.registration.enums.PartyType;
@@ -38,6 +39,7 @@ public class PartyVO extends BaseVO {
 	private String dinNumber;
 	private String partyStatus;	
 	
+	@JsonProperty("partyAddress")
 	private Set<PartyAddressVO> partyAddresses = new HashSet<PartyAddressVO>(0);
 
 	public Long getPartyId() {

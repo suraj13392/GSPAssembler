@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.gsp.mastek.common.vo.BaseVO;
 
 /**
@@ -25,9 +26,17 @@ public class OrganizationVO extends BaseVO {
 	private String organizationStatus;
 	private Set<PartyVO> parties = new HashSet<PartyVO>(0);
 	private BusinessDtlsVO businessDtls ;
+	
+	@JsonProperty("serviceDtls")
 	private Set<ServiceDtlsVO> serviceDtlses = new HashSet<ServiceDtlsVO>(0);
+	
+	@JsonProperty("gstnregistrationDtls")
 	private Set<GstnregistrationDtlsVO> gstnregistrationDtlses = new HashSet<GstnregistrationDtlsVO>(0);
+	
+	@JsonProperty("organizationAddress")
 	private Set<OrganizationAddressVO> organizationAddresses = new HashSet<OrganizationAddressVO>(0);
+	
+	@JsonProperty("goodsDtls")
 	private Set<GoodsDtlsVO> goodsDtlses = new HashSet<GoodsDtlsVO>(0);
 	
 	public Long getOrganizationId() {

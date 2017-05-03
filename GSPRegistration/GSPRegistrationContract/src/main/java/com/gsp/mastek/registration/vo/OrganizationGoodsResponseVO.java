@@ -1,6 +1,5 @@
 package com.gsp.mastek.registration.vo;
 
-import java.util.List;
 import java.util.Set;
 
 public class OrganizationGoodsResponseVO {

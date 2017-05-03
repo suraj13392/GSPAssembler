@@ -2,10 +2,13 @@ package com.gsp.mastek.registration.vo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class OrganizationGstnResponseVO {
 
 	private Long organizationId;
 	
+	@JsonProperty("GstnregistrationDtls")
 	private List<GstnregistrationDtlsVO> GstnregistrationDtlses;
 
 	public Long getOrganizationId() {

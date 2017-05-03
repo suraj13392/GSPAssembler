@@ -1,7 +1,5 @@
 package com.gsp.mastek.registration.vo;
 
-import java.util.List;
-
 public class PartyResponseVO {
 	private OrganizationVO organizationDetails ;
 
