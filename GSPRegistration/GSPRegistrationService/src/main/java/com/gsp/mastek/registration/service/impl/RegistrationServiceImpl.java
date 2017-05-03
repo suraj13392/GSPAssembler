@@ -17,6 +17,7 @@ import com.gsp.mastek.registration.mapper.GoodsDtlsMapper;
 import com.gsp.mastek.registration.mapper.GstnregistrationDtlsMapper;
 import com.gsp.mastek.registration.mapper.OrganizationAddressMapper;
 import com.gsp.mastek.registration.mapper.OrganizationContactMapper;
+import com.gsp.mastek.registration.mapper.OrganizationDetailsMapper;
 import com.gsp.mastek.registration.mapper.OrganizationMapper;
 import com.gsp.mastek.registration.mapper.PartyMapper;
 import com.gsp.mastek.registration.mapper.ServiceDtlsMapper;
@@ -77,6 +78,8 @@ public class RegistrationServiceImpl implements RegistrationService {
 	private BusinessDtlsMapper businessDtlsMapper;
 	@Autowired
 	private PartyMapper partyMapper;
+	@Autowired
+	private OrganizationDetailsMapper organizationDetailsMapper;
 
 	/*
 	 * (non-Javadoc)
@@ -195,10 +198,11 @@ public class RegistrationServiceImpl implements RegistrationService {
 					allAddress.addAll(organization.getOrganizationAddresses());
 			}
 		}
-		OrganizationDetailsResponseVO response = new OrganizationDetailsResponseVO();
-		List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
-		/*response.setAddressDetails(allAddressVOs);
-		response.setLegalName(organization.getLegalName());
+	
+		OrganizationDetailsResponseVO response=organizationDetailsMapper.fromOrganization(organization);
+	/*	List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
+		response.setAddressDetails(allAddressVOs);*/
+		/*response.setLegalName(organization.getLegalName());
 		response.setOrganizationId(organization.getOrganizationId());
 		response.setOrganizationStatus(organization.getOrganizationStatus());
 		response.setPanNumber(organization.getPanNumber());
