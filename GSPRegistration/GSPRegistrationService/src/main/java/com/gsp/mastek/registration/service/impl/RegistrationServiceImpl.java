@@ -15,8 +15,10 @@ import com.gsp.mastek.common.log.Loggable;
 import com.gsp.mastek.registration.mapper.BusinessDtlsMapper;
 import com.gsp.mastek.registration.mapper.GoodsDtlsMapper;
 import com.gsp.mastek.registration.mapper.GstnregistrationDtlsMapper;
+import com.gsp.mastek.registration.mapper.OrganizationAddressMapper;
 import com.gsp.mastek.registration.mapper.OrganizationContactMapper;
 import com.gsp.mastek.registration.mapper.OrganizationMapper;
+import com.gsp.mastek.registration.mapper.PartyMapper;
 import com.gsp.mastek.registration.mapper.ServiceDtlsMapper;
 import com.gsp.mastek.registration.model.BusinessDtls;
 import com.gsp.mastek.registration.model.GoodsDtls;
@@ -24,6 +26,7 @@ import com.gsp.mastek.registration.model.GstnregistrationDtls;
 import com.gsp.mastek.registration.model.Organization;
 import com.gsp.mastek.registration.model.OrganizationAddress;
 import com.gsp.mastek.registration.model.OrganizationContact;
+import com.gsp.mastek.registration.model.Party;
 import com.gsp.mastek.registration.model.ServiceDtls;
 import com.gsp.mastek.registration.repository.GoodsDtlsRepository;
 import com.gsp.mastek.registration.repository.OrganizationRepository;
@@ -33,11 +36,18 @@ import com.gsp.mastek.registration.specification.OrganizationSpecs;
 import com.gsp.mastek.registration.vo.BusinessDtlsVO;
 import com.gsp.mastek.registration.vo.GoodsDtlsVO;
 import com.gsp.mastek.registration.vo.GstnregistrationDtlsVO;
+import com.gsp.mastek.registration.vo.OrganizationAddressVO;
 import com.gsp.mastek.registration.vo.OrganizationBusinessResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationContactResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationContactVO;
+import com.gsp.mastek.registration.vo.OrganizationDetailsResponseVO;
+import com.gsp.mastek.registration.vo.OrganizationGoodsResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationGstnResponseVO;
+import com.gsp.mastek.registration.vo.OrganizationServiceResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationVO;
+import com.gsp.mastek.registration.vo.PartyDetailsResponseVO;
+import com.gsp.mastek.registration.vo.PartyResponseVO;
+import com.gsp.mastek.registration.vo.PartyVO;
 import com.gsp.mastek.registration.vo.SearchRegDtlsCriteriaVO;
 import com.gsp.mastek.registration.vo.ServiceDtlsVO;
 
@@ -61,9 +71,12 @@ public class RegistrationServiceImpl implements RegistrationService {
 	private GoodsDtlsMapper goodsDtlsMapper;
 	@Autowired
 	private OrganizationContactMapper organizationContactMapper;
-
+	@Autowired
+	private OrganizationAddressMapper  organizationAddressMapper;
 	@Autowired
 	private BusinessDtlsMapper businessDtlsMapper;
+	@Autowired
+	private PartyMapper partyMapper;
 
 	/*
 	 * (non-Javadoc)
@@ -164,14 +177,122 @@ public class RegistrationServiceImpl implements RegistrationService {
 		return responseVO;
 	}
 
+	
+	/*Added By Priyanka*/
+	
 	@Override
-	public OrganizationVO getParty(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
-		Organization organization = organizationRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
-		Set<GoodsDtls> goodsDtlsList = (Set<GoodsDtls>)goodsDtlsRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
-		Set<ServiceDtls> serviceDtlsList=(Set<ServiceDtls>) serviceDtlsRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
-		OrganizationVO outputVO = organizationMapper.fromOrganization(organization);
-		outputVO.setGoodsDtlses(goodsDtlsMapper.fromGoodsDtlses(goodsDtlsList));
-		outputVO.setServiceDtlses(serviceDtlsMapper.fromServiceDtlses(serviceDtlsList));
-		return outputVO;
+	public OrganizationDetailsResponseVO getOrganizationDetails(
+			SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+		
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		
+		List<OrganizationAddress> allAddress = new ArrayList<OrganizationAddress>();
+		
+		if(organization != null){
+			if(organization.getOrganizationAddresses() != null){	
+			
+					allAddress.addAll(organization.getOrganizationAddresses());
+			}
+		}
+		OrganizationDetailsResponseVO response = new OrganizationDetailsResponseVO();
+		List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
+		/*response.setAddressDetails(allAddressVOs);
+		response.setLegalName(organization.getLegalName());
+		response.setOrganizationId(organization.getOrganizationId());
+		response.setOrganizationStatus(organization.getOrganizationStatus());
+		response.setPanNumber(organization.getPanNumber());
+		response.setTradeName(organization.getTradeName());
+		response.setCommencementDt(organization.getCommencementDt());
+		response.setGstnRegistrationDt(organization.getGstnRegistrationDt());*/
+		
+		return response;
 	}
+	
+	@Override
+	public PartyResponseVO getParty(
+			SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+		
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		Set<GoodsDtlsVO> goodsVOs = null;
+		Set<ServiceDtlsVO> serviceVOs = null;
+		Organization allOranization = new Organization();
+		if(organization != null){
+			goodsVOs=goodsDetails(organization.getOrganizationId());
+			serviceVOs=serviceDetails(organization.getOrganizationId());
+			allOranization=organization;
+		}
+		PartyResponseVO response=new  PartyResponseVO();
+		OrganizationVO allOraganizationVOs = organizationMapper.fromOrganization(allOranization);
+		allOraganizationVOs.setGoodsDtlses(goodsVOs);
+		allOraganizationVOs.setServiceDtlses(serviceVOs);
+		response.setOrganizationDetails(allOraganizationVOs);
+		return response;
+	}
+
+
+
+	@Override
+	public OrganizationGoodsResponseVO getGoodsDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		Set<GoodsDtlsVO> goodsVOs = null;
+		if(organization != null){
+			goodsVOs=goodsDetails(organization.getOrganizationId());
+		}
+		OrganizationGoodsResponseVO response=new OrganizationGoodsResponseVO();
+		response.setGoodsDetails(goodsVOs);
+		response.setOrganizationId(organization.getOrganizationId());
+		return response;
+	}
+
+	private Set<GoodsDtlsVO> goodsDetails(Long organizationId){
+		Set<GoodsDtls> goodsDtlsList =(Set<GoodsDtls>)goodsDtlsRepository.findByOrganizationId(organizationId);
+		Set<GoodsDtlsVO> goodsVOs =goodsDtlsMapper.fromGoodsDtlses(goodsDtlsList);
+		return goodsVOs;
+		
+	}
+
+	@Override
+	public OrganizationServiceResponseVO getServiceDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+	
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		Set<ServiceDtlsVO> serviceVOs = null;
+		if(organization != null){
+	
+		 		serviceVOs=serviceDetails(organization.getOrganizationId());
+		}
+		OrganizationServiceResponseVO response=new OrganizationServiceResponseVO();
+		response.setServiceDetails(serviceVOs);
+		response.setOrganizationId(organization.getOrganizationId());
+		return response;
+	}
+	
+	private Set<ServiceDtlsVO> serviceDetails(Long organizationId){
+		Set<ServiceDtls>  serviceDtlsList = (Set<ServiceDtls>)serviceDtlsRepository.findByOrganizationId(organizationId);
+		Set<ServiceDtlsVO> serviceVOs=serviceDtlsMapper.fromServiceDtlses(serviceDtlsList);
+		return serviceVOs;
+	}
+
+
+
+	@Override
+	public PartyDetailsResponseVO getPartyDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		
+		List<Party> allParties = new ArrayList<Party>();
+		if(organization != null){
+			if(organization.getParties()!=null){
+				allParties.addAll(organization.getParties());
+			}
+		}
+		PartyDetailsResponseVO response=new PartyDetailsResponseVO();
+		List<PartyVO> allPartyVOs = partyMapper.fromParties(allParties);
+		response.setParty(allPartyVOs);
+		return response;
+	}
+	
 }

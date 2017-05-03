@@ -1,5 +1,7 @@
 package com.gsp.mastek.registration.mapper;
 
+import java.util.List;
+
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -18,4 +20,6 @@ public interface OrganizationMapper {
 	@InheritInverseConfiguration
 	OrganizationVO fromOrganization(Organization organization);
 
+	@InheritInverseConfiguration
+	List<OrganizationVO> fromOrganizations(List<Organization> organization);
 }

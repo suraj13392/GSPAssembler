@@ -8,7 +8,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import com.gsp.mastek.registration.model.GoodsDtls;
+import com.gsp.mastek.registration.model.OrganizationAddress;
 import com.gsp.mastek.registration.vo.GoodsDtlsVO;
+import com.gsp.mastek.registration.vo.OrganizationAddressVO;
 
 @Mapper(componentModel = "spring")
 public interface GoodsDtlsMapper {
@@ -25,5 +27,5 @@ public interface GoodsDtlsMapper {
 	@InheritInverseConfiguration
 	Set<GoodsDtlsVO> fromGoodsDtlses(Set<GoodsDtls> goodsDtlses);
 	
-    
+	
 }
