@@ -9,8 +9,8 @@ import org.mapstruct.factory.Mappers;
 import com.gsp.mastek.registration.vo.OrganizationVO;
 import com.gsp.mastek.registration.model.Organization;
 
-@Mapper(uses = { OrganizationAddressMapper.class, BusinessDtlsMapper.class, GoodsDtlsMapper.class,
-		GstnregistrationDtlsMapper.class, ServiceDtlsMapper.class, PartyMapper.class }, componentModel = "spring")
+@Mapper(uses = { OrganizationAddressMapper.class, BusinessDtlsMapper.class, 
+		GstnregistrationDtlsMapper.class,  PartyMapper.class }, componentModel = "spring")
 public interface OrganizationMapper {
 
 	OrganizationMapper INSTANCE = Mappers.getMapper(OrganizationMapper.class);

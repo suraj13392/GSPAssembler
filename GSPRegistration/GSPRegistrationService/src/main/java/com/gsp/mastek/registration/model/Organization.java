@@ -44,8 +44,7 @@ public class Organization extends BaseEntity {
 	
 	private String organizationStatus;
 	
-	@OneToOne(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
-	@JoinColumn(name = "organizationId", referencedColumnName = "organizationId")
+	@OneToOne(mappedBy = "organization", cascade = { CascadeType.DETACH})
 	private BusinessDtls businessDtls;
 	
 	@OneToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)

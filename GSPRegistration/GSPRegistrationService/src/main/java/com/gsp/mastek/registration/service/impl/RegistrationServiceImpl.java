@@ -29,6 +29,7 @@ import com.gsp.mastek.registration.model.OrganizationAddress;
 import com.gsp.mastek.registration.model.OrganizationContact;
 import com.gsp.mastek.registration.model.Party;
 import com.gsp.mastek.registration.model.ServiceDtls;
+import com.gsp.mastek.registration.repository.BusinessDtlsRepository;
 import com.gsp.mastek.registration.repository.GoodsDtlsRepository;
 import com.gsp.mastek.registration.repository.OrganizationRepository;
 import com.gsp.mastek.registration.repository.ServiceDtlsRepository;
@@ -61,7 +62,9 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Autowired
 	private GoodsDtlsRepository goodsDtlsRepository;
 	@Autowired
-	private ServiceDtlsRepository serviceDtlsRepository;	
+	private ServiceDtlsRepository serviceDtlsRepository;
+	@Autowired
+	private BusinessDtlsRepository businessDtlsRepository;
 	@Autowired
 	private OrganizationMapper organizationMapper;
 	@Autowired
@@ -92,15 +95,24 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public OrganizationVO saveOrganization(OrganizationVO organizationVO) {
 		Organization organization = organizationMapper.toOrganization(organizationVO);
 		organization = organizationRepository.save(organization);
+		saveBusinessDtls(organizationVO.getBusinessDtls(), organization);
 		Set<GoodsDtlsVO> goodsDtlsVOs = saveGoodsDtls(organizationVO.getGoodsDtlses(), organization);
 		Set<ServiceDtlsVO> serviceDtlsVOs = saveServiceDtls(organizationVO.getServiceDtlses(), organization);
 		OrganizationVO output = organizationMapper.fromOrganization(organization);
 		output.setGoodsDtlses(goodsDtlsVOs);
 		output.setServiceDtlses(serviceDtlsVOs);
 		return output;
+	}	
+
+	private void saveBusinessDtls(BusinessDtlsVO businessDtlsVO, Organization organization) {
+		if (businessDtlsVO != null ) {
+			BusinessDtls businessDtls = businessDtlsMapper.toBusinessDtls(businessDtlsVO);
+			businessDtls.setOrganization(organization);
+			businessDtls =  businessDtlsRepository.save(businessDtls);
+			organization.setBusinessDtls(businessDtls);
+		}
 	}
 
-	
 
 	private Set<ServiceDtlsVO> saveServiceDtls(Set<ServiceDtlsVO> serviceDtlsVOs, Organization organization) {
 		if (CollectionUtils.isNotEmpty(serviceDtlsVOs)) {

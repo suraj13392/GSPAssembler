@@ -36,6 +36,10 @@ public class BusinessDtls extends BaseEntity {
 	
 	private String divisionCd;
 	
+	@OneToOne(cascade = { CascadeType.DETACH }, fetch = FetchType.EAGER)
+	@JoinColumn(name = "organizationId", referencedColumnName = "organizationId")
+	private Organization organization;
+	
 	public Long getBusinessdtlsId() {
 		return businessdtlsId;
 	}
@@ -84,13 +88,17 @@ public class BusinessDtls extends BaseEntity {
 	public void setDivisionCd(String divisionCd) {
 		this.divisionCd = divisionCd;
 	}
-	
-	
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
+	}
 	@Override
 	public String toString() {
 		return "BusinessDtls [businessdtlsId=" + businessdtlsId + ", stateCd=" + stateCd + ", stateJurisdiction="
 				+ stateJurisdiction + ", wardCircleSectorNum=" + wardCircleSectorNum + ", centerJurisdiction="
 				+ centerJurisdiction + ", rangeCd=" + rangeCd + ", commissionarateCd=" + commissionarateCd
-				+ ", divisionCd=" + divisionCd + "]";
+				+ ", divisionCd=" + divisionCd + ", organization=" + organization + "]";
 	}
 }
