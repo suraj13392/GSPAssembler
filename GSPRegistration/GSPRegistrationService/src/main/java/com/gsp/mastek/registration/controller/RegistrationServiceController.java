@@ -17,6 +17,8 @@ import com.gsp.mastek.registration.vo.OrganizationGoodsResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationGstnResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationServiceResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationVO;
+import com.gsp.mastek.registration.vo.PartyAddressResponseVO;
+import com.gsp.mastek.registration.vo.PartyContactResponseVO;
 import com.gsp.mastek.registration.vo.PartyDetailsResponseVO;
 import com.gsp.mastek.registration.vo.PartyResponseVO;
 import com.gsp.mastek.registration.vo.RegRequestVO;
@@ -106,5 +108,19 @@ public class RegistrationServiceController {
 		return reponse;
 	}
 	
+	@RequestMapping(value = "/registration/getPartyAddress", method = RequestMethod.POST)
+	public RegResponseVO<PartyAddressResponseVO> getPartyAddress(@RequestBody SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO){
+		PartyAddressResponseVO vo = registrationService.getPartyAddress(searchRegDtlsCriteriaVO);
+		RegResponseVO<PartyAddressResponseVO> response = new RegResponseVO<PartyAddressResponseVO>();
+		response.setPayload(vo);
+		return response;
+	}
 	
+	@RequestMapping(value = "/registration/getPartyContactDetails", method = RequestMethod.POST)
+	public RegResponseVO<PartyContactResponseVO> getPartyContactDetails(@RequestBody SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO){
+		PartyContactResponseVO vo = registrationService.getPartyContactDetails(searchRegDtlsCriteriaVO);
+		RegResponseVO<PartyContactResponseVO> response = new RegResponseVO<PartyContactResponseVO>();
+		response.setPayload(vo);
+		return response;
+	}
 }

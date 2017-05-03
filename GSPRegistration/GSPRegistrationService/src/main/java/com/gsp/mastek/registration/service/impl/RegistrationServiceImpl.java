@@ -19,6 +19,8 @@ import com.gsp.mastek.registration.mapper.OrganizationAddressMapper;
 import com.gsp.mastek.registration.mapper.OrganizationContactMapper;
 import com.gsp.mastek.registration.mapper.OrganizationDetailsMapper;
 import com.gsp.mastek.registration.mapper.OrganizationMapper;
+import com.gsp.mastek.registration.mapper.PartyAddressMapper;
+import com.gsp.mastek.registration.mapper.PartyContactMapper;
 import com.gsp.mastek.registration.mapper.PartyMapper;
 import com.gsp.mastek.registration.mapper.ServiceDtlsMapper;
 import com.gsp.mastek.registration.model.BusinessDtls;
@@ -28,6 +30,8 @@ import com.gsp.mastek.registration.model.Organization;
 import com.gsp.mastek.registration.model.OrganizationAddress;
 import com.gsp.mastek.registration.model.OrganizationContact;
 import com.gsp.mastek.registration.model.Party;
+import com.gsp.mastek.registration.model.PartyAddress;
+import com.gsp.mastek.registration.model.PartyContact;
 import com.gsp.mastek.registration.model.ServiceDtls;
 import com.gsp.mastek.registration.repository.BusinessDtlsRepository;
 import com.gsp.mastek.registration.repository.GoodsDtlsRepository;
@@ -47,6 +51,10 @@ import com.gsp.mastek.registration.vo.OrganizationGoodsResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationGstnResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationServiceResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationVO;
+import com.gsp.mastek.registration.vo.PartyAddressResponseVO;
+import com.gsp.mastek.registration.vo.PartyAddressVO;
+import com.gsp.mastek.registration.vo.PartyContactResponseVO;
+import com.gsp.mastek.registration.vo.PartyContactVO;
 import com.gsp.mastek.registration.vo.PartyDetailsResponseVO;
 import com.gsp.mastek.registration.vo.PartyResponseVO;
 import com.gsp.mastek.registration.vo.PartyVO;
@@ -83,7 +91,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 	private PartyMapper partyMapper;
 	@Autowired
 	private OrganizationDetailsMapper organizationDetailsMapper;
-
+	@Autowired
+	private PartyContactMapper partyContactMapper;
+	@Autowired
+	private PartyAddressMapper partyAddressMapper;
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -303,4 +314,61 @@ public class RegistrationServiceImpl implements RegistrationService {
 		return response;
 	}
 	
+	@Override
+	public PartyAddressResponseVO getPartyAddress(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		
+		List<Party> parties = new ArrayList<Party>();
+		List<PartyAddress> partyAddresses = new ArrayList<PartyAddress>();
+		
+		if(organization != null){
+			if(organization.getParties()!= null){
+				parties.addAll(organization.getParties());
+			}
+		}
+		
+		if(parties != null){
+			for (Party party : parties) {
+			if(organization.getOrganizationAddresses() != null){				
+						partyAddresses.addAll(party.getPartyAddresses());
+			}
+		}
+	}
+		
+		PartyAddressResponseVO response = new PartyAddressResponseVO();
+		List<PartyAddressVO> allAddressVOs = partyAddressMapper.fromPartyAddresses(partyAddresses);
+		response.setAddress(allAddressVOs);
+		return response;
+	}
+
+	@Override
+	public PartyContactResponseVO getPartyContactDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
+		
+		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = organizations.get(0);
+		
+		List<Party> parties = new ArrayList<Party>();
+		List<PartyContact> partyContacts = new ArrayList<PartyContact>();
+		
+		if(organization != null){
+			if(organization.getParties()!= null){
+				parties.addAll(organization.getParties());
+			}
+		}
+		
+		if(parties!=null){
+			for (Party party : parties) {
+				for (PartyAddress PartyAddress:party.getPartyAddresses()) {
+					partyContacts.addAll(PartyAddress.getPartyContacts());
+				}
+			}
+		}
+		
+		PartyContactResponseVO response = new PartyContactResponseVO();
+		List<PartyContactVO> partyContactVOs = partyContactMapper.fromPartyContacts(partyContacts);
+		response.setContactDetails(partyContactVOs);
+		return response;
+	}
 }

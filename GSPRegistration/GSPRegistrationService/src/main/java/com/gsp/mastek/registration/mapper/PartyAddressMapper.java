@@ -1,5 +1,7 @@
 package com.gsp.mastek.registration.mapper;
 
+import java.util.List;
+
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -17,4 +19,5 @@ public interface PartyAddressMapper {
 	@InheritInverseConfiguration
 	PartyAddressVO fromPartyAddress(PartyAddress partyAddress);
     
+	List<PartyAddressVO> fromPartyAddresses(List<PartyAddress> partyAddresses);
 }
