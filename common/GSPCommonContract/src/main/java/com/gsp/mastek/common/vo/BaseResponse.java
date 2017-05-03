@@ -10,11 +10,11 @@ public class BaseResponse<X,Y> implements IBaseResponse{
 	
 	private String status;
 	
-	private X data;
+	private X data;	
+	
+	private List<ErrorDTO> errors;
 	
 	private Y request; 
-	
-	private List<ErrorDTO> errors;	
 
 	public String getStatus() {
 		return status;

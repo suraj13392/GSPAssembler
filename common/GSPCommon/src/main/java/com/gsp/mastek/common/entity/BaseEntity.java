@@ -7,7 +7,7 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
-//import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -16,8 +16,8 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-/*import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;*/
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -50,22 +50,62 @@ public abstract class BaseEntity{
 	@PrePersist
 	public void prePersist() throws Exception {
 		this.createdBy = getUsernameOfAuthenticatedUser();
-		;
 		this.createdDt = new Date();
-		this.requestId = 1L;
+		this.requestId = getRequestId();
+		this.activityId = getActivityId();
 	}
 
 	@PreUpdate
 	public void preUpdate() throws Exception {
-		this.updatedBy = getUsernameOfAuthenticatedUser();
-		;
+		this.updatedBy = getUsernameOfAuthenticatedUser();		
 		this.updatedDt = new Date();
-		this.activityId = 1L;
+		this.requestId = getRequestId();
+		this.activityId = getActivityId();
 	}
 
+	private Long getRequestId() {
+
+		try {
+			if (!(RequestContextHolder.currentRequestAttributes() instanceof ServletRequestAttributes)) {
+				return 0L;
+			}
+		} catch (IllegalStateException e) {
+			return 0L;
+		}
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
+				.getRequest();
+
+		if (request == null || request.getHeader("X-REQUEST-ID") == null) {
+			return 0L;
+		}
+
+		String strRequestId = request.getHeader("X-REQUEST-ID");
+		return Long.valueOf(strRequestId);
+	}
+	
+	private Long getActivityId() {
+
+		try {
+			if (!(RequestContextHolder.currentRequestAttributes() instanceof ServletRequestAttributes)) {
+				return 0L;
+			}
+		} catch (IllegalStateException e) {
+			return 0L;
+		}
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
+				.getRequest();
+
+		if (request == null || request.getHeader("X-ACTIVITY-ID") == null) {
+			return 0L;
+		}
+
+		String strActivityId = request.getHeader("X-ACTIVITY-ID");
+		return Long.valueOf(strActivityId);
+	}
+	
 	private String getUsernameOfAuthenticatedUser() {
 
-		/*try {
+		try {
 			if (!(RequestContextHolder.currentRequestAttributes() instanceof ServletRequestAttributes)) {
 				return "System";
 			}
@@ -75,14 +115,12 @@ public abstract class BaseEntity{
 		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes())
 				.getRequest();
 
-		if (request == null || request.getHeader("X-EMAIL") == null) {
+		if (request == null || request.getHeader("X-USER") == null) {
 			return "System";
 		}
 
-		String username = request.getHeader("X-EMAIL");
-		return username;*/
-		
-		return "System";
+		String username = request.getHeader("X-USER");
+		return username;
 	}
 
 	@JsonIgnore
@@ -129,18 +167,10 @@ public abstract class BaseEntity{
 		this.updatedDt = updatedDt;
 	}
 
-	public Long getRequestId() {
-		return requestId;
-	}
-
 	public void setRequestId(Long requestId) {
 		this.requestId = requestId;
 	}
-
-	public Long getActivityId() {
-		return activityId;
-	}
-
+	
 	public void setActivityId(Long activityId) {
 		this.activityId = activityId;
 	}
