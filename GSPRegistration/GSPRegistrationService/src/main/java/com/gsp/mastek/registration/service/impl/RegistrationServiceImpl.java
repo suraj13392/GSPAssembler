@@ -152,19 +152,20 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Override
 	public OrganizationContactResponseVO getOrganizationContactDetails(
 			SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
-
 		List<Organization> organizations = organizationRepository.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
-		List<OrganizationContact> allContacts = new ArrayList<OrganizationContact>();
-		if(organization != null){
-			if(organization.getOrganizationAddresses() != null){				
-				for( OrganizationAddress oa :organization.getOrganizationAddresses()){
-					if(oa.getOrganizationContacts() != null) {
-					 allContacts.addAll(oa.getOrganizationContacts());
-					}
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}		
+		
+		List<OrganizationContact> allContacts = new ArrayList<OrganizationContact>();		
+		if(organization != null && organization.getOrganizationAddresses() != null){
+			for( OrganizationAddress oa :organization.getOrganizationAddresses()){
+				if(oa.getOrganizationContacts() != null) {
+				    allContacts.addAll(oa.getOrganizationContacts());
 				}
 			}
-		}
+		}		
 		OrganizationContactResponseVO reponse = new OrganizationContactResponseVO();
 		List<OrganizationContactVO> allContactVOs = organizationContactMapper.fromOrganizationContacts(allContacts);
 		reponse.setContactDetails(allContactVOs);
