@@ -1,5 +1,6 @@
 package com.gsp.mastek.registration.service;
 
+import com.gsp.mastek.registration.vo.OrganizationAddressResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationBusinessResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationContactResponseVO;
 import com.gsp.mastek.registration.vo.OrganizationDetailsResponseVO;
@@ -18,22 +19,24 @@ public interface RegistrationService {
 	OrganizationVO saveOrganization(OrganizationVO organizationVO);
 
 	OrganizationContactResponseVO getOrganizationContactDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	OrganizationBusinessResponseVO getOrganizationBusinessDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
 
 	OrganizationGstnResponseVO getOrganizationGstin(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	OrganizationDetailsResponseVO getOrganizationDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
 
 	PartyResponseVO getParty(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	OrganizationGoodsResponseVO getGoodsDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	OrganizationServiceResponseVO getServiceDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	PartyDetailsResponseVO getPartyDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
-	
+
 	PartyAddressResponseVO getPartyAddress(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
 
 	PartyContactResponseVO getPartyContactDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
+
+	OrganizationAddressResponseVO getOrganizationAddressDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO);
 }
