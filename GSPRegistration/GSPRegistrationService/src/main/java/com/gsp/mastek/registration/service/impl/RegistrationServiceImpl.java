@@ -177,12 +177,15 @@ public class RegistrationServiceImpl implements RegistrationService {
 	@Override
 	public OrganizationBusinessResponseVO getOrganizationBusinessDetails(
 			SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
-		Organization organization = organizationRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
+		List<Organization> organizations = organizationRepository
+				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 		BusinessDtls businessDtl = new BusinessDtls();
-		if (organization != null) {
-			if (organization.getBusinessDtls() != null) {
+		if (organization!=null && organization.getBusinessDtls() != null) {
 				businessDtl = organization.getBusinessDtls();
-			}
 		}
 		BusinessDtlsVO reponseVO = businessDtlsMapper.fromBusinessDtls(businessDtl);
 		OrganizationBusinessResponseVO response = new OrganizationBusinessResponseVO();
@@ -193,14 +196,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	@Override
 	public OrganizationGstnResponseVO getOrganizationGstin(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
-		Organization organization = organizationRepository.findOne(searchRegDtlsCriteriaVO.getOrganizationId());
-		List<GstnregistrationDtls> GstnregistrationDtls = new ArrayList<GstnregistrationDtls>();
-		if (organization != null) {
-			if (organization.getGstnregistrationDtlses() != null) {
-				GstnregistrationDtls.addAll(organization.getGstnregistrationDtlses());
-			}
+		List<Organization> organizations = organizationRepository
+				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
 		}
-		List<GstnregistrationDtlsVO> GstnregistrationVOs = gstnregistrationDtlsMapper
+		Set<GstnregistrationDtls> GstnregistrationDtls = null;
+		if (organization != null && organization.getGstnregistrationDtlses() != null) {
+				GstnregistrationDtls=organization.getGstnregistrationDtlses();
+			}
+		Set<GstnregistrationDtlsVO> GstnregistrationVOs = gstnregistrationDtlsMapper
 				.fromGstnregistrationDtlses(GstnregistrationDtls);
 		OrganizationGstnResponseVO responseVO = new OrganizationGstnResponseVO();
 		responseVO.setGstnregistrationDtlses(GstnregistrationVOs);
@@ -214,17 +220,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 
 		List<OrganizationAddress> allAddress = new ArrayList<OrganizationAddress>();
 
-		if (organization != null) {
-			if (organization.getOrganizationAddresses() != null) {
+		if (organization != null && organization.getOrganizationAddresses() != null) {
 
 				allAddress.addAll(organization.getOrganizationAddresses());
 			}
-		}
-
 		OrganizationDetailsResponseVO response = organizationDetailsMapper.fromOrganization(organization);
 		List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddress);
 		response.setAddressDetails(allAddressVOs);
@@ -236,7 +242,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 		Set<GoodsDtlsVO> goodsVOs = null;
 		Set<ServiceDtlsVO> serviceVOs = null;
 		Organization allOranization = new Organization();
@@ -257,7 +266,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public OrganizationGoodsResponseVO getGoodsDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 		Set<GoodsDtlsVO> goodsVOs = null;
 		if (organization != null) {
 			goodsVOs = goodsDetails(organization.getOrganizationId());
@@ -280,7 +292,10 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 		Set<ServiceDtlsVO> serviceVOs = null;
 		if (organization != null) {
 
@@ -303,14 +318,15 @@ public class RegistrationServiceImpl implements RegistrationService {
 	public PartyDetailsResponseVO getPartyDetails(SearchRegDtlsCriteriaVO searchRegDtlsCriteriaVO) {
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 
 		List<Party> allParties = new ArrayList<Party>();
-		if (organization != null) {
-			if (organization.getParties() != null) {
+		if (organization != null && organization.getParties() != null) {
 				allParties.addAll(organization.getParties());
 			}
-		}
 		PartyDetailsResponseVO response = new PartyDetailsResponseVO();
 		List<PartyVO> allPartyVOs = partyMapper.fromParties(allParties);
 		response.setParty(allPartyVOs);
@@ -322,16 +338,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 
 		List<Party> parties = new ArrayList<Party>();
 		List<PartyAddress> partyAddresses = new ArrayList<PartyAddress>();
 
-		if (organization != null) {
-			if (organization.getParties() != null) {
+		if (organization != null && organization.getParties() != null) {
 				parties.addAll(organization.getParties());
 			}
-		}
 
 		if (parties != null) {
 			for (Party party : parties) {
@@ -352,16 +369,17 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 
 		List<Party> parties = new ArrayList<Party>();
 		List<PartyContact> partyContacts = new ArrayList<PartyContact>();
 
-		if (organization != null) {
-			if (organization.getParties() != null) {
+		if (organization != null && organization.getParties() != null) {
 				parties.addAll(organization.getParties());
 			}
-		}
 
 		if (parties != null) {
 			for (Party party : parties) {
@@ -383,13 +401,14 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 		List<Organization> organizations = organizationRepository
 				.findAll(OrganizationSpecs.findByCriteria(searchRegDtlsCriteriaVO));
-		Organization organization = organizations.get(0);
+		Organization organization = null;
+		if (CollectionUtils.isNotEmpty(organizations)) {
+			organization = organizations.get(0);
+		}
 		List<OrganizationAddress> allAddresses = new ArrayList<OrganizationAddress>();
 
-		if (organization != null) {
-			if (organization.getOrganizationAddresses() != null) {
+		if (organization != null && organization.getOrganizationAddresses() != null) {
 				allAddresses.addAll(organization.getOrganizationAddresses());
-			}
 		}
 		OrganizationAddressResponseVO response = new OrganizationAddressResponseVO();
 		List<OrganizationAddressVO> allAddressVOs = organizationAddressMapper.fromOrganizationAddresses(allAddresses);

@@ -1,15 +1,13 @@
 package com.gsp.mastek.registration.vo;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Set;
 
 public class OrganizationGstnResponseVO {
 
 	private Long organizationId;
 	
-	@JsonProperty("GstnregistrationDtls")
-	private List<GstnregistrationDtlsVO> GstnregistrationDtlses;
+	/*@JsonProperty("gstnregistrationDtls")*/
+	private Set<GstnregistrationDtlsVO> GstnregistrationDtlses;
 
 	public Long getOrganizationId() {
 		return organizationId;
@@ -19,11 +17,11 @@ public class OrganizationGstnResponseVO {
 		this.organizationId = organizationId;
 	}
 
-	public List<GstnregistrationDtlsVO> getGstnregistrationDtlses() {
+	public Set<GstnregistrationDtlsVO> getGstnregistrationDtlses() {
 		return GstnregistrationDtlses;
 	}
 
-	public void setGstnregistrationDtlses(List<GstnregistrationDtlsVO> gstnregistrationDtlses) {
+	public void setGstnregistrationDtlses(Set<GstnregistrationDtlsVO> gstnregistrationDtlses) {
 		GstnregistrationDtlses = gstnregistrationDtlses;
 	}
 
@@ -32,6 +30,6 @@ public class OrganizationGstnResponseVO {
 		return "OrganizationGstnResponseVO [organizationId=" + organizationId + ", GstnregistrationDtlses="
 				+ GstnregistrationDtlses + "]";
 	}
-	
+
 	
 }
