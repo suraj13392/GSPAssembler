@@ -1,0 +1,45 @@
+{
+  "txi": [
+    {
+      "rtin": "30ABCDE3304F2Z6",
+      "rname": "Kamath Foods Pvt. Ltd.",
+      "st_cd": 12,
+      "dnum": "ZrgGwRycwygbMHz",
+      "dt": "21-03-2016",
+      "itms": [
+        {
+          "ty": "S",
+          "hsn_sc": "S8774",
+          "txval": 2354.92,
+          "irt": 0,
+          "iamt": 0,
+          "crt": 62.3,
+          "camt": 863.12,
+          "srt": 24.45,
+          "samt": 8.37361437
+        }
+      ]
+    },
+    {
+      "chksum": "AflJufPlFStqKBZ",
+      "rtin": "30ABCDE3304F2Z6",
+      "rname": "Kamath Foods Pvt. Ltd.",
+      "st_cd": 12,
+      "dnum": "ZrgGwRycwygbMHz",
+      "dt": "21-03-2016",
+      "itms": [
+        {
+          "ty": "S",
+          "hsn_sc": "S8774",
+          "txval": 2354.92,
+          "irt": 0,
+          "iamt": 0,
+          "crt": 62.3,
+          "camt": 863.12,
+          "srt": 24.45,
+          "samt": 8.37361437
+        }
+      ]
+    }
+  ]
+}

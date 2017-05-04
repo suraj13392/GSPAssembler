@@ -1,0 +1,21 @@
+{
+  "isd_rcd": [
+    {
+      "gstin_isd": "02DDDFP3434S2Z3",
+      "i_num": "85619",
+      "i_dt": "22-03-2016",
+      "ig_cr": 0,
+      "cg_cr": 682.88,
+      "sg_cr": 582.88
+    },
+    {
+      "chksum": "AflJufPlFStqKBZ",
+      "gstin_isd": "02DDDFP3434S2Z3",
+      "i_num": "85619",
+      "i_dt": "22-03-2016",
+      "ig_cr": 0,
+      "cg_cr": 682.88,
+      "sg_cr": 582.88
+    }
+  ]
+}

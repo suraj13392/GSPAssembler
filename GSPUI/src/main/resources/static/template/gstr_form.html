@@ -1,0 +1,1496 @@
+<!--<script src="js/xlsx.core.min.js"></script>-->
+
+<!--
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.26/pdfmake.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.26/vfs_fonts.js"></script>-->
+
+
+<div ng-controller="gstrController">
+	<section class="subpage-header1" class="cause-section"
+		data-anchor="sect1">
+		<div class="container-fluid ">
+			<div class="col-md-12 ">
+				<div class="panel panel-default gstrPanel">
+					<div class="panel-heading " id="panelText">DETAILS OF OUTWARD
+						SUPPLIES</div>
+					<div class="row">
+						<div class="col-md-3"></div>
+						<div class="col-md-6">
+							<div id="successMessageDiv" style="display: none"
+								class="msg-alert alert alert-success alert-style" role="alert">
+								<button type="button" class="close" data-hide="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<div id="successMsgTxt" style="text-align: center;"></div>
+							</div>
+		
+							<div id="errorMessageDiv" style="display: none"
+								class="msg-alert alert alert-danger" role="alert">
+								<button type="button" class="close" data-hide="alert"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<div id="errorMsgTxt" style="text-align: center;"></div>
+							</div>
+						</div>
+						<div class="col-md-3"></div>
+						</div>
+					<div class="panel-body">
+
+						<form class="input_height form-horizontal" action="">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+										<input id="GSTN_id" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="GSTN">
+									</div>
+
+									<!-- <label for="triggerSystem" class="col-md-4 control-label font14"  >GSTIN</label>
+											<div class="col-md-8" >
+												 <input type="text" id="GSTN_id" class="form-control" ng-model="GSTN" >
+											</div> -->
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Taxable
+											Person</span> <input id="nameGstn" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+									<!-- 	<label for="triggerSystem" class="col-md-4 control-label font14"  >Taxable Person</label>
+											<div class="col-md-8" >
+												 <input type="text" id="nameGstn" class="form-control"  ng-model="name">
+											</div> -->
+								</div>
+
+								<div class="form-group col-md-6">
+
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Month</span>
+										<select class="form-control">
+											<option value="">--Select--</option>
+											<option>January</option>
+											<option>February</option>
+											<option>March</option>
+											<option>April</option>
+											<option>May</option>
+											<option>June</option>
+											<option>July</option>
+											<option>August</option>
+											<option>September</option>
+											<option>October</option>
+											<option>November</option>
+											<option>December</option>
+
+										</select>
+									</div>
+
+									<!-- 	<label for="triggerSystem" class="col-md-4 control-label font14"  >Month</label>
+										<div class="col-md-8" >
+											<select class="form-control">
+											<option>--Select-- </option>
+															    <option>January </option>
+															    <option>February </option>
+															    <option>March </option>
+															    <option>April</option><option>May</option>
+															    <option>June</option><option>July</option>
+															    <option>August</option><option>September</option>
+															    <option>October</option><option>November</option><option>December</option>
+											</select>
+										</div> -->
+								</div>
+								<div class="form-group col-md-6">
+
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Year</span>
+										<select class="form-control">
+											<option value="">--Select--</option>
+											<option>2016</option>
+											<option>2017</option>
+										</select>
+									</div>
+
+									<!-- 	<label for="triggerSystem" class="col-md-4 control-label font14"  >Year</label>
+										<div class="col-md-8" >
+											<select class="form-control">
+											<option>--Select-- </option>
+															    <option>2016 </option>
+															    <option>2017 </option>
+															    
+											</select>
+										</div> -->
+								</div>
+
+								<div class="form-group col-md-6">
+
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Aggregate
+											Turnover(PFY)</span> <input id="turnover" type="text"
+											class="form-control" aria-label="Text input with checkbox"
+											ng-model="turnover">
+									</div>
+
+									<!-- <label for="triggerSystem" class="col-md-4 control-label font14"  >Aggregate Turnover(PFY)</label>
+											<div class="col-md-8" >
+												 <input type="text" id="turnover" class="form-control" ng-model="turnover" >
+											</div> -->
+								</div>
+
+								<!--
+								</div>
+																<div class="row">	-->
+
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Upload
+											File</span> <input id="files" type="file" class="form-control"
+											aria-label="Text input with checkbox">
+									</div>
+
+									<!-- 	<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>Upload File</span>
+												  <input id="files" type="file" class="form-control" aria-label="Text input with checkbox">
+												  <span class="input-group-btn">
+													<button class="btn btn-primary my-btn-style"  ng-click = "submitFile();" type="button">Go!</button>
+												  </span>
+												</div> -->
+
+
+
+								</div>
+								<div class="col-md-6"></div>
+								<div class="col-md-6">
+									<div class="form-group float-right" style="margin-bottom: 0px;">
+									
+										<button class="btn btn-primary my-btn-style" ng-click="submitFile('gstr1Status',$event);">Get GSTR1 Status</button>
+									<button class="btn btn-primary my-btn-style " ng-click="submitFile('gstr1',$event);">Get GSTR1</button>
+									<button class="btn btn-primary my-btn-style" style="padding: 16px 65px !important;" ng-click="submitFile('go',$event);" type="button">Go!</button>
+									</div>
+								</div>
+							
+							</div>
+
+
+
+
+
+						</form>
+						<br /> <br />
+
+						<div class="row" id="download_link">
+							<!-- <div id="pagination" class="col-md-6"></div> -->
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="form-group float-right" style="margin-bottom: 0px;">
+								
+									<button class="btn btn-primary my-btn-style"
+										ng-click="saveGstr1();">SAVE</button>
+									<button class="btn btn-primary my-btn-style" ng-click="save();">SUBMIT</button>
+								<!-- 	<button class="btn btn-primary my-btn-style"
+										data-toggle="modal" data-target="#download_modal">DOWNLOAD</button> -->
+									<!-- <button class="btn btn-primary my-btn-style"
+										ng-click="printAction();" data-dismiss="modal">PRINT</button> -->
+								</div>
+							</div>
+						</div>
+
+						<div id="editor"></div>
+
+
+						<div class="row">
+
+							<div class="col-md-12" id="form_table" style="display: none">
+								<!-- ****************-->
+
+								<div class="panel-heading" id="panelText"
+									style="font-weight: bolder; border-color: rgba(0, 0, 0, 0.25);"></div>
+
+
+								<div class="panel panel-primary">
+									<div class="panel panel-heading primaryPanel row panel_radius">
+										<div class="col-md-6">
+											<span class="font14" id="tab_label">GSTR1 Returns</span>
+										</div>
+										<div id="pagination" class="col-md-5"></div>
+											<a href="" class=" col-md-1"
+											 ng-click="printAction();" style="font-size:20px;color:#fff"><span class="fa fa-print"></span></a>
+									</div>
+									<div class="panel panel-body">
+										<div id="menuContent_1" class="tab-content">
+							
+											<div class="tab-pane active table-responsive" id="Tab1"
+												style="background: #eee;">
+												<label class="font14" id="lab1">(5A) Amendments to
+													details of Outward Supplies to a registered person of
+													earlier tax periods </label>
+												<table class="table  table-bordered table-hover" id="table2">
+													<thead>
+														<tr class="font14 table_th1">
+															<th colspan="2" class="align-center">Original
+																Invoice</th>
+															<th>GSTIN/UIN</th>
+															<th colspan="6" class="align-center">Revised/Original
+																Invoice</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th>POS</th>
+															<th>Indicate if supply attracts reverse charge $</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+															<th>GSTIN of e- commerce operator</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th>No</th>
+															<th>Date</th>
+															<th></th>
+															<th>No</th>
+															<th>Date</th>
+															<th>Value</th>
+															<th>Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>Taxable value</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table2Data" ng-attr-id="{{item.Original_IN_No}}">
+															<td>{{item.Original_IN_No}}</td>
+															<td>{{item.Original_IN_Date}}</td>
+															<td>{{item.GSTIN_UIN}}</td>
+															<td>{{item.Rev_Original_IN_No}}</td>
+															<td>{{item.Rev_Original_IN_Date}}</td>
+															<td>{{item.Rev_Original_IN_Value}}</td>
+															<td>{{item.Rev_Original_IN_Goods_Services}}</td>
+															<td>{{item.Rev_Original_IN_HSN_SAC}}</td>
+															<td>{{item.Rev_Original_IN_TaxableValue}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.POS_only_if_different_from_the_location_of_recipient_}}</td>
+															<td>{{item.Indicate_if_supply_attracts_reverse_charge}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+															<td>{{item.GSTIN_of_commerce_operator_if_applicable_}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<div class="tab-pane table-responsive" id="Tab2"
+												style="background: #eee;">
+												<label class="font14" id="lab2">(6) Taxable outward
+													supplies to a consumer where Place of Supply (State Code)
+													is other than the State where supplier is located
+													(Inter-state supplies) and Invoice value is more than Rs
+													2.5 lakh </label>
+												<table class="table  table-bordered table-hover" id="table3">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">Recipient’s State code</th>
+															<th>Name of the recipient</th>
+															<th colspan="6" class="align-center">Invoice</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th>POS</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th></th>
+															<th></th>
+															<th>No</th>
+															<th>Date</th>
+															<th>Value</th>
+															<th>Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>Taxable value</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+
+														<tr ng-repeat="item in table3Data">
+															<td>{{item.RecipientsStatecode}}</td>
+															<td>{{item.NameOfTheRecipient}}</td>
+															<td>{{item.Invoice_No}}</td>
+															<td>{{item.Invoice_Date}}</td>
+															<td>{{item.Invoice_Value}}</td>
+															<td>{{item.Invoice_Goods_Services}}</td>
+															<td>{{item.Invoice_HSN_SAC}}</td>
+															<td>{{item.Invoice_TaxableValue}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.POS_only_if_different_from_the_location_of_recipient_}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+
+														</tr>
+													</tbody>
+												</table>
+
+											</div>
+
+											<div class="tab-pane table-responsive" id="Tab3"
+												style="background: #eee;">
+												<label class="font14" id="lab3">(6A)Amendment to
+													taxable outward supplies to a consumer of earlier tax
+													periods where Place of Supply (State Code) is other than
+													the State where supplier is located (Inter-state supplies)
+													and Invoice value is more than Rs 2.5 lakh </label>
+												<table class="table  table-bordered table-hover" id="table4">
+													<thead>
+														<tr class="font14 table_th1">
+															<th colspan="2" class="align-center">Original
+																Invoice</th>
+															<th>Recipient’s State code</th>
+															<th>Name of the recipient</th>
+															<th colspan="5" class="align-center">Revised Invoice</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th>POS</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th>No</th>
+															<th>Date</th>
+															<th></th>
+															<th></th>
+															<th>No</th>
+															<th>Date</th>
+															<th>Value</th>
+															<th>Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table4Data">
+															<td>{{item.Original_Invoice_No}}</td>
+															<td>{{item.Original_Invoice_No_Date}}</td>
+															<td>{{item.RecipientStateCode}}</td>
+															<td>{{item.NameOfTheRecipient}}</td>
+															<td>{{item.Revised_Invoice_No}}</td>
+															<td>{{item.Revised_Invoice_Date}}</td>
+															<td>{{item.Revised_Invoice_Goods_Services}}</td>
+															<td>{{item.Revised_Invoice_HSN_SAC}}</td>
+															<td>{{item.Revised_Invoice_Taxable_Value}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.POS_only_if_different_from_the_location_of_recipient_}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											
+											<div class="tab-pane  table-responsive" id="Tab4">
+												<label class="font14" id="lab4">(5) Taxable outward
+													supplies to a registered person</label>
+												<table class="table  table-bordered table-hover" id="table1">
+
+													<thead>
+														<tr class="font14 table_th1">
+															<th>GSTIN/UIN</th>
+															<th colspan="6" class="align-center">Invoice</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th>POS</th>
+															<th>Indicate if supply attracts reverse charge $</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+															<th>GSTIN of e- commerce operator</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th></th>
+															<th>No</th>
+															<th>Date</th>
+															<th>Value</th>
+															<th>Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>Taxable value</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="item in table1Data">
+															<td>{{item.GSTIN_UIN}}</td>
+															<td>{{item.Invoice_No}}</td>
+															<td>{{item.Invoice_Date}}</td>
+															<td>{{item.Invoice_Value}}</td>
+															<td>{{item.Invoice_Goods_Services}}</td>
+															<td>{{item.Invoice_HSN_SAC}}</td>
+															<td>{{item.Invoice_TaxableValue}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.POS_only_if_different_from_the_location_of_recipient_}}</td>
+															<td>{{item.Indicate_if_supply_attracts_reverse_charge_}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+															<td>{{item.GSTIN_of_ecommerce_operator__if_applicable_}}</td>
+														</tr>
+													</tbody>
+												</table>
+												<!--  </div></div> -->
+											</div>
+											<div class="tab-pane table-responsive" id="Tab5"
+												style="background: #eee;">
+												<label class="font14" id="lab5">(7)Taxable outward
+													supplies to consumer (Other than 6 above) </label>
+												<table class="table  table-bordered table-hover" id="table5">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>State code(Place of Supply)</th>
+															<th>Aggregate Taxable Value</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table5Data">
+															<td>{{item.Goods_Services}}</td>
+															<td>{{item.HSN_SAC}}</td>
+															<td>{{item.Statecode}}</td>
+															<td>{{item.AggregateTaxableValue}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+														</tr>
+													</tbody>
+												</table>
+
+											</div>
+											<div class="tab-pane table-responsive" id="Tab6"
+												style="background: #eee;">
+												<label class="font14" id="lab6">(7A)Amendment to
+													Taxable outward supplies to consumer of earlier tax periods
+													(original supplies covered under 7 above in earlier tax
+													period (s)) </label>
+												<table class="table  table-bordered table-hover" id="table6">
+													<thead>
+														<tr class="font14 table_th1">
+															<th colspan="4" class="align-center">Original
+																Details</th>
+															<th colspan="3" class="align-center">Revised Details</th>
+															<th>Aggregate Taxable Value)</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th>Tax on this Invoice is paid under provisional
+																assessment</th>
+														</tr>
+														<tr class="font12 table_th2">
+															<th>Month(Tax Period)</th>
+															<th>Goods and Services</th>
+															<th>HSN/SAC</th>
+															<th>/SAC State Code</th>
+															<th>Goods/Services</th>
+															<th>HSN/SAC</th>
+															<th>State code(Place of Supply(State Code))</th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table6Data">
+															<td>{{item.OriginalDetails_Month_TaxPeriod}}</td>
+															<td>{{item.OriginalDetails_Goods_Services}}</td>
+															<td>{{item.OriginalDetails_HSN_SAC}}</td>
+															<td>{{item.OriginalDetails_StateCode}}</td>
+															<td>{{item.RevisedDetails_Goods_Services}}</td>
+															<td>{{item.RevisedDetails_HSN_SAC}}</td>
+															<td>{{item.RevisedDetails_Statecode}}</td>
+															<td>{{item.AggregateTaxableValue}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<div class="tab-pane table-responsive" id="Tab7"
+												style="background: #eee;">
+												<label class="font14" id="lab7">(8) Details of
+													Credit/Debit Notes </label>
+												<table class="table  table-bordered table-hover" id="table7">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">GSTIN/UIN/Name of recipient</th>
+															<th class="align-center">Type of note(Debit/Credit)</th>
+
+															<th colspan="2" class="align-center">Debit
+																Note/credit note</th>
+															<th colspan="2" class="align-center">Original
+																Invoice</th>
+															<th>Differential Value(Plus or Minus)</th>
+															<th colspan="6" class="align-center">Differential
+																Tax</th>
+
+														</tr>
+														<tr class="font12 table_th2">
+															<th></th>
+															<th></th>
+															<th>No.</th>
+															<th>Date</th>
+															<th>No.</th>
+															<th>Date</th>
+															<th></th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+
+														</tr>
+														<tr class="font12">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table7Data">
+															<td>{{item.GSTIN_UIN_NameOfRecipient}}</td>
+															<td>{{item.TypeOfNote_Debit_Credit_}}</td>
+															<td>{{item.DebitNote_creditnote_No}}</td>
+															<td>{{item.DebitNote_creditnote_Date}}</td>
+															<td>{{item.Original_No}}</td>
+															<td>{{item.Original_Date}}</td>
+															<td>{{item.DifferentialValue_Plus_or_Minus}}</td>
+															<td>{{item.DifferentialTax_IGST_Rate}}</td>
+															<td>{{item.DifferentialTax_IGST_Amt}}</td>
+															<td>{{item.DifferentialTax_CGST_Rate}}</td>
+															<td>{{item.DifferentialTax_CGST_Amt}}</td>
+															<td>{{item.DifferentialTax_SGST_Rate}}</td>
+															<td>{{item.DifferentialTax_SGST_Amt}}</td>
+														</tr>
+													</tbody>
+													<thead>
+														<tr class="font12">
+															<th colspan="13">Other than reverse charge</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+
+														</tr>
+													</tbody>
+													<thead>
+														<tr class="font12">
+															<th colspan="13">Reverse charge</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+
+														</tr>
+													</tbody>
+												</table>
+												<br /> <br />
+
+											</div>
+											<div class="tab-pane table-responsive" id="Tab8"
+												style="background: #eee;">
+												<label class="font14" id="lab8">(8A) Amendment to
+													Details of Credit/Debit Notes of earlier tax periods </label>
+												<table class="table  table-bordered table-hover" id="table8">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">GSTIN/UIN/Name of recipient</th>
+															<th class="align-center">Type of note(Debit/Credit)</th>
+
+															<th colspan="2" class="align-center">Original</th>
+															<th colspan="2" class="align-center">Revised</th>
+															<th colspan="2" class="align-center">Original
+																Invoice details</th>
+															<th>Differential Value(Plus or Minus)</th>
+															<th colspan="6" class="align-center">Differential
+																Tax</th>
+
+														</tr>
+														<tr class="font12 table_th2">
+															<th></th>
+															<th></th>
+															<th>No.</th>
+															<th>Date</th>
+															<th>No.</th>
+															<th>Date</th>
+															<th>No.</th>
+															<th>Date</th>
+															<th></th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+
+														</tr>
+														<tr class="font12">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+
+														</tr>
+													</thead>
+
+
+													<tbody>
+														<tr ng-repeat="item in table8Data">
+															<td>{{item.GSTIN_UIN_NameOfRecipient}}</td>
+															<td>{{item.TypeOfNote_Debit_Credit_}}</td>
+															<td>{{item.Original_No}}</td>
+															<td>{{item.Original_Date}}</td>
+															<td>{{item.Revised_No}}</td>
+															<td>{{item.Revised_Date}}</td>
+															<td>{{item.Original_Invoice_No}}</td>
+															<td>{{item.Original_Invoice_No_Date}}</td>
+															<td>{{item.DifferentialValue_Plus_or_Minus}}</td>
+															<td>{{item.DifferentialTax_IGST_Rate}}</td>
+															<td>{{item.DifferentialTax_IGST_Amt}}</td>
+															<td>{{item.DifferentialTax_CGST_Rate}}</td>
+															<td>{{item.DifferentialTax_CGST_Amt}}</td>
+															<td>{{item.DifferentialTax_SGST_Rate}}</td>
+															<td>{{item.DifferentialTax_SGST_Amt}}</td>
+														</tr>
+													</tbody>
+													<thead>
+														<tr class="font12">
+															<th colspan="13">Other than reverse charge</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+
+														</tr>
+													</tbody>
+													<thead>
+														<tr class="font12">
+															<th colspan="13">Reverse charge</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+															<td></td>
+
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tab-pane table-responsive" id="Tab9"
+												style="background: #eee;">
+												<label class="font14" id="lab9">(9) Nil rated,
+													Exempted and Non GST outward supplies* </label>
+												<table class="table  table-bordered table-hover" id="table9">
+													<thead>
+														<tr class="font14 table_th1">
+															<th></th>
+															<th class="align-center">Goods/Services</th>
+															<th class="align-center">Nil Rated(Amount)</th>
+															<th class="align-center">Exempted(Amount)</th>
+															<th class="align-center">Non GST supplies(Amount)</th>
+
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="item in table11Data">
+															<td>{{item.Description}}</td>
+															<td>{{item.Goods_Services}}</td>
+															<td>{{item.NilRated_Amount}}</td>
+															<td>{{item.Exempted_Amount}}</td>
+															<td>{{item.NonGSTsupplies_Amount}}</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+											<div class="tab-pane table-responsive" id="Tab10"
+												style="background: #eee;">
+												<label class="font14" id="lab10">(10) Supplies
+													Exported (including deemed exports) </label>
+												<table class="table  table-bordered table-hover"
+													id="table10">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">Description</th>
+															<th colspan="6" class="align-center">Invoice</th>
+															<th colspan="2" class="align-center">Shipping
+																bill/bill of export</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th class="align-center">Tax on this Invoice is paid
+																under provisional assessment)</th>
+
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th class="align-center">No.</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Value</th>
+															<th class="align-center">Goods/Services</th>
+															<th class="align-center">HSN/SAC</th>
+															<th class="align-center">Taxable value</th>
+															<th class="align-center">No.</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table9Data">
+															<td>{{item.Description}}</td>
+															<td>{{item.Invoice_No}}</td>
+															<td>{{item.Invoice_Date}}</td>
+															<td>{{item.Invoice_Value}}</td>
+															<td>{{item.Invoice_Goods_Services}}</td>
+															<td>{{item.Invoice_HSN_SAC}}</td>
+															<td>{{item.Invoice_TaxableValue}}</td>
+															<td>{{item.ShippingBill_No}}</td>
+															<td>{{item.ShippingBill_Date}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+
+														</tr>
+													</tbody>
+												</table>
+												<br /> <br />
+
+											</div>
+											<div class="tab-pane table-responsive" id="Tab11"
+												style="background: #eee;">
+												<label class="font14" id="lab11">(10A) Amendment to
+													Supplies Exported (including deemed exports) </label>
+												<table class="table  table-bordered table-hover"
+													id="table11">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">Description</th>
+															<th colspan="2" class="align-center">Original
+																Invoice</th>
+															<th colspan="5" class="align-center">Revised Invoice</th>
+															<th colspan="2" class="align-center">Shipping
+																bill/bill of export</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th class="align-center">Tax on this Invoice is paid
+																under provisional assessment)</th>
+
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th class="align-center">No.</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">No.</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Goods/Services</th>
+															<th class="align-center">HSN/SAC</th>
+															<th class="align-center">Taxable value</th>
+															<th class="align-center">No.</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Amt</th>
+															<th></th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table10Data">
+															<td>{{item.Description}}</td>
+															<td>{{item.Original_Invoice_No}}</td>
+															<td>{{item.Original_Invoice_No_Date}}</td>
+															<td>{{item.Revised_Invoice_No}}</td>
+															<td>{{item.Revised_Invoice_Date}}</td>
+															<td>{{item.Revised_Invoice_Goods_Services}}</td>
+															<td>{{item.Revised_Invoice_HSN_SAC}}</td>
+															<td>{{item.Revised_Invoice_Taxable_Value}}</td>
+															<td>{{item.ShippingBill_No}}</td>
+															<td>{{item.ShippingBill_Date}}</td>
+															<td>{{item.IGST_Rate}}</td>
+															<td>{{item.IGST_Amt}}</td>
+															<td>{{item.CGST_Rate}}</td>
+															<td>{{item.CGST_Amt}}</td>
+															<td>{{item.SGST_Rate}}</td>
+															<td>{{item.SGST_Amt}}</td>
+															<td>{{item.Tax_on_this_Invoice_is_paid_under_provisional_assessment_}}</td>
+
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+											<div class="tab-pane table-responsive" id="Tab12"
+												style="background: #eee;">
+												<label class="font14" id="lab12">(11) Tax liability
+													arising on account of Time of Supply without issuance of
+													Invoice in the same period. </label>
+												<table class="table  table-bordered table-hover"
+													id="table12">
+													<thead>
+														<tr class="font14 table_th1">
+															<th class="align-center">GSTIN/UIN/Name of customer</th>
+															<th class="align-center">State Code</th>
+															<th class="align-center">Document No</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Goods/Services</th>
+															<th class="align-center">HSN/SAC of supply</th>
+															<th class="align-center">Amount of advance received/
+																Value of Supply provided without raising a bill</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+
+
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table12Data">
+															<td>{{item.GSTIN_UIN_NameOfCustomer}}</td>
+															<td>{{item.StateCode}}</td>
+															<td>{{item.DocumentNo}}</td>
+															<td>{{item.Date}}</td>
+															<td>{{item.Goods_Service}}</td>
+															<td>{{item.HSN_SAC}}</td>
+															<td>{{item.Amount_of_advance_received_Value_of_Supply_provided_without_raising_a_bill}}</td>
+															<td>{{item.TAX_IGST_Rate}}</td>
+															<td>{{item.TAX_IGST_Amt}}</td>
+															<td>{{item.TAX_CGST_Rate}}</td>
+															<td>{{item.TAX_CGST_Amt}}</td>
+															<td>{{item.TAX_SGST_Rate}}</td>
+															<td>{{item.TAX_SGST_Amt}}</td>
+														</tr>
+													</tbody>
+												</table>
+												<br /> <br />
+
+
+											</div>
+											<div class="tab-pane table-responsive" id="Tab13"
+												style="background: #eee;">
+												<label class="font14" id="lab13">(11A) Amendment to
+													Tax liability arising on account of Time of Supply without
+													issuance of Invoice in the same tax period. </label>
+												<table class="table  table-bordered table-hover"
+													id="table13">
+													<thead>
+														<tr class="font14 table_th1">
+															<th colspan="3" class="align-center">Original
+																Details</th>
+															<th colspan="6" class="align-center">Revised Details</th>
+															<th class="align-center">Amount of advance
+																received/Value of Supply provided without raising a bill</th>
+															<th colspan="6" class="align-center">TAX</th>
+
+														</tr>
+														<tr class="font14 table_th2">
+															<th class="align-center">GSTIN/UIN/Name of customer</th>
+															<th class="align-center">Document Number</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">GSTIN/UIN/Name of customer</th>
+															<th class="align-center">State Code</th>
+															<th class="align-center">Document No</th>
+															<th class="align-center">Date</th>
+															<th class="align-center">Goods/Services</th>
+															<th class="align-center">HSN/SAC of supply to be
+																made</th>
+															<th></th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+														</tr>
+														<tr class="font14">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+															<th class="align-center">Rate</th>
+															<th class="align-center">Tax</th>
+														</tr>
+													</thead>
+
+
+													<tbody>
+														<tr ng-repeat="item in table13Data">
+															<td>{{item.OriginalDetails_GSTIN_UIN_Nameofcustomer}}</td>
+															<td>{{item.OriginalDetails_DocumentNo}}</td>
+															<td>{{item.OriginalDetails_Date}}</td>
+															<td>{{item.RevisedDetails_GSTIN_UIN_Nameofcustomer}}</td>
+															<td>{{item.RevisedDetails_StateCode}}</td>
+															<td>{{item.RevisedDetails_DocumentNo}}</td>
+															<td>{{item.RevisedDetails_Date}}</td>
+															<td>{{item.RevisedDetails_Goods_Services}}</td>
+															<td>{{item.RevisedDetails_HSN_SAC}}</td>
+															<td>{{item.Amount_of_advance_received_Value_of_Supply_provided_without_raising_a_bill}}</td>
+															<td>{{item.TAX_IGST_Rate}}</td>
+															<td>{{item.TAX_IGST_Amt}}</td>
+															<td>{{item.TAX_CGST_Rate}}</td>
+															<td>{{item.TAX_CGST_Amt}}</td>
+															<td>{{item.TAX_SGST_Rate}}</td>
+															<td>{{item.TAX_SGST_Amt}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<div class="tab-pane table-responsive" id="Tab14"
+												style="background: #eee;">
+												<label class="font14" id="lab14">(12) Tax already
+													paid (on advance receipt/ on account of time of supply) on
+													invoices issued in the current period. </label>
+												<table class="table  table-bordered table-hover"
+													id="table14">
+													<thead>
+														<tr class="font14 table_th1">
+															<th>Invoice No.</th>
+															<th>Transaction id(A number assigned by the system
+																when tax was paid)</th>
+															<th colspan="6" class="align-center">TAX Paid on
+																receipt of advance/on account of time of supply</th>
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th></th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+
+														</tr>
+														<tr class="font14">
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Tax</th>
+															<th>Rate</th>
+															<th>Tax</th>
+															<th>Rate</th>
+															<th>Tax</th>
+
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr ng-repeat="item in table14Data">
+															<td>{{item.InvoiceNo}}</td>
+															<td>{{item.TransactionId}}</td>
+															<td>{{item.TAX_IGST_Rate}}</td>
+															<td>{{item.TAX_IGST_Amt}}</td>
+															<td>{{item.TAX_CGST_Rate}}</td>
+															<td>{{item.TAX_CGST_Amt}}</td>
+															<td>{{item.TAX_SGST_Rate}}</td>
+															<td>{{item.TAX_SGST_Amt}}</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<div class="tab-pane table-responsive" id="Tab15"
+												style="background: #eee;">
+												<label class="font14" id="lab15">(13) Supplies made
+													through e-commerce portals of other companies </label><br /> <label
+													class="font14">Part 1- Supplies made through
+													e-commerce portals of other companies to Registered Taxable
+													Persons</label>
+												<table class="table  table-bordered table-hover"
+													id="table15">
+													<thead>
+														<tr class="font14 table_th1">
+															<th>Invoice No.</th>
+															<th>Date</th>
+															<th>Merchant ID issued by ecommerce operator</th>
+															<th>GSTIN of ecommerce portal</th>
+															<th>Gross Value of supplies</th>
+															<th>Taxable value</th>
+															<th>Goods(G)/Services (S)</th>
+															<th>HSN/SAC</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+															<th>Place of Supply(State Code)</th>
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th></th>
+
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr>
+															<td></td>
+															<td>(2)</td>
+															<td>(3)</td>
+															<td>(4)</td>
+															<td>(5)</td>
+														</tr>
+													</tbody>
+												</table>
+												<br /> <br /> <label class="font14" id="lab16">Part
+													2- Supplies made through e-commerce portals of other
+													companies to Unregistered Persons</label>
+												<table class="table  table-bordered table-hover"
+													id="table16">
+													<thead>
+														<tr class="font14 table_th1">
+															<th>Sr No.</th>
+															<th>Merchant ID issued by ecommerce portal</th>
+															<th>GSTIN of ecommerce portal</th>
+															<th>Place of Supply(State Code)</th>
+															<th>Taxable value</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr>
+															<td></td>
+															<td>(2)</td>
+															<td>(3)</td>
+															<td>(4)</td>
+															<td>(5)</td>
+														</tr>
+													</tbody>
+												</table>
+												<br /> <br /> <label class="font14" id="lab17">Part-
+													2A Amendment to Supplies made through e-commerce portals of
+													other companies to Unregistered Taxable Persons</label>
+												<table class="table  table-bordered table-hover"
+													id="table17">
+													<thead>
+														<tr class="font14 table_th1">
+															<th>Sr No.</th>
+															<th colspan="2" class="align-center">Original
+																Details</th>
+															<th colspan="2" class="align-center">Revised Details</th>
+															<th>Merchant ID issued by ecommerce portal</th>
+															<th>GSTIN of ecommerce portal</th>
+															<th>Taxable value</th>
+															<th colspan="2" class="align-center">IGST</th>
+															<th colspan="2" class="align-center">CGST</th>
+															<th colspan="2" class="align-center">SGST</th>
+														</tr>
+														<tr class="font14 table_th2">
+															<th></th>
+															<th>Tax period of supplies</th>
+															<th>Place of Supply(State Code)</th>
+															<th>Tax period of supplies</th>
+															<th>Place of Supply(State Code)</th>
+															<th></th>
+															<th></th>
+															<th></th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+															<th>Rate</th>
+															<th>Amt</th>
+														</tr>
+													</thead>
+
+													<tbody>
+														<tr>
+															<td></td>
+															<td>(2)</td>
+															<td>(3)</td>
+															<td>(4)</td>
+															<td>(5)</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+											<div class="tab-pane table-responsive" id="Tab16"
+												style="background: #eee;">
+												<label class="font14" id="lab18">(14) Invoices
+													issued during the tax period including invoices issued in
+													case of inward supplies received from unregistered persons
+													liable for reverse charge</label>
+												<table class="table  table-bordered table-hover"
+													id="table18">
+													<thead>
+														<tr class="font14 table_th1">
+															<th>S.No.</th>
+															<th>Series number of invoices</th>
+															<th>From</th>
+															<th>To</th>
+															<th>Total number of invoices</th>
+															<th>Number of cancelled invoices</th>
+															<th>Net Number of invoices issued</th>
+
+														</tr>
+													</thead>
+													<tbody>
+														<tr ng-repeat="item in table15Data">
+															<td>{{item.SrNo}}</td>
+															<td>{{item.SeriesNumberOfInvoices}}</td>
+															<td>{{item.From}}</td>
+															<td>{{item.To}}</td>
+															<td>{{item.TotalNumberOfInvoices}}</td>
+															<td>{{item.NumberOfCancelledInvoices}}</td>
+															<td>{{item.NetNumberOfInvoicesIssued}}</td>
+
+														</tr>
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+
+									</div>
+								</div>
+
+								<div id="pdf_div"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="modal" id="download_modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<label>Select Download Option</label>
+				</div>
+
+				<div class="modal-body">
+					<div class="row">
+						<div class="form-group col-md-10">
+							<!--<label for="sel1" class="font14 col-md-5">Download Option:</label>-->
+							<select class="form-control col-md-3" id="download_sel">
+								<option>--Select--</option>
+								<option>Excel</option>
+								<option>PDF</option>
+							</select>
+
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer signup_body" style="text-align: left">
+
+					<a id="down_link" href="" class="btn btn-primary my-btn-style"
+						ng-click="exportAction();" data-dismiss="modal">SUBMIT</a>
+
+				</div>
+				<form action=""></form>
+
+			</div>
+		</div>
+	</div>
+
+ 	<div class="modal" id="error__modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="modal_header_label"
+						style="font-weight: lighter; font-size: 15px; position: absolute; left: 40%; top: 2%;color: #000000;">Error Occured</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						
+						<div class="col-md-12 col-sm-12 col-xs-12" style="    margin-top: 14px;">
+							<label id="error-label">RET100 : Duplicate Invoice</label>
+						</div>
+					
+						<div class="col-md-10"></div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" data-dismiss="modal">Ok</button>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+		
+		
+		$(function() {
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							$('#pagination').pagination({
+								items: 16,
+								itemsOnPage: 1,
+								displayedPages:5,
+								currentPage: 1,
+								hrefTextPrefix: "#Tab",
+								cssStyle: 'light-theme',
+								href: false,
+								onPageClick: function(){
+									$(".page-link").attr("target","_self");
+									$(".page-link").attr("data-toggle","tab");
+									
+									/* if($("#Tab1").hasClass("active")){$("#tab_label").text("(5) Taxable outward supplies to a registered person")}
+									else if($("#Tab2").hasClass("active")){$("#tab_label").text("(5A) Amendments to details of Outward Supplies to a registered person of earlier tax periods")} */
+								}	
+
+							});
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							
+			});
+		
+		
+		$(document).ready(function(){
+			/*
+			 $("#moveleft").click(function(){
+							$( "#newsNavTabs" ).toggle( "slide" );
+							$("#newsNavTabs1").css("display","block");
+						})
+						$("#moveright").click(function(){
+							
+						})*/
+			
+			
+   $('#moveleft').click(function(){
+    	var hidden = $('#newsNavTabs');
+        hidden.hide('slide', {direction: 'left'}, 1000);
+        var h=$('#newsNavTabs1');
+        var  position = $("#newsNavTabs").position();
+        if(position.left==0){
+         h.show('slide', {direction: 'left'}, 1000);
+       // $("#newsNavTabs1").css("display","block");
+       }
+    });
+    
+    $('#moveright').click(function(){
+    	var hidden = $('#newsNavTabs1');
+        hidden.show('slide', {direction: 'left'}, 400);
+          $("#newsNavTabs").css("display","block");
+          $("#newsNavTabs1").css("display","none");
+    });
+		
+});
+		
+	</script>
+
+
+
+

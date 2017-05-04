@@ -1,0 +1,294 @@
+{
+  "gstin": "37ABCDE9552F3Z4",
+  "ret_period": "072016",
+  "chksum": "AflJufPlFStqKBZ",
+  "sec_sum": [
+    {
+      "sec_nm": "b2b",
+      "chksum": "ABCDEFGHI",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 20,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        },
+        {
+          "ctin": "56GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 10,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        }
+      ]
+    },
+    {
+      "sec_nm": "b2ba",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF3652D3A3",
+          "chksum": "Pjfhghjh",
+          "ttl_rec": 30,
+          "ttl_val": 25674,
+          "ttl_igst": 894.99,
+          "ttl_cgst": 12589,
+          "ttl_sgst": 25659.87,
+          "ttl_cess": 2356,
+          "ttl_tax": 26554
+        }
+      ]
+    },
+    {
+      "sec_nm": "cdnr",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "ttl_rec": 10,
+          "ttl_val": 12345,
+          "ttl_igst": 124.99,
+          "ttl_cgst": 3423,
+          "ttl_sgst": 5589.87,
+          "ttl_cess": 3423,
+          "ttl_tax": 1234
+        }
+      ]
+    },
+    {
+      "sec_nm": "cdnra",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 20,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        },
+        {
+          "ctin": "56GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 10,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        }
+      ]
+    },
+    {
+      "sec_nm": "b2cl",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 20,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        },
+        {
+          "ctin": "56GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 10,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        }
+      ]
+    },
+    {
+      "sec_nm": "b2cls",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 20,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        },
+        {
+          "ctin": "56GRRHF35542D3A3",
+          "chksum": "Afghnhmjhj",
+          "ttl_rec": 10,
+          "ttl_val": 15775,
+          "ttl_igst": 144.99,
+          "ttl_cgst": 3563,
+          "ttl_sgst": 5699.87,
+          "ttl_cess": 39853,
+          "ttl_tax": 26534
+        }
+      ]
+    },
+    {
+      "sec_nm": "exp",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "expa",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "txpd",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "at",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "ata",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "b2cs",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "b2csa",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "hsn",
+      "chksum": "AflJufPlFStqKBZ",
+      "ttl_rec": 10,
+      "ttl_val": 12345,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    },
+    {
+      "sec_nm": "nil",
+      "chksum": "pqroesdf",
+      "ttl_rec": 90,
+      "ttl_val": 14574,
+      "ttl_igst": 124.99,
+      "ttl_cgst": 3423,
+      "ttl_sgst": 5589.87,
+      "ttl_cess": 3423,
+      "ttl_tax": 1234
+    }
+  ]
+}

@@ -1,0 +1,1011 @@
+<div ng-controller="gstr3Controller">
+	<section class="subpage-header1" class="cause-section"
+		data-anchor="sect1">
+		<div class="container-fluid ">
+		  <div class="col-md-12 ">
+		  	<div class="panel panel-default gstrPanel">
+				<div class="panel-heading " id="panelText">GSTR3 Details</div>
+				<div class="panel-body">
+					<form class="input_height form-horizontal" action="">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+										<input id="GSTN1A_id" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="GSTN">
+									</div>
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Return Period </span>
+										 <input id="returnPeriod" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+									
+								</div>
+								
+
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN(Supplier) </span>
+										 <input id="ctin" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Return Period </span>
+										 <input id="returnPeriod" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+	
+								</div>
+								<div class="col-md-10"></div>
+								<div class="col-md-2">
+									<button class="btn btn-primary my-btn-style float-right"
+										style="padding: 16px 65px !important;"
+										ng-click="getGSTR3Data();" type="button">Go!</button>
+								</div>
+								 
+							</div>
+						</form>
+							<br/><br/>
+						<div class="row" id="gstr3ButtonGroup">
+							
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="form-group float-right" style="margin-bottom: 0px;">
+									<button class="btn btn-primary my-btn-style"
+										ng-click="submitFile();">SAVE</button>
+									<button class="btn btn-primary my-btn-style" ng-click="save();">SUBMIT</button>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12" id="gstr3_table" style="padding-left: 0px;padding-right: 0px;display: none">
+								<div class="panel-heading" id="panelText" >
+								 <div class="panel panel-primary" >
+								 <div class="panel panel-heading primaryPanelTab row panel_radius">
+										 		
+										 	<div class="col-md-7">
+														<span class="font14" id="tab_label">GSTR3 Details</span>
+													</div>
+													<div id="pagination-gstr3" class="col-md-5">
+												</div>
+								<!-- 	<ul class="nav nav-tabs" style="margin-top: -11px;border-bottom: #fff;">
+										<li ng-repeat="step in steps" ng-class="{active: $index==getCurrentStepIndex()}">
+										  <a href="javascript:void(0)" ng-click="goToStep($index)">{{step}}</a>
+										</li>
+									 </ul> -->
+								
+									</div>
+									<div class="panel panel-body tab-content" >
+									<div class="tab-pane active table-responsive"  id="gstr3_tab1" ng-repeat="item in gstr3Data.tod">
+									<div class="col-md-12">	<label class="gstr3Label" style="font-weight: bolder!important">Turn Over Details</label></div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Gross Turnover </span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="item.gr_to" readonly="readonly">
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Non GST Turnover </span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="item.non_to" readonly="readonly">
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Export Turnover</span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="item.exp_to" readonly="readonly">
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Net Taxable Turnover </span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="item.net_to" readonly="readonly">
+											</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Nil rated and Exempted Domestic Turnover </span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="item.nil_to" readonly="readonly">
+											</div>
+										</div>
+									</div>
+									<div id="gstr3_tab2" class="tab-pane table-responsive">
+									<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">Outward Supplies</label></div>
+									<h5 align=center>Inter-state supplies to Registered taxpayers</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>state_cd</th>
+										 		<th>Tax Rate</th>
+										 		<th>Taxable Value</th>
+										 		<th>IGST Amount (as per invoice)</th>
+										 		<th>CESS (on Value of Inter-State Supply of goods)</th>
+										 		
+										 	</tr>
+										 	
+										 	
+										 	</thead>
+										 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.inter.inter_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.state_cd}}</td>
+												<td>{{item.tx_r}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+									 </table>
+									 <br/>
+									 
+									 <h5 align=center>Intra-State Supplies to Registered taxpayers</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Tax Rate</th>
+										 		<th>Taxable Value</th>
+										 		<th>CGST ( on Value of Intra-State Supply of goods)</th>
+										 		<th>SGST (on Value of Intra-State Supply of goods)</th>
+										 		<th>CESS (on Value of Intra-State Supply of goods)</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.intra.intra_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.tx_r}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 
+										 <br/>
+									 
+									 <h5 align=center>Inter-State Supplies to Consumers</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>state_cd</th>
+										 		<th>Tax Rate</th>
+										 		<th>Taxable Value</th>
+										 		<th>IGST (on Total Taxable value of Inter-state supply of goods)</th>
+										 		<th>CESS (on Value of Intra-State Supply of goods)</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.inter_c.interc_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.state_cd}}</td>
+												<td>{{item.tx_r}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+									 
+									 <h5 align=center>Intra-State Supplies to Consumers</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Tax Rate</th>
+										 		<th>Taxable Value</th>
+										 		<th>CGST ( on Value of Intra-State Supply of goods)</th>
+										 		<th>SGST (on Value of Intra-State Supply of goods)</th>
+										 		<th>CESS (on Value of Intra-State Supply of goods)</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.intra_c.intrac_det" 	>
+										 		<td>{{item.ty}}</td>
+												
+												<td>{{item.tx_r}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+									 
+									 <h5 align=center>Exports</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Taxable Value</th>
+										 		<th>IGST paid for Export of services</th>
+										 		<th>CGST paid for Export of services</th>
+										 		<th>SGST paid for Export of services</th>
+										 		<th>Export of services with/without payment of GST indicator</th>
+										 		<th>CESS paid for Export of services</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.exp.exp_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.ex_tp}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 	 <br/>
+									 
+									 <h5 align=center>Revision of invoices</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>state_cd</th>
+										 		<th>Goods/Services</th>
+										 		<th>Document Type</th>
+										 		<th>Differential Value</th>
+										 		<th>IGST Amt</th>
+										 		<th>CGST Amt</th>
+										 		<th>SGST Amt</th>
+										 		<th>CESS Amt</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.revsup.dt">
+										 		<td>{{gstr3Data.osup.revsup.state_cd}}</td>
+												<td>{{item.ty}}</td>
+												<td>{{item.docty}}</td>
+												<td>{{item.val}}</td>
+												<td>{{item.iamt	}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.csamt}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+									 
+									 <h5 align=center>Total Tax Liability on Outward supplies</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Month (to which invoice/debit note/credit note pertains)</th>
+										 		<th>Total value (Outward supply of Goods for the tax period)</th>
+										 		<th>IGST Amt</th>
+										 		<th>CGST Amt</th>
+										 		<th>SGST Amt</th>
+										 		<th>CESS Amt</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.osup.ttxliab.tottx_det">
+										 		
+												<td>{{item.ty}}</td>
+												<td>{{item.mon}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.iamt	}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.cess}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+									 	
+									</div>
+										<div id="gstr3_tab3" class="tab-pane table-responsive">
+											<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important"ssss>Inward Supplies</label></div>
+											 <h5 align=center>Inter-State supplies received</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>state_cd</th>
+										 		<th>Tax Rate</th>
+										 		<th>Taxable Value</th>
+										 		<th>IGST Amt</th>
+										 		<th>ITC of IGST available in the current month </th>
+										 		<th>CESS amount as per invoice</th>
+										 		<th>ITC of CESS available in the current month </th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.inter.in_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.state_cd}}</td>
+												<td>{{item.txrt}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.itc_i}}</td>
+												<td>{{item.cess}}</td>
+												<td>{{item.itc_cs}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 </table>
+										 <br/>
+										  <h5 align=center>Intra-State supplies received</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Tax Rate</th>
+										 		<th>Value (Intra-state Supplies received)</th>
+										 		<th>CGST  (Value of Inter-state Supplies received)</th>
+										 		<th>SGST  (Value of Inter-state Supplies received)</th>
+										 		<th>ITC on CGST (available for the payable on Value of Intra-state Supplies received) </th>
+										 		<th>ITC on SGST (available for the payable on Value of Intra-state Supplies received)</th>
+										 		<th>CESS (on Value of Inter-state Supplies received) </th>
+										 		<th>ITC of CESS available  for the payable (on Value of Intra-state Supplies received)</th>
+										 												 		
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.intra.intra_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.txrt}}</td>
+												<td>{{item.val}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.itc_c}}</td>
+												<td>{{item.itc_s}}</td>
+												<td>{{item.cess}}</td>
+												<td>{{item.itc_cs}}</td>
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+										  <h5 align=center>Imports</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Assessable value of Imports</th>
+										 		<th>IGST on imports</th>
+										 		<th>ITC on IGST available for IGST paid on Imports</th>
+										 		<th>CESS on Imports</th>
+										 		<th>ITC of CESS available for IGST paid on Imports </th>
+										 									 		
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.imp.imp_det" 	>
+										 		<td>{{item.ty}}</td>
+												<td>{{item.aval}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.itc_i}}</td>
+												<td>{{item.csamt}}</td>
+												<td>{{item.itc_cs}}</td>
+											
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+										   <h5 align=center>Revision of Invoices</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>state_cd</th>
+												<th>Goods/Services</th>
+										 		<th>Document Type</th>
+										 		<th>Differential value </th>
+										 		<th>IGST payable </th>
+										 		<th>CGST payable </th>
+										 		<th>CESS payable </th>
+										 		<th>SGST payable</th>
+										 		<th>ITC available in IGST</th>
+										 		<th>ITC available in CGST</th>
+										 		<th>ITC available in SGST</th>
+										 		<th>ITC available in CESS</th>
+										 									 		
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.rev_inv.dt" 	>
+										 		<td>{{gstr3Data.isup.rev_inv.state_cd}}</td>
+												<td>{{item.ty}}</td>
+												<td>{{item.docty}}</td>
+												<td>{{item.val}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.csamt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.tc_i}}</td>
+												<td>{{item.tc_c}}</td>
+												<td>{{item.tc_s}}</td>
+												<td>{{item.tc_cs}}</td>
+											
+										 	</tr>
+										 </tbody>
+										 </table>
+										  <br/>
+										   <h5 align=center>Total Tax liability on inward supplies on reverse charge</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Month (to which invoice/debit note/credit note pertains) </th>
+										 		<th>Total value (of Inward supply of Goods on which reverse charge is applicable) </th>
+										 		<th>CGST liability (on Total value of Inward supply of goods on which reverse charge is applicable)</th>
+										 		<th>SGST liability (on Total value of Inward supply of goods on which reverse charge is applicable)</th>
+										 		<th>IGST liability (on Total value of Inward supply of goods on which reverse charge is applicable) </th>
+										 		<th>Cess on total tax liab</th>
+										 				
+										 	</tr>
+										 	
+										 	</thead>
+											   <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.tx_liab.txliab_det" 	>
+										 		
+												<td>{{item.ty}}</td>
+												<td>{{item.mon}}</td>
+												<td>{{item.val}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.csamt}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										  <br/>
+										   <h5 align=center>ITC Reversal</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Document (for which rectification is done) </th>
+										 		<th>Differential value (on which tax is to be paid based on upward modification or to be reversed based on downward modification (but subject to confirmation of counter-party)) </th>
+										 		<th>Amount of ITC reversal of IGST </th>
+										 		<th> ITC reversed on IGST</th>
+										 		<th>Amount of ITC reversal of CGST  </th>
+										 		<th> ITC reversed on cgst</th>
+										 		<th>Cess Amount</th>
+										 		<th> ITC reversed on cess</th>
+										 		<th>Amount of ITC reversal of SGST </th>
+										 		<th> ITC reversed on sgst</th>
+										 				
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.itc_rev.itc_rvsl" 	>
+										 		
+												<td>{{item.ty}}</td>
+												<td>{{item.docty}}</td>
+												<td>{{item.val}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.iigst}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.icgst}}</td>
+												<td>{{item.csamt}}</td>
+												<td>{{item.icess}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.isgst}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										  <br/>
+										   <h5 align=center>Job Work</h5>
+										<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Output tax added/reduced due to  mismatched </th>
+										 		<th>IGST Amount</th>
+										 		<th>IGST Interest</th>
+										 		<th>CGST Amount </th>
+										 		<th> CGST Interest</th>
+										 		<th>SGST Amount  </th>
+										 		<th> SGST Interest</th>
+										 		<th>CESS Amount</th>
+										 		<th> CESS Interest</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.isup.jb_wrk.job_det" 	>
+										 		
+												<td>{{item.desc}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.i_int}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.c_int}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.s_int}}</td>
+												<td>{{item.csamt}}</td>
+												<td>{{item.cs_int}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										</div>
+										<div id="gstr3_tab4" class="tab-pane table-responsive">
+										<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important"> Total Tax Liability</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>Month (to which invoice/debit note/credit note pertains )</th>
+										 		<th>Total value (of Outward supply of Goods for the tax period)</th>
+										 		<th>Total CGST liability for the tax period </th>
+										 		<th> Total SGST liability for the tax period</th>
+										 		<th>Total IGST liability for the tax period  </th>
+										 		<th>Total CESS liability for the tax period</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.ttxl.ttltx_det" 	>
+										 		
+												<td>{{item.ty}}</td>
+												<td>{{item.mon}}</td>
+												<td>{{item.txval}}</td>
+												<td>{{item.camt}}</td>
+												<td>{{item.samt}}</td>
+												<td>{{item.iamt}}</td>
+												<td>{{item.csamt}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										</div>
+											<div id="gstr3_tab5" class="tab-pane table-responsive">
+											<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">TCS Credit</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>GSTIN of the Ecommerce</th>
+										 		<th>IGST Rate of TCS</th>
+										 		<th>IGST Tax Amnt of TCS</th>
+										 		<th>CGST Rate of TCS </th>
+										 		<th>CGST Tax Amnt of TCS</th>
+										 		<th>SGST Rate of TCS </th>
+										 		<th>SGST Tax Amnt of TCS</th>
+										 		<th>CESS Rate of TCS</th>
+										 		<th>CESS Tax Amnt of TCS</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.tcs_cr.tcs_det" 	>
+										 		
+												<td>{{item.gstin_ec}}</td>
+												<td>{{item.irt}}</td>
+												<td>{{item.itx}}</td>
+												<td>{{item.crt}}</td>
+												<td>{{item.ctx}}</td>
+												<td>{{item.srt}}</td>
+												<td>{{item.stx}}</td>
+												<td>{{item.csrt}}</td>
+												<td>{{item.cstx}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										</div>
+											<div id="gstr3_tab6" class="tab-pane table-responsive">
+												<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">TDS Credit</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>GSTIN of the TDS deducter</th>
+										 		<th>IGST Rate of TDS</th>
+										 		<th>IGST Tax Amnt of TDS</th>
+										 		<th>CGST Rate of TDS</th>
+										 		<th>CGST Tax Amnt of TDS</th>
+										 		<th>SGST Rate of TDS</th>
+										 		<th>SGST Tax Amnt of TDS</th>
+										 		<th>CESS Rate of TDS</th>
+										 		<th>CESS Tax Amnt of TDS</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody  >
+										 	<tr ng-repeat="item in gstr3Data.tds_cr.tds_det" 	>
+										 		
+												<td>{{item.gstin}}</td>
+												<td>{{item.irt}}</td>
+												<td>{{item.itx}}</td>
+												<td>{{item.crt}}</td>
+												<td>{{item.ctx}}</td>
+												<td>{{item.srt}}</td>
+												<td>{{item.stx}}</td>
+												<td>{{item.csrt}}</td>
+												<td>{{item.cstx}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										</div>
+										<div id="gstr3_tab7" class="tab-pane table-responsive">
+											<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">ITC Credit</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Goods/Services</th>
+										 		<th>IGST Rate </th>
+										 		<th>IGST Tax Amount </th>
+										 		<th>CGST Rate </th>
+										 		<th>CGST Tax Amount</th>
+										 		<th>SGST Rate </th>
+										 		<th>SGST Tax Amount</th>
+										 		<th>CESS Rate</th>
+										 		<th>CESS Tax Amount</th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody  >
+										 	<tr ng-repeat="item in gstr3Data.itc_cr.itc_det	" 	>
+										 		
+												<td>{{item.ty}}</td>
+												<td>{{item.irt}}</td>
+												<td>{{item.itx}}</td>
+												<td>{{item.crt}}</td>
+												<td>{{item.ctx}}</td>
+												<td>{{item.srt}}</td>
+												<td>{{item.stx}}</td>
+												<td>{{item.csrt}}</td>
+												<td>{{item.cstx}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										</div>
+										<div id="gstr3_tab8" class="tab-pane table-responsive">
+										<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">Tax Paid</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>IGST payable</th>
+										 		<th>CGST payable </th>
+										 		<th>SGST payable</th>
+										 		<th>CESS payable </th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody  >
+										 	<tr	>
+										 		
+												<td>{{gstr3Data.tpm.tx_pb_a.txpay.i_py}}</td>
+												<td>{{gstr3Data.tpm.tx_pb_a.txpay.c_py}}</td>
+												<td>{{gstr3Data.tpm.tx_pb_a.txpay.s_py}}</td>
+												<td>{{gstr3Data.tpm.tx_pb_a.txpay.cs_py}}</td>
+												
+										 	</tr>
+										 </tbody>
+										 </table>
+										 <br/>
+										   <h5 align=center>Paid By Cash</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Debit No</th>
+										 		<th>Igst paid</th>
+										 		<th>Cgst paid</th>
+										 		<th>Sgst paid  </th>
+										 		<th>Cess paid </th>
+										 		
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody>
+											 	<tr ng-repeat="item in gstr3Data.tpm.tx_pb_a.pdcash" 	>
+											 		<td>{{item.debitno}}</td>
+													<td>{{item.ipd}}</td>
+													<td>{{item.cpd}}</td>
+													<td>{{item.spd}}</td>
+													<td>{{item.cspd}}</td>
+											 	</tr>
+											 </tbody>
+										 </table>
+										  <br/>
+										   <h5 align=center>Paid by Credit - ITC</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Debit No</th>
+										 		<th>IGST paid using igst</th>
+										 		<th>IGST paid using Cgst</th>
+										 		<th>IGST paid using Sgst </th>
+										 		<th>CGST paid using igst</th>
+										 		<th>CGST paid using cgst</th>
+										 		<th>SGST paid using igst </th>
+										 		<th>SGST paid using sgst </th>
+										 		<th>Cess paid using cess</th>
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody>
+											 	<tr ng-repeat="item in gstr3Data.tpm.tx_pb_a.pdcr" 	>
+											 		<td>{{item.debitno}}</td>
+													<td>{{item.i_pdi}}</td>
+													<td>{{item.i_pdc}}</td>
+													<td>{{item.i_ds}}</td>
+													<td>{{item.c_pdi}}</td>
+													<td>{{item.c_pdc}}</td>
+													<td>{{item.s_pdi}}</td>
+													<td>{{item.s_pds}}</td>
+													<td>{{item.cs_pdcs}}</td>
+											 	</tr>
+											 </tbody>
+										 </table>
+										  <br/>
+										   <h5 align=center>Payable Details</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Interest payable in IGST head</th>
+										 		<th>Interest payable in CGST head</th>
+										 		<th>Interest payable in SGST head</th>
+										 		<th>Interest payable in CESS head </th>
+										 		<th>Late Fee payable in IGST head</th>
+										 		<th>Late Fee payable in CGST head</th>
+										 		<th>Late Fee payable in SGST head</th>
+										 		<th>Late Fee payable in CESS head</th>
+										 		<th>Others payable in IGST head</th>
+										 		<th>Others payable in CGST head</th>
+										 		<th>Others payable in SGST head</th>
+										 		<th>Others payable in CESS head</th>
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody>
+											 	<tr	>
+											 		<td>{{gstr3Data.tpm.tx_pb_b.py_det.i_int}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.c_int}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.s_int}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.cs_int}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.i_lfee}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.c_lfee}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.s_lfee}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.cs_lfee}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.i_ors}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.c_ors}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.s_ors}}</td>
+													<td>{{gstr3Data.tpm.tx_pb_b.py_det.cs_ors}}</td>
+												
+											 	</tr>
+											 </tbody>
+										 </table>
+										   <br/>
+										   <h5 align=center>Paid By Cash</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Debit No</th>
+										 		<th>Igst paid Interest</th>
+										 		<th>Cgst paid Interest</th>
+										 		<th>Sgst paid Interest </th>
+										 		<th>Cess paid Interest</th>
+										 		<th>Igst paid Late fee</th>
+										 		<th>Cgst paid Late fee</th>
+										 		<th>Sgst paid Late fee</th>
+										 		<th>Cess paid Late fee</th>
+										 		<th>Igst Others</th>
+										 		<th>Cgst Others</th>
+										 		<th>Sgst Others</th>
+										 		<th>Cess Others</th>
+										 	</tr>
+										 	
+										 	</thead>
+											<tbody>
+												<tr ng-repeat="item in gstr3Data.tpm.pdcash" 	>
+											 		<td>{{item.debitno}}</td>
+													<td>{{item.i_pdint}}</td>
+													<td>{{item.c_pdint}}</td>
+													<td>{{item.s_pdint}}</td>
+													<td>{{item.cs_pdint}}</td>
+													<td>{{item.i_pdlfee}}</td>
+													<td>{{item.c_pdlfee}}</td>
+													<td>{{item.s_pdlfee}}</td>
+													<td>{{item.cs_pdlfee}}</td>
+													<td>{{item.i_pdors}}</td>
+													<td>{{item.c_pdors}}</td>
+													<td>{{item.s_pdors}}</td>
+													<td>{{item.cs_pdors}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										</div>
+										<div id="gstr3_tab9" class="tab-pane table-responsive">
+										<div class="col-md-12">	<label class="gstr3Label"  style="font-weight: bolder!important">Refund Claim</label></div>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>GSTIN</th>
+										 		<th>Return period</th>
+										 		<th>Bank account</th>
+										 		<th>Debit Number</th>
+											 	</tr>
+										 	
+										 	</thead>
+											 <tbody>
+												<tr>
+											 		<td>{{gstr3Data.refclm.gstin}}</td>
+													<td>{{gstr3Data.refclm.ret_period}}</td>
+													<td>{{gstr3Data.refclm.bankacc}}</td>
+													<td>{{gstr3Data.refclm.debitno}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										 <br/>
+										    <h5 align=center>IGST Refund Claim Details</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Tax</th>
+										 		<th>Penality</th>
+										 		<th>Interest</th>
+										 		<th>Fees</th>
+										 		<th>Others</th>
+										 	
+										 	</tr>
+										 	
+										 	</thead>
+										 <tbody>
+												<tr>
+											 		<td>{{gstr3Data.refclm.i_rfclm.tax}}</td>
+													<td>{{gstr3Data.refclm.i_rfclm.pen}}</td>
+													<td>{{gstr3Data.refclm.i_rfclm.int}}</td>
+													<td>{{gstr3Data.refclm.i_rfclm.fee}}</td>
+													<td>{{gstr3Data.refclm.i_rfclm.oth}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										 <br/>
+										    <h5 align=center>CGST Refund Claim Details</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Tax</th>
+										 		<th>Penality</th>
+										 		<th>Interest</th>
+										 		<th>Fees</th>
+										 		<th>Others</th>
+										 	
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody>
+												<tr>
+											 		<td>{{gstr3Data.refclm.cgstrefclm.tax}}</td>
+													<td>{{gstr3Data.refclm.cgstrefclm.pen}}</td>
+													<td>{{gstr3Data.refclm.cgstrefclm.int}}</td>
+													<td>{{gstr3Data.refclm.cgstrefclm.fee}}</td>
+													<td>{{gstr3Data.refclm.cgstrefclm.oth}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										 	 <br/>
+										    <h5 align=center>SGST Refund Claim Details</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Tax</th>
+										 		<th>Penality</th>
+										 		<th>Interest</th>
+										 		<th>Fees</th>
+										 		<th>Others</th>
+										 	
+										 	</tr>
+										 	
+										 	</thead>
+											  <tbody>
+												<tr>
+											 		<td>{{gstr3Data.refclm.sgstrefclm.tax}}</td>
+													<td>{{gstr3Data.refclm.sgstrefclm.pen}}</td>
+													<td>{{gstr3Data.refclm.sgstrefclm.int}}</td>
+													<td>{{gstr3Data.refclm.sgstrefclm.fee}}</td>
+													<td>{{gstr3Data.refclm.sgstrefclm.oth}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										 	 <br/>
+										    <h5 align=center>CESS Refund Claim Details</h5>
+										   		<table class="table  table-bordered table-hover" id="table1"> 
+										   <thead>
+										 	    <tr class="font14 table_th1">
+										 		<th>Tax</th>
+										 		<th>Penality</th>
+										 		<th>Interest</th>
+										 		<th>Fees</th>
+										 		<th>Others</th>
+										 	
+										 	</tr>
+										 	
+										 	</thead>
+											 <tbody>
+												<tr>
+											 		<td>{{gstr3Data.refclm.cessrefclm.tax}}</td>
+													<td>{{gstr3Data.refclm.cessrefclm.pen}}</td>
+													<td>{{gstr3Data.refclm.cessrefclm.int}}</td>
+													<td>{{gstr3Data.refclm.cessrefclm.fee}}</td>
+													<td>{{gstr3Data.refclm.cessrefclm.oth}}</td>
+											 	</tr>
+												</tbody>
+										 </table>
+										</div>
+									</div>
+								 </div>
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		  </div>
+		 </div>
+		
+	</section>
+
+</div>
+<script>
+
+$(function() {
+					$(".page-link").attr("target","_self");
+					$(".page-link").attr("data-toggle","tab");
+					
+					$('#pagination-gstr3').pagination({
+						items: 9,
+						itemsOnPage: 1,
+						displayedPages:5,
+						currentPage: 1,
+						hrefTextPrefix: "#gstr3_tab",
+						cssStyle: 'light-theme',
+						href: false,
+						onPageClick: function(){
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							/* if($("#Tab1").hasClass("active")){$("#tab_label").text("(5) Taxable outward supplies to a registered person")}
+							else if($("#Tab2").hasClass("active")){$("#tab_label").text("(5A) Amendments to details of Outward Supplies to a registered person of earlier tax periods")} */
+						}	
+
+					});
+					$(".page-link").attr("target","_self");
+					$(".page-link").attr("data-toggle","tab");
+					
+					
+	});
+</script>

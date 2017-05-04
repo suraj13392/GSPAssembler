@@ -1,0 +1,990 @@
+<div ng-controller="gstr2Summary as ctrl">
+<section class="subpage-header1"  class="cause-section" data-anchor="sect1"  >
+              <div class="container-fluid ">
+                     <div class="col-md-12" id="gstr1SummaryPanel">
+                           <div class="panel panel-default gstrPanel" >
+                                  <div class="panel-heading myPanelHeading" id="panelText">GSTR2 Summary</div>                                                       
+                           <div class="panel-body">
+                           <form class="input_height form-horizontal" role="form">
+                                  
+                                         <div class="form-group col-md-6">
+                                         <div class="input-group">
+                                                                                    <span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+                                                                                    <input id="GSTN_id" type="text" class="form-control" aria-label="Text input with checkbox" ng-model="summaryData.gstin" readonly="readonly">
+                                                                     </div>
+                                         <!--   <label for="triggerSystem" class="col-md-4 control-label font14"  >GSTIN</label>
+                                                                           <div class="col-md-8" >
+                                                                                  <input type="text" id="GSTN_id" class="form-control" ng-model="summaryData.gstin" readonly="readonly">
+                                                                           </div> -->
+                                         </div>
+                                         <div class="form-group col-md-6">
+                                                <div class="input-group">
+                                                                                    <span class="input-group-addon"><span class="astr">*</span>Return Period</span>
+                                                                                    <input id="returnPeriod" type="text" class="form-control" aria-label="Text input with checkbox" ng-model="summaryData.ret_period" readonly="readonly"> 
+                                                                     </div>
+                                         <!--   <label for="triggerSystem" class="col-md-4 control-label font14"  >Return Period</label>
+                                                                           <div class="col-md-8" >
+                                                                                  <input type="text" id="returnPeriod" class="form-control" ng-model="summaryData.ret_period" readonly="readonly">
+                                                                           </div> -->
+                                         </div>
+                                  
+                                         <div class="form-group col-md-6">
+                                         <div class="input-group">
+                                                                                    <span class="input-group-addon"><span class="astr">*</span>CheckSum Value</span>
+                                                                                    <input id="checkSum" type="text" class="form-control" aria-label="Text input with checkbox" ng-model="summaryData.chksum" readonly="readonly"> 
+                                                                     </div>
+                                                <!-- <label for="triggerSystem" class="col-md-4 control-label font14"  >CheckSum Value</label>
+                                                                           <div class="col-md-8" >
+                                                                                  <input type="text" id="checkSum" class="form-control" ng-model="summaryData.chksum" readonly="readonly">
+                                                                           </div> -->
+                                         </div>
+                                         
+                                         <div class="form-group col-md-6">
+                                                       <button class="btn btn-primary my-btn-style"   ng-click = "getGstr2Summary();">GET Summary</button>
+                                         </div>
+                                  
+                                  </form>
+                           
+                           
+                           <div class="col-md-12"></div>
+                           <div id="paginationSum2" class="col-md-6"></div> 
+                                  
+                     <div class="row">
+                           <div class="col-md-12" id="form_tableSummary" style="padding-left: 0px;padding-right: 0px;display: none">
+                           <div id="menuContent_1" class="tab-content">
+                                  <!-- Start : B2B Section Summary -->
+                                  <div class="tab-pane active table-responsive" id="Tab1" style="background: #eee;">
+                                        <div class="panel panel-primary">
+                                               <div class="panel panel-heading">       
+                                               <label class="font14" id="lab1">B2B</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                                
+                                                <!-- B2B Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subb2b"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{b2bData.sec_nm}}</td>
+                                                             <td>{{b2bData.chksum}}</td>
+                                                             <td>{{b2bData.rc}}</td>
+                                                             <td>{{b2bData.ttl_val}}</td>
+                                                             <td>{{b2bData.ttl_txpd_igst}}</td>
+                                                             <td>{{b2bData.ttl_txpd_sgst}}</td>
+                                                             <td>{{b2bData.ttl_txpd_cgst}}</td>
+                                                             <td>{{b2bData.ttl_txpd_cess}}</td>
+                                                             <td>{{b2bData.ttl_itcavld_igst}}</td>
+                                                             <td>{{b2bData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{b2bData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{b2bData.ttl_itcavld_cess}}</td>                                                             
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2B2b').css('display','block');})()"  target="_self">View Details</a></td>                                                        
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2B2b" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Supplier TIN for B2B</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in b2bData.cpty_sum"> <!-- to do -->
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div>
+                                               </div>
+                                  </div>
+                                  <!-- End : B2B Section Summary -->
+                                  
+                                    <!-- Start : B2BA Section Summary -->                     
+                                    <div class="tab-pane  table-responsive" id="Tab2" style="background: #eee;">
+                                         <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">B2BA</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                                                                               
+                                                <!-- B2BA Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subb2ba"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{b2baData.sec_nm}}</td>
+                                                             <td>{{b2baData.chksum}}</td>
+                                                             <td>{{b2baData.rc}}</td>
+                                                             <td>{{b2baData.ttl_val}}</td>
+                                                             <td>{{b2baData.ttl_txpd_igst}}</td>
+                                                             <td>{{b2baData.ttl_txpd_sgst}}</td>
+                                                             <td>{{b2baData.ttl_txpd_cgst}}</td>
+                                                             <td>{{b2baData.ttl_txpd_cess}}</td>
+                                                              <td>{{b2baData.ttl_itcavld_igst}}</td>
+                                                              <td>{{b2baData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{b2baData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{b2baData.ttl_itcavld_cess}}</td>                                                         
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2B2ba').css('display','block');})()"  target="_self">View Details</a></td>                                                       
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2B2ba" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Supplier TIN for B2BA</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in b2baData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div>
+                                               </div>
+                                  </div>
+                                  <!-- End : B2BA Section Summary -->
+                                  
+                                   <!-- Start : CDN Section Summary -->
+                                    <div class="tab-pane  table-responsive" id="Tab3" style="background: #eee;">
+                                         <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">CDN</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <!-- CDN Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subcdn"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{cdnData.sec_nm}}</td>
+                                                             <td>{{cdnData.chksum}}</td>
+                                                             <td>{{cdnData.rc}}</td>
+                                                             <td>{{cdnData.ttl_val}}</td>
+                                                             <td>{{cdnData.ttl_txpd_igst}}</td>
+                                                             <td>{{cdnData.ttl_txpd_sgst}}</td>
+                                                             <td>{{cdnData.ttl_txpd_cgst}}</td>
+                                                             <td>{{cdnData.ttl_txpd_cess}}</td>
+                                                             <td>{{cdnData.ttl_itcavld_igst}}</td>
+                                                             <td>{{cdnData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{cdnData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{cdnData.ttl_itcavld_cess}}</td>                                                             
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2cdn').css('display','block');})()"  target="_self">View Details</a></td>                                                        
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2cdn" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Supplier TIN for CDN</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in cdnData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div></div>
+                                  </div>
+                                  <!-- End : CDN Section Summary -->
+                                  
+                                   <!-- Start : CDNA Section Summary -->
+                                    <div class="tab-pane  table-responsive" id="Tab4" style="background: #eee;">
+                                    <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">CDNA</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <!-- CDNA Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subcdna"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{cdnaData.sec_nm}}</td>
+                                                             <td>{{cdnaData.chksum}}</td>
+                                                             <td>{{cdnaData.rc}}</td>
+                                                             <td>{{cdnaData.ttl_val}}</td>
+                                                             <td>{{cdnaData.ttl_txpd_igst}}</td>
+                                                             <td>{{cdnaData.ttl_txpd_sgst}}</td>
+                                                             <td>{{cdnaData.ttl_txpd_cgst}}</td>
+                                                             <td>{{cdnaData.ttl_txpd_cess}}</td>
+                                                              <td>{{cdnaData.ttl_itcavld_igst}}</td>
+                                                              <td>{{cdnaData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{cdnaData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{cdnaData.ttl_itcavld_cess}}</td>                                                         
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2cdna').css('display','block');})()"  target="_self">View Details</a></td>                                                       
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2cdna" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Supplier TIN for CDNA</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in cdnaData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div></div>
+                                  </div>
+                                    <!-- End : CDNA Section Summary -->
+                                  
+                                    <!-- Start : ISD Section Summary -->
+                                  <div class="tab-pane  table-responsive" id="Tab5" style="background: #eee;">
+                                  <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">ISD</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <!-- ISD Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subisd"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{isdData.sec_nm}}</td>
+                                                             <td>{{isdData.chksum}}</td>
+                                                             <td>{{isdData.rc}}</td>
+                                                             <td>{{isdData.ttl_val}}</td>
+                                                             <td>{{isdData.ttl_txpd_igst}}</td>
+                                                             <td>{{isdData.ttl_txpd_sgst}}</td>
+                                                             <td>{{isdData.ttl_txpd_cgst}}</td>
+                                                             <td>{{isdData.ttl_txpd_cess}}</td>
+                                                             <td>{{isdData.ttl_itcavld_igst}}</td>
+                                                             <td>{{isdData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{isdData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{isdData.ttl_itcavld_cess}}</td>                                                             
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2isd').css('display','block');})()"  target="_self">View Details</a></td>                                                        
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2isd" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>ISD TIN for ISD</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in isdData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div></div>
+                                  </div>
+                                    <!-- End : ISD Section Summary -->
+                                  
+                                    <!-- Start  : TDS Section Summary -->
+                                    <div class="tab-pane  table-responsive" id="Tab6" style="background: #eee;">
+                                    <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">TDS</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <!-- TDS Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subtds"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{tdsData.sec_nm}}</td>
+                                                             <td>{{tdsData.chksum}}</td>
+                                                             <td>{{tdsData.rc}}</td>
+                                                             <td>{{tdsData.ttl_val}}</td>
+                                                             <td>{{tdsData.ttl_txpd_igst}}</td>
+                                                             <td>{{tdsData.ttl_txpd_sgst}}</td>
+                                                             <td>{{tdsData.ttl_txpd_cgst}}</td>
+                                                             <td>{{tdsData.ttl_txpd_cess}}</td>
+                                                             <td>{{tdsData.ttl_itcavld_igst}}</td>
+                                                             <td>{{tdsData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{tdsData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{tdsData.ttl_itcavld_cess}}</td>                                                             
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2tds').css('display','block');})()"  target="_self">View Details</a></td>                                                        
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2tds" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Deductor TIN for TDS</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in tdsData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div></div>
+                                  </div>
+                                  <!-- End : TDS Section Summary -->
+                                  
+                                   <!-- Start : TCS Section Summary -->
+                                    <div class="tab-pane  table-responsive" id="Tab7" style="background: #eee;">
+                                    <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">TCS</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <!-- TCS Section Summary --> 
+                                                <table class="table  table-bordered table-hover" id="subtcs"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             <th>Counter Party Summary</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr>
+                                                             <td>{{tcsData.sec_nm}}</td>
+                                                             <td>{{tcsData.chksum}}</td>
+                                                             <td>{{tcsData.rc}}</td>
+                                                             <td>{{tcsData.ttl_val}}</td>
+                                                             <td>{{tcsData.ttl_txpd_igst}}</td>
+                                                             <td>{{tcsData.ttl_txpd_sgst}}</td>
+                                                             <td>{{tcsData.ttl_txpd_cgst}}</td>
+                                                             <td>{{tcsData.ttl_txpd_cess}}</td>
+                                                             <td>{{tcsData.ttl_itcavld_igst}}</td>
+                                                             <td>{{tcsData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{tcsData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{tcsData.ttl_itcavld_cess}}</td>                                                             
+                                                              <td><a  href="" onclick="(function(){ $('#subgstr2tcs').css('display','block');})()"  target="_self">View Details</a></td>                                                        
+                                                        </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                <!-- Counter Party Summary -->
+                                               <table class="table  table-bordered table-hover" id="subgstr2tcs" style="display:none"> 
+                                                        <thead>
+                                                       <tr>
+                                                             <th>Ecommerce Portal TIN for TCS</th>
+                                                             <th>Invoice Check sum value</th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                             </tr>
+                                                       </thead>
+                                                       <tbody>
+                                                       <tr ng-repeat="items in tcsData.cpty_sum">
+                                                             <td>{{items.ctin}}</td>
+                                                             <td>{{items.chksum}}</td>
+                                                             <td>{{items.rc}}</td>
+                                                             <td>{{items.ttl_val}}</td>
+                                                             <td>{{items.ttl_txpd_igst}}</td>
+                                                             <td>{{items.ttl_txpd_sgst}}</td>
+                                                             <td>{{items.ttl_txpd_cgst}}</td>
+                                                             <td>{{items.ttl_txpd_cess}}</td>
+                                                             <td>{{items.ttl_itcavld_igst}}</td>
+                                                             <td>{{items.ttl_itcavld_sgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cgst}}</td>
+                                                             <td>{{items.ttl_itcavld_cess}}</td>
+                                                       </tr>
+                                                       </tbody>
+                                               </table>
+                                               
+                                                </div></div>
+                                         </div>
+                                         <!-- End : TCS Section Summary -->
+                                         
+                                          <!-- Start : IMPG Section Summary -->
+                                         <div class="tab-pane  table-responsive" id="Tab8" style="background: #eee;">
+                                                 <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">IMPG</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <table class="table  table-bordered table-hover"> 
+                                                        <thead>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                       </thead>
+                                                       <tbody>
+                                                             <tr>
+                                                             <td>{{impgData.sec_nm}}</td>
+                                                             <td>{{impgData.chksum}}</td>
+                                                             <td>{{impgData.rc}}</td>
+                                                             <td>{{impgData.ttl_val}}</td>
+                                                             <td>{{impgData.ttl_txpd_igst}}</td>
+                                                             <td>{{impgData.ttl_txpd_sgst}}</td>
+                                                             <td>{{impgData.ttl_txpd_cgst}}</td>
+                                                             <td>{{impgData.ttl_txpd_cess}}</td>
+                                                              <td>{{impgData.ttl_itcavld_igst}}</td>
+                                                              <td>{{impgData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{impgData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{impgData.ttl_itcavld_cess}}</td>
+                                                             </tr>
+                                                       </tbody>
+                                               </table>
+                                               </div></div>
+                                         </div>
+                                         <!-- End : IMPG Section Summary -->
+                                         
+                                           <!-- Start : IMPGA Section Summary -->
+                                         <div class="tab-pane  table-responsive" id="Tab9" style="background: #eee;">
+                                                 <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">IMPGA</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <table class="table  table-bordered table-hover"> 
+                                                        <thead>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                       </thead>
+                                                       <tbody>
+                                                             <tr>
+                                                             <td>{{impgaData.sec_nm}}</td>
+                                                             <td>{{impgaData.chksum}}</td>
+                                                             <td>{{impgaData.rc}}</td>
+                                                             <td>{{impgaData.ttl_val}}</td>
+                                                             <td>{{impgaData.ttl_txpd_igst}}</td>
+                                                             <td>{{impgaData.ttl_txpd_sgst}}</td>
+                                                             <td>{{impgaData.ttl_txpd_cgst}}</td>
+                                                             <td>{{impgaData.ttl_txpd_cess}}</td>
+                                                              <td>{{impgaData.ttl_itcavld_igst}}</td>
+                                                              <td>{{impgaData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{impgaData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{impgaData.ttl_itcavld_cess}}</td>
+                                                             </tr>
+                                                       </tbody>
+                                               </table>
+                                               </div></div>
+                                         </div>
+                                         <!-- End : IMPGA Section Summary -->
+                                         
+                                          <!-- Start : IMPS Section Summary -->
+                                         <div class="tab-pane  table-responsive" id="Tab10" style="background: #eee;">
+                                                 <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">IMPS</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <table class="table  table-bordered table-hover"> 
+                                                        <thead>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                       </thead>
+                                                       <tbody>
+                                                             <tr>
+                                                             <td>{{impsData.sec_nm}}</td>
+                                                             <td>{{impsData.chksum}}</td>
+                                                             <td>{{impsData.rc}}</td>
+                                                             <td>{{impsData.ttl_val}}</td>
+                                                             <td>{{impsData.ttl_txpd_igst}}</td>
+                                                             <td>{{impsData.ttl_txpd_sgst}}</td>
+                                                             <td>{{impsData.ttl_txpd_cgst}}</td>
+                                                             <td>{{impsData.ttl_txpd_cess}}</td>
+                                                              <td>{{impsData.ttl_itcavld_igst}}</td>
+                                                              <td>{{impsData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{impsData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{impsData.ttl_itcavld_cess}}</td>
+                                                             </tr>
+                                                       </tbody>
+                                               </table>
+                                               </div></div>
+                                         </div>
+                                         <!-- Start : IMPS Section Summary -->
+                                         
+                                          <!-- Start : IMPSA Section Summary -->
+                                         <div class="tab-pane  table-responsive" id="Tab11" style="background: #eee;">
+                                                 <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">IMPSA</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <table class="table  table-bordered table-hover"> 
+                                                        <thead>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                       </thead>
+                                                       <tbody>
+                                                             <tr>
+                                                             <td>{{impsaData.sec_nm}}</td>
+                                                             <td>{{impsaData.chksum}}</td>
+                                                             <td>{{impsaData.rc}}</td>
+                                                             <td>{{impsaData.ttl_val}}</td>
+                                                             <td>{{impsaData.ttl_txpd_igst}}</td>
+                                                             <td>{{impsaData.ttl_txpd_sgst}}</td>
+                                                             <td>{{impsaData.ttl_txpd_cgst}}</td>
+                                                             <td>{{impsaData.ttl_txpd_cess}}</td>
+                                                              <td>{{impsaData.ttl_itcavld_igst}}</td>
+                                                              <td>{{impsaData.ttl_itcavld_sgst}}</td>
+                                                              <td>{{impsaData.ttl_itcavld_cgst}}</td>
+                                                              <td>{{impsaData.ttl_itcavld_cess}}</td>
+                                                             </tr>
+                                                       </tbody>
+                                               </table>
+                                               </div></div>
+                                         </div>
+                                         <!-- End : IMPSA Section Summary -->
+                                         
+                                          <!-- Start : NIL Section Summary -->
+                                         <div class="tab-pane  table-responsive" id="Tab12" style="background: #eee;">
+                                                 <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">NIL</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                               
+                                                <table class="table  table-bordered table-hover"> 
+                                                        <thead>
+                                                             <th>Return Section</th>
+                                                             <th>Invoice Check sum value </th>
+                                                             <th>Record Count</th>
+                                                             <th>Total Taxible Value</th>
+                                                             <th>Total Tax paid IGST</th>
+                                                             <th>Total Tax paid SGST</th>
+                                                             <th>Total Tax paid CGST</th>
+                                                             <th>Total Tax paid CESS</th>
+                                                             <th>ITC Availed IGST</th>
+                                                             <th>ITC Availed SGST</th>
+                                                             <th>ITC Availed CGST</th>
+                                                             <th>ITC Availed CESS</th>
+                                                       </thead>
+                                                       <tbody>
+                                                             <tr>
+                                                             <td>{{nilData.sec_nm}}</td>
+                                                             <td>{{nilData.chksum}}</td>
+                                                             <td>{{nilData.rc}}</td>
+                                                             <td>{{nilData.ttl_val}}</td>
+                                                             <td>{{nilData.ttl_txpd_igst}}</td>
+                                                             <td>{{nilData.ttl_txpd_sgst}}</td>
+                                                             <td>{{nilData.ttl_txpd_cgst}}</td>
+                                                             <td>{{nilData.ttl_txpd_cess}}</td>
+                                                             <td>{{nilData.ttl_itcavld_igst}}</td>
+                                                             <td>{{nilData.ttl_itcavld_sgst}}</td>
+                                                             <td>{{nilData.ttl_itcavld_cgst}}</td>
+                                                             <td>{{nilData.ttl_itcavld_cess}}</td>
+                                                             </tr>
+                                                       </tbody>
+                                               </table>
+                                               </div></div>
+                                         </div>
+                                         <!-- End : NIL Section Summary -->
+                                  
+                                    <div class="tab-pane  table-responsive" id="Tab13" style="background: #eee;">
+                                    <div class="panel panel-primary">
+                                               <div class="panel panel-heading">
+                                               <label class="font14" id="lab2">Declaration</label>
+                                               </div>
+                                               <div class="panel panel-body">
+                                                
+                                                <label class="font14" style="font-weight:lighter;">
+                                                <input type="checkbox">
+                                                      &nbsp;&nbsp; I hereby declare that the information given in this statement is true, correct and complete in every respect. I
+                                                       further declare that I have the legal authority to submit this statement.
+                                                </label>
+                                                
+                                                <button class="btn btn-primary my-btn-style" data-toggle="modal"
+						data-target="#digital_modal">SUBMIT WITH DSC</button>
+                                    </div>
+                           </div>
+                     </div>
+                     </div>
+                           
+                           
+                     </div>
+                     </div>
+              </div>
+</section>
+	<div class="modal" id="digital_modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="modal_header_label"
+						style="font-weight: lighter; font-size: 15px; position: absolute; left: 40%; top: 2%;color: #000000;">Digital Signature</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5"></div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<img src="../img/logo.png"/>
+						</div>
+						<br/>
+						
+						<div class="col-md-12 col-sm-12 col-xs-12" style="    margin-top: 14px;">
+							<label>Select Certificate</label>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+							<table class="table  table-bordered table-hover">
+								<thead>
+								<th>Common Name</th>
+								<th>Issuer Name</th>
+								<th>Serial No</th>
+								<th>Expiry Date</th>
+								</thead>
+								<tbody>
+								<tr>
+									<td>Class3 Oraganization..</td>	
+									<td>e-Mudhra</td>	
+									<td>1425986</td>
+									<td>22-12-2017</td>	
+								</tr>
+								<tr>
+									<td>Activity Oraganization</td>	
+									<td>Mudhra</td>	
+									<td>3541244</td>
+									<td>23-5-2017</td>	
+								</tr>
+								
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="col-md-8"></div>
+						<div class="col-md-2" style="margin-right: -35px;">
+							<button class="btn btn-primary">Sign</button>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+</div>
+
+<script>
+$(function() {
+       $(".page-link").attr("target","_self");
+       $(".page-link").attr("data-toggle","tab");
+       
+       $('#paginationSum2').pagination({
+              items: 13,
+              itemsOnPage: 1,
+              displayedPages:5,
+              currentPage: 1,
+              hrefTextPrefix: "#Tab",
+              cssStyle: 'light-theme',
+              href: false,
+              onPageClick: function(){
+                     $(".page-link").attr("target","_self");
+                     $(".page-link").attr("data-toggle","tab");
+              }      
+
+       });
+       $(".page-link").attr("target","_self");
+       $(".page-link").attr("data-toggle","tab");
+       
+       
+});
+</script>
+                           

@@ -1,0 +1,864 @@
+<div ng-controller="gstr1Summary as ctrl">
+ <section class="subpage-header1"  class="cause-section" data-anchor="sect1"  >
+		<div class="container-fluid ">
+			<div class="col-md-12" id="gstr1SummaryPanel">
+				<div class="panel panel-default gstrPanel" >
+					<div class="panel-heading myPanelHeading" id="panelText">GSTR1 Summary</div>									
+				<div class="panel-body">
+				<form class="input_height form-horizontal" role="form">
+					
+						<div class="form-group col-md-6">
+						<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+												  <input id="GSTN_id" type="text" class="form-control" aria-label="Text input with checkbox">
+										</div>
+						<!-- 	<label for="triggerSystem" class="col-md-4 control-label font14"  >GSTIN</label>
+											<div class="col-md-8" >
+												 <input type="text" id="GSTN_id" class="form-control" ng-model="summaryData.gstin" readonly="readonly">
+											</div> -->
+						</div>
+						<div class="form-group col-md-6">
+							<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>Return Period</span>
+												  <input id="returnPeriod" type="text" class="form-control" aria-label="Text input with checkbox"  > 
+										</div>
+						<!-- 	<label for="triggerSystem" class="col-md-4 control-label font14"  >Return Period</label>
+											<div class="col-md-8" >
+												 <input type="text" id="returnPeriod" class="form-control" ng-model="summaryData.ret_period" readonly="readonly">
+											</div> -->
+						</div>
+					
+						<div class="form-group col-md-6">
+						<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>CheckSum</span>
+												  <input id="checkSum" type="text" class="form-control" aria-label="Text input with checkbox"> 
+										</div>
+							<!-- <label for="triggerSystem" class="col-md-4 control-label font14"  >CheckSum Value</label>
+											<div class="col-md-8" >
+												 <input type="text" id="checkSum" class="form-control" ng-model="summaryData.chksum" readonly="readonly">
+											</div> -->
+						</div>
+						
+						<div class="form-group col-md-6">
+								 <button class="btn btn-primary my-btn-style"   ng-click = "getSummary();">GET Summary</button>
+						</div>
+					
+					</form>
+				
+				
+				<div class="col-md-12"></div>
+				<div id="paginationSum" class="col-md-6"></div> 
+					
+			<div class="row">
+				<div class="col-md-12" id="form_tableSummary" style="padding-left: 0px;padding-right: 0px;display: none">
+				<div id="menuContent_1" class="tab-content">
+					<div class="tab-pane active table-responsive" id="Tab1" style="background: #eee;">
+					 	<div class="panel panel-primary">
+					 		<div class="panel panel-heading">	
+					 		<label class="font14" id="lab1">B2B</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 <tr>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>Counter Party Summary</th>
+					 			 	</tr>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{b2bData.sec_nm}}</td>
+					 			 	<td>{{b2bData.chksum}}</td>
+					 			 	<td>{{b2bData.ttl_rec}}</td>
+					 			 	<td>{{b2bData.ttl_val}}</td>
+					 			 	<td>{{b2bData.ttl_igst}}</td>
+					 			 	<td>{{b2bData.ttl_cgst}}</td>
+					 			 	<td>{{b2bData.ttl_sgst}}</td>
+					 			 	<td>{{b2bData.ttl_cess}}</td>
+					 			 	<td>{{b2bData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subb2b').css('display','block');})()"  target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		 
+					 		<table class="table  table-bordered table-hover" id="subb2b" style="display:none"> 
+					 			 <thead>
+					 			 <tr>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	</tr>
+					 			 </thead>
+					 			 <tbody>
+					 			 <tr ng-repeat="items in b2bData.cpty_sum">
+					 			 	<td>{{items.ctin}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div>
+					 		</div>
+					 </div>
+					 
+					  <div class="tab-pane  table-responsive" id="Tab2" style="background: #eee;">
+					  	<div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">B2BA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>Counter Party Summary</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{b2baData.sec_nm}}</td>
+					 			 	<td>{{b2baData.chksum}}</td>
+					 			 	<td>{{b2baData.ttl_rec}}</td>
+					 			 	<td>{{b2baData.ttl_val}}</td>
+					 			 	<td>{{b2baData.ttl_igst}}</td>
+					 			 	<td>{{b2baData.ttl_cgst}}</td>
+					 			 	<td>{{b2baData.ttl_sgst}}</td>
+					 			 	<td>{{b2baData.ttl_cess}}</td>
+					 			 	<td>{{b2baData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subb2ba').css('display','block');})()" target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		
+					 		
+					 		<table class="table  table-bordered table-hover" id="subb2ba" style="display:none"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr ng-repeat="items in b2baData.cpty_sum">
+					 			 	<td>{{items.ctin}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div>
+					 		</div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab3" style="background: #eee;">
+					  	<div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">CDNR</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>Counter Party Summary</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 <tr>
+					 			 	<td>{{cdnrData.sec_nm}}</td>
+					 			 	<td>{{cdnrData.chksum}}</td>
+					 			 	<td>{{cdnrData.ttl_rec}}</td>
+					 			 	<td>{{cdnrData.ttl_val}}</td>
+					 			 	<td>{{cdnrData.ttl_igst}}</td>
+					 			 	<td>{{cdnrData.ttl_cgst}}</td>
+					 			 	<td>{{cdnrData.ttl_sgst}}</td>
+					 			 	<td>{{cdnrData.ttl_cess}}</td>
+					 			 	<td>{{cdnrData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subcdnr').css('display','block');})()" target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		
+					 		<table class="table  table-bordered table-hover" id="subcdnr" style="display:none"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr ng-repeat="items in cdnrData.cpty_sum">
+					 			 	<td>{{items.ctin}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab4" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">CDNRA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>Counter Party Summary</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{cdnraData.sec_nm}}</td>
+					 			 	<td>{{cdnraData.chksum}}</td>
+					 			 	<td>{{cdnraData.ttl_rec}}</td>
+					 			 	<td>{{cdnraData.ttl_val}}</td>
+					 			 	<td>{{cdnraData.ttl_igst}}</td>
+					 			 	<td>{{cdnraData.ttl_cgst}}</td>
+					 			 	<td>{{cdnraData.ttl_sgst}}</td>
+					 			 	<td>{{cdnraData.ttl_cess}}</td>
+					 			 	<td>{{cdnraData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subcdnra').css('display','block');})()" target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		
+					 		<table class="table  table-bordered table-hover" id="subcdnra" style="display:none"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr ng-repeat="items in cdnraData.cpty_sum">
+					 			 	<td>{{items.ctin}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					 <div class="tab-pane  table-responsive" id="Tab5" style="background: #eee;">
+					 <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">B2CL</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>State Code Summary</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{b2clData.sec_nm}}</td>
+					 			 	<td>{{b2clData.chksum}}</td>
+					 			 	<td>{{b2clData.ttl_rec}}</td>
+					 			 	<td>{{b2clData.ttl_val}}</td>
+					 			 	<td>{{b2clData.ttl_igst}}</td>
+					 			 	<td>{{b2clData.ttl_cgst}}</td>
+					 			 	<td>{{b2clData.ttl_sgst}}</td>
+					 			 	<td>{{b2clData.ttl_cess}}</td>
+					 			 	<td>{{b2clData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subb2cl').css('display','block');})()" target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		
+					 		<table class="table  table-bordered table-hover" id="subb2cl" style="display:none"> 
+					 			 <thead>
+					 			 	<th>State Code</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr ng-repeat="items in b2clData.cpty_sum">
+					 			 	<td>{{items.state_cd}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab6" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">B2CLA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	<th>State Code Summary</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{b2clsData.sec_nm}}</td>
+					 			 	<td>{{b2clsData.chksum}}</td>
+					 			 	<td>{{b2clsData.ttl_rec}}</td>
+					 			 	<td>{{b2clsData.ttl_val}}</td>
+					 			 	<td>{{b2clsData.ttl_igst}}</td>
+					 			 	<td>{{b2clsData.ttl_cgst}}</td>
+					 			 	<td>{{b2clsData.ttl_sgst}}</td>
+					 			 	<td>{{b2clsData.ttl_cess}}</td>
+					 			 	<td>{{b2clsData.ttl_tax}}</td>
+					 			 	<td><a  href="" onclick="(function(){ $('#subb2cls').css('display','block');})()" target="_self">View Details</a></td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		
+					 		<table class="table  table-bordered table-hover" id="subb2cls" style="display:none"> 
+					 			 <thead>
+					 			 	<th>State Code</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 	
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr ng-repeat="items in b2clsData.cpty_sum">
+					 			 	<td>{{items.state_cd}}</td>
+					 			 	<td>{{items.chksum}}</td>
+					 			 	<td>{{items.ttl_rec}}</td>
+					 			 	<td>{{items.ttl_val}}</td>
+					 			 	<td>{{items.ttl_igst}}</td>
+					 			 	<td>{{items.ttl_cgst}}</td>
+					 			 	<td>{{items.ttl_sgst}}</td>
+					 			 	<td>{{items.ttl_cess}}</td>
+					 			 	<td>{{items.ttl_tax}}</td>
+					 			 </tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab7" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">EXP</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 <tr>
+					 			 	<td>{{expData.sec_nm}}</td>
+					 			 	<td>{{expData.chksum}}</td>
+					 			 	<td>{{expData.ttl_rec}}</td>
+					 			 	<td>{{expData.ttl_val}}</td>
+					 			 	<td>{{expData.ttl_igst}}</td>
+					 			 	<td>{{expData.ttl_cgst}}</td>
+					 			 	<td>{{expData.ttl_sgst}}</td>
+					 			 	<td>{{expData.ttl_cess}}</td>
+					 			 	<td>{{expData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					 	  <div class="tab-pane  table-responsive" id="Tab8" style="background: #eee;">
+					 	  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">EXPA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 	
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			  <tr>
+					 			 	<td>{{expaData.sec_nm}}</td>
+					 			 	<td>{{expaData.chksum}}</td>
+					 			 	<td>{{expaData.ttl_rec}}</td>
+					 			 	<td>{{expaData.ttl_val}}</td>
+					 			 	<td>{{expaData.ttl_igst}}</td>
+					 			 	<td>{{expaData.ttl_cgst}}</td>
+					 			 	<td>{{expaData.ttl_sgst}}</td>
+					 			 	<td>{{expaData.ttl_cess}}</td>
+					 			 	<td>{{expaData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+					 </div>
+					 	  <div class="tab-pane  table-responsive" id="Tab9" style="background: #eee;">
+					 	  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">TXPD</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr>
+					 			 	<td>{{txpdData.sec_nm}}</td>
+					 			 	<td>{{txpdData.chksum}}</td>
+					 			 	<td>{{txpdData.ttl_rec}}</td>
+					 			 	<td>{{txpdData.ttl_val}}</td>
+					 			 	<td>{{txpdData.ttl_igst}}</td>
+					 			 	<td>{{txpdData.ttl_cgst}}</td>
+					 			 	<td>{{txpdData.ttl_sgst}}</td>
+					 			 	<td>{{txpdData.ttl_cess}}</td>
+					 			 	<td>{{txpdData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+						 </div>
+						 	  <div class="tab-pane  table-responsive" id="Tab10" style="background: #eee;">
+						 	  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">AT</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr>
+					 			 	<td>{{atData.sec_nm}}</td>
+					 			 	<td>{{atData.chksum}}</td>
+					 			 	<td>{{atData.ttl_rec}}</td>
+					 			 	<td>{{atData.ttl_val}}</td>
+					 			 	<td>{{atData.ttl_igst}}</td>
+					 			 	<td>{{atData.ttl_cgst}}</td>
+					 			 	<td>{{atData.ttl_sgst}}</td>
+					 			 	<td>{{atData.ttl_cess}}</td>
+					 			 	<td>{{atData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table>
+					 		</div></div>
+						 </div>
+						 <div class="tab-pane  table-responsive" id="Tab11" style="background: #eee;">
+						 <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">ATA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 	
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total Record Value</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr>
+					 			 	<td>{{ataData.sec_nm}}</td>
+					 			 	<td>{{ataData.chksum}}</td>
+					 			 	<td>{{ataData.ttl_rec}}</td>
+					 			 	<td>{{ataData.ttl_val}}</td>
+					 			 	<td>{{ataData.ttl_igst}}</td>
+					 			 	<td>{{ataData.ttl_cgst}}</td>
+					 			 	<td>{{ataData.ttl_sgst}}</td>
+					 			 	<td>{{ataData.ttl_cess}}</td>
+					 			 	<td>{{ataData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table></div></div>
+						 </div>
+						 <div class="tab-pane  table-responsive" id="Tab12" style="background: #eee;">
+						 <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">B2CS</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	 <tr>
+					 			 	<td>{{b2csData.sec_nm}}</td>
+					 			 	<td>{{b2csData.chksum}}</td>
+					 			 	<td>{{b2csData.ttl_rec}}</td>
+					 			 	<td>{{b2csData.ttl_igst}}</td>
+					 			 	<td>{{b2csData.ttl_cgst}}</td>
+					 			 	<td>{{b2csData.ttl_sgst}}</td>
+					 			 	<td>{{b2csData.ttl_cess}}</td>
+					 			 	<td>{{b2csData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table></div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab13" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">B2CSA</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{b2csaData.sec_nm}}</td>
+					 			 	<td>{{b2csaData.chksum}}</td>
+					 			 	<td>{{b2csaData.ttl_rec}}</td>
+					 			 	<td>{{b2csaData.ttl_igst}}</td>
+					 			 	<td>{{b2csaData.ttl_cgst}}</td>
+					 			 	<td>{{b2csaData.ttl_sgst}}</td>
+					 			 	<td>{{b2csaData.ttl_cess}}</td>
+					 			 	<td>{{b2csaData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table></div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab14" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">NTL</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 <tr>
+					 			 	<td>{{nilData.sec_nm}}</td>
+					 			 	<td>{{nilData.chksum}}</td>
+					 			 	<td>{{nilData.ttl_rec}}</td>
+					 			 	<td>{{nilData.ttl_igst}}</td>
+					 			 	<td>{{nilData.ttl_cgst}}</td>
+					 			 	<td>{{nilData.ttl_sgst}}</td>
+					 			 	<td>{{nilData.ttl_cess}}</td>
+					 			 	<td>{{nilData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table></div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab15" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">HSN</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					 		
+					 		<table class="table  table-bordered table-hover"> 
+					 			 <thead>
+					 			 	<th>Return Section</th>
+					 			 	<th>Check Sum Value</th>
+					 			 	<th>Total Record Count</th>
+					 			 	<th>Total IGST</th>
+					 			 	<th>Total CGST</th>
+					 			 	<th>Total SGST</th>
+					 			 	<th>Total Cess</th>
+					 			 	<th>Total TaxableValue</th>
+					 			 </thead>
+					 			 <tbody>
+					 			 	<tr>
+					 			 	<td>{{hsnData.sec_nm}}</td>
+					 			 	<td>{{hsnData.chksum}}</td>
+					 			 	<td>{{hsnData.ttl_rec}}</td>
+					 			 	<td>{{hsnData.ttl_igst}}</td>
+					 			 	<td>{{hsnData.ttl_cgst}}</td>
+					 			 	<td>{{hsnData.ttl_sgst}}</td>
+					 			 	<td>{{hsnData.ttl_cess}}</td>
+					 			 	<td>{{hsnData.ttl_tax}}</td>
+					 			 	</tr>
+					 			 </tbody>
+					 		</table></div></div>
+					 </div>
+					  <div class="tab-pane  table-responsive" id="Tab16" style="background: #eee;">
+					  <div class="panel panel-primary">
+					 		<div class="panel panel-heading">
+					 		<label class="font14" id="lab2">Declaration</label>
+					 		</div>
+					 		<div class="panel panel-body">
+					  		
+					  		<label class="font14" style="font-weight:lighter;">
+					  		<input type="checkbox">
+					  			&nbsp;&nbsp; I hereby declare that the information given in this statement is true, correct and complete in every respect. I
+								further declare that I have the legal authority to submit this statement.
+							</label>
+							
+							 <button class="btn btn-primary my-btn-style" data-toggle="modal"
+						data-target="#digital_modal">SUBMIT WITH DSC</button>
+					  </div>
+				</div>
+			</div>
+			</div>
+				
+				
+			</div>
+			</div>
+		</div>
+</section>
+
+	 	<div class="modal" id="digital_modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="modal_header_label"
+						style="font-weight: lighter; font-size: 15px; position: absolute; left: 40%; top: 2%;color: #000000;">Digital Signature</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-5 col-sm-5 col-xs-5"></div>
+						<div class="col-md-7 col-sm-7 col-xs-7">
+							<img src="../img/logo.png"/>
+						</div>
+						<br/>
+						
+						<div class="col-md-12 col-sm-12 col-xs-12" style="    margin-top: 14px;">
+							<label>Select Certificate</label>
+						</div>
+						<div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+							<table class="table  table-bordered table-hover">
+								<thead>
+								<th>Common Name</th>
+								<th>Issuer Name</th>
+								<th>Serial No</th>
+								<th>Expiry Date</th>
+								</thead>
+								<tbody>
+								<tr>
+									<td>Class3 Oraganization..</td>	
+									<td>e-Mudhra</td>	
+									<td>1425986</td>
+									<td>22-12-2017</td>	
+								</tr>
+								<tr>
+									<td>Activity Oraganization</td>	
+									<td>Mudhra</td>	
+									<td>3541244</td>
+									<td>23-5-2017</td>	
+								</tr>
+								
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="col-md-8"></div>
+						<div class="col-md-2" style="margin-right: -35px;">
+							<button class="btn btn-primary">Sign</button>
+						</div>
+						<div class="col-md-2">
+							<button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+</div>
+
+<script>
+$(function() {
+	$(".page-link").attr("target","_self");
+	$(".page-link").attr("data-toggle","tab");
+	
+	$('#paginationSum').pagination({
+		items: 16,
+		itemsOnPage: 1,
+		displayedPages:5,
+		currentPage: 1,
+		hrefTextPrefix: "#Tab",
+		cssStyle: 'light-theme',
+		href: false,
+		onPageClick: function(){
+			$(".page-link").attr("target","_self");
+			$(".page-link").attr("data-toggle","tab");
+		}	
+
+	});
+	$(".page-link").attr("target","_self");
+	$(".page-link").attr("data-toggle","tab");
+	
+	
+});
+</script>
+				

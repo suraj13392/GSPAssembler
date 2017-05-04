@@ -1,0 +1,82 @@
+{
+  "gstin": "05BDIPA7164F1ZT",
+  "tax_prd": "201606",
+  "tr": [
+    {
+      "dt": "15/12/2016",
+      "desc": "Reverse charge",
+      "trans_cd": "30003",
+      "igst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "cgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "sgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "cess": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "tr_typ": "Cr",
+      "bal": 2000,
+      "refNo": "ACK5678901"
+    }
+  ],
+  "amt_overdue": {
+    "desc": " Closing Balance",
+    "bal": 4000,
+    "igst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "cgst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "sgst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "cess": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    }
+  }
+}

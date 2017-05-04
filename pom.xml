@@ -9,11 +9,13 @@
 	<modules>
 		<module>common</module>
 		<module>APIGateway</module>
-		<!--  <module>GSPMaster</module>  -->
+		<module>GSPMaster</module>
 		<module>GSPInterface</module>
 		<module>GSPRegistration</module>
+		<module>GSPUI</module>
 		
 	</modules>	
+
 	<build>
 		<plugins>
 			<plugin>

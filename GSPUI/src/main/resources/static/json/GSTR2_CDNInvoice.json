@@ -1,0 +1,60 @@
+{
+  "cdn_Data": [
+    {
+      "cgstin": "12abck1234ascjy",
+      "typ": "B2C",
+      "cname": "Kamath Foods Pvt. Ltd.",
+      "cdn": [
+        {
+          "ty": "D",
+          "nt_num": 863984,
+          "nt_dt": "06-05-2016",
+          "i_num": "53065",
+          "i_dt": "18-10-2016",
+          "rsn": "AsyVqCxdxOGWCCb",
+          "val": 9523.76,
+          "irt": 82.21,
+          "iamt": 681.99,
+          "crt": 0,
+          "camt": 0,
+          "srt": 0,
+          "samt": 0,
+          "elg": "C",
+          "itc": {
+            "tx_c": 0,
+            "tx_i": 147.2,
+            "tx_s": 159.3,
+            "tc_c": 0,
+            "tc_i": 7896.3,
+            "tc_s": 4563.2
+          }
+        },
+        {
+          "chksum": "AflJufPlFStqKBZ",
+          "ty": "D",
+          "nt_num": 863984,
+          "nt_dt": "06-05-2016",
+          "i_num": "53065",
+          "i_dt": "18-10-2016",
+          "rsn": "AsyVqCxdxOGWCCb",
+          "val": 9523.76,
+          "irt": 82.21,
+          "iamt": 681.99,
+          "crt": 0,
+          "camt": 0,
+          "srt": 0,
+          "samt": 0,
+          "elg": "C",
+          "itc": {
+            "tx_c": 0,
+            "tx_i": 147.2,
+            "tx_s": 159.3,
+            "tc_c": 0,
+            "tc_i": 7896.3,
+            "tc_s": 4563.2
+          }
+        }
+      ]
+    }
+  ]
+}

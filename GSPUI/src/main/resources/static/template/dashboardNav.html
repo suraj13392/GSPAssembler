@@ -1,0 +1,106 @@
+<!-- <div class="row" style="margin-bottom:-17px;margin-left:0px;margin-right:25px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation" class="active"><a href="#">Request for Demo</a></li>
+                        <li role="presentation"><a href="#">News &amp; Events</a></li>
+                        <li role="presentation"><a href="#">24/7 Customer Care</a></li>
+                        <li role="presentation"><a href="#/">Logout</a></li>
+                    </ul>
+    </div>
+</div> -->
+
+<div ng-controller="dashboardNavController">
+        <nav class="navbar navbar-default navigation-clean indexMainNav">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link" href="#" style="height:70px;margin-top:-15px;padding-bottom:15px;"> <img src="img/logo_with name.png" style="height:58px;"></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown" role="presentation"><a href="#">Home </a></li>
+                       <!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" target="_self">Masters <span class="caret"></span></a>
+						    <ul class="dropdown-menu" role="menu">
+						        <li role="presentation"><a  ui-sref=".stateMaster" ui-sref-opts="{reload: true}">State Master</a></li>
+						        <li role="presentation"><a ui-sref=".supplierMaster" ui-sref-opts="{reload: true}">Supplier Master</a></li>
+						        <li role="presentation"><a ui-sref=".recipientMaster" ui-sref-opts="{reload: true}">Recipient Master</a></li>
+						         <li role="presentation"><a ui-sref=".hsnMaster" ui-sref-opts="{reload: true}">HSN Master</a></li>
+						    </ul>
+						</li> -->
+						<li class="dropdown">
+						  <a class="dropdown-toggle" data-toggle="dropdown">Returns <b class="caret"></b></a> 
+						  <ul class="dropdown-menu">
+							<li class="dropdown dropdown-submenu">
+							  <a  class="dropdown-toggle" data-toggle="dropdown">GSTR1</a>
+							  <ul class="dropdown-menu">
+								<li ><a ui-sref=".gstr1" ui-sref-opts="{reload: true}">Save GSTR1</a></li>
+								<li><a ui-sref=".gstr1-Summary" ui-sref-opts="{reload: true}">File GSTR1</a></li>
+							  </ul>
+							</li>
+							<li class="dropdown dropdown-submenu">
+							  <a  class="dropdown-toggle" data-toggle="dropdown">GSTR1A</a>
+							  <ul class="dropdown-menu">
+								<li ><a ui-sref=".gstr1A" ui-sref-opts="{reload: true}">Save GSTR1A</a></li>
+								<li><a ui-sref=".gstr1A-Summary" ui-sref-opts="{reload: true}">File GSTR1A </a></li>
+							  </ul>
+							</li>
+							<li class="dropdown dropdown-submenu">
+							  <a  class="dropdown-toggle" data-toggle="dropdown">GSTR2</a>
+							  <ul class="dropdown-menu">
+								<li ><a ui-sref=".gstr2" ui-sref-opts="{reload: true}">Save GSTR2</a></li>
+								<li><a ui-sref=".gstr2-Summary" ui-sref-opts="{reload: true}">File GSTR2</a></li>
+							  </ul>
+							</li>
+							<li class="dropdown dropdown-submenu">
+							  <a  class="dropdown-toggle" data-toggle="dropdown">GSTR3</a>
+							  <ul class="dropdown-menu">
+								<li ><a  ui-sref=".gstr3" ui-sref-opts="{reload: true}">Save GSTR3</a></li>
+							<!-- 	<li><a >File GSTR3 </a></li> -->
+							  </ul>
+							</li>
+							<li class="dropdown dropdown-submenu">
+							  <a  class="dropdown-toggle" data-toggle="dropdown">LEDGER</a>
+							  <ul class="dropdown-menu">
+								<li ><a  ui-sref=".cashLedger" ui-sref-opts="{reload: true}">Cash Ledger</a></li>
+								<li><a  ui-sref=".itcLedger" ui-sref-opts="{reload: true}">ITC Ledger</a></li>
+								<li><a  ui-sref=".liabilityLedger" ui-sref-opts="{reload: true}">Liability Ledger</a></li>
+							  </ul>
+							</li>
+						  </ul>
+						</li>
+						
+		  
+						<!--  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" target="_self">Returns <span class="caret"></span></a>
+						    <ul class="dropdown-menu" role="menu">
+						        <li role="presentation"><a ui-sref=".gstr1" ui-sref-opts="{reload: true}">GSTR1</a></li>
+						         <li role="presentation"><a ui-sref=".gstr1-Summary" ui-sref-opts="{reload: true}">Get GSTR1 Summary</a></li>
+						         <li role="presentation"><a ui-sref=".gstr2" ui-sref-opts="{reload: true}">GSTR2</a></li>
+						         <li role="presentation"><a ui-sref=".gstr2-Summary" ui-sref-opts="{reload: true}">Get GSTR2 Summary</a></li>
+						           <li role="presentation"><a ui-sref=".gstr1A" ui-sref-opts="{reload: true}">GSTR1A</a></li>
+						           <li role="presentation"><a ui-sref=".gstr1A-Summary" ui-sref-opts="{reload: true}">GSTR1A Summary</a></li>
+						        <li role="presentation"><a  ui-sref=".gstr3" ui-sref-opts="{reload: true}">GSTR3</a></li>
+								 <li role="presentation"><a  ui-sref=".cashLedger" ui-sref-opts="{reload: true}">Cash Ledger</a></li>
+								  <li role="presentation"><a  ui-sref=".ITCLedger" ui-sref-opts="{reload: true}">ITC Ledger</a></li>
+								   <li role="presentation"><a  ui-sref=".liabilityLedger" ui-sref-opts="{reload: true}">Liability Ledger</a></li>
+						         <li role="presentation"><a href="#">GSTR4</a></li>
+						    </ul>
+						</li> -->
+						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" target="_self">History <span class="caret"></span></a>
+						    <ul class="dropdown-menu" role="menu">
+						        <li role="presentation"><a ui-sref=".download_return" ui-sref-opts="{reload: true}">Download Returns</a></li>
+						    </ul>
+						</li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" target="_self">Download <span class="caret"></span></a>
+						    <ul class="dropdown-menu" role="menu">
+						        <li role="presentation"><a ui-sref=".GSTR_Template" ui-sref-opts="{reload: true}">GSTR Template</a></li>
+						    </ul>
+						</li>
+						<li class="dropdown" role="presentation"><a ui-sref=".userprofile" ui-sref-opts="{reload: true}">User Profile </a></li>
+						 <li class="dropdown" role="presentation"><a href="#" ng-click="dashboardsignOut()">Logout </a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    

@@ -39,7 +39,7 @@ public class PartyVO extends BaseVO {
 	private String dinNumber;
 	private String partyStatus;	
 	
-	@JsonProperty("partyAddress")
+	/*@JsonProperty("partyAddress")*/
 	private Set<PartyAddressVO> partyAddresses = new HashSet<PartyAddressVO>(0);
 
 	public Long getPartyId() {

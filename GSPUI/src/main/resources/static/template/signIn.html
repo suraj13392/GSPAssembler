@@ -1,0 +1,112 @@
+   <div ng-controller="signInController">         
+    <section class="login-header1"  class="cause-section" data-anchor="sect1" style="padding-bottom: 155px;">
+	<div class="container-fluid">
+			<div class="col-md-12" >
+				<div class="col-md-4"  >
+					<article style="border:1px solid #dddddd;padding-left: 14px; max-height:500px;padding-top: 12px;border-radius: 10px;box-shadow: 10px 10px 5px rgba(153, 153, 153, 0.32);">
+						<label class="title20" style="font-weight:bolder;font-size:20px;">Educational Resources</label>
+	 
+						<p >Browse recent issues of Inland Insights, our educational article series focusing on the latest 
+						trends in commercial real estate industry topics. </p> <br/>
+						<p >Learn More >></p>
+					</article>
+
+				</div>
+				<div class="col-md-4" >
+				<article style="border:1px solid #dddddd;padding-left: 14px;max-height:500px;padding-top: 12px;border-radius: 10px;box-shadow: 10px 10px 5px rgba(153, 153, 153, 0.32);">
+					<label class="title20" style="font-weight:bolder;font-size:20px;">REIT Products Overview</label>
+				 
+					<p>Browse recent issues of Inland Insights, our educational article series focusing on the latest trends in commercial real estate industry topics.</p> 
+					<br/><p>Learn More >></p>
+				</article>
+				</div>
+				<div class="col-md-4" >
+					<article style="border:1px solid #dddddd;padding-left: 14px;max-height:500px;padding-top: 12px;border-radius: 10px;box-shadow: 10px 10px 5px rgba(153, 153, 153, 0.32);">
+						<form>
+							<label class="title20" style="font-weight:bolder;font-size:20px;">Sign In</label>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="User Name"  ng-model="ctrl.userName">
+							</div>
+							<div class="form-group">
+										<input type="password" class="form-control" placeholder="Password" ng-model="ctrl.pass" onKeyDown="if(event.keyCode==13);">
+							</div>
+							<p style="text-align:right">
+							<a  href="#dashboard" class="btn btn-primary my-btn-style"  ng-click="signIn()" >Sign In</a>
+							<a  href="#/" class="btn btn-primary my-btn-style"    >Cancel</a>
+							</p>
+						</form>
+					</article>
+			</div>
+		</div>
+			
+		</div>
+	</section>
+            
+       </div>     
+         
+			
+			<div class="modal" id="signup_modal" role="dialog">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header" >
+													<button type="button"  class="close" data-dismiss="modal">&times;</button>
+													<h4 style="font-weight:bolder;padding-left:254px;font-size: 17px;">SIGN UP</h4>
+													 <h6 style="padding-left:170px;font-size: 15px;" class="">ALREADY REGISTERED? <a href="signIn.html" ng-click="ctrl.closeModal()">SIGN IN</a></h6>
+													 
+												</div>
+												<form>
+												<div class="modal-body">
+													 
+													 <div id="signUP_success" style="display:none" class="msg-alert alert alert-success" role="alert">
+														<!-- <button type="button" class="close" data-hide="alert" aria-label="Close"> 
+														<span aria-hidden="true">&times;</span></button>-->
+													   <div id="successMsgTxt">You have been successfully registered to our Investor Services portal. 
+													 Kindly Sign In with your credentials and start your investment journey with our customized investment services. 
+														<a href="signIn.html">Sign In </a>now</div></div>
+													 <div id="signUP_error" style="display:none" class="msg-alert alert alert-danger" role="alert">
+                                                        <!-- <button type="button" class="close" data-hide="alert" aria-label="Close"> 
+                                                        <span aria-hidden="true">&times;</span></button>-->
+                                                       <div id="errorMsgTxt">Please enter sign up details </div>
+                                                        </div>
+													
+													<div class="row signup_body">
+														<div class="col-md-6" style="border-right: 1px solid #ebebeb;">
+															<div class="form-group">
+																	<input type="text" class="form-control required" placeholder="First Name" ng-model="user.fname" required>
+															</div>
+															<div class="form-group">
+																	<input type="text" class="form-control required" placeholder="Last Name" ng-model="user.lname" required>
+															</div>
+															<div class="form-group">
+																	<input type="email" class="form-control required" placeholder="Email Id" ng-model="user.email" required>
+															</div>
+															<div class="form-group">
+																	<input type="password" class="form-control required" placeholder="Password" ng-model="user.passwrd" required>
+															</div>
+														</div>
+														<span class="signup-seperator">OR</span>
+														<div class="col-md-6" style="padding-left:30px;padding-top:60px;">
+														<a class="btn btn-primary btn-social btn-facebook my-btn-style"   style="min-width:90%;background-color: #3b5998;">
+															<i class="fa fa-facebook" style="line-height:0"></i> Sign in with Facebook
+														</a><br/>
+															<a class="btn btn-primary btn-social btn-google my-btn-style"  style="min-width:90%;margin-top: 10px;background-color: #c23321;">
+															<i class="fa fa-google" style="line-height:0"></i> Sign in with Google
+														 </a><br/>
+														 <a class="btn btn-primary btn-social my-btn-style"  style="min-width:90%;margin-top: 10px;">
+															<i class="fa fa-credit-card" style="line-height:0"></i> Sign in with Aadhar
+														 </a>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer signup_body" style="text-align:left">
+											
+													
+													<a href="" class="btn btn-primary my-btn-style" >Sign Up</a>
+												</div>
+												</form>
+										
+											</div>
+										</div>
+				</div>
+
+		

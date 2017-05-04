@@ -1,0 +1,148 @@
+{
+  "b2b": [
+    {
+      "ctin": "01AABCE2207R1Z5",
+      "cfs": "Y",
+      "inv": [
+        {
+          "flag": "A",
+          "chksum": "AflJufPlFStqKBZ",
+          "inum": "S008400",
+          "idt": "24-11-2016",
+          "val": 729248.16,
+          "pos": "06",
+          "rchrg": "N",
+          "updby": "R",
+          "itms": [
+            {
+              "num": 1,
+              "itm_det": {
+                "ty": "S",
+                "hsn_sc": "G1221",
+                "txval": 6210.99,
+                "irt": 0,
+                "iamt": 0,
+                "crt": 37.4,
+                "camt": 614.44,
+                "srt": 33.41,
+                "samt": 5.68,
+                "csrt": 10,
+                "csamt": 621.09,
+                "elg": "ip"
+              },
+              "itc": {
+                "tx_i": 147.2,
+                "tx_s": 159.3,
+                "tx_c": 159.3,
+                "tx_cs": 0,
+                "tc_c": 0,
+                "tc_i": 7896.3,
+                "tc_s": 4563.2,
+                "tc_cs": 0
+              }
+            },
+            {
+              "num": 2,
+              "itm_det": {
+                "ty": "S",
+                "hsn_sc": "G1231",
+                "txval": 1000.05,
+                "irt": 0,
+                "iamt": 0,
+                "crt": 37.45,
+                "camt": 887.44,
+                "srt": 33.41,
+                "samt": 5.68,
+                "csrt": 5.12,
+                "csamt": 50.12,
+                "elg": "ip"
+              },
+              "itc": {
+                "tx_i": 147.2,
+                "tx_s": 159.3,
+                "tx_c": 159.3,
+                "tx_cs": 0,
+                "tc_c": 0,
+                "tc_i": 7896.3,
+                "tc_s": 4563.2,
+                "tc_cs": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+      {
+      "ctin": "PQRS",
+      "cfs": "Y",
+      "inv": [
+        {
+          "flag": "A",
+          "chksum": "AflJufPlFStqKBZ",
+          "inum": "S0085680",
+          "idt": "24-11-2016",
+          "val": 729248.16,
+          "pos": "06",
+          "rchrg": "N",
+          "updby": "R",
+          "itms": [
+            {
+              "num": 1,
+              "itm_det": {
+                "ty": "S",
+                "hsn_sc": "avf",
+                "txval": 1511.99,
+                "irt": 0,
+                "iamt": 0,
+                "crt": 37.4,
+                "camt": 614.44,
+                "srt": 33.41,
+                "samt": 5.68,
+                "csrt": 10,
+                "csamt": 621.09,
+                "elg": "ip"
+              },
+              "itc": {
+                "tx_i": 147.2,
+                "tx_s": 159.3,
+                "tx_c": 159.3,
+                "tx_cs": 0,
+                "tc_c": 0,
+                "tc_i": 7896.3,
+                "tc_s": 4563.2,
+                "tc_cs": 0
+              }
+            },
+            {
+              "num": 2,
+              "itm_det": {
+                "ty": "S",
+                "hsn_sc": "umhj",
+                "txval": 25.05,
+                "irt": 0,
+                "iamt": 0,
+                "crt": 37.45,
+                "camt": 887.44,
+                "srt": 33.41,
+                "samt": 5.68,
+                "csrt": 5.12,
+                "csamt": 50.12,
+                "elg": "ip"
+              },
+              "itc": {
+                "tx_i": 147.2,
+                "tx_s": 159.3,
+                "tx_c": 159.3,
+                "tx_cs": 0,
+                "tc_c": 0,
+                "tc_i": 7896.3,
+                "tc_s": 4563.2,
+                "tc_cs": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

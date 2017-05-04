@@ -1,0 +1,161 @@
+.card{
+   
+    position:relative;
+top:10px;	
+    
+    
+   
+}
+ /*.card-margin{
+   
+    box-sizing: border-box;
+    
+    }*/
+.card-border{
+   border:1px solid black;
+    
+}
+.card-subText{
+    font-size: 12px;
+   display:block;
+}
+.card-mainText{
+    font-size: 14px;
+    display:block;
+    color: #337ab7;
+   
+}
+/*style 1*/
+.card-title, .card-title-fig{
+    
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+}
+.card-title-fig{
+     /*  font-size: 24px;*/
+}
+
+.card-sub-title, .card-sub-fig{
+   
+   
+    
+   position:relative;
+    margin-left:auto;
+    margin-right:auto;
+}
+/*.card-sub-fig{
+     font-size : 18px;
+}*/
+
+/*style 2*/
+.card-title-left{
+    position:relative;
+    margin-top:10%;
+     font-weight: bold;
+}
+.card-left-fig{
+  font-size:20px;
+    
+    color:#333;
+    font-weight:bolder;
+}
+.card-right-fig{
+   /* font-size: 24px;*/
+     color: #333333;
+    font-weight: bolder;
+
+}
+.card1{
+   /*  position:absolute;
+    top:12px; */
+    padding-bottom: 15px;
+}
+.card2{
+   /*  position:absolute;
+    top:78px; */
+}
+
+/* top row filter*/
+.filter-row{
+    min-height:40px;
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: #ededed;
+}
+.filter-elm{
+    width:50%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* graphs*/
+#pie1-container,#pie2-container{
+     max-width:230px;
+    max-height:300px;
+    position:relative;
+    top:10%;
+    left:10%;
+}
+#img-map{
+     position:relative;
+    top:10%;
+   
+    max-width:350px;
+}
+
+.graph-card{
+    border:1px solid black;
+}
+#spline-container{
+    
+     position:relative;
+    top:10%;
+   
+}
+#graph-section{
+    margin-top:1%;
+}
+/* #pie1-container > .highcharts-container{
+    height:256px!important;
+} 
+*/
+#dashboard-header{
+        margin-top: 150px;
+        padding-top: 139px!important;
+    /* background: #f2f2f2; */
+    /* padding: 180px 0 0px; */
+}
+
+#pie2-container .highcharts-container ,#pie1-container .highcharts-container {
+	height:270px!important;
+	width: 230px!important
+}
+
+#dashboard_nav .nav-tabs > li > a
+{
+	border: none!important;
+	/* border-bottom: 1px solid #ccc!important; */
+}
+#dashboard_nav .nav-tabs > li.active > a, #dashboard_nav .nav-tabs > li.active > a:hover, #dashboard_nav .nav-tabs > li.active > a:focus
+{
+	border: 1px solid #ccc!important;
+    border-bottom: none!important;
+	background-color:#ededed!important;
+}
+
+/* #supplierDiv
+{
+	border-top: 1px solid #ccc;
+} */
+.card-margin
+{
+	    /* padding-top: 14px; */
+}
+
+.card-margin .panel{/* min-height:150px; */box-shadow: 0 1px 9px rgba(0, 0, 0, 0.49);color: black;}
+.card-subText{    color: rgb(51, 122, 183);font-weight: bold;}
+.fa-inr{font-size: 11px!important;}

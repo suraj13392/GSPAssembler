@@ -1,0 +1,32 @@
+{
+  "cdnr": [
+    {
+      "ctin": "01AAAAP1208Q1ZS",
+      "cfs": "Y",
+      "nt": [
+        {
+          "flag": "M",
+          "updby": "R",
+          "chksum": "AflJufPlFStqKBZ",
+          "ntty": "C",
+          "nt_num": "533515",
+          "nt_dt": "23-09-2016",
+          "rsn": "Not mentioned",
+          "rchrg": "Y",
+          "inum": "915914",
+          "idt": "23-09-2016",
+          "val": 10000,
+          "irt": 3,
+          "iamt": 833.33,
+          "crt": 4,
+          "camt": 500,
+          "srt": 5,
+          "samt": 900,
+          "csrt": 2,
+          "csamt": 500,
+          "etin": "01AAAAP1208Q1Z7"
+        }
+      ]
+    }
+  ]
+}

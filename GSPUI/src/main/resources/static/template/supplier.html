@@ -1,0 +1,99 @@
+ <div ng-controller="supplierController">  
+ <section class="subpage-header1" id="sect1" class="cause-section" data-anchor="sect1" >
+	<div class="container-fluid">
+		<div class="col-md-12">
+		
+    	<div class="panel panel-default gstrPanel" >
+			<div class="panel-heading myPanelHeading" id="panelText">Supplier Master</div>
+				<div class="panel-body">
+					<div class="row">
+					<div class="col-md-7"></div>
+					<div class="col-md-3">
+						<div class="input-group">
+					            <input class="form-control" ng-model="searchText" placeholder="Search" type="search" ng-change="search()" /> <span class="input-group-addon">
+								      <span class="glyphicon glyphicon-search"></span>
+								</span>
+				        </div>
+			        </div>
+			        </div>
+			       
+			        <div class="row">
+			        <div class="col-md-2"></div>
+					<div class=" col-md-8">
+			          <table class="table table-bordered table-striped data-table myTable">
+				            <thead class="thead-inverse">
+				                <tr>
+				                    <th class="EmpId"> <button  ng-click="sort('GSTINId',$event)"  style="background-color: #0078b4;">GSTIN  
+				                        &nbsp;&nbsp;<span class="{{Header[0]}}"></span>
+				                         </button>
+				
+				                    </th>
+				                    <th class="name"> <button ng-click="sort('supplierName')" style="background-color: #0078b4;"> Supllier Details</button>			                         <span class="{{Header[1]}}"></span></a> 
+				                    </th>
+				                    <th></th>
+				                </tr>
+				            </thead>
+				            <tbody>
+				                <tr ng-repeat="item in arrData | orderBy:columnToOrder:reverse">
+				                    <td>{{item.GSTINId}}</td>
+				                    <td>{{item.supplierName}}</td>
+				                    <td> <buttton type="submit" style="cursor:pointer" ng-click="editSup(item.GSTINId)"><i class="glyphicon glyphicon-edit"></i></button>&nbsp;&nbsp;&nbsp;&nbsp;<buttton type='submit' style='cursor:pointer' ng-click="deleteSup(item.GSTINId)"><i class="glyphicon glyphicon-trash"></i></button></td>
+				                </tr>
+				            </tbody>
+        			</table>
+					</div>
+					</div>
+					
+					<!-- <div class="row">
+											<div class="col-md-2"></div>
+											<div class=" col-md-8">
+											 <ul class="pagination pagination-sm" style="margin: 0px;">
+												<li ng-class="{active:0}"><a href="" ng-click="firstPage()" target="_self">First</a>
+																					  </li>
+												<li ng-repeat="n in range(ItemsByPage.length)"> <a href="" ng-click="setPage()" ng-bind="n+1" target="_self">1</a>
+																					  </li>
+												<li><a href="" ng-click="lastPage()" target="_self">Last</a>
+																					  </li>
+											</ul>
+										   </div>
+										</div> -->
+					
+			        <form class="input_height">
+			         <div class="row">
+			         		<div class="col-md-2"></div>
+			            <div class="col-md-3">
+			                <input type="text" id="gstinId" ng-model="newEmpId" class="form-control" placeholder="GSTIN">
+			            </div>
+			            <div class="col-md-3">
+			                <input type="text" ng-model="newName" class="form-control" placeholder="Supplier Details">
+			            </div>
+			            <div class="col-md-1">
+			                <button ng-click="add()" type="button" id="addSupplierBtn" class="btn btn-primary my-btn-style" > <span class="glyphicon glyphicon-plus" style="line-height: 0"></span>
+							<button class="btn btn-primary my-btn-style" style="display: none"  id="editSupplierBtn" ng-click = "editSupData();">Edit</button>
+			                </button>
+			            </div>
+        			</div>
+        			</form>
+					
+						<!--
+						<button class="btn btn-primary my-btn-style" id="addRow" ng-click = "addRow();">Add</button>
+												<div class="table_deign">
+																<table id="supplierTable" class="table table-bordred table-striped">
+															<thead>
+															<th>GSTIN</th>
+															<th>Supllier Details</th>
+															<th></th>
+															</thead>
+															<tbody>
+															
+															</tbody>
+															</table>
+												</div>-->
+						
+				</div>
+		</div>
+		</div>
+		</div>
+</section>
+</div>
+

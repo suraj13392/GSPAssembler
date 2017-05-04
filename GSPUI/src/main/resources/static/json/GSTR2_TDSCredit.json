@@ -1,0 +1,38 @@
+{
+  "tds_credit": [
+    {
+      "ctin": "12DEFPS5555D1Z2",
+      "tds_invoices": [
+        {
+          "ctin": "19ABCDE2813F5Z3",
+          "i_num": "2132132131",
+          "i_dt": "22-03-16",
+          "i_val": 6775.77,
+          "pay_dt": "22-03-16",
+          "tds_val": 4000.8,
+          "irt": 10,
+          "iamt": 2000,
+          "crt": 3.5,
+          "camt": 3000.5,
+          "srt": 3.5,
+          "samt": 3200.9
+        },
+        {
+          "chksum": "AflJufPlFStqKBZ",
+          "ctin": "19ABCDE2813F5Z3",
+          "i_num": "2132132131",
+          "i_dt": "22-03-16",
+          "i_val": 6775.77,
+          "pay_dt": "22-03-16",
+          "tds_val": 4000.8,
+          "irt": 10,
+          "iamt": 2000,
+          "crt": 3.5,
+          "camt": 3000.5,
+          "srt": 3.5,
+          "samt": 3200.9
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+ <div ng-controller="stateController">  
+ <section class="subpage-header1" id="sect1" class="cause-section" data-anchor="sect1" >
+	<div class="container-fluid">
+		<div class="col-md-12">
+		<div class="panel panel-default gstrPanel" >
+			<div class="panel-heading myPanelHeading" id="panelText">State Master</div>
+			<div class="panel-body">
+			<!--
+			<div id="toolbar" class="btn-group">
+						<button type="button" class="btn btn-default">
+							<i class="glyphicon glyphicon-plus"></i>
+						</button>
+						<button type="button" class="btn btn-default">
+							<i class="glyphicon glyphicon-heart"></i>
+						</button>
+						<button type="button" class="btn btn-default">
+							<i class="glyphicon glyphicon-trash"></i>
+						</button>
+						</div>-->
+			
+			<div class="col-md-2"></div>
+			<div class=" col-md-8">
+			<table id="mytable" class="table table-bordered table-striped">
+			<thead class="thead-inverse">
+			<th><input type="checkbox" id="checkall" /></th>
+			<th>State Code</th>
+			<th>State Name</th>
+			<th class="del_row" style="display:none">Delete</th>
+			</thead>
+			<tbody>
+			<tr ng-repeat="item in tableArray">
+				<td><input type='checkbox' name='record'></td>
+				<td>{{item.stateCode}}</td>
+				<td>{{item.stateName}}</td>
+			
+			</tr>
+			
+			</tbody>
+			</table>
+			<button class="btn btn-primary my-btn-style"  id="save_state" ng-click = "state_btn();">SAVE</button>
+			<button class="btn btn-primary my-btn-style" id="state_manage" style="display:none"  ng-click = "state_manage();">Manage</button>
+			</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</section>
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+ <div class="modal-header">
+ <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+<span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+  <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+      </div>
+          <div class="modal-body">
+   <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+   </div>
+      <div class="modal-footer ">
+       <button type="button" id="yesModal"  class="btn btn-primary my-btn-style" ng-click="deleteRecord()"  data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+      <button type="button" class="btn btn-primary my-btn-style" data-dismiss="modal">
+<span class="glyphicon glyphicon-remove"></span> No</button>
+    </div>
+     </div>
+    <!-- /.modal-content --> 
+ </div>
+     <!-- /.modal-dialog --> 
+    </div>
+</div>
+
+
+

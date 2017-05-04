@@ -1,0 +1,359 @@
+<div ng-controller="liabilityLedgerController">
+	<section class="subpage-header1" class="cause-section"
+		data-anchor="sect1">
+		<div class="container-fluid ">
+		  <div class="col-md-12 ">
+		  	<div class="panel panel-default gstrPanel">
+				<div class="panel-heading " id="panelText">Liability Details</div>
+				<div class="panel-body">
+						<form class="input_height form-horizontal" action="">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+										<input id="GSTN1A_id" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="GSTN">
+									</div>
+								</div>
+								
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Tax Period</span>
+										 <input id="ctin" type="date" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+								</div>
+								<div class="col-md-10"></div>
+								<div class="col-md-2">
+									<button type="button" class="btn btn-primary my-btn-style float-right" style="padding: 16px 65px !important;" ng-click="getLiabilityLedger($event);" >Go!</button>
+								</div>
+							
+							</div>
+						</form>
+						<br/><br/>
+						<!-- <div class="row" id="liabilityLedgerButtonGroup">
+							
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="form-group float-right" style="margin-bottom: 0px;">
+									<button class="btn btn-primary my-btn-style"
+										ng-click="submitFile();">SAVE</button>
+									<button class="btn btn-primary my-btn-style" ng-click="save();">SUBMIT</button>
+								</div>
+							</div>
+						</div> -->
+						<div class="row">
+							<div class="col-md-12" id="liabilityLedger_table" style="padding-left: 0px;padding-right: 0px;display: none">
+								<div class="panel-heading" id="panelText" >
+								 <div class="panel panel-primary">
+								 <div class="panel panel-heading primaryPanelTab row panel_radius">
+										 	
+										 <div class="col-md-9 col-sm-9">
+														<span class="font14" id="tab_label">Liability Ledger</span>
+													</div>
+													<div id="pagination" class="col-md-3 col-sm-9">
+												</div>
+													
+									<!-- <ul class="nav nav-tabs" style="margin-top: -11px;border-bottom: #fff;">
+										<li ng-repeat="step in steps" ng-class="{active: $index==getCurrentStepIndex()}">
+										  <a href="javascript:void(0)" ng-click="goToStep($index)">{{step}}</a>
+										</li>
+									 </ul> -->
+								
+									</div>
+									<div class="panel panel-body tab-content">
+										
+										<div class="tab-pane active table-responsive" id="Tab1">
+											<div class="col-md-12">	<label>Transaction Details</label></div>
+											<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Date</th>
+														<th>Description</th>
+														<th>Reference Number</th>
+														<th>Balance</th>
+														<th>Transaction Type</th>
+														<th>Transaction Code</th>
+														<th></th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr ng-repeat="item in liabilityLedger.tr">
+														<td>{{item.dt}}</td>
+														<td>{{item.desc}}</td>
+														<td>{{item.refNo}}</td>
+														<td>{{item.bal}}</td>
+														<td>{{item.tr_typ}}</td>
+														<td>{{item.trans_cd}}</td>
+														<td><a  href="" ng-click="getTransactionAllData(item.trans_cd)"  target="_self">View Details</a></td>
+													</tr>
+												 </tbody>
+											 </table>
+										<br/>
+										<div id="subcash" style="display:none">
+											<div class="tab-pane active table-responsive col-md-12"  >
+										  	<div class="panel panel-primary">
+												<div class="panel panel-heading">	
+												<label class="font14" id="lab1">Details</label>
+												</div>
+												<div class="panel panel-body">
+												<table class="table  table-bordered table-hover"> 
+													 <thead>
+													 <tr>
+														<th>Type</th>
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<th>Fee</th>
+														<th>Other</th>
+														<th>Total</th>
+														</tr>
+													 </thead>
+													 <tbody>
+														<tr>
+														<td>IGST</td>
+														<td>{{allTransactionalDetails.igst.tx}}</td>
+														<td>{{allTransactionalDetails.igst.intr}}</td>
+														<td>{{allTransactionalDetails.igst.pen}}</td>
+														<td>{{allTransactionalDetails.igst.fee}}</td>
+														<td>{{allTransactionalDetails.igst.oth}}</td>
+														<td>{{allTransactionalDetails.igst.tot}}</td>
+														</tr>
+														<tr>
+														<td>CGST</td>
+														<td>{{allTransactionalDetails.cgst.tx}}</td>
+														<td>{{allTransactionalDetails.cgst.intr}}</td>
+														<td>{{allTransactionalDetails.cgst.pen}}</td>
+														<td>{{allTransactionalDetails.cgst.fee}}</td>
+														<td>{{allTransactionalDetails.cgst.oth}}</td>
+														<td>{{allTransactionalDetails.cgst.tot}}</td>
+														</tr>
+														<tr>
+														<td>SGST</td>
+														<td>{{allTransactionalDetails.sgst.tx}}</td>
+														<td>{{allTransactionalDetails.sgst.intr}}</td>
+														<td>{{allTransactionalDetails.sgst.pen}}</td>
+														<td>{{allTransactionalDetails.sgst.fee}}</td>
+														<td>{{allTransactionalDetails.sgst.oth}}</td>
+														<td>{{allTransactionalDetails.sgst.tot}}</td>
+														</tr>
+														<tr>
+														<td>CESS</td>
+														<td>{{allTransactionalDetails.cess.tx}}</td>
+														<td>{{allTransactionalDetails.cess.intr}}</td>
+														<td>{{allTransactionalDetails.cess.pen}}</td>
+														<td>{{allTransactionalDetails.cess.fee}}</td>
+														<td>{{allTransactionalDetails.cess.oth}}</td>
+														<td>{{allTransactionalDetails.cess.tot}}</td>
+														</tr>
+														
+													 </tbody>
+												</table>
+												</div>
+												</div>
+												</div>
+										</div>
+									
+									</div>
+									<div class="tab-pane table-responsive" id="Tab2">
+									<div class="col-md-12">	<label>Overdue Details</label></div>
+											<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">Description</span>
+												 <input id="returnPeriod" type="text" class="form-control"
+													aria-label="Text input with checkbox" ng-model="liabilityLedger.amt_overdue.desc" readonly="readonly">
+											</div>
+											</div>
+											<div class="form-group col-md-6">
+												<div class="input-group">
+													<span class="input-group-addon">Balance Amount</span>
+													 <input id="returnPeriod" type="text" class="form-control"
+														aria-label="Text input with checkbox" ng-model="liabilityLedger.amt_overdue.bal" readonly="readonly">
+												</div>
+											</div>
+											<br/><br/>
+											<!-- <h5 align=center>IGST</h5> -->
+												<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Type</th>
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<th>Fee</th>
+														<th>Other</th>
+														<th>Total</th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr>
+													<td>IGST</td>
+														<td>{{liabilityLedger.amt_overdue.igst.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.igst.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.igst.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.igst.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.igst.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.igst.tot}}</td>
+													</tr>
+													<tr>
+													<td>CGST</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.tot}}</td>
+													</tr>
+													<tr>
+													<td>SGST</td>
+															<td>{{liabilityLedger.amt_overdue.sgst.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.tot}}</td>
+													</tr>
+													<tr>
+													<td>CESS</td>
+														<td>{{liabilityLedger.amt_overdue.cess.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.tot}}</td>
+													</tr>
+												 </tbody>
+											 </table>
+											<!--  <br/>
+											<h5 align=center>CGST</h5>
+												<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<th>Fee</th>
+														<th>Other</th>
+														<th>Total</th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr>
+														<td>{{liabilityLedger.amt_overdue.cgst.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.cgst.tot}}</td>
+													</tr>
+												 </tbody>
+											 </table>
+											 <br/>
+											<h5 align=center>SGST</h5>
+												<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<th>Fee</th>
+														<th>Other</th>
+														<th>Total</th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr>
+														<td>{{liabilityLedger.amt_overdue.sgst.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.sgst.tot}}</td>
+													</tr>
+												 </tbody>
+											 </table>
+											  <br/>
+											<h5 align=center>CESS</h5>
+												<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<th>Fee</th>
+														<th>Other</th>
+														<th>Total</th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr>
+														<td>{{liabilityLedger.amt_overdue.cess.tx}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.intr}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.pen}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.fee}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.oth}}</td>
+														<td>{{liabilityLedger.amt_overdue.cess.tot}}</td>
+													</tr>
+												 </tbody>
+											 </table> -->
+										
+											
+										
+										</div>
+								</div>
+								</div>
+							</div>
+						</div>
+						
+				</div>
+			</div>
+		  </div>
+		</div>
+	</section>
+</div>
+
+<script>
+
+$(function() {
+					$(".page-link").attr("target","_self");
+					$(".page-link").attr("data-toggle","tab");
+					
+					$('#pagination').pagination({
+						items: 2,
+						itemsOnPage: 1,
+						displayedPages:5,
+						currentPage: 1,
+						hrefTextPrefix: "#Tab",
+						cssStyle: 'light-theme',
+						href: false,
+						onPageClick: function(){
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							/* if($("#Tab1").hasClass("active")){$("#tab_label").text("(5) Taxable outward supplies to a registered person")}
+							else if($("#Tab2").hasClass("active")){$("#tab_label").text("(5A) Amendments to details of Outward Supplies to a registered person of earlier tax periods")} */
+						}	
+
+					});
+					$(".page-link").attr("target","_self");
+					$(".page-link").attr("data-toggle","tab");
+					
+					
+	});
+</script>

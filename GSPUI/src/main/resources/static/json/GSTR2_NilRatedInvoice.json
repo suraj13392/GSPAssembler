@@ -1,0 +1,30 @@
+{
+  "sply_ty": "IERS",
+  "nil": [
+    {
+      "hsn_sc": "H761",
+      "cpddr": 1000,
+      "uredr": 1000,
+      "exptdsply": 5394970.87,
+      "ngsply": 992.93,
+      "nilsply": 0
+    },
+    {
+      "hsn_sc": "H761",
+      "cpddr": 1000,
+      "uredr": 1000,
+      "exptdsply": 5394970.87,
+      "ngsply": 992.93,
+      "nilsply": 0
+    },
+    {
+      "hsn_sc": "H761",
+      "cpddr": 1000,
+      "uredr": 1000,
+      "exptdsply": 5394970.87,
+      "ngsply": 992.93,
+      "nilsply": 0
+    }
+  ],
+  "chksum": "AflJufPlFStqKBZ"
+}

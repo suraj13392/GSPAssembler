@@ -1,0 +1,1554 @@
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>-->
+
+<!--<script src="js/xlsx.core.min.js"></script>-->
+
+
+
+<!--<script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>-->
+
+  <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>-->
+  
+
+<div ng-controller="gstr2Controller as ctrl">      
+    <section class="subpage-header1" id="sect12" class="cause-section" data-anchor="sect1" >
+		<div class="container-fluid">
+			<div class="col-md-12">
+				<div class="panel panel-default gstrPanel">
+							<div class="panel-heading myPanelHeading" id="panelText">DETAILS OF INWARD SUPPLIES/PURCHASES RECEIVED</div>
+								<div class="row">
+									<div class="col-md-3"></div>
+									<div class="col-md-6">
+										 <div id="successMessageDiv" style="display:none" class="msg-alert alert alert-success" role="alert">
+								        <button type="button" class="close" data-hide="alert" aria-label="Close">
+								        <span aria-hidden="true">&times;</span></button>
+								       <div id="successMsgTxt" style="text-align: center;"> </div></div>
+								        
+										<div id="errorMessageDiv" style="display:none" class="msg-alert alert alert-danger" role="alert">
+								        <button type="button" class="close" data-hide="alert" aria-label="Close">
+								        <span aria-hidden="true">&times;</span></button>
+								        <div id="errorMsgTxt" style="text-align: center;"></div></div> 
+							        </div>
+							        <div class="col-md-3"></div>
+							       </div>
+							        
+							
+							<div class="panel-body">
+								<form class="input_height">
+								<div class="row">
+								<div class="col-md-6">
+									<div class="form-group" >
+										<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+												  <input id="GSTN_id" type="text" class="form-control" aria-label="Text input with checkbox" ng-model="GSTN">
+										</div>
+									<!--  <label for="GSTIN" class="font14">GSTIN</label>
+	  								  <input type="text" id="GSTN_id" class="form-control" ng-model="GSTN" > -->
+									</div>	
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+									<div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>Name of the Taxable Person</span>
+												  <input id="nameGstn" type="text" class="form-control" aria-label="Text input with checkbox" ng-model="name">
+												</div>
+									 <!-- <label for="GSTIN" class="font14">Name of the Taxable Person</label>
+	  								  <input type="text" id="nameGstn" class="form-control"  ng-model="name"> -->
+									</div>	
+								</div>	
+<!--
+								<div class="col-md-6">
+									<div class="form-group">
+									 <label for="GSTIN" class="font14">Aggregate Turnover of the Taxable Person in the previous FY</label>
+	  								  <input type="text" id="turnover" class="form-control" ng-model="turnover" >
+									</div>	
+								</div>	
+-->
+								
+								
+							
+										<div class="col-md-6">
+											<div class="form-group">
+											<div class="col-md-1"><label for="GSTIN" class="font14">Period:</label></div>
+											<div class="col-md-5">
+											
+												 <div class="input-group">
+												  <span class="input-group-addon"><span class="astr">*</span>Month</span>
+													<select class="form-control"  >
+													  <option value="">--Select--</option>
+														<option>January </option>
+															    <option>February </option>
+															    <option>March </option>
+															    <option>April</option><option>May</option>
+															    <option>June</option><option>July</option>
+															    <option>August</option><option>September</option>
+															    <option>October</option><option>November</option><option>December</option>
+													  
+													</select>
+												</div>											
+					
+												</div>
+											<div class="col-md-5"> 
+											 <div class="input-group">
+											  <span class="input-group-addon"><span class="astr">*</span>Year</span>
+													<select class="form-control"  >
+													  <option value="">--Select--</option>
+														<option>2016 </option>
+															    <option>2017 </option>
+													</select>
+											</div>
+											
+											</div>	
+										<!-- 	<div class="col-md-3">
+											   <button class="btn btn-primary my-btn-style"   ng-click = "getData();">Get Data</button>
+											</div> -->
+											
+										</div>
+										</div>
+										<div class="form-group col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon"><span class="astr">*</span>Upload
+													File</span> <input  type="file" class="form-control"
+													aria-label="Text input with checkbox">
+											</div>
+		
+										</div>
+										<div class="col-md-8"></div>
+										<div class="col-md-4">
+											<div class="form-group float-right" style="margin-bottom: 0px;">
+											
+													<button class="btn btn-primary my-btn-style"
+													style="padding: 16px 65px !important;"
+													ng-click="getData()" type="button">Get GSTR2</button>
+													
+													<button class="btn btn-primary my-btn-style "
+													style="padding: 16px 65px !important;"
+													ng-click="getData()" type="button">Go!</button>
+											</div>
+										</div>
+											
+											
+									</div>
+                                    <br/>
+								<!-- <div class="row">							
+								<div class="col-md-6">
+									<div class="form-group">
+									 
+									 <div class="col-md-3"><label for="GSTIN" class="font14">Upload File</label></div>
+																			 <div class="col-md-6"><input type = "file" id="files" name="file" class="form-control"   style="border: 1px solid #838383;"/></div>
+																			   <div class="col-md-3"> <button class="btn btn-primary my-btn-style"   ng-click = "submitFile();">GO</button></div>
+									 
+	  								    <div class="col-md-3"><label for="GSTIN" class="font14">Get Data</label></div>
+	  								    <div class="col-md-3"> <button class="btn btn-primary my-btn-style"   ng-click = "getData();">Get Data</button></div>
+	  								  
+									</div>	
+								</div>	
+								</div> -->
+							
+								</form>
+								<br/><br/>
+		
+					<div class="row" id="download_link">							
+						<div class="col-md-6"></div>
+						<div class="col-md-6">
+						<div class="form-group float-right">
+						<!--  <button class="btn btn-primary my-btn-style"   ng-click = "getData();">Get GSTR2</button> -->
+						 <button class="btn btn-primary my-btn-style"   ng-click = "saveGstr2();">SAVE</button>
+						 <button class="btn btn-primary my-btn-style"   ng-click = "submit();">SUBMIT</button>
+						 <!-- <button class="btn btn-primary my-btn-style"   data-toggle="modal" data-target="#download_modal">DOWNLOAD</button> -->
+						<!--  <button class="btn btn-primary my-btn-style"   ng-click="printAction();" data-dismiss="modal">PRINT</button> -->
+						 </div>
+						 </div>
+				</div>	
+					
+					<div id="editor"></div>
+		
+		
+		<div class="row">
+									
+			<div class="col-md-12" id="form_table2" style="padding-left: 0px;padding-right: 0px;display: none">
+                <!-- ****************-->
+                  						  
+
+				<div class="panel-heading" id="panelText" style="font-weight: bolder;border-color: rgba(0, 0, 0, 0.25);	">	
+				<!-- <div id="pagination" ></div></div> -->
+		
+		
+		 <div class="panel panel-primary">
+					 		<div class="panel panel-heading primaryPanel row panel_radius">
+					 		<div class="col-md-6"><span class="font14" id="tab_label">GSTR2 Return</span></div>
+							<div id="pagination" class="col-md-5"></div>
+							<a href="" class=" col-md-1"
+							ng-click="printAction();" style="font-size:20px;color:#fff"><span class="fa fa-print"></span></a>	
+					 		</div>
+							<div class="panel panel-body">
+            <div id="menuContent_1" class="tab-content">
+              <div class="tab-pane active table-responsive" id="Tab1">
+              	<label class="font14" id="lab1">(4) From Registered Taxable Persons including supplies received from unregistered person in case of reverse charge</label>
+                   <table class="table  table-bordered table-hover" id="table1"> 
+									   <thead>
+									 	    <tr class="font14 table_th1">
+									 		<th>GSTIN / Name of Unregistered Supplier</th>
+									 		<th colspan="6" class="align-center"> Invoice</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">CGST</th>
+									 		<th colspan="2" class="align-center">SGST</th>
+									 		<th>POS (only if different from the location of recipient)</th>
+									 		<th>Eligibility of ITC as inputs/capital goods/input services/none</th>
+									 		
+									 		<th colspan="3" class="align-center">Total Tax available as ITC $</th>
+									 		<th colspan="3" class="align-center">ITC available this month $</th>
+									 	</tr>
+									 	
+									 	  <tr class="font12 table_th2">
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										        <th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+
+										      	<th  class="align-center">IGST</th>
+										    	<th class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+										      	<th  class="align-center">IGST</th>
+										    	<th  class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+										      
+										      	
+										    </tr>
+										     <tr class="font12">
+											<th></th>
+										    	<th>No</th>
+										    	<th>Date</th>
+										    	<th>Value</th>
+										    	<th>Goods/Services</th>
+										    	<th>HSN/SAC</th>
+										    	<th>Taxable value</th>
+										        <th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th></th>
+										      	<th></th>
+
+												<th >Amt</th>
+												<th >Amt</th>
+												<th >Amt</th>
+												<th >Amt</th>
+												<th >Amt</th>
+												<th >Amt</th>
+																			
+										    </tr>								   
+											
+									 	</thead>
+										 <tbody  ng-repeat="obj in newB2BData">
+										 	<tr ng-repeat="subobj in obj.itms" 	>
+										 		<td>{{obj.ctin}}</td>
+										 		<td>{{obj.inum}}</td>
+										 		<td>{{obj.idt}}</td>
+										 		<td>{{obj.val}}</td>
+										 		<td>{{subobj.itm_det.ty}}</td>
+										 		<td>{{subobj.itm_det.hsn_sc}}</td>
+										 		<td>{{subobj.itm_det.txval}}</td>
+										 		<td>{{subobj.itm_det.irt}}</td>
+										 		<td>{{subobj.itm_det.iamt}}</td>
+										 		<td>{{subobj.itm_det.crt}}</td>
+										 		<td>{{subobj.itm_det.camt}}</td>
+									 			<td>{{subobj.itm_det.srt}}</td>
+										 		<td>{{subobj.itm_det.samt}}</td>
+										 		<td>{{obj.pos}}</td>
+										 		<td>{{subobj.itm_det.elg}}</td>
+										 		<td>{{subobj.itc.tx_i}}</td>
+										 		<td>{{subobj.itc.tx_c}}</td>
+										 		<td>{{subobj.itc.tx_s}}</td>
+										 		<td>{{subobj.itc.tc_i}}</td>
+										 		<td>{{subobj.itc.tc_c}}</td>
+										 		<td>{{subobj.itc.tc_s}}</td>
+										 		
+										 	</tr>
+										 </tbody>
+									 </table>			
+			  </div>
+			   <div class="tab-pane table-responsive" id="Tab2" style="background: #eee;">
+			   <label class="font14" id="lab2">(4A) Amendments to details of inward supplies received in earlier tax periods </label>
+									 <table class="table  table-bordered table-hover" id="table2"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th colspan="3" class="align-center">Original Invoice</th>
+									 		<th colspan="7" class="align-center">Revised/Original Invoice</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">CGST</th>
+									 		<th colspan="2" class="align-center">SGST</th>
+									 		<th>POS(Indicate if supply attracts reverse charge $)</th>
+											<th>Eligibility of ITC as inputs/capital goods/input services/non</th>
+									 		
+									 		<th colspan="3" class="align-center">Total Tax available as ITC $</th>
+									 		<th colspan="3" class="align-center">ITC available this month $</th>
+									 	</tr>
+									 	<tr class="font12 table_th2">
+										    	
+                                            
+                                            <th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+												<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										    	<th></th>
+										        <th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th>
+										      	<th></th><th></th>
+												<th>IGST</th>
+												<th>CGST</th>
+												<th>SGST</th>
+												<th>IGST</th>
+												<th>CGST</th>
+												<th>SGST</th>
+										 </tr>
+										 <tr class="font12">
+										    	<th>GSTN of unregistered supplier</th>
+										    	<th>No.</th>
+										    	<th>Date</th>
+										    	<th>GSTN of supplier</th>
+										    	<th>No.</th>
+												<th>Date</th>
+										    	<th>Value</th>
+										    	<th>Goods/Services</th>
+										    	<th>HSN/SAC</th>
+										    	<th>Taxable value</th>
+										        <th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th></th><th></th>
+												<th>Amt</th><th>Amt</th>
+												<th>Amt</th><th>Amt</th>
+												<th>Amt</th><th>Amt</th>
+										 </tr>
+                               
+									 	</thead>
+									 	
+										<tbody  ng-repeat="obj in B2BaData">
+										 	<tr ng-repeat="subobj in obj.itms" 	>
+										 		<td>{{obj.ctin}}</td>
+										 		<td>{{obj.oinum}}</td>
+										 		<td>{{obj.oidt}}</td>
+										 		<td>{{obj.ctin}}</td>
+										 		<td>{{obj.inum}}</td>
+										 		<td>{{obj.idt}}</td>
+										 		<td>{{obj.val}}</td>
+										 		<td>{{subobj.itm_det.ty}}</td>
+										 		<td>{{subobj.itm_det.hsn_sc}}</td>
+										 		<td>{{subobj.itm_det.txval}}</td>
+										 		<td>{{subobj.itm_det.irt}}</td>
+										 		<td>{{subobj.itm_det.iamt}}</td>
+										 		<td>{{subobj.itm_det.crt}}</td>
+										 		<td>{{subobj.itm_det.camt}}</td>
+									 			<td>{{subobj.itm_det.srt}}</td>
+										 		<td>{{subobj.itm_det.samt}}</td>
+										 		<td>{{obj.pos}}</td>
+										 		<td>{{subobj.itm_det.elg}}</td>
+										 		<td>{{subobj.itc.tx_i}}</td>
+										 		<td>{{subobj.itc.tx_c}}</td>
+										 		<td>{{subobj.itc.tx_s}}</td>
+										 		<td>{{subobj.itc.tc_i}}</td>
+										 		<td>{{subobj.itc.tc_c}}</td>
+										 		<td>{{subobj.itc.tc_s}}</td>
+										 		
+										 	</tr>
+										 </tbody>
+									 </table>
+						</div>
+			  
+              <div class="tab-pane table-responsive" id="Tab3" style="background: #eee;">
+                <label class="font14" id="lab3">(5) Goods /Capital goods received from Overseas (Import of goods)
+							</label>
+						 		<table class="table  table-bordered table-hover" id="table3"> 
+									   <thead>
+									 	<tr class="font14 table_th1"><th></th>
+									 		<th colspan="5" class="align-center">Bill of entry/ Import report</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th >Eligibility of ITC as inputs/capital</th>
+									 		<th  class="align-center">Total Tax available as ITC </th>
+									 		<th  class="align-center">ITC available this month </th>
+									 	</tr>
+									 	<tr class="font12 table_th2">
+										    	<th></th>
+												<th class="align-center">No.</th>
+												<th class="align-center">Date</th>
+										    	<th class="align-center">Value</th>
+										    	<th class="align-center">HSN</th>
+										    	<th class="align-center">Taxable value</th>
+										        <th class="align-center">Rate</th>
+										      	<th class="align-center">Amt</th>
+                                            
+												<th class="align-center">goods/none</th>
+										    	<th></th>
+										    	<th></th>
+										</tr>	
+                                        <tr class="font12">
+                                           <th></th><th></th>
+										   <th></th>
+                                            <th></th>
+										   <th></th>
+                                           <th></th>
+                                            <th></th>
+										   <th></th>
+                                            <th></th>
+										   <th></th>
+                                           <th></th>
+										</tr>	
+									 	</thead>
+									 	
+										 <tbody ng-repeat="item in jsonImportGoodsInvoices.imp_g">
+										 	
+										 	<tr ng-repeat="obj in item.itms">
+										 		<td style="white-space: nowrap">
+											        <!-- form -->
+											        <form editable-form name="rowform" onbeforesave="saveTableData($data, obj.hsn_sc)" ng-show="rowform.$visible" class="form-buttons form-inline input_height" shown="inserted == obj">
+											          <button type="submit" ng-disabled="rowform.$waiting" >
+											            <i class="glyphicon glyphicon-save"></i>
+											          </button>&nbsp;&nbsp;
+											          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" >
+											            <i class="glyphicon glyphicon-remove-circle"></i>
+											          </button>
+											        </form>
+											        <div class="buttons" ng-show="!rowform.$visible">
+											          <button type="button"  ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i></button>
+											          <!--<button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>-->
+											        </div>  
+											      </td>
+										 		<td><span editable-text="item.boe_num" e-name="boe_num" e-form="rowform"> {{item.boe_num}} </span></td>
+										 		<td><span editable-text="item.boe_dt" e-name="boe_dt" e-form="rowform"> {{item.boe_dt}} </span></td>
+										 		<td><span editable-text="item.boe_val" e-name="boe_val" e-form="rowform"> {{item.boe_val}} </span></td>
+										 		<td><span editable-text="obj.hsn_sc" e-name="hsn_sc" e-form="rowform"> {{obj.hsn_sc}} </span></td>
+										 		<td><span editable-text="obj.txval" e-name="txval" e-form="rowform"> {{obj.txval}} </span></td>
+										 		<td><span editable-text="obj.irt" e-name="irt" e-form="rowform"> {{obj.irt}} </span></td>
+										 		<td><span editable-text="obj.iamt" e-name="iamt" e-form="rowform"> {{obj.iamt}} </span></td>
+										 		<td><span editable-text="obj.elg" e-name="elg" e-form="rowform"> {{obj.elg}} </span></td>
+										 		<td><span editable-text="obj.tx_i" e-name="tx_i" e-form="rowform"> {{obj.tx_i}} </span></td>
+										 		<td><span editable-text="obj.tc_i" e-name="tc_i" e-form="rowform"> {{obj.tc_i}} </span></td>
+										 												 		
+										 	</tr>
+										 </tbody>
+									 </table>
+									 
+							</div>
+							
+							 <div class="tab-pane table-responsive" id="Tab4" style="background: #eee;">
+								<label class="font14" id="lab4">(5A)Amendments in Goods /Capital goods received from Overseas (Import of goods) of earlier tax periods </label>
+						 	 	<table class="table  table-bordered table-hover  table-condensed" id="table4" > 
+
+                                    <thead>
+									 	<tr class="font14 table_th1">
+									 		<th></th>
+									 		<th colspan="2" class="align-center">Original Bill of entry/ Import report</th>
+									 		<th colspan="5" class="align-center">Revised Details of Bill of entry/ Import Report</th>
+                                            <th colspan="2" class="align-center">IGST</th>
+									 		<th class="align-center">Eligibility of ITC as inputs/capital</th>
+									 		<th  class="align-center">Total Tax available as ITC </th>
+									 		<th  class="align-center">ITC available this month </th>
+									 	</tr>
+									 	<tr class="font12 table_th2">
+										    	<th><button type="button"   class="headerTableBtn" ng-click="addTableData()"><i class="glyphicon glyphicon-plus" ></i></button></th>
+												<th class="align-center">No.</th>
+                                                <th class="align-center">Date</th>
+                                            <th class="align-center">No.</th>
+                                            <th class="align-center">Date</th>
+                                            <th class="align-center">Value</th>
+                                            <th class="align-center">HSN</th>
+                                                <th class="align-center">Taxable value</th>
+                                            <th class="align-center">Rate</th>
+                                            <th class="align-center">Amt</th>
+                                            <th></th><th></th><th></th>
+										</tr>	
+                     
+									 	</thead>
+                                        <tbody ng-repeat="item in jsonData.imp_ga">
+										 	<tr ng-repeat="obj in item.itms">
+										 		
+										 		<td style="white-space: nowrap">
+											        <!-- form -->
+											        <form editable-form name="rowform" onbeforesave="saveTableData($data, obj.hsn_sc)" ng-show="rowform.$visible" class="form-buttons form-inline input_height" shown="inserted == obj">
+											          <button type="submit" ng-disabled="rowform.$waiting" >
+											            <i class="glyphicon glyphicon-save"></i>
+											          </button>&nbsp;&nbsp;
+											          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" >
+											            <i class="glyphicon glyphicon-remove-circle"></i>
+											          </button>
+											        </form>
+											        <div class="buttons" ng-show="!rowform.$visible">
+											          <button type="button"  ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i></button>
+											          <!--<button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>-->
+											        </div>  
+											      </td>
+										 		
+										 		<td> <span editable-text="item.oboe_num" e-name="oboe_num" e-form="rowform">{{item.oboe_num}}</span></td>
+										 		<td> <span editable-text="item.oboe_dt" e-name="oboe_dt" e-form="rowform"> {{item.oboe_dt}} </span></td>
+												<td> <span editable-text="item.boe_num" e-name="boe_num" e-form="rowform"> {{item.boe_num}} </span></td>
+										 		<td> <span editable-text="item.boe_dt" e-name="boe_dt" e-form="rowform"> {{item.boe_dt}} </span></td>
+										 		<td> <span editable-text="item.boe_val" e-name="boe_val" e-form="rowform"> {{item.boe_val}} </span></td>
+										 		
+										 		<td> <span editable-text="obj.hsn_sc" e-name="hsn_sc" e-form="rowform"> {{obj.hsn_sc}} </span></td>
+										 		<td> <span editable-text="obj.txval" e-name="txval" e-form="rowform"> {{obj.txval}} </span></td>
+										 		<td> <span editable-text="obj.irt" e-name="irt" e-form="rowform"> {{obj.irt}} </span></td>
+										 		<td> <span editable-text="obj.iamt" e-name="iamt" e-form="rowform"> {{obj.iamt}} </span></td>
+										 		<td> <span editable-text="obj.elg" e-name="elg" e-form="rowform"> {{obj.elg}} </span></td>
+										 		<td> <span editable-text="obj.tx_i" e-name="tx_i" e-form="rowform"> {{obj.tx_i}} </span></td>
+										 		<td> <span editable-text="obj.tc_i" e-name="tc_i" e-form="rowform">{{obj.tc_i}} </span></td>
+										 		
+										 		
+										 	</tr>
+										 </tbody>
+									 </table>
+							</div>
+						 <div class="tab-pane table-responsive" id="Tab5" style="background: #eee;">
+						 <label class="font14" id="lab5">(6) Services received from a supplier located outside India (Import of services) </label>
+						 	 	<table class="table  table-bordered table-hover" id="table5"> 
+									   <thead>
+									 	<tr class="font14 table_th1"><th></th>
+									 		<th colspan="5"  class="align-center">Invoice</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">ITC Admissibility</th>
+									 		
+									 	</tr>
+									 	 <tr class="font12 table_th2"><th></th>
+												<th class="align-center">No</th>
+										    	<th class="align-center">Date</th>
+												<th class="align-center">Value</th>
+										    	<th class="align-center">SAC</th>
+												<th class="align-center">Taxable value</th>
+										      	
+												<th class="align-center">Rate</th>
+										      	<th class="align-center">Amt</th>
+												<th class="align-center">Total ITC Admissible as input services/none</th>
+										      	<th class="align-center">ITC admissible this month</th>
+										      	
+										    </tr>
+									 	</thead>
+									 	
+										 <tbody ng-repeat="item in jsonServiceBills.imp_s">
+										 	<tr ng-repeat="obj in item.itms">
+										 			<td style="white-space: nowrap">
+											        <!-- form -->
+											        <form editable-form name="rowform" onbeforesave="saveTableData($data, obj.hsn_sc)" ng-show="rowform.$visible" class="form-buttons form-inline input_height" shown="inserted == obj">
+											          <button type="submit" ng-disabled="rowform.$waiting" >
+											            <i class="glyphicon glyphicon-save"></i>
+											          </button>&nbsp;&nbsp;
+											          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" >
+											            <i class="glyphicon glyphicon-remove-circle"></i>
+											          </button>
+											        </form>
+											        <div class="buttons" ng-show="!rowform.$visible">
+											          <button type="button"  ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i></button>
+											          <!--<button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>-->
+											        </div>  
+											      </td>
+										 		
+										 		<td>  <span editable-text="item.i_num" e-name="i_num" e-form="rowform">{{item.i_num}} </span></td>
+										 		<td>  <span editable-text="item.i_dt" e-name="i_dt" e-form="rowform"> {{item.i_dt}}</span></td>
+												<td>  <span editable-text="item.i_val" e-name="i_val" e-form="rowform"> {{item.i_val}} </span></td>
+										 		<td>  <span editable-text="obj.hsn_sc" e-name="hsn_sc" e-form="rowform"> {{obj.hsn_sc}} </span></td>
+										 		<td>  <span editable-text="obj.txval" e-name="txval" e-form="rowform"> {{obj.txval}} </span></td>
+										 		<td>  <span editable-text="obj.irt" e-name="irt" e-form="rowform"> {{obj.irt}} </span></td>
+												<td>  <span editable-text="obj.iamt" e-name="iamt" e-form="rowform"> {{obj.iamt}} </span></td>
+										 		<td>  <span editable-text="obj.tia" e-name="tia" e-form="rowform"> {{obj.tia}} </span></td>
+										 		<td>  <span editable-text="obj.iam" e-name="iam" e-form="rowform">{{obj.iam}} </span></td>
+										 	</tr>
+										 </tbody>
+									 </table>
+									 
+						 	</div>
+						 	 <div class="tab-pane table-responsive" id="Tab6" style="background: #eee;">
+						 	 <label class="font14" id="lab6">(6A) Amendments in Services received from a supplier located outside India (Import of services) of earlier tax periods</label>
+						 	 	<table class="table  table-bordered table-hover" id="table6"> 
+									   <thead>
+									 	<tr class="font14 table_th1"> <th></th>
+									 		<th colspan="2"  class="align-center">Original Invoice</th>
+                                            <th colspan="5" class="align-center">Revised details of Invoice</th>
+									 		
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">ITC Admissibility</th>
+									 		
+									 	</tr>
+									 	<tr class="font12 table_th2"> <th></th>
+												<th class="align-center">No</th>
+										    	<th class="align-center">Date</th>
+                                                <th class="align-center">No</th>
+										    	<th class="align-center">Date</th>
+												<th class="align-center">Value</th>
+										    	<th class="align-center">SAC</th>
+												<th class="align-center">Taxable value</th>
+										      	
+												<th class="align-center">Rate</th>
+										      	<th class="align-center">Amt</th>
+												<th class="align-center">Total ITC Admissible as input services/none</th>
+										      	<th class="align-center">ITC admissible this month</th>
+										    </tr>
+									 	</thead>
+									 	
+											 <tbody ng-repeat="item in jsonAmmendedSerBill.imp_sa">
+										 	<tr ng-repeat="obj in item.itms">
+										 			<td style="white-space: nowrap">
+											        <!-- form -->
+											        <form editable-form name="rowform" onbeforesave="saveTableData($data, obj.hsn_sc)" ng-show="rowform.$visible" class="form-buttons form-inline input_height" shown="inserted == obj">
+											          <button type="submit" ng-disabled="rowform.$waiting" >
+											            <i class="glyphicon glyphicon-save"></i>
+											          </button>&nbsp;&nbsp;
+											          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" >
+											            <i class="glyphicon glyphicon-remove-circle"></i>
+											          </button>
+											        </form>
+											        <div class="buttons" ng-show="!rowform.$visible">
+											          <button type="button"  ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i></button>
+											          <!--<button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>-->
+											        </div>  
+											      </td>
+										 		
+										 		<td>  <span editable-text="item.oi_num" e-name="oi_num" e-form="rowform">{{item.oi_num}} </span></td>
+										 		<td>  <span editable-text="item.oi_dt" e-name="oi_dt" e-form="rowform"> {{item.oi_dt}}</span></td>
+												<td>  <span editable-text="item.i_num" e-name="i_num" e-form="rowform"> {{item.i_num}} </span></td>
+										 		<td>  <span editable-text="item.i_dt" e-name="i_dt" e-form="rowform"> {{item.i_dt}} </span></td>
+										 		<td>  <span editable-text="item.i_val" e-name="i_val" e-form="rowform"> {{item.i_val}} </span></td>
+										 		<td>  <span editable-text="obj.hsn_sc" e-name="hsn_sc" e-form="rowform"> {{obj.hsn_sc}} </span></td>
+										 		<td>  <span editable-text="obj.txval" e-name="txval" e-form="rowform"> {{obj.txval}} </span></td>
+												<td>  <span editable-text="obj.irt" e-name="irt" e-form="rowform"> {{obj.irt}} </span></td>
+										 		<td>  <span editable-text="obj.iamt" e-name="iamt" e-form="rowform"> {{obj.iamt}} </span></td>
+										 		<td>  <span editable-text="obj.tia" e-name="tia" e-form="rowform"> {{obj.tia}} </span></td>
+										 		<td>  <span editable-text="obj.iam" e-name="iam" e-form="rowform">{{obj.iam}} </span></td>
+										 	</tr>
+										 </tbody>
+									 </table>
+									 </div>
+									 
+						 	 <div class="tab-pane table-responsive" id="Tab7" style="background: #eee;">
+								 <label class="font14" id="lab7">(7) Details of Credit/Debit Notes </label>
+						 	 	<table class="table  table-bordered table-hover" id="table7"> 
+									   <thead> 
+									 	<tr class="font14 table_th1"><th></th>
+									 		<th   class="align-center">GSTIN</th>
+									 		<th   class="align-center">Type of note(Debit/Credit)</th>
+									 		
+											<th colspan="2" class="align-center">Debit Note/credit note</th>
+											<th colspan="2" class="align-center">Original Invoice </th>
+											<th >Differential Value(Plus or Minus)</th>
+											<th colspan="6" class="align-center">Differential Tax</th>
+									 	     <th> Eligibility for ITC (select from drop down as in Table 5 above)</th>
+                                            <th colspan="3" class="align-center">Total Tax available as ITC</th>
+                                            <th colspan="3" class="align-center">ITC available this month</th>
+									 	</tr>
+									 	 <tr class="font12 table_th2">
+									 	 	<th></th>
+											<th></th><th></th>
+												<th>No.</th>
+										    	<th>Date</th>
+												<th>No.</th>
+										    	<th>Date </th>
+												<th></th>
+												<th colspan="2" class="align-center">IGST</th>
+										    	<th colspan="2" class="align-center">CGST</th>
+										    	<th colspan="2" class="align-center">SGST </th><th></th>
+												<th  class="align-center">IGST</th>
+										    	<th  class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+												<th  class="align-center">IGST</th>
+										    	<th  class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+												
+										    </tr>
+										     <tr class="font12">
+											<th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+											<th>Rate</th>
+											<th>Amt</th>
+											<th>Rate</th>
+											<th>Amt</th>
+											<th>Rate</th>
+											<th>Amt</th><th></th>
+											<th>Amt</th>
+											<th>Amt</th>
+											<th>Amt</th>
+                                                 <th>Amt</th>
+											<th>Amt</th>
+											<th>Amt</th>
+                                            </tr>
+									 	</thead>
+									 	
+										 <tbody ng-repeat="item in jsonCDNInvoice.cdn_Data">
+										 	<tr ng-repeat="obj in item.cdn">
+										 		<td style="white-space: nowrap">
+											        <!-- form -->
+											        <form editable-form name="rowform" onbeforesave="saveTableData($data, obj.hsn_sc)" ng-show="rowform.$visible" class="form-buttons form-inline input_height" shown="inserted == obj">
+											          <button type="submit" ng-disabled="rowform.$waiting" >
+											            <i class="glyphicon glyphicon-save"></i>
+											          </button>&nbsp;&nbsp;
+											          <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" >
+											            <i class="glyphicon glyphicon-remove-circle"></i>
+											          </button>
+											        </form>
+											        <div class="buttons" ng-show="!rowform.$visible">
+											          <button type="button"  ng-click="rowform.$show()"><i class="glyphicon glyphicon-edit"></i></button>
+											          <!--<button type="button" class="btn btn-danger" ng-click="removeUser($index)">del</button>-->
+											        </div>  
+											      </td>
+										 		<td> <span editable-text="item.cgstin" e-name="cgstin" e-form="rowform"> {{item.cgstin}} </span> </td>
+										 		<td> <span editable-text="item.typ" e-name="typ" e-form="rowform"> {{item.typ}} </span></td>
+												<td> <span editable-text="obj.nt_num" e-name="nt_num" e-form="rowform"> {{obj.nt_num}} </span></td>
+										 		<td> <span editable-text="obj.nt_dt" e-name="nt_dt" e-form="rowform"> {{obj.nt_dt}} </span></td>
+										 		<td> <span editable-text="obj.i_num" e-name="i_num" e-form="rowform"> {{obj.i_num}} </span></td>
+										 		<td> <span editable-text="obj.i_dt" e-name="i_dt" e-form="rowform"> {{obj.i_dt}} </span></td>
+										 		<td> <span editable-text="obj.val" e-name="val" e-form="rowform"> {{obj.val}} </span></td>
+										 		<td> <span editable-text="obj.irt" e-name="irt" e-form="rowform"> {{obj.irt}} </span></td>
+										 		<td> <span editable-text="obj.iamt" e-name="iamt" e-form="rowform"> {{obj.iamt}} </span></td>
+										 		<td> <span editable-text="obj.crt" e-name="crt" e-form="rowform"> {{obj.crt}} </span></td>
+												<td> <span editable-text="obj.camt" e-name="camt" e-form="rowform"> {{obj.camt}} </span></td>
+										 		<td> <span editable-text="obj.srt" e-name="srt" e-form="rowform"> {{obj.srt}} </span></td>
+										 		<td> <span editable-text="obj.samt" e-name="samt" e-form="rowform"> {{obj.samt}} </span></td>
+										 		<td> <span editable-text="obj.elg" e-name="elg" e-form="rowform"> {{obj.elg}} </span></td>				 		
+										 		<td> <span editable-text="obj.itc.tx_i" e-name="itc.tx_i" e-form="rowform"> {{obj.itc.tx_i}} </span></td>
+										 		<td> <span editable-text="obj.itc.tx_c" e-name="itc.tx_c" e-form="rowform"> {{obj.itc.tx_c}} </span></td>
+										 		<td> <span editable-text="obj.itc.tx_s" e-name="itc.tx_s" e-form="rowform"> {{obj.itc.tx_s}} </span></td>
+										 		<td> <span editable-text="obj.itc.tc_i" e-name="itc.tc_i" e-form="rowform"> {{obj.itc.tc_i}} </span></td>
+										 		<td> <span editable-text="obj.itc.tc_c" e-name="itc.tc_c" e-form="rowform"> {{obj.itc.tc_c}} </span></td>
+										 		<td> <span editable-text="obj.itc.tc_s" e-name="itc.tc_s" e-form="rowform"> {{obj.itc.tc_s}} </span></td>
+										 		
+										 		
+										 	</tr>
+										 </tbody>
+										<thead>
+										    <tr class="font12">
+												<th colspan="20" >Other than reverse charge</th>
+										    </tr>
+										 </thead>
+										 <tbody>
+										 	<tr>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+                                                
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												
+										 	</tr>
+										 </tbody>
+										 <thead>
+										    <tr class="font12">
+												<th colspan="20">Reverse charge</th>
+										    </tr>
+										 </thead>
+										 <tbody>
+										 	<tr>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												
+                                                
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+										 	</tr>
+										 </tbody>
+									 </table><br/><br/>
+									
+			              		</div>
+			              		<div class="tab-pane table-responsive" id="Tab8" style="background: #eee;">
+			              		 <label class="font14" id="lab8">(7A) Amendment to Details of Credit/Debit Notes of earlier tax periods </label>
+						 	 	<table class="table  table-bordered table-hover" id="table8"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th colspan="3"  class="align-center">Original Debit Note/ credit note</th>
+									 		<th colspan="3"  class="align-center">Revised Details of original Debit Note/ credit note</th>
+									 		<th   class="align-center">Type of note(Debit/Credit)</th>
+									 		<th >Differential Value(Plus or Minus)</th>
+											<th colspan="6" class="align-center">Differential Tax</th>
+									 	     <th> Eligibility for ITC (select from drop down as in Table 5 above)</th>
+                                            <th colspan="3" class="align-center">Total Tax available as ITC</th>
+                                            <th colspan="3" class="align-center">ITC available this month</th>
+									 	</tr>
+									 	 <tr class="font12 table_th2">
+												<th>GSTIN</th>
+										    	<th>No.</th>
+												<th>Date </th>
+												<th>GSTIN</th>
+										    	<th>No.</th>
+												<th>Date </th>
+												<th></th>
+                                                <th></th>
+                                                
+												<th colspan="2" class="align-center">IGST</th>
+										    	<th colspan="2" class="align-center">CGST</th>
+										    	<th colspan="2" class="align-center">SGST </th><th></th>
+												<th  class="align-center">IGST</th>
+										    	<th  class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+												<th  class="align-center">IGST</th>
+										    	<th  class="align-center">CGST</th>
+										    	<th  class="align-center">SGST </th>
+												
+										    </tr>
+										     <tr class="font12">
+											<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+											<th>Rate</th>
+											<th>Amt</th>
+											<th>Rate</th>
+											<th>Amt</th>
+											<th>Rate</th>
+											<th>Amt</th><th></th>
+											<th>Amt</th>
+											<th>Amt</th>
+											<th>Amt</th>
+                                                 <th>Amt</th>
+											<th>Amt</th>
+											<th>Amt</th>
+                                            </tr>
+									 	</thead>
+										 
+										 <tbody >
+										 	<tr ng-repeat="item in jsonCDNAInvoice.cdna">
+										 		<td>{{item.cgstin}}</td>
+										 		<td>{{item.ont_num}}</td>
+										 		<td>{{item.ont_dt}}</td>
+										 		<td>{{item.cgstin}}</td>
+										 		<td>{{item.nt_num}}</td>
+										 		<td>{{item.nt_dt}}</td>
+										 		<td>{{item.typ}}</td>
+										 		<td>{{item.val}}</td>
+										 		<td>{{item.irt}}</td>
+										 		<td>{{item.iamt}}</td>
+										 		<td>{{item.crt}}</td>
+										 		<td>{{item.camt}}</td>
+										 		<td>{{item.srt}}</td>
+										 		<td>{{item.samt}}</td>
+										 		<td>{{item.elg}}</td>
+										 		
+												<td>{{item.itc.tx_i}}</td>
+										 		<td>{{item.itc.tx_c}}</td>
+										 		<td>{{item.itc.tx_s}}</td>
+										 		<td>{{item.itc.tc_i}}</td>
+										 		<td>{{item.itc.tc_c}}</td>
+										 		<td>{{item.itc.tc_s}}</td>
+										 		
+										 		
+										 		
+										 	</tr>
+										 </tbody>
+                                    
+
+                                    <thead>
+										    <tr class="font12">
+												<th colspan="21" >Other than reverse charge</th>
+										    </tr>
+										 </thead>
+										 <tbody>
+										 	<tr>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+                                                
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												
+										 	</tr>
+										 </tbody>
+										 <thead>
+										    <tr class="font12">
+												<th colspan="21">Reverse charge</th>
+										    </tr>
+										 </thead>
+										 <tbody>
+										 	<tr>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												
+                                                
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+										 		<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+										 	</tr>
+										 </tbody>
+									 </table>
+			              		</div>
+			              		  <div class="tab-pane table-responsive" id="Tab9" style="background: #eee;">
+								 <label class="font14" id="lab9">(8) Supplies received from composition taxable person/unregistered person & other exempt/nil/non GST supplies </label>
+								 <table class="table  table-bordered table-hover" id="table9"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+										  
+									 		<th   class="align-center">Description</th>
+									 		<th   class="align-center">HSN Code/SAC code</th>
+											<th  colspan="5" class="align-center">Value of supplies received from</th>
+                                        </tr>
+                                           <tr class="font14 table_th2">
+                                           <th></th><th></th>
+                                               <th>Compounding Taxable person</th>
+                                               <th>Unregistered Taxable person not included in Table 4 above</th>
+                                                <th>Any exempt supply not included in Table 4 above</th>
+                                               <th>Any nil rated supply not included in Table 4 above</th>
+                                               <th>Non GST Supply</th>
+                                               
+                                           </tr> 
+									 	</thead>
+										 <tbody>
+										 	<tr ng-repeat="item in jsonNilRated.nil">
+										 		<td>Interstate supplies</td>
+										 		<td>{{item.hsn_sc}}</td>
+										 		<td>{{item.cpddr}}</td>
+										 		<td>{{item.uredr}}</td>
+										 		<td>{{item.exptdsply}}</td>	
+										 		<td>{{item.nilsply}}</td>	
+										 		<td>{{item.ngsply}}</td>										 		
+										 	</tr>
+												
+											  <tr class="font14">
+                                           <td>Intrastate supplies</td><td></td><td></td><td></td><td></td><td></td><td></td>
+                                           </tr>
+										 </tbody>
+									</table>
+								 </div>
+								 <div class="tab-pane table-responsive" id="Tab10" style="background: #eee;">
+								 <label class="font14" id="lab10">(9) ISD credit received </label>
+								 <table class="table  table-bordered table-hover" id="table10"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+                                            <th></th>
+									 		<th   class="align-center">GSTIN_ISD</th>
+									 		<th  colspan="2" class="align-center">Invoice/Document details</th>
+											<th class="align-center">SAC</th>
+											<th colspan="3"  class="align-center">ISD Credit</th>
+											
+									 	
+									 	</tr>
+									 	<tr class="font14 table_th2">
+										<th></th>
+									 		<th></th>
+									 		<th class="align-center">No</th>
+									 		<th class="align-center">Date</th>
+											<th   class="align-center"></th>
+											<th   class="align-center">IGST</th>
+											<th   class="align-center">CGST</th>
+											<th   class="align-center">SGST</th>
+									 	</tr>
+                                           <tr class="font14">
+                                           <th>Auto populated</th><th></th>
+                                               <th></th><th></th>
+                                               <th></th><th></th><th></th><th></th>
+                                           </tr>
+                                           <tr class="font14">
+                                           <th>Not auto populated (claimed)</th><th></th>
+                                               <th></th><th></th>
+                                               <th></th><th></th><th></th><th></th>
+                                           </tr>
+									 	</thead>
+									 	
+										 <tbody>
+										 	<tr ng-repeat="item in jsonISDCredit.isd_rcd">
+										 		<td></td>
+												<td>{{item.gstin_isd}}</td>
+										 		<td>{{item.i_num}}</td>
+										 		<td>{{item.i_dt}}</td>
+										 		<td>{{item.Invoice_Value}}</td>
+										 		<td>{{item.ig_cr}}</td>
+										 		<td>{{item.cg_cr}}</td>
+										 		<td>{{item.sg_cr}}</td>
+										 		
+										 	</tr>
+										 </tbody>
+									</table>
+									<br/><br/>
+									 
+								 </div>
+								 <div class="tab-pane table-responsive" id="Tab11" style="background: #eee;">
+								 <label class="font14" id="lab11">10(1) TDS Credit received </label>
+								 <table class="table  table-bordered table-hover" id="table11"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th   class="align-center">GSTIN of deductor</th>
+									 		<th colspan="3"  class="align-center">Invoice/Document</th>
+									 		<th   class="align-center">Date of Payment made to the deductee</th>
+											<th class="align-center">Value on which TDS has been deducted</th>
+											<th colspan="2"  class="align-center">TDS_IGST</th>
+											<th colspan="2"  class="align-center">TDS_CGST</th>
+											<th colspan="2"  class="align-center">TDS_SGST</th>
+                                        </tr>
+									 	<tr class="font14 table_th2">
+										<th></th>
+											<th   class="align-center">No.</th>
+									 		<th class="align-center">Date</th>
+											<th   class="align-center">Value</th><th></th><th></th>
+                                            
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		
+									 	</tr>
+                                           
+									 	</thead>
+									 	
+										 <tbody ng-repeat="items in jsonTDSCredit.tds_credit">
+										 	<tr ng-repeat="item in items.tds_invoices">
+										 		<td>{{item.ctin}}</td>
+										 		<td>{{item.i_num}}</td>
+										 		<td>{{item.i_dt}}</td>
+										 		<td>{{item.i_val}}</td>
+										 		<td>{{item.pay_dt}}</td>
+										 		<td>{{item.tds_val}}</td>
+										 		<td>{{item.irt}}</td>
+										 		<td>{{item.iamt}}</td>									 		
+										 		<td>{{item.crt}}</td>
+										 		<td>{{item.camt}}</td>
+												<td>{{item.srt}}</td>
+										 		<td>{{item.samt}}</td>
+												
+										 	</tr>
+											
+										 </tbody>
+									</table>
+								 </div>
+								 	 <div class="tab-pane table-responsive" id="Tab12" style="background: #eee;">
+								 <label class="font14" id="lab12">10(2) TCS Credit received </label>
+								 <table class="table  table-bordered table-hover" id="table12"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th   class="align-center">GSTIN of E-commerce portal</th>
+									 		<th   class="align-center">Merchant ID allocated by e-commerce portal</th>
+									 		<th   class="align-center">Gross Value of Supplies</th>
+											<th   class="align-center">Taxable Value on which TCS has been deducted</th>
+											<th colspan="2"  class="align-center">TDS_IGST</th>
+											<th colspan="2"  class="align-center">TDS_CGST</th>
+											<th colspan="2"  class="align-center">TDS_SGST</th>
+                                        </tr>
+									 	<tr class="font14 table_th2">
+										<th></th><th></th>
+											<th></th><th></th>
+                                            
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		<th   class="align-center">Rate</th>
+									 		<th class="align-center">Amt</th>
+									 		
+									 	</tr>
+                                           
+									 	</thead>
+									 	 
+										 <tbody>
+										 <tr ng-repeat="item in jsonTCSCredit.tcs_data">
+										 		<td>{{item.ctin}}</td>
+										 		<td>{{item.mid}}</td>
+										 		<td>{{item.sup_val}}</td>
+										 		<td>{{item.tx_val}}</td>
+										 		<td>{{item.tcs_irt}}</td>
+										 		<td>{{item.tcs_iamt}}</td>
+										 		<td>{{item.tcs_crt}}</td>
+										 		<td>{{item.tcs_camt}}</td>									 		
+										 		<td>{{item.tcs_srt}}</td>
+										 		<td>{{item.tcs_samt}}</td>
+										 	</tr>
+										 </tbody>
+									</table>
+									<br/><br/>
+									
+								
+								 </div>
+								 <div class="tab-pane table-responsive" id="Tab13" style="background: #eee;">
+								  <label class="font14" id="lab13">(11) ITC Received on an invoice on which partial credit availed earlier </label>
+								 <table class="table  table-bordered table-hover" id="table13"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th colspan="2"  class="align-center">Original invoice/ doc.</th>
+									 		<th  colspan="6"  class="align-center">ITC availed</th>
+									 		
+									 	</tr>
+                                        <tr class="font14 table_th2">
+                                            <th></th>   <th></th>   
+                                            <th class="align-center" colspan="2"> IGST</th>    <th colspan="2" class="align-center">CGST</th>   <th class="align-center" colspan="2">SGST</th>  
+                                        </tr>   
+									 	
+									 	<tr class="font14">
+									 		<th class="align-center">No</th>
+                                            <th class="align-center">Date</th>
+                                            <th class="align-center">Earlier</th>
+                                            <th class="align-center">This month</th>
+                                            <th class="align-center">Earlier</th>
+                                            <th class="align-center">This month</th>
+                                            <th class="align-center">Earlier</th>
+                                            <th class="align-center">This month</th>
+									 	</tr>
+									 	</thead>
+									 	 
+									 	
+										 <tbody>
+										 	<tr ng-repeat="item in jsonITCreceived.itc_rcd">
+										 		<td>{{item.i_num}}</td>
+										 		<td>{{item.i_dt}}</td>
+										 		<td>{{item.o_ig}}</td>
+										 		<td>{{item.n_ig}}</td>
+										 		<td>{{item.o_cg}}</td>
+										 		<td>{{item.n_cg}}</td>
+										 		<td>{{item.o_sg}}</td>
+										 		<td>{{item.n_sg}}</td>									 		
+										 	</tr>
+										 </tbody>
+									</table>
+								 </div>
+							<div class="tab-pane table-responsive" id="Tab14" style="background: #eee;">
+								 <label class="font14" id="lab14">(12) Tax liability under Reverse Charge arising on account of time of Supply without receipt of Invoice </label>
+								 <table class="table  table-bordered table-hover" id="table14"> 
+									   <thead>
+									 	<tr class="font14">
+									 		<th class="align-center" >GSTN/Name of unregistered supplier</th>
+                                            <th class="align-center" >State Code</th>
+                                            <th class="align-center" >Document No.</th>
+                                            <th class="align-center" >Document Date </th>
+                                            <th class="align-center" >Goods/Services</th>
+                                            <th class="align-center" >HSN/SAC of supply</th>
+                                            <th class="align-center" >Taxable Value</th>
+                                            <th class="align-center" colspan="6">TAX</th>
+                                            
+									 	</tr>
+									 	<tr class="font14">
+									 		<th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+
+									 		<th colspan="2"  class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">CGST</th>
+									 		<th colspan="2"  class="align-center">SGST</th>
+									 									 	
+									 	</tr>
+									 	<tr class="font14">
+                                            <th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+									 		
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+									 									 	
+									 	</tr>
+									 	</thead>
+									 	
+										 <tbody ng-repeat="item in jsonTaxLiability.txi">
+										 	<tr ng-repeat="obj in item.itms">
+										 		<td>{{item.rtin}}</td>
+										 		<td>{{item.st_cd}}</td>
+										 		<td>{{item.dnum}}</td>									 		
+										 		<td>{{item.dt}}</td>
+										 		<td>{{obj.ty}}</td>
+												<td>{{obj.hsn_sc}}</td>
+										 		<td>{{obj.txval}}</td>
+												<td>{{obj.irt}}</td>
+												<td>{{obj.iamt}}</td>
+												<td>{{obj.crt}}</td>
+												<td>{{obj.camt}}</td>
+												<td>{{obj.srt}}</td>
+												<td>{{obj.samt}}</td>
+										 	</tr>
+										 </tbody>
+									</table>							
+								 </div>
+								 
+								<div class="tab-pane table-responsive" id="Tab15" style="background: #eee;">
+								 <label class="font14" id="lab15">(12A) Amendment in Tax liability under Reverse Charge arising on account of time of Supply without receipt of Invoice </label><br/>
+								  <table class="table  table-bordered table-hover" id="table15"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th colspan="3"  class="align-center">Original Details</th>
+									 		<th colspan="6"  class="align-center" >Revised Details</th>
+									 		<th >Taxable Value</th>
+									 		<th colspan="6"  class="align-center">TAX</th>
+                                        </tr>
+									 		<tr class="font14 table_th2">
+									 		    
+                                            <th></th>
+                                               <th></th>
+                                               <th></th>
+                                               <th></th>
+                                               <th></th>
+                                               
+                                            <th></th>
+                                               <th></th>
+                                               <th></th>
+                                               <th></th>
+                                               <th></th>
+                                                
+                                                 <th colspan="2"  class="align-center">IGST</th>
+									 		    <th colspan="2" class="align-center">CGST</th>
+									 		    <th colspan="2"  class="align-center">SGST</th>
+                                               
+									 	</tr>
+                                           <tr class="font14">
+                                           
+                                               <th>GSTN/Name of customer</th>
+                                                <th>Document No.</th>
+                                                <th>Document Date</th>
+                                                
+                                                <th>GSTN/Name of customer</th>
+                                                <th>State Code</th>
+                                                <th>Document No.</th>
+                                                <th>Date</th>
+                                                <th>Goods/Services</th>
+                                                <th>HSN/SAC of supply to be made</th>
+									 		    <th></th>
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+									 		<th >Rate</th>
+									 		<th >Tax</th>
+                                           
+                                           
+                                           </tr>
+                                           
+									 	</thead>
+									 	<tbody ng-repeat="item in jsonAmendedTaxLiability.atxi">
+										 	<tr ng-repeat="obj in item.itms">
+										 		<td>{{item.ogstin}}</td>
+										 		<td>{{item.odnum}}</td>
+										 		<td>{{item.otdt}}</td>									 		
+										 		<td>{{item.rtin}}</td>
+										 		<td>{{item.st_cd}}</td>
+												<td>{{item.dnum}}</td>
+										 		<td>{{item.dt}}</td>
+												<td>{{obj.ty}}</td>
+												<td>{{obj.hsn_sc}}</td>
+												<td>{{obj.txval}}</td>
+												<td>{{obj.irt}}</td>
+												<td>{{obj.iamt}}</td>
+												<td>{{obj.crt}}</td>
+												<td>{{obj.camt}}</td>
+												<td>{{obj.srt}}</td>
+												<td>{{obj.samt}}</td>
+										 	</tr>
+										 </tbody>
+									</table>	
+								</div>
+								 
+								 <div class="tab-pane table-responsive" id="Tab16" style="background: #eee;">
+								 <label class="font14" id="lab18">(13) Tax already paid under Reverse Charge in earlier tax periods on account of time of supply for which invoices issued in the current period</label>
+								 <table class="table  table-bordered table-hover" id="table18"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th class="align-center">Invoice No.</th>
+									 		<th class="align-center">Invoice Date</th>
+									 		<th class="align-center">Transaction id (A number assigned by the system when tax was paid)</th>
+									 		<th class="align-center" colspan="6">TAX Paid on Time of Supply</th>
+									 		
+									 	</tr>
+                                        <tr class="font14 table_th2">
+                                            <th></th>   <th></th>   <th></th>
+                                            <th colspan="2" class="align-center">IGST</th><th colspan="2" class="align-center">CGST</th><th colspan="2" class="align-center">SGST</th>
+                                        </tr>   
+                                        <tr class="font14">
+                                            <th></th>   <th></th>   <th></th>
+                                            
+                                            <th>Rate</th>   <th>Tax</th>
+                                            <th>Rate</th>   <th>Tax</th>
+                                            <th>Rate</th>   <th>Tax</th>
+                                            
+                                        </tr>        
+									 	</thead>
+										 <tbody>
+										 		<tr ng-repeat="item in jsonTaxReverserCharges.txpd">
+										 		<td>{{item.i_num}}</td>
+										 		<td>{{item.i_dt}}</td>
+										 		<td>{{item.doc_num}}</td>									 		
+										 		<td>{{item.irt}}</td>
+										 		<td>{{item.iamt}}</td>
+												<td>{{item.crt}}</td>
+										 		<td>{{item.camt}}</td>
+										 		<td>{{item.srt}}</td>
+										 		<td>{{item.samt}}</td>
+											
+										 	</tr>
+										 </tbody>
+									</table>							
+								 </div>
+                
+                
+<!--                                manish update-->
+                
+<!--                17-->
+                        <div class="tab-pane table-responsive" id="Tab17" style="background: #eee;">
+								 <label class="font14" id="lab14">(14) ITC Reversal </label>
+								 <table class="table  table-bordered table-hover" id="table14"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th class="align-center" >S.No.</th>
+                                            <th class="align-center" >Description</th>
+                                            <th class="align-center" colspan="3" >ITC Reversal</th>
+                                            
+									 	</tr>
+									 	<tr class="font14 table_th2">
+									 		<th></th><th></th>
+                                            <th  class="align-center">IGST</th>
+									 		<th  class="align-center">CGST</th>
+									 		<th  class="align-center">SGST</th>
+
+                                            
+
+									 									 	
+									 	</tr>
+									 	<tr class="font14">
+                                            <th></th><th></th><th class="align-center">Amount</th><th class="align-center">Amount</th><th class="align-center">Amount</th>
+									 		
+									 									 	
+									 	</tr>
+									 	</thead>
+									 	
+										 <tbody>
+										 	<tr ng-repeat="item in jsonITC.itc_rvsl">
+										 		<td></td>
+										 		<td>{{item.des}}</td>
+										 		<td>{{item.iamt}}</td>									 		
+										 		<td>{{item.camt}}</td>
+										 		<td>{{item.samt}}</td>
+										 	</tr>
+										 </tbody>
+									</table>							
+								 </div>    
+<!--								18 -->
+                                 <div class="tab-pane table-responsive" id="Tab18" style="background: #eee;">
+								 <label class="font14" id="lab14">(14A) Amendment to ITC Reversal </label>
+								 <table class="table  table-bordered table-hover" id="table14"> 
+									   <thead>
+									 	<tr class="font14 table_th1">
+									 		<th class="align-center" >S.No.</th>
+									 		<th class="align-center" >Tax period</th>
+                                            <th class="align-center" >Description*</th>
+                                            <th class="align-center" colspan="6" >ITC Reversal</th>
+                                            
+									 	</tr>
+									 	<tr class="font14 table_th2">
+									 		<th></th><th></th><th></th>
+                                            <th  class="align-center" colspan="2">IGST</th>
+									 		<th  class="align-center" colspan="2">CGST</th>
+									 		<th  class="align-center" colspan="2">SGST</th>
+									 	</tr>
+									 	<tr class="font14">
+                                            <th></th><th></th><th></th>
+                                            <th class="align-center">Amount</th><th class="align-center">Interest</th>
+                                            <th class="align-center">Amount</th><th class="align-center">Interest</th>
+                                            <th class="align-center">Amount</th><th class="align-center">Interest</th>
+									 		
+									 									 	
+									 	</tr>
+									 	</thead>
+									 	
+										 <tbody>
+										 	<tr ng-repeat="item in jsonITC.itc_rvsl">
+										 		<td></td>
+										 		<td></td>
+										 		<td>{{item.des}}</td>
+										 		<td>{{item.iamt}}</td>	
+										 		<td>{{item.iint}}</td>									 		
+										 		<td>{{item.camt}}</td>
+										 		<td>{{item.cint}}</td>	
+										 		<td>{{item.samt}}</td>
+										 		<td>{{item.sint}}</td>	
+										 	</tr>
+										 </tbody>
+									</table>							
+								 </div> 
+                
+<!--                tabs over-->
+						</div>
+					</div></div>
+			   
+			   			<div id="pdf_div"></div>	
+			   		
+			      </div>
+              </div>
+             </div> 
+            </div>
+			</div>
+		</div>
+	</section>
+	
+		
+		<div class="modal" id="download_modal" role="dialog" >
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<div class="modal-header" >
+													<button type="button"  class="close" data-dismiss="modal">&times;</button>
+													<label>Select Download Option</label>												</div>
+											
+												<div class="modal-body">
+													<div class="row">
+														<div class="form-group col-md-10" >
+														  <!--<label for="sel1" class="font14 col-md-5">Download Option:</label>-->
+														  <select class="form-control col-md-3" id="download_sel">
+														  	 <option >Select</option>
+														    <option >Excel</option>
+														    <option >PDF</option>
+														  </select>
+														  
+														</div>
+													</div>
+													
+												</div>
+												<div class="modal-footer signup_body" style="text-align:left">
+													
+													<a id="down_link" href="" class="btn btn-primary my-btn-style"   ng-click="exportAction();" data-dismiss="modal">SUBMIT</a>
+											
+												</div>
+												</form>
+										
+											</div>
+										</div>
+				</div>
+		
+		
+
+	</div>  
+	
+	
+	
+	<script>
+		
+		
+		$(function() {
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							$('#pagination').pagination({
+								items: 18,
+								itemsOnPage: 1,
+								displayedPages:5,
+								currentPage: 1,
+								hrefTextPrefix: "#Tab",
+								cssStyle: 'light-theme',
+								href: false,
+								onPageClick: function(){
+									$(".page-link").attr("target","_self");
+									$(".page-link").attr("data-toggle","tab");
+								}	
+
+							});
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							
+			});
+		
+		
+		$(document).ready(function(){
+			/*
+			 $("#moveleft").click(function(){
+							$( "#newsNavTabs" ).toggle( "slide" );
+							$("#newsNavTabs1").css("display","block");
+						})
+						$("#moveright").click(function(){
+							
+						})*/
+			
+			
+   $('#moveleft').click(function(){
+    	var hidden = $('#newsNavTabs');
+        hidden.hide('slide', {direction: 'left'}, 1000);
+        var h=$('#newsNavTabs1');
+        var  position = $("#newsNavTabs").position();
+        if(position.left==0){
+         h.show('slide', {direction: 'left'}, 1000);
+       // $("#newsNavTabs1").css("display","block");
+       }
+    });
+    
+    $('#moveright').click(function(){
+    	var hidden = $('#newsNavTabs1');
+        hidden.show('slide', {direction: 'left'}, 400);
+          $("#newsNavTabs").css("display","block");
+          $("#newsNavTabs1").css("display","none");
+    });
+		
+});
+		
+	</script>
+
+
+
+            
+   

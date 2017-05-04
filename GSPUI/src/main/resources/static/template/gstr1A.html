@@ -1,0 +1,424 @@
+<div ng-controller="gstr1AController">
+<section class="subpage-header1" class="cause-section"
+		data-anchor="sect1">
+		<div class="container-fluid ">
+		<div class="col-md-12 ">
+				<div class="panel panel-default gstrPanel">
+				<div class="panel-heading " id="panelText">GSTR1A Details</div>
+				<div class="panel-body">
+					
+						<form class="input_height form-horizontal" action="">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+										<input id="GSTN1A_id" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="GSTN">
+									</div>
+
+									<!-- <label for="triggerSystem" class="col-md-4 control-label font14"  >GSTIN</label>
+											<div class="col-md-8" >
+												 <input type="text" id="GSTN_id" class="form-control" ng-model="GSTN" >
+											</div> -->
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Return Period </span>
+										 <input id="returnPeriod" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+									
+								</div>
+								
+
+								<div class="form-group col-md-6">
+
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Month</span>
+										<select class="form-control">
+											<option value="">--Select--</option>
+											<option>January</option>
+											<option>February</option>
+											<option>March</option>
+											<option>April</option>
+											<option>May</option>
+											<option>June</option>
+											<option>July</option>
+											<option>August</option>
+											<option>September</option>
+											<option>October</option>
+											<option>November</option>
+											<option>December</option>
+
+										</select>
+									</div>
+
+									
+								</div>
+								<div class="form-group col-md-6">
+
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>Year</span>
+										<select class="form-control">
+											<option value="">--Select--</option>
+											<option>2016</option>
+											<option>2017</option>
+										</select>
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>ctin </span>
+										 <input id="ctin" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+									
+								</div>
+								  <div class="form-group col-md-6">
+                                         <span class="font14">Action Required</span>
+                                         <label class="radio-inline">
+                                               <input type="radio" name="gender">Yes
+                                             </label>
+                                         <label class="radio-inline">
+                                        <input type="radio" name="gender">No
+                                      </label>
+                                      
+                                      <button class="btn btn-primary my-btn-style float-right"
+										style="padding: 16px 65px !important;"
+										 ng-click = "getGstr1AData();" type="button">Go!</button>
+                                
+                                   </div>
+
+								<!-- <div class="col-md-10"></div>
+								<div class="col-md-2">
+									<button class="btn btn-primary my-btn-style float-right"
+										style="padding: 16px 65px !important;"
+										 ng-click = "getGstr1AData();" type="button">Get Data</button>
+								</div> -->
+							</div>
+						</form>
+						<br/><br/>
+						<div class="row" id="gstr1AButtonGroup">
+							
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="form-group float-right" style="margin-bottom: 0px;">
+									<button class="btn btn-primary my-btn-style"
+										ng-click="submitFile();">SAVE</button>
+									<button class="btn btn-primary my-btn-style" ng-click="save();">SUBMIT</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row">
+								<div class="col-md-12" id="gstr1_table" style="padding-left: 0px;padding-right: 0px;display: none">
+									<div class="panel-heading" id="panelText" style="font-weight: bolder;border-color: rgba(0, 0, 0, 0.25);	">
+										 <div class="panel panel-primary">
+										 	<div class="panel panel-heading primaryPanel row panel_radius">
+										 		<div class="col-md-8"><span class="font14" id="tab_label">GSTR1A Return</span></div>
+												<div id="pagination-gstr1A" class="col-md-4 "></div>	
+										 	</div>
+										 	<div class="panel panel-body">
+            									<div id="menuContent_1" class="tab-content">
+            										<div class="tab-pane active table-responsive" id="Tab1">
+              											<label class="font14" id="lab1">B2B Invoice Data</label>
+              												   <table class="table  table-bordered table-hover" id="table1"> 
+									   <thead>
+									 	    <tr class="font14 table_th1">
+									 	    <th></th>
+									 		<th>GSTIN of receiver/UIN</th>
+									 		<th colspan="6" class="align-center"> Invoice</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">CGST</th>
+									 		<th colspan="2" class="align-center">SGST</th>
+									 		<th>POS (only if different from the location of recipient)</th>
+									 		<th>Indicate if supply attracts reverse charge $</th>
+									 		<th>Tax on this Invoice is paid under provisional assessment</th>
+									 		
+									 	</tr>
+									 	
+									 	  <tr class="font12 table_th2">
+									 	  		<th></th>
+										    	<th></th>
+										    	<th>No</th>
+										    	<th>Date</th>
+										    	<th>Value</th>
+										    	<th>Goods/Services</th>
+										    	<th>HSN/SAC</th>
+										    	<th>Taxable value</th>
+										      	 <th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th></th><th></th><th></th>
+										      	
+										    </tr>
+										   
+									 	</thead>
+										 <tbody  ng-repeat="obj in newB2BData">
+										 	<tr ng-repeat="subobj in obj.itms" 	>
+										 		<td><select><option>Accept</option><option>Reject</option></select></td>
+										 		<td>{{obj.ctin}}</td>
+										 		<td>{{obj.inum}}</td>
+										 		<td>{{obj.idt}}</td>
+										 		<td>{{obj.val}}</td>
+										 		<td>{{subobj.itm_det.ty}}</td>
+										 		<td>{{subobj.itm_det.hsn_sc}}</td>
+										 		<td>{{subobj.itm_det.txval}}</td>
+										 		<td>{{subobj.itm_det.irt}}</td>
+										 		<td>{{subobj.itm_det.iamt}}</td>
+										 		<td>{{subobj.itm_det.crt}}</td>
+										 		<td>{{subobj.itm_det.camt}}</td>
+									 			<td>{{subobj.itm_det.srt}}</td>
+										 		<td>{{subobj.itm_det.samt}}</td>
+										 		<td>{{obj.pos}}</td>
+										 		<td>{{obj.rchrg}}</td>
+										 	
+										 		
+										 	</tr>
+										 </tbody>
+									 </table>	
+              										</div>
+              										
+              										   <div class="tab-pane table-responsive" id="Tab2" style="background: #eee;">
+														   <label class="font14" id="lab2">B2BA Invoive Data</label>
+																				 <table class="table  table-bordered table-hover" id="table2"> 
+																				     <thead>
+									 	    <tr class="font14 table_th1">
+									 	    <th></th>
+									 		<th colspan="3" class="align-center">Original Invoice</th>
+									 		<th colspan="7" class="align-center"> Invoice</th>
+									 		<th colspan="2" class="align-center">IGST</th>
+									 		<th colspan="2" class="align-center">CGST</th>
+									 		<th colspan="2" class="align-center">SGST</th>
+									 		<th>POS (only if different from the location of recipient)</th>
+									 		
+									 	</tr>
+									 	
+									 	  <tr class="font12 table_th2">
+									 	  <th></th>
+									 	 		 <th>GSTIN of supplier</th>
+									 	 		 <th>No</th>
+										    	<th>Date</th>
+										    	<th>GSTIN of supplier</th>
+										    	<th>No</th>
+										    	<th>Date</th>
+										    	<th>Value</th>
+										    	<th>Goods/Services</th>
+										    	<th>HSN/SAC</th>
+										    	<th>Taxable value</th>
+										      	 <th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th>Rate</th>
+										      	<th>Amt</th>
+										      	<th></th>
+										      	
+										    </tr>
+										   
+									 	</thead>
+																				 	
+																					<tbody  ng-repeat="obj in B2BaData">
+																					 	<tr ng-repeat="subobj in obj.itms" 	>
+																					 	<td><select><option>Accept</option><option>Reject</option></select></td>
+																					 		<td>{{obj.ctin}}</td>
+																					 		<td>{{obj.oinum}}</td>
+																					 		<td>{{obj.oidt}}</td>
+																					 		<td></td>
+																					 		<td>{{obj.inum}}</td>
+																					 		<td>{{obj.idt}}</td>
+																					 		<td>{{obj.val}}</td>
+																					 		<td>{{subobj.itm_det.ty}}</td>
+																					 		<td>{{subobj.itm_det.hsn_sc}}</td>
+																					 		<td>{{subobj.itm_det.txval}}</td>
+																					 		<td>{{subobj.itm_det.irt}}</td>
+																					 		<td>{{subobj.itm_det.iamt}}</td>
+																					 		<td>{{subobj.itm_det.crt}}</td>
+																					 		<td>{{subobj.itm_det.camt}}</td>
+																				 			<td>{{subobj.itm_det.srt}}</td>
+																					 		<td>{{subobj.itm_det.samt}}</td>
+																					 		<td>{{obj.pos}}</td>
+																					 																																		 		
+																					 	</tr>
+																					 </tbody>
+																				 </table>
+																	</div>
+																	  <div class="tab-pane table-responsive" id="Tab3" style="background: #eee;">
+														   <label class="font14" id="lab2">CDN Invoice Data</label>
+																				 <table class="table  table-bordered table-hover" id="table2"> 
+																				   <thead>
+																				 	<tr class="font14 table_th1">
+																				 	<th></th>
+																				 		<th  class="align-center">GSTIN/UIN/Name</th>
+																				 		<th class="align-center">Type of note(Debit/Credit)</th>
+																				 		<th colspan="2" class="align-center">Debit Note/credit note</th>
+																				 		<th colspan="2" class="align-center">Original Invoice </th>
+																				 		<th class="align-center">Differential Value(Plus or Minus)</th>
+																				 		<th colspan="6" class="align-center">Differential Tax</th>
+																				 		
+																				 	</tr>
+																				 	<tr class="font12 table_th2">
+																					 		<th></th>
+											                                           		 <th></th>
+																					    	<th></th>
+																					    	
+																					    	<th>No</th>
+																					    	<th>Date</th>
+																					    	<th>No</th>
+																					    	<th>Date</th><th></th>
+																							<th colspan="2" class="align-center">IGST</th>
+																					    	<th colspan="2" class="align-center">CGST</th>
+																					    	<th colspan="2" class="align-center">SGST </th>		    																						
+																					 </tr>
+																					 <tr class="font12"><th></th>
+																					 <th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+																					 <th>Rate</th>
+																					 <th>Amt</th>
+																					  <th>Rate</th>
+																					 <th>Amt</th>
+																					  <th>Rate</th>
+																					 <th>Amt</th>
+																					 </tr>
+																							                               
+																				 	</thead>
+																				 	
+																					<tbody  ng-repeat="obj in jsonCDNInvoices.cdnr">
+																					 	<tr ng-repeat="subobj in obj.nt">
+																					 	<td><select><option>Accept</option><option>Reject</option></select></td>
+																					 		<td>{{obj.ctin}}</td>
+																					 		
+																					 		<td>{{subobj.ntty}}</td>
+																					 		<td>{{subobj.nt_num}}</td>
+																					 		<td>{{subobj.nt_dt}}</td>
+																					 		<td>{{subobj.inum}}</td>
+																					 		<td>{{subobj.idt}}</td>
+																					 		
+																					 		<td>{{subobj.val}}</td>
+																					 		<td>{{subobj.irt}}</td>
+																					 		<td>{{subobj.iamt}}</td>
+																					 		<td>{{subobj.crt}}</td>
+																					 		<td>{{subobj.camt}}</td>
+																					 		<td>{{subobj.srt}}</td>
+																					 		<td>{{subobj.samt}}</td>
+																					 																							 		
+																					 	</tr>
+																					 </tbody>
+																				 </table>
+																	</div>
+																	
+																	  <div class="tab-pane table-responsive" id="Tab4" style="background: #eee;">
+														   <label class="font14" id="lab2">CDNA Invoice Data</label>
+																				 <table class="table  table-bordered table-hover" id="table2"> 
+																				 <thead>
+																				 	<tr class="font14 table_th1">
+																				 	<th></th>
+																				 		<th  class="align-center">GSTIN/UIN/Name</th>
+																				 		<th class="align-center">Type of note(Debit/Credit)</th>
+																				 		<th colspan="2" class="align-center">Original Debit Note/credit note</th>
+																				 		<th colspan="2" class="align-center">Revised Debit Note/credit note</th>
+																				 		<th colspan="2" class="align-center">Original Invoice </th>
+																				 		<th class="align-center">Differential Value(Plus or Minus)</th>
+																				 		<th colspan="6" class="align-center">Differential Tax</th>
+																				 		
+																				 	</tr>
+																				 	<tr class="font12 table_th2">
+																					 	<th></th>
+											                                           		 <th></th>
+																					    	<th></th>
+																					    	<th>No</th>
+																					    	<th>Date</th>
+																					    	<th>No</th>
+																					    	<th>Date</th>
+																					    	<th>No</th>
+																					    	<th>Date</th><th></th>
+																							<th colspan="2" class="align-center">IGST</th>
+																					    	<th colspan="2" class="align-center">CGST</th>
+																					    	<th colspan="2" class="align-center">SGST </th>		    																						
+																					 </tr>
+																					 <tr class="font12">
+																					 <th></th>
+																					 <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+																					 <th>Rate</th>
+																					 <th>Amt</th>
+																					  <th>Rate</th>
+																					 <th>Amt</th>
+																					  <th>Rate</th>
+																					 <th>Amt</th>
+																					 </tr>
+																							                               
+																				 	</thead>
+																				 	
+																					<tbody  ng-repeat="obj in jsonCDNAInvoices.cdnra">
+																					 	<tr ng-repeat="subobj in obj.nt">
+																					 	<td><select><option>Accept</option><option>Reject</option></select></td>
+																					 		<td>{{obj.ctin}}</td>
+																					 		
+																					 		<td>{{subobj.ntty}}</td>
+																					 		<td>{{subobj.ont_num}}</td>
+																					 		<td>{{subobj.ont_dt}}</td>
+																					 		<td>{{subobj.nt_num}}</td>
+																					 		<td>{{subobj.nt_dt}}</td>
+																					 		<td>{{subobj.inum}}</td>
+																					 		<td>{{subobj.idt}}</td>
+																					 		
+																					 		<td>{{subobj.val}}</td>
+																					 		<td>{{subobj.irt}}</td>
+																					 		<td>{{subobj.iamt}}</td>
+																					 		<td>{{subobj.crt}}</td>
+																					 		<td>{{subobj.camt}}</td>
+																					 		<td>{{subobj.srt}}</td>
+																					 		<td>{{subobj.samt}}</td>
+																					 								
+																					 	</tr>
+																					 </tbody>
+																				 </table>
+																	</div>
+											           </div>
+            								</div>
+										 </div>
+									</div>
+								</div>
+						</div>
+				</div>
+				</div>
+		</div>
+		</div>
+</section>
+</div>
+
+	
+	<script>
+		
+		
+		$(function() {
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							$('#pagination-gstr1A').pagination({
+								items: 4,
+								itemsOnPage: 1,
+								displayedPages:5,
+								currentPage: 1,
+								hrefTextPrefix: "#Tab",
+								cssStyle: 'light-theme',
+								href: false,
+								onPageClick: function(){
+									$(".page-link").attr("target","_self");
+									$(".page-link").attr("data-toggle","tab");
+								}	
+
+							});
+							$(".page-link").attr("target","_self");
+							$(".page-link").attr("data-toggle","tab");
+							
+							
+			});
+		
+
+	</script>

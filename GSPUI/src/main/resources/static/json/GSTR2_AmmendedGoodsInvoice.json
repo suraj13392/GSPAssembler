@@ -1,0 +1,63 @@
+{
+  "imp_ga": [
+    {
+      "boe_num": 25662,
+      "boe_dt": "18-04-2016",
+      "oboe_num": 8000,
+      "oboe_dt": "22-03-2016",
+      "boe_val": 338203.29,
+      "itms": [
+        {
+          "num": 1,
+          "hsn_sc": "H1",
+          "txval": 582.88,
+          "irt": 10.5,
+          "iamt": 159.3,
+          "elg": "ip",
+          "tx_i": 123.02,
+          "tc_i": 50.3
+        },
+        {
+          "num": 2,
+          "hsn_sc": "H2",
+          "txval": 582.88,
+          "irt": 10.5,
+          "iamt": 159.3,
+          "elg": "ip",
+          "tx_i": 123.02,
+          "tc_i": 50.3
+        }
+      ]
+    },
+    {
+      "chksum": "AflJufPlFStqKBZ",
+      "boe_num": 26662,
+      "boe_dt": "18-04-2016",
+      "oboe_num": 9000,
+      "oboe_dt": "22-03-2016",
+      "boe_val": 338203.29,
+      "itms": [
+        {
+          "num": 1,
+          "hsn_sc": "H3",
+          "txval": 582.88,
+          "irt": 10.5,
+          "iamt": 159.3,
+          "elg": "ip",
+          "tx_i": 123.02,
+          "tc_i": 50.3
+        },
+        {
+          "num": 2,
+          "hsn_sc": "H4",
+          "txval": 582.88,
+          "irt": 10.5,
+          "iamt": 159.3,
+          "elg": "ip",
+          "tx_i": 123.02,
+          "tc_i": 50.3
+        }
+      ]
+    }
+  ]
+}

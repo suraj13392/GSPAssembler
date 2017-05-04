@@ -1,0 +1,25 @@
+{
+  "itc_rvsl": [
+    {
+      "rsn": "Reason",
+      "des": "description of XYA",
+      "iamt": 789.32,
+      "iint": 456.1,
+      "camt": 741.02,
+      "cint": 123.32,
+      "samt": 753.15,
+      "sint": 102
+    },
+    {
+      "chksum": "AflJufPlFStqKBZ",
+      "rsn": "Reason",
+      "des": "description of XYA",
+      "iamt": 789.32,
+      "iint": 456.1,
+      "camt": 741.02,
+      "cint": 123.32,
+      "samt": 753.15,
+      "sint": 102
+    }
+  ]
+}

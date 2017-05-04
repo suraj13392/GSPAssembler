@@ -1,0 +1,29 @@
+{
+  "tcs_data": [
+    {
+      "ctin": "19ABCDE2813F5Z3",
+      "mid": "2132132131",
+      "sup_val": 123213.87,
+      "tx_val": 6775.77,
+      "tcs_irt": 9.8,
+      "tcs_iamt": 2000,
+      "tcs_crt": 3.5,
+      "tcs_camt": 3000.5,
+      "tcs_srt": 3.5,
+      "tcs_samt": 3200.9
+    },
+    {
+      "chksum": "AflJufPlFStqKBZ",
+      "ctin": "19ABCDE2813F5Z3",
+      "mid": "2132132131",
+      "sup_val": 123213.87,
+      "tx_val": 6775.77,
+      "tcs_irt": 9.8,
+      "tcs_iamt": 2000,
+      "tcs_crt": 3.5,
+      "tcs_camt": 3000.5,
+      "tcs_srt": 3.5,
+      "tcs_samt": 3200.9
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+<div ng-controller="ITCLedgerController">
+	<section class="subpage-header1" class="cause-section"
+		data-anchor="sect1">
+		<div class="container-fluid ">
+		  <div class="col-md-12 ">
+		  	<div class="panel panel-default gstrPanel">
+				<div class="panel-heading " id="panelText">ITC Ledger </div>
+				<div class="panel-body">
+						<form class="input_height form-horizontal" action="">
+							<div class="row">
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>GSTIN</span>
+										<input id="GSTN1A_id" type="text" class="form-control"
+											aria-label="Text input with checkbox" ng-model="GSTN">
+									</div>
+								</div>
+								
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>From Date</span>
+										 <input id="ctin" type="date" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+
+								</div>
+								<div class="form-group col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"><span class="astr">*</span>To Date</span>
+										 <input id="returnPeriod" type="date" class="form-control"
+											aria-label="Text input with checkbox" ng-model="name">
+									</div>
+	
+								</div>
+								   <div class="form-group col-md-6">
+											   <button class="btn btn-primary my-btn-style"  ng-click="getITCLedger($event)" type="button">Go!</button>
+								 </div>
+							
+							</div>
+						</form>
+						
+					<!-- 	<div class="row" id="ITCLedgerButtonGroup">
+							
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+								<div class="form-group float-right" style="margin-bottom: 0px;">
+									<button class="btn btn-primary my-btn-style"
+										ng-click="submitFile();">SAVE</button>
+									<button class="btn btn-primary my-btn-style" ng-click="save();">SUBMIT</button>
+								</div>
+							</div>
+						</div> -->
+						<div class="row">
+							<div class="col-md-12" id="ITCLedger_table" style="padding-left: 0px;padding-right: 0px;display: none">
+								<div class="panel-heading" id="panelText" >
+								 <div class="panel panel-primary" >
+										 <div class="panel panel-heading">	
+											<label class="font14" id="lab1">ITC Ledger Details </label>
+										</div>
+									<div class="panel panel-body"  style=" box-shadow: none;">
+												<div >
+										
+											<table class="table  table-bordered table-hover" id="table1"> 
+												   <thead>
+														<tr class="font14 table_th1">
+														<th>Date of transaction</th>
+														<th>Description of transaction</th>
+														<th>Transaction type</th>
+														<th>Debit No / CIN Number</th>
+														<th>Balance</th>
+														<th></th>
+														
+													</tr>
+													
+													
+													</thead>
+												 <tbody >
+													<tr ng-repeat="item in ITCLedger.tr">
+														<td>{{item.dt}}</td>
+														<td>{{item.tr_name}}</td>
+														<td>{{item.tr_typ}}</td>
+														<td>{{item.db_no}}</td>
+														<td>{{item.bal}}</td>
+														<td><a  href="" ng-click="getITCTransactionData(item.db_no)"  target="_self">View Details</a></td>
+													</tr>
+												 </tbody>
+											 </table>
+										
+										<div id="subcash" style="display:none">
+											<div class="tab-pane active table-responsive col-md-12" id="Tab1" >
+										  	<div class="panel panel-primary">
+												<div class="panel panel-heading">	
+												<label class="font14" id="lab1">Transaction Details</label>
+												</div>
+												<div class="panel panel-body">
+												<table class="table  table-bordered table-hover"> 
+													 <thead>
+													 <tr>
+														<th>Type</th>
+														<th>Tax</th>
+														<th>Interest</th>
+														<th>Penalty</th>
+														<!-- <th>Fee</th> -->
+														<th>Other</th>
+														<th>Total</th>
+														</tr>
+													 </thead>
+													 <tbody>
+														<tr>
+														<td>IGST</td>
+														<td>{{allITCTransactionalDetails.igst.tx}}</td>
+														<td>{{allITCTransactionalDetails.igst.intr}}</td>
+														<td>{{allITCTransactionalDetails.igst.pen}}</td>
+														<!-- <td>{{allITCTransactionalDetails.igst.fee}}</td> -->
+														<td>{{allITCTransactionalDetails.igst.oth}}</td>
+														<td>{{allITCTransactionalDetails.igst.tot}}</td>
+														</tr>
+														<tr>
+														<td>CGST</td>
+														<td>{{allITCTransactionalDetails.cgst.tx}}</td>
+														<td>{{allITCTransactionalDetails.cgst.intr}}</td>
+														<td>{{allITCTransactionalDetails.cgst.pen}}</td>
+														<!-- <td>{{allITCTransactionalDetails.cgst.fee}}</td> -->
+														<td>{{allITCTransactionalDetails.cgst.oth}}</td>
+														<td>{{allITCTransactionalDetails.cgst.tot}}</td>
+														</tr>
+														<tr>
+														<td>SGST</td>
+														<td>{{allITCTransactionalDetails.sgst.tx}}</td>
+														<td>{{allITCTransactionalDetails.sgst.intr}}</td>
+														<td>{{allITCTransactionalDetails.sgst.pen}}</td>
+														<!-- <td>{{allITCTransactionalDetails.sgst.fee}}</td> -->
+														<td>{{allITCTransactionalDetails.sgst.oth}}</td>
+														<td>{{allITCTransactionalDetails.sgst.tot}}</td>
+														</tr>
+														<tr>
+														<td>CESS</td>
+														<td>{{allITCTransactionalDetails.cess.tx}}</td>
+														<td>{{allITCTransactionalDetails.cess.intr}}</td>
+														<td>{{allITCTransactionalDetails.cess.pen}}</td>
+														<!-- <td>{{allITCTransactionalDetails.cess.fee}}</td> -->
+														<td>{{allITCTransactionalDetails.cess.oth}}</td>
+														<td>{{allITCTransactionalDetails.cess.tot}}</td>
+														</tr>
+														
+													 </tbody>
+												</table>
+												</div>
+												</div>
+												</div>
+										</div>
+									
+									</div>
+									
+								</div>
+								</div>
+							</div>
+						</div>
+						
+				</div>
+			</div>
+		  </div>
+		</div>
+	</section>
+</div>
+

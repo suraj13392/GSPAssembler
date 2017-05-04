@@ -1,0 +1,157 @@
+{
+  "gstin": "05BDIPA7164F1ZT",
+  "fr_dt": "01-06-2016",
+  "to_dt": "01-11-2016",
+  "op_bal": {
+    "desc": "Opening Balance",
+    "op_tot": 2000,
+    "igst": {
+      "tx": 100,
+      "intr": 100,
+      "pen": 100,
+      "oth": 100,
+      "fee": 100,
+      "tot": 500
+    },
+    "cgst": {
+      "tx": 100,
+      "intr": 100,
+      "pen": 100,
+      "oth": 100,
+      "fee": 100,
+      "tot": 500
+    },
+    "sgst": {
+      "tx": 100,
+      "intr": 100,
+      "pen": 100,
+      "oth": 100,
+      "fee": 100,
+      "tot": 500
+    },
+    "cess": {
+      "tx": 100,
+      "intr": 100,
+      "pen": 100,
+      "oth": 100,
+      "fee": 100,
+      "tot": 500
+    }
+  },
+  "tr": [
+    {
+      "dt": "06/06/2016",
+      "desc": "Amount deposited",
+      "refNo": "681969",
+      "bal": 2000,
+      "tr_typ": "cr",
+      "igst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "cgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "sgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "cess": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      }
+    },
+      {
+      "dt": "06/06/2016",
+      "desc": "Amount deposited",
+      "refNo": "12345678",
+      "bal": 2000,
+      "tr_typ": "cr",
+      "igst": {
+        "tx": 200,
+        "intr": 200,
+        "pen": 200,
+        "oth": 200,
+        "fee": 200,
+        "tot": 1000
+      },
+      "cgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "sgst": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      },
+      "cess": {
+        "tx": 100,
+        "intr": 100,
+        "pen": 100,
+        "oth": 100,
+        "fee": 100,
+        "tot": 500
+      }
+    }
+  ],
+  "cl_bal": {
+    "desc": "Closing Balance",
+    "cl_tot": 4000,
+    "igst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "cgst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "sgst": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    },
+    "cess": {
+      "tx": 200,
+      "intr": 200,
+      "pen": 200,
+      "oth": 200,
+      "fee": 200,
+      "tot": 1000
+    }
+  }
+}

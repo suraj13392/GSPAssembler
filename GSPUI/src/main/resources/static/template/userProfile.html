@@ -1,0 +1,1304 @@
+
+<div ng-controller="userProfileController as ctrl">
+<section class="subpage-header1" class="cause-section" data-anchor="sect1">
+              <div class="container-fluid ">
+                     <div class="col-md-12 ">
+                     <div class="panel panel-default gstrPanel">
+                     <div class="panel-heading " id="panelText">User Profile</div>
+                     <div class="panel-body">
+                   
+                     <div class="row" class="userTab">
+                                  <div class="col-md-1 register-part01 active-underline" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 23px;">
+                                                01
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab1" data-toggle="tab" target="_self">Business Details</a></label>
+                                         </div>
+                                        <!--  <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div> -->
+                                  </div>
+                         
+                                  <div class="col-md-2 register-part02" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 40px;">
+                                                02
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab2" data-toggle="tab" target="_self">Place of Business</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div>
+                                  <div class="col-md-2 register-part03" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 65px;">
+                                            03 
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab3" data-toggle="tab" target="_self">Propreitor /Partner Details</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div>
+                                   <div class="col-md-2 register-part07" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 50px;">
+                                            04 
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab7" data-toggle="tab" target="_self">Authorised Signatory</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div>
+                                  
+                                  <div class="col-md-2 register-part04" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 35px;">
+                                             05 
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab4" data-toggle="tab" target="_self">GSTIN Details</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div>
+                                  
+                                  <div class="col-md-2 register-part05" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 60px;">
+                                                06
+                                         </div>
+                                         <div class="col-md-10 text-part">
+                                                <label class="label12"><a href="#userTab5" data-toggle="tab" target="_self">Goods /Services Details</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div>
+                                  
+                                  <div class="col-md-1 register-part06" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-12 num-part" style="left: 16px;">
+                                                07
+                                         </div>
+                                         <div class="col-md-12 text-part">
+                                                <label class="label12"><a href="#userTab6" data-toggle="tab" target="_self">My Tax Payers</a></label>
+                                         </div>
+                                  </div>
+                                  
+                                  <!-- <div class="col-md-2 register-part07" style="padding-left: 0px; padding-right: 0px;/*  width: 114px; */">
+                                         <div class="col-md-2 num-part">
+                                                07
+                                         </div>
+                                         <div class="col-md-4 text-part">
+                                                <label class="label12">Authorized Signatory</a></label>
+                                         </div>
+                                         <div class="col-md-1">
+                                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                         </div>
+                                  </div> -->
+                                
+                           </div>
+                           <div class="row" id="userTabMenu">
+                           <div class="tab-content">
+                           
+                           
+                             <div class="tab-pane active" id="userTab1">
+                                         <form class="input_height_UserProfile form-horizontal" style="margin-top: 15px;">
+                                                      <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Legal Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.legalName" >
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Trade Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.tradeName">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Constitution of Business</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.legalName">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">PAN Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.panNumber">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">State Code</span>
+                                                                     <select class="form-control" ng-model="userModel.businessDtls.stateCd">
+                                                                           <option value="">--Select--</option>
+                                                                            <option>Maharashtra</option>
+                                                                           <option>Delhi</option>
+                                                                           <option>Gujrat</option>
+                                                                           <option>Punjab</option>
+                                                                           <option>Kerala</option>
+                                                                           <option>Goa</option>
+                                                                           <option>Madhya Pradesh</option>
+                                                                           <option>Uttar Pradesh</option>
+                                                                            <option>Rajasthan</option>
+                                                                           <option>Tamil Nadu</option>
+                                                                     </select>
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">State Jurisdiction</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.stateJurisdiction">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Ward/Circle/Sector No</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.wardCircleSectorNum">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Center Jurisdiction</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.centerJurisdiction">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Range Code</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.rangeCd">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Commissionarate Code</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.commissionarateCd">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Division Code</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.businessDtls.divisionCd">
+                                                              </div>
+                                                       </div>
+                                                       <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Date of Commencement of Business</span>
+                                                                     <input  type="Date" class="form-control"
+                                                                           aria-label="Text input with checkbox" ng-model="userModel.commencementDt">
+                                                              </div>
+                                                       </div>
+                                                       <div>
+                                                         <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save</label></button>
+                                                     <!--     <button class="btn btn-primary" ng-click="nextTabOpen('userTab1')"><label style="font-size:12px;font-weight:lighter;">Next</label></button> -->
+                                                        </div>
+                                         </form>
+                             </div>
+                             
+                             
+                              <div class="tab-pane" id="userTab2">
+                              <div data-ng-repeat="item in placeList">
+                              <div  class="panel-group accordionplace"  ng-attr-id="{{'mainId-'+item.id}}">
+                              <div class="panel panel-default" ng-attr-id="{{'accordion-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                          <a data-toggle="collapse" class="placeAnchId" data-target="{{'#collapse-'+item.id}}"  style="float:left:font-size:14px;" ng-click="getListCollpase('collapse-'+item.id)" >Place Details {{item.id}}</a>
+                                      </div>
+                                       <div ng-attr-id="{{'collapse-'+item.id}}" class="panel-collapse collapse in">
+                                       <div class="panel-body">
+                                         <form class="input_height_UserProfile form-horizontal" id="collapseOne" >
+                                       			<div class="row row-style">
+	                                               <div class="form-group col-md-6">
+	                                                       <div class="input-group">
+	                                                                     <span class="input-group-addon">Address Type</span>
+	                                                                     <select class="form-control">
+	                                                                           <option value="">--Select--</option>
+	                                                                           <option>Principal Place</option>
+	                                                                           <option>Additional Place</option>
+	                                                                     </select>
+	                                                              </div>
+	                                                </div>
+	                                                <div class="col-md-6"></div>
+                                                </div>
+                                              
+                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Building No</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Floor No</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Building Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Street</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Locality</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">District</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">State</span>
+                                                                     <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                            <option>Maharashtra</option>
+                                                                           <option>Delhi</option>
+                                                                           <option>Gujarat</option>
+                                                                           <option>Punjab</option>
+                                                                           <option>Kerala</option>
+                                                                           <option>Goa</option>
+                                                                           <option>Madhya Pradesh</option>
+                                                                           <option>Uttar Pradesh</option>
+                                                                            <option>Rajasthan</option>
+                                                                           <option>Tamil Nadu</option>
+                                                                     </select>
+                                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Pincode</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                <fieldset class="scheduler-border">
+                                                         <legend class="scheduler-border">Contact Details</legend>
+                                                         <div class="form-group col-md-6">
+                                                         <div class="phone-list" data-ng-repeat="obj in item.mobileList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-btn">
+                                                                                  <button type="button" class="btn user_primary_btn my-btn-style dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                                
+                                                                                        
+                                                                                  <span class="type-text">Contact Type</span>
+                                                                                  <span class="caret"></span></button>
+                                                                                  <ul class="dropdown-menu" role="menu" ng-attr-id="{{'mobile-'+obj.mobileid}}">
+                                
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="fax">Fax</a></li>
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="phone">Phone</a></li>
+                                                                                         <li id="mobileLink"><a class="changeType" href="javascript:;" data-type-value="mobile">Mobile</a></li>
+                                                                                  </ul>
+                                                                           </span>
+                                                                                  <input type="text"  name="" placeholder="Enter mobile number">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                           
+                                                                     </div>
+                                                                     <div ng-attr-id="{{'preferred-'+obj.mobileid}}"  style="display:none">
+                                                   			   <div class="row">
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group">
+                                                                           <span class="input-group-addon">Preferred Day</span>
+                                                                                  <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                           <option>Weekday</option>
+                                                                           <option>Weekend</option>
+                                                                     </select>
+                                                                     </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                     <span class="input-group-addon">Preferred Time From</span>
+                                                                   <input id="timepicker1" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                               </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                           <span class="input-group-addon">Preferred Time To</span>
+                                                                             <input id="timepicker2" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                                     </div>
+                                                              </div>
+                                                              </div>
+                                                              </div>
+                                                                   
+                                                              </div>
+                                                            
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addNewChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Phone</span> </button>
+                                                      </div>
+                                                    
+                                                      
+                                                             
+                                                             
+                                                                     <div class="form-group col-md-6">
+                                                                     <div class="emiallist" data-ng-repeat="obj in item.emailList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">Email Id</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeEmailChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addEmailChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Email</span></button>
+                                                              </div>
+                                       
+                                                </fieldset>
+                                                </div>
+                                              
+                                         </form>
+                                         </div>
+                                       
+                              </div>
+                           </div>
+                           </div>
+                           </div>
+                           <div class="panel-footer">
+                           <a  href="" id="addPlacedetails" ng-click="addPlacedetails()"><label style="font-size:12px;font-weight:lighter;">Add another place details</label></a> </div>
+                            <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save & Continue</label></button>
+                          
+                           </div>
+                           
+                           
+                              <div class="tab-pane" id="userTab3">
+                              <div data-ng-repeat="item in partnerList">
+                              <div  class="panel-group accordion"  ng-attr-id="{{'mainPartnerId-'+item.id}}">
+                              <div class="panel panel-default" ng-attr-id="{{'accordionPart-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                          <a data-toggle="collapse"  data-parent="{{'#mainPartnerId-'+item.id}}" data-target="{{'#collapsePart-'+item.id}}" ng-click="getPartCollpase('collapsePart-'+item.id)"  style="float:left:font-size:14px;">Partner Details {{item.id}}</a>
+                                      </div>
+                                       <div ng-attr-id="{{'collapsePart-'+item.id}}" class="panel-collapse collapse in">
+                                       <div class="panel-body">
+                                           <form class="input_height_UserProfile form-horizontal">
+                                                <div class="row row-style">
+                                                <div class="form-group col-md-4">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">Party Type</span>
+                                                                     <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                           <option>Proprieter</option>
+                                                                           <option>Partner</option>
+                                                                     </select>
+                                                              </div>
+                                                </div>
+                                                <div class="col-md-8"></div>
+                                                </div>
+                                              
+                                                <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">First Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Middle Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Last Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's First Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's Middle Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's Last Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">Designation</span>
+                                                                     <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                            <option>CEO</option>
+                                                                           <option>Chairman</option>
+                                                                     </select>
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">Date of Birth</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group col-md-6">
+                                                                                  <span class="font14">Gender</span>
+                                                                                  <label class="radio-inline">
+                                                                                        <input type="radio" name="gender">Male
+                                                                                      </label>
+                                                                                  <label class="radio-inline">
+                                                                                 <input type="radio" name="gender">Female
+                                                                               </label>
+                                                                                <label class="radio-inline">
+                                                                                 <input type="radio" name="gender">Other
+                                                                               </label>
+                                                                                  </div>
+                                                                                  <div class="form-group col-md-6">
+                                                                                         <span class="font14">Is citizen of India</span>
+                                                                                         <label class="radio-inline">
+                                                                                               <input type="radio"  name="{{'citizenIndia-'+item.id}}" value="Yes" ng-click="getCitizen('citizenIndia-'+item.id)">Yes
+                                                                                             </label>
+                                                                                         <label class="radio-inline">
+                                                                                               <input type="radio"  name="{{'citizenIndia-'+item.id}}" value="No" ng-click="getCitizen('citizenIndia-'+item.id)">No
+                                                                                             </label>
+                                                                                  </div>
+                                                                                  <div  id="{{'citizenIndia-'+item.id}}" style="display:none">
+                                                                                  <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">PAN Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Passport Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Aadhar Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                                                  <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">DIN Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                </div>
+                                                                                  <div class="col-md-12">
+                                                                                  <fieldset class="scheduler-border">
+                                                         <legend class="scheduler-border">Address Details</legend>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Building No</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Floor No</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Building Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Street</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Locality</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">District</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">State</span>
+                                                                     <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                            <option>Maharastra</option>
+                                                                           <option>Delhi</option>
+                                                                           <option>Gujrat</option>
+                                                                           <option>Punjab</option>
+                                                                           <option>Kerala</option>
+                                                                           <option>Goa</option>
+                                                                           <option>Madhya Pradesh</option>
+                                                                           <option>Uttar Pradesh</option>
+                                                                            <option>Rajasthan</option>
+                                                                           <option>Tamil Nadu</option>
+                                                                     </select>
+                                                              </div>
+                                                       </div>
+                                                                                           <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Pin Code</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-12">
+                                                                                                <fieldset class="scheduler-border">
+                                                         <legend class="scheduler-border">Contact Details</legend>
+                                                         <div class="form-group col-md-6">
+                                                         <div class="phone-list" data-ng-repeat="obj in item.mobileList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-btn">
+                                                                                  <button type="button" class="btn user_primary_btn my-btn-style dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                                
+                                                                                        
+                                                                                  <span class="type-text">Contact Type</span>
+                                                                                  <span class="caret"></span></button>
+                                                                                  <ul class="dropdown-menu" role="menu" ng-attr-id="{{'mobile-'+obj.mobileid}}">
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="phone">Phone</a></li>
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="fax">Fax</a></li>
+                                                                                         <li id="mobileLink"><a class="changeType" href="javascript:;" data-type-value="mobile">Mobile</a></li>
+                                                                                  </ul>
+                                                                           </span>
+                                                                                  <input type="text"  name="" placeholder="Enter mobile number">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                           
+                                                                     </div>
+                                                                     <div id="mobile_preferredday" data-ng-repeat="subobj in obj.preferreddayList" >
+                                                      <div class="row">
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group">
+                                                                           <span class="input-group-addon">Preferred Day</span>
+                                                                                  <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                           <option>Monday</option>
+                                                                           <option>Tuesday</option>
+                                                                            <option>Wednesday</option>
+                                                                            <option>Thursday</option>
+                                                                           <option>Friday</option>
+                                                                     </select>
+                                                                     </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                     <span class="input-group-addon">Preferred Time From</span>
+                                                                   <input id="timepicker1" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                               </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                           <span class="input-group-addon">Preferred Time To</span>
+                                                                             <input id="timepicker2" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                                     </div>
+                                                              </div>
+                                                              </div>
+                                                              </div>
+                                                                   
+                                                              </div>
+                                                            
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addNewChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Phone</span> </button>
+                                                      </div>
+                                                    
+                                                      
+                                                             
+                                                             
+                                                                     <div class="form-group col-md-6">
+                                                                     <div class="emiallist" data-ng-repeat="obj in item.emailList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">Email Id</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeEmailChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addEmailChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Email</span></button>
+                                                              </div>
+                                                                               
+                                                </fieldset></div>
+                                                                                  </fieldset>
+                                                                                  </div>
+                                                                                  </form>
+                                                                                  </div>
+                                                                     </div>
+                                                              </div>
+                                                       </div>
+                                                </div>
+                                                <div class="panel-footer">
+                                                <a  id="addpartnerdetails" ng-click="addpartnerdetails()"><label style="font-size:12px;font-weight:lighter;">Add another Partner details</label></a></div>
+                                                <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save & Continue</label></button>
+                           </div>
+                           
+						      <div class="tab-pane" id="userTab7">
+                          
+                           <div data-ng-repeat="item in authorizedList">
+                              <div  class="panel-group accordion"  ng-attr-id="{{'mainAuthorizedId'+item.id}}">
+                              <div class="panel panel-default" ng-attr-id="{{'accordionPart-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                 <a data-toggle="collapse"  data-parent="{{'#mainAuthorizedId-'+item.id}}" data-target="{{'#collapsePart-'+item.id}}" ng-click="getPartCollpase('collapsePart-'+item.id)"  style="float:left:font-size:14px;">Authorized Signatory Details {{item.id}}</a>
+                              </div>
+                              <div ng-attr-id="{{'collapsePart-'+item.id}}" class="panel-collapse collapse in">
+                                 <div class="panel-body">
+                                <form class="input_height_UserProfile form-horizontal">
+                                       <div class="form-group  col-md-4">
+                                               <div class="input-group">
+                                                      <span class="input-group-addon">First Name</span>
+                                                      <input  type="text" class="form-control" aria-label="Text input with checkbox">
+                                               </div>
+                                        </div>
+                                        <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Middle Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Last Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's First Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's Middle Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group  col-md-4">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Father's/Husband's Last Name</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">Designation</span>
+                                                                     <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                            <option>CEO</option>
+                                                                           <option>Chairman</option>
+                                                                     </select>
+                                                              </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                                       <div class="input-group">
+                                                                     <span class="input-group-addon">Date of Birth</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                               <span class="font14">Gender</span>
+                                               <label class="radio-inline">
+                                                     <input type="radio" name="gender">Male
+                                                   </label>
+                                               <label class="radio-inline">
+                                                     <input type="radio" name="gender">Female
+                                                  </label>
+                                                  <label class="radio-inline">
+                                                     <input type="radio" name="gender">Other
+                                                  </label>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                               <span class="font14">Is citizen of India</span>
+                                               <label class="radio-inline">
+                                                     <input type="radio"  name="{{'citizenIndia-'+item.id}}" value="Yes" ng-click="getCitizen('citizenIndia-'+item.id)">Yes
+                                                   </label>
+                                               <label class="radio-inline">
+                                                     <input type="radio"  name="{{'citizenIndia-'+item.id}}" value="No" ng-click="getCitizen('citizenIndia-'+item.id)">No
+                                                   </label>
+                                        </div>
+                                        <div  id="{{'citizenIndia-'+item.id}}" style="display:none">
+                                                      <div class="form-group  col-md-6">
+                                                                   <div class="input-group">
+                                                                     <span class="input-group-addon">PAN Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                                  </div>
+                                                </div>
+                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Passport Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Aadhar Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                </div>
+                                                <div class="form-group  col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">DIN Number</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                                     </div>
+                                       </div>
+                                       <div class="col-md-12">
+                                       <fieldset class="scheduler-border">
+                                              <legend class="scheduler-border">Address Details</legend>
+                                              <div class="form-group  col-md-6">
+                                                                     <div class="input-group">
+                                                                            <span class="input-group-addon">Building No</span>
+                                                                            <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                     </div>
+                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                                          <div class="input-group">
+                                                                                 <span class="input-group-addon">Floor No</span>
+                                                                                 <input  type="text" class="form-control"
+                                                                                       aria-label="Text input with checkbox">
+                                                                          </div>
+                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                                          <div class="input-group">
+                                                                                 <span class="input-group-addon">Building Name</span>
+                                                                                 <input  type="text" class="form-control"
+                                                                                       aria-label="Text input with checkbox">
+                                                                          </div>
+                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                                          <div class="input-group">
+                                                                                 <span class="input-group-addon">Street</span>
+                                                                                 <input  type="text" class="form-control"
+                                                                                       aria-label="Text input with checkbox">
+                                                                          </div>
+                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                                          <div class="input-group">
+                                                                                 <span class="input-group-addon">Locality</span>
+                                                                                 <input  type="text" class="form-control"
+                                                                                       aria-label="Text input with checkbox">
+                                                                          </div>
+                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                                          <div class="input-group">
+                                                                                 <span class="input-group-addon">District</span>
+                                                                                 <input  type="text" class="form-control"
+                                                                                       aria-label="Text input with checkbox">
+                                                                          </div>
+                                              </div>
+                                              <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                            <span class="input-group-addon">State</span>
+                                                                            <select class="form-control">
+                                                                                  <option value="">--Select--</option>
+                                                                                   <option>Maharastra</option>
+                                                                                  <option>Delhi</option>
+                                                                                  <option>Gujrat</option>
+                                                                                  <option>Punjab</option>
+                                                                                  <option>Kerala</option>
+                                                                                  <option>Goa</option>
+                                                                                  <option>Madhya Pradesh</option>
+                                                                                  <option>Uttar Pradesh</option>
+                                                                                   <option>Rajasthan</option>
+                                                                                  <option>Tamil Nadu</option>
+                                                                            </select>
+                                                                     </div>
+                                                              </div>
+                                              <div class="form-group  col-md-6">
+                                                    <div class="input-group">
+                                                           <span class="input-group-addon">Pin Code</span>
+                                                           <input  type="text" class="form-control"
+                                                                 aria-label="Text input with checkbox">
+                                                    </div>
+                                              </div>
+                                              <div class="col-md-12">
+                                                <fieldset class="scheduler-border">
+                                               
+                                                <legend class="scheduler-border">Contact Details</legend>
+                                                         <div class="form-group col-md-6">
+                                                         <div class="phone-list" data-ng-repeat="obj in item.mobileList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-btn">
+                                                                                  <button type="button" class="btn user_primary_btn my-btn-style dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                                
+                                                                                        
+                                                                                  <span class="type-text">Contact Type</span>
+                                                                                  <span class="caret"></span></button>
+                                                                                  <ul class="dropdown-menu" role="menu" ng-attr-id="{{'mobile-'+obj.mobileid}}">
+                               
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="fax">Fax</a></li>
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="phone">Phone</a></li>
+                                                                                         <li id="mobileLink"><a class="changeType" href="javascript:;" data-type-value="mobile">Mobile</a></li>
+                                                                                  </ul>
+                                                                           </span>
+                                                                                  <input type="text"  name="" placeholder="Enter mobile number">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                          
+                                                                     </div>
+                                                                     <div ng-attr-id="{{'preferred-'+obj.mobileid}}"  style="display:none">
+                                                                     <div class="row">
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group">
+                                                                           <span class="input-group-addon">Preferred Day</span>
+                                                                                  <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                           <option>Monday</option>
+                                                                           <option>Tuesday</option>
+                                                                            <option>Wednesday</option>
+                                                                            <option>Thursday</option>
+                                                                           <option>Friday</option>
+                                                                     </select>
+                                                                     </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                     <span class="input-group-addon">Preferred Time From</span>
+                                                                   <input id="timepicker1" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                               </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                           <span class="input-group-addon">Preferred Time To</span>
+                                                                             <input id="timepicker2" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                                     </div>
+                                                              </div>
+                                                              </div>
+                                                              </div>
+                                                                  
+                                                              </div>
+                                                           
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addNewChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Phone</span> </button>
+                                                      </div>
+                                               
+                                                         <!-- <legend class="scheduler-border">Contact Details</legend>
+                                                         <div class="form-group col-md-6">
+                                                         <div class="phone-list" data-ng-repeat="obj in item.mobileList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-btn">
+                                                                                  <button type="button" class="btn user_primary_btn my-btn-style dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                               
+                                                                                        
+                                                                                  <span class="type-text">Contact Type</span>
+                                                                                  <span class="caret"></span></button>
+                                                                                  <ul class="dropdown-menu" role="menu" ng-attr-id="{{'mobile-'+obj.mobileid}}">
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="phone">Phone</a></li>
+                                                                                         <li><a class="changeType" href="javascript:;" data-type-value="fax">Fax</a></li>
+                                                                                         <li id="mobileLink"><a class="changeType" href="javascript:;" data-type-value="mobile">Mobile</a></li>
+                                                                                  </ul>
+                                                                           </span>
+                                                                                  <input type="text"  name="" placeholder="Enter mobile number">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                          
+                                                                     </div>
+                                                                     <div id="mobile_preferredday" data-ng-repeat="subobj in obj.preferreddayList"  >
+                                                      <div class="row">
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group">
+                                                                           <span class="input-group-addon">Preferred Day</span>
+                                                                                  <select class="form-control">
+                                                                           <option value="">--Select--</option>
+                                                                           <option>Monday</option>
+                                                                           <option>Tuesday</option>
+                                                                            <option>Wednesday</option>
+                                                                            <option>Thursday</option>
+                                                                           <option>Friday</option>
+                                                                     </select>
+                                                                     </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                     <span class="input-group-addon">Preferred Time From</span>
+                                                                   <input id="timepicker1" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                               </div>
+                                                              </div>
+                                                              <div class="form-group col-md-6">
+                                                                     <div class="input-group bootstrap-timepicker timepicker">
+                                                                           <span class="input-group-addon">Preferred Time To</span>
+                                                                             <input id="timepicker2" type="text" class="form-control input-small">
+                                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                                                     </div>
+                                                              </div>
+                                                              </div>
+                                                              </div>
+                                                                  
+                                                              </div>
+                                                           
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addNewChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Phone</span> </button>
+                                                      </div> -->
+                                                   
+                                                      
+                                                             
+                                                             
+                                                                     <div class="form-group col-md-6">
+                                                                     <div class="emiallist" data-ng-repeat="obj in item.emailList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">Email Id</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeEmailChoice(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                     <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addEmailChoice(item.id)"><span class="glyphicon glyphicon-plus">Add Email</span></button>
+                                                              </div>
+                                      
+                                                </fieldset>
+                                                </div>
+                                       </fieldset>
+                                       </div>
+                                         </form>
+                                         </div>
+                                         </div>
+                                      </div>
+                                      </div>
+                                  </div>
+                          
+                              
+                                        <div class="panel-footer">
+                                        <a  id="addAutorizedDetails" ng-click="addAutorizedDetails()"><label style="font-size:12px;font-weight:lighter;">Add another Authorized Signatory details</label></a></div>
+                                        <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save & Continue</label></button>
+                           </div>  
+                           
+                           
+  	<!-- Added by Sumedh - GSTIN Details_Start -->
+            				<div class="tab-pane" id="userTab4">
+                            <div data-ng-repeat="item in statelist">
+                              <div  class="panel-group accordionplace"  ng-attr-id="{{'mainId-'+item.id}}">
+                              <div class="panel panel-default" ng-attr-id="{{'accordion-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                          <a data-toggle="collapse" class="placeAnchId" data-target="{{'#collapse-'+item.id}}"  style="float:left:font-size:14px;" ng-click="getListCollpase('collapse-'+item.id)" >GSTIN Details {{item.id}}</a>
+                                      </div>
+                                       <div ng-attr-id="{{'collapse-'+item.id}}" class="panel-collapse collapse in">
+                                       <div class="panel-body">
+                                         <form class="input_height_UserProfile form-horizontal" id="collapseOne" >
+                                        
+                                                      <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">State Code</span>
+                                                                     <select class="form-control">
+                                                                          
+                                                    <option value="">---Select---</option>
+													<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+													<option value="Andhra Pradesh">Andhra Pradesh</option>
+													<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+													<option value="Assam">Assam</option>
+													<option value="Bihar">Bihar</option>
+													<option value="Chandigarh">Chandigarh</option>
+													<option value="Chhattisgarh">Chhattisgarh</option>
+													<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+													<option value="Daman and Diu">Daman and Diu</option>
+													<option value="Delhi">Delhi</option>
+													<option value="Goa">Goa</option>
+													<option value="Gujarat">Gujarat</option>
+													<option value="Haryana">Haryana</option>
+													<option value="Himachal Pradesh">Himachal Pradesh</option>
+													<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+													<option value="Jharkhand">Jharkhand</option>
+													<option value="Karnataka">Karnataka</option>
+													<option value="Kerala">Kerala</option>
+													<option value="Lakshadweep">Lakshadweep</option>
+													<option value="Madhya Pradesh">Madhya Pradesh</option>
+													<option value="Maharashtra">Maharashtra</option>
+													<option value="Manipur">Manipur</option>
+													<option value="Meghalaya">Meghalaya</option>
+													<option value="Mizoram">Mizoram</option>
+													<option value="Nagaland">Nagaland</option>
+													<option value="Orissa">Orissa</option>
+													<option value="Pondicherry">Pondicherry</option>
+													<option value="Punjab">Punjab</option>
+													<option value="Rajasthan">Rajasthan</option>
+													<option value="Sikkim">Sikkim</option>
+													<option value="Tamil Nadu">Tamil Nadu</option>
+													<option value="Tripura">Tripura</option>
+													<option value="Uttaranchal">Uttaranchal</option>
+													<option value="Uttar Pradesh">Uttar Pradesh</option>
+													<option value="West Bengal">West Bengal</option>
+												</select>
+                                                              </div>
+                                                       </div>
+                                           
+                                                
+                                                 <div class="form-group col-md-6">
+                                                                     <div class="gstrlist" data-ng-repeat="obj in item.gstrList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">GSTIN</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removegstinList(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                      <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addgstinList(item.id)"><span class="glyphicon glyphicon-plus">ADD GSTIN</span></button>
+                                                               </div>
+                                                              </form>
+    		</div>
+                           </div>
+                     </div>
+              </div>
+              </div>
+              <div class="panel-footer">
+              <a ng-click="addGSTRList()"><label style="font-size:12px;font-weight:lighter;">Click here to add another State</label></a></div>
+              <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save & Continue</label></button>              
+              </div>
+              
+<!--Added by Sumedh - GSTIN Details_End -->
+
+
+<!--Added by Sumedh - Goods&Services_Start -->
+
+	<div class="tab-pane" id="userTab5">
+	<div class="col-md-12" style="margin-top: 15px;">
+		<div class="col-md-2" ><span style="font-size:16px;float:left;"> Goods Details </span></div>
+		<div class="col-md-10"><span style="font-size:16px;"> Services Details </span></div> 
+     </div>                                    
+     <div class="row">
+			        <div class="col-md-12">
+					<div class=" col-md-6"> 
+					
+			          <table class="table table-bordered table-striped data-table myTable">
+			       
+				            <thead class="thead-inverse">
+				                <tr>
+				            
+				                    <th class="DescID" style="width: 80%;"> <button style="background-color: #0078b4;"> Description  </button>
+			
+							    	 </th>
+				                    <th class="HSN"> <button style="background-color: #0078b4;"> HSN Code </button> <span class="{{Header[1]}}"></span></a> 
+				                    </th>
+				                    
+				                </tr>
+				            </thead>
+				          <tbody>
+				                <tr ng-repeat="item in goodsDetail">
+				                    <td>{{item.DescId}}</td>
+				                    <td>{{item.hsnCode}}</td>
+				                </tr>
+				            </tbody>
+        			</table>
+					</div>
+					
+					
+			<div class=" col-md-6"> 
+					
+			          <table class="table table-bordered table-striped data-table myTable">
+			       
+				            <thead class="thead-inverse">
+				                <tr>
+				            
+				                    <th class="ServicesDescID" style="width: 80%;"> <button style="background-color: #0078b4;"> Description</button>
+			
+							    	 </th>
+							  
+				                    <th class="SAC"> <button style="background-color: #0078b4;"> SAC Code </button> <span class="{{Header[1]}}"></span></a> 
+				                    </th>
+				                    
+				                </tr>
+				            </thead>
+				          <tbody>
+				                <tr ng-repeat="item in servicesDetail">
+				                    <td>{{item.ServicesDescId}}</td>
+				                    <td>{{item.sacCode}}</td>
+				                </tr>
+				            </tbody>
+        			</table>
+					</div>		
+					
+					
+					
+					</div>
+					</div>
+                                    
+                                          
+          <form class="input_height">
+			         <div class="row">
+			         		<div class="col-md-12">
+			            <div class="col-md-3">
+			             <textarea id="DescId" ng-model="newDescId" class="form-control" rows="2"  placeholder="Description"></textarea>
+			                <!-- <input type="text" id="DescId" ng-model="newDescId" class="form-control" placeholder="Description"> -->
+			            </div>
+			            <div class="col-md-2">
+			                <input type="text" ng-model="newHSN" class="form-control" placeholder="HSN Code">
+			            </div>
+			            <div class="col-md-1">
+			                <button ng-click="addgoodsdetail()" type="button" class="btn btn-primary my-btn-style" > <span class="glyphicon glyphicon-plus" style="line-height: 0;top: -1px!important;"></span>
+			                </button>
+			            </div>
+			            
+			      <div class="col-md-3">
+			     			 <textarea id="ServicesDescId" ng-model="newServicesDescId" class="form-control" rows="2"  placeholder="Description"></textarea>
+			                <!-- <input type="text" id="ServicesDescId" ng-model="newServicesDescId" class="form-control" placeholder="Description"> -->
+			            </div>
+			            <div class="col-md-2">
+			                <input type="text" ng-model="newSAC" class="form-control" placeholder="SAC Code">
+			            </div>
+			            <div class="col-md-1">
+			                <button ng-click="addservicesdetail()" type="button" class="btn btn-primary my-btn-style" > <span class="glyphicon glyphicon-plus" style="line-height: 0;top: -1px!important;"></span>
+			                </button>
+			            </div>      
+			            
+			          </div> 
+        			</div>
+        			</form>
+                                          </div>
+                                          
+  <!-- Goods&Services_End - Added by Sumedh - -->      
+    <!-- My Tax Payers_Start - Added by Sumedh--->            
+           <div class="tab-pane" id="userTab6">
+ 			<div class="form-group col-md-6" style="margin-top: 20px;">
+           <span class="font14">Select option :</span>
+            <label class="radio-inline">
+   			<input type="radio" name="party" value="Party-Organisation" ng-click="getorganisation('party')">Party-Organisation
+    		</label>
+    		 <label class="radio-inline">
+    		<input type="radio" name="party" value="Organisation" ng-click="getorganisation('organisation')">Organisation
+      		 </label>
+          	 </div>     
+          	       <div id="partyDiv" class="form-group col-md-12" style="display:none;">
+                           <div data-ng-repeat="item in partydetails">
+                              <div  class="panel-group accordionplace"  ng-attr-id="{{'mainId-'+item.id}}">
+                              <div class="panel panel-default" ng-attr-id="{{'accordion-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                          <a data-toggle="collapse" class="placeAnchId" data-target="{{'#collapse-'+item.id}}"  style="float:left:font-size:14px;" ng-click="getListCollpase('collapse-'+item.id)" >Party - {{item.id}}</a>
+                                      </div>
+                                       <div ng-attr-id="{{'collapse-'+item.id}}" class="panel-collapse collapse in">
+                                       <div class="panel-body">
+                                         <form class="input_height_UserProfile form-horizontal" id="collapseOne" >
+                                        
+                                                        <div class="form-group col-md-6">
+                                                              <div class="input-group">
+                                                                     <span class="input-group-addon">Party</span>
+                                                                     <input  type="text" class="form-control"
+                                                                           aria-label="Text input with checkbox">
+                                                              </div>
+                                               			</div>
+               
+               
+               												<div class="form-group col-md-6">
+                                                                     <div class="partydetailsList" data-ng-repeat="obj in item.partydetailsList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">Organisation</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removepartydetails(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                      <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addpartydetailsinList(item.id)"><span class="glyphicon glyphicon-plus">Add Organisation</span></button>
+                                                               </div>
+                                                               </form>
+                                          </div>
+                           </div></div>
+                         </div></div>
+                         
+                         <div class="panel-footer">
+                         <a ng-click="addpartyList()"><label style="font-size:12px;font-weight:lighter;">Add another Party</label></a></div>
+                         <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save</label></button>
+                         </div>
+                         <br>
+                         
+    	<div id="orgDiv" class="form-group col-md-12" style="display:none;" >
+                            <div data-ng-repeat="item in orgdetails">
+                               <div  class="panel-group accordionplace"  ng-attr-id="{{'mainId-'+item.id}}"> 
+                              <div class="panel panel-default" ng-attr-id="{{'accordion-'+item.id}}">
+                              <div class="panel-heading accordion-toggle collapsed" style="font-size: 14px;">
+                                          <a data-toggle="collapse" class="placeAnchId" data-target="{{'#collapse-'+item.id}}" style="float:left:font-size:14px;">Organisation {{item.id}}</a>
+                                      </div>
+                                       <div ng-attr-id="{{'collapse-'+item.id}}" class="panel-collapse collapse in"> 
+                                       <div class="panel-body">
+                                         <form class="input_height_UserProfile form-horizontal" id="collapseOne" >
+                                        
+                                                       <div class="form-group col-md-6">
+                                                                     <div class="orgdetailsList" data-ng-repeat="obj in item.orgdetailsList">
+                                                                     <div class="input-group phone-input">
+                                                                           <span class="input-group-addon">Organisation</span>
+                                                                           <input  type="text" class="form-control"
+                                                                                  aria-label="Text input with checkbox">
+                                                                  <span class="input-group-btn"><button class="btn btn-danger my-btn-style btn-remove-phone" type="button" ng-show="!$first" ng-click="removeorgdetails(item.id)"><span class="glyphicon glyphicon-remove"></span></button></span>
+                                                                     </div>
+                                                                     </div>
+                                                                      <button type="button" class="btn btn-primary my-btn-style btn-sm btn-add-phone" ng-click="addorgdetailsinList(item.id)"><span class="glyphicon glyphicon-plus">Add Organisation</span></button>
+                                                               </div>
+                                                               </form>                     
+                       </div> 
+                          <div class="panel-footer">
+                
+                         <button class="btn btn-primary"><label style="font-size:12px;font-weight:lighter;">Save</label></button>
+                         </div>
+                       
+                       </div></div></div></div></div>
+                       
+  <!-- My Tax Payers_End - Added by Sumedh--->  
+
+  
+                           </div>
+                     </div>
+              </div>
+</section>
+</div>
+  <script type="text/javascript">
+        $('#timepicker1').timepicker();
+        $('#timepicker2').timepicker();
+
+       
+       
+    </script> 

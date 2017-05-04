@@ -1,0 +1,191 @@
+<div ng-controller="loginNavController">
+
+<div class="row" style="margin-bottom:-17px;margin-left:0px;margin-right:25px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <ul class="nav navbar-nav navbar-right">
+                        <li role="presentation" class="active"><a href="#">Request for Demo</a></li>
+                        <li role="presentation"><a href="#">News &amp; Events</a></li>
+                        <li role="presentation"><a href="#">24/7 Customer Care</a></li>
+                        <li role="presentation" class="index-menu"><a href="" id="signInModalBtn"
+						data-toggle="modal" data-target="#signin_modal">Login | </a></li>
+                         <li role="presentation" class="index-menu" style="margin-left:-25px"><a
+						href="" class="registerBtn" data-toggle="modal"
+						data-target="#signin_modal">Register</a></li>
+						<li role="presentation" class="dashboard-menu" style="display:none;"><a href="#" ng-click="signOut()">Logout</a></li>
+                    </ul>
+    </div>
+</div>
+    <div class="indexMainNav" id="indexMainNavId">
+        <nav class="navbar navbar-default navigation-clean">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-link" href="#" style="height:70px;margin-top:-15px;padding-bottom:15px;"> <img src="img/logo_with name.png" style="height:58px;"></a>
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                </div>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li  role="presentation"><a href="#">Services </a></li>
+                        <li  role="presentation"><a href="#">Expertise </a></li>
+                        <li  role="presentation"><a href="#">Corporate GST</a></li>
+                        <li role="presentation"><a href="#">Business Solution</a></li>
+                        <li role="presentation"><a href="#">Industry Solutions</a></li>
+                        <li role="presentation" class="dashboard-menu" style="display:none"><a href="#dashboard">Dashboard</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </nav> 
+
+					</div>
+    </div>
+    
+         	<div class="modal" id="signin_modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 id="modal_header_label"
+						style="font-weight: bolder; font-size: 17px; position: absolute; left: 45%; color: #0088cc;">Sign
+						In</h4>
+				</div>
+				<form>
+					<div class="modal-body">
+						<div class="row signup_body" style="margin-right: -43px;">
+
+							<div class="col-md-12">
+								<div class="form-group signin_input_height"
+									style="margin-top: 38px !important;">
+
+									<input type="text" class="form-control required"
+										placeholder="User Name" ng-model="userName" required>
+								</div>
+								<div class="form-group signin_input_height">
+
+									<input type="password" class="form-control required"
+										placeholder="Password" ng-model="password" required>
+								</div>
+								<div class="form-group signin_input_height">
+									<a href="#dashboard" ui-sref-opts="{reload: true}" autoscroll="true" class="btn btn-primary my-btn-style"
+										style="min-width: 100%;" ng-click="signIn()">Login</a>
+								</div>
+								<label class="label12 "><a href="" class="keepMeLabel">Keep
+										Me SignIn</a></label> <label class="label12"><a href=""
+									class="forgetpasslabel">Forgot Password</a></label>
+							</div>
+							<div class="row">
+								<div class="col-md-5 col-sm-5 col-xs-5"></div>
+								<div class="col-md-4 col-sm-4 col-xs-4">
+									<span>OR</span>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4 col-sm-4 col-xs-4"></div>
+								<div class="col-md-5 col-sm-5 col-xs-5">
+									<span class="signup-seperator1">Sign in with</span>
+								</div>
+							</div>
+							
+							<div class="row" style="padding-top: 19px;">
+
+								<div class="facebook_icon">
+									<a class="btn btn-social-icon btn-facebook  my-btn-style"
+										style="background-color: #3b5998;"><span
+										class="fa fa-facebook"></span></a>
+								</div>
+								<div class="googlw_icon">
+									<a class="btn btn-social-icon btn-facebook  my-btn-style"
+										style="background-color: #c23321;"><span
+										class="fa fa-google"></span></a>
+								</div>
+								<div class="adhar_icon">
+									<a
+										class="btn btn-primary btn-social-icon btn-facebook  my-btn-style"
+										style=""><span class="fa fa-credit-card"></span></a>
+								</div>
+							
+							</div>
+
+							<br />
+							<div class="col-md-12" style="padding-left: 27%;">
+								<label class="label12">Don't have Account ? &nbsp;&nbsp;
+									<a href="" class="registerBtn">Register Now</a>
+								</label>
+							</div>
+
+
+
+
+						</div>
+
+						<div class="row register_body" style="display: none;">
+
+							<div class="col-md-12" style="border-right: 1px solid #ebebeb;">
+								<div class="form-group signin_input_height"
+									style="margin-top: 38px !important;">
+
+									<input type="text" class="form-control required"
+										placeholder="First Name" ng-model="user.fname" required>
+								</div>
+								<div class="form-group signin_input_height">
+
+									<input type="text" class="form-control required"
+										placeholder="Last Name" ng-model="user.lname" required>
+								</div>
+								<div class="form-group signin_input_height">
+
+									<input type="email" class="form-control required"
+										placeholder="Email ID" ng-model="user.emailid" required>
+								</div>
+								<div class="form-group signin_input_height">
+
+									<input type="text" class="form-control required"
+										placeholder="User Name" ng-model="user.username" required>
+								</div>
+								<div class="form-group signin_input_height">
+
+									<input type="password" class="form-control required"
+										placeholder="Password" ng-model="user.password" required>
+								</div>
+								
+								<div class="form-group signin_input_height">
+									<select class="form-control role_dropdown"> <!--  ng-model="user.role" -->
+										<option selected>--Role--</option>
+										<option>Tax Payer</option>
+										<option>Tax Consultant</option>
+									</select>
+
+									<!-- 	<input type="text" class="form-control required"
+										placeholder="Role" ng-model="user.lname" required> -->
+								</div>
+								<div class="form-group signin_input_height">
+									<button class="btn btn-primary my-btn-style"
+										ng-click="register(user);">Register</button>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer signup_body" style="text-align: left">
+						<!-- <a href="" class="btn btn-primary my-btn-style" >Sign Up</a> -->
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+	
+	<script>
+
+	$(".registerBtn").click(function() {
+		$("#modal_header_label").text("Register");
+		$(".signup_body").slideUp();
+		$(".register_body").slideDown();
+	});
+
+	$("#signInModalBtn").click(function() {
+		$("#modal_header_label").text("Sign In")
+		$(".signup_body").slideDown();
+		$(".register_body").slideUp();
+	});
+	</script>

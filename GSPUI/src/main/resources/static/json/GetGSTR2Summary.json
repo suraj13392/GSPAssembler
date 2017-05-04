@@ -1,0 +1,287 @@
+    {
+  "gstin": "37ABCDE9552F3Z4",
+  "ret_period": "072016",
+  "chksum": "AflJufPlFStqKBZ",
+  "section_summary": [
+    {
+      "sec_nm": "b2b",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 20,
+          "ttl_val": 345,
+          "ttl_txpd_igst": 424.99,
+          "ttl_txpd_sgst": 2589.87,
+          "ttl_txpd_cgst": 5423,
+          "ttl_txpd_cess": 7423,
+          "ttl_itcavld_igst": 324.99,
+          "ttl_itcavld_sgst": 67589.87,
+          "ttl_itcavld_cgst": 6423,
+          "ttl_itcavld_cess": 2123
+        }
+      ]
+    },
+    {
+      "sec_nm": "b2ba",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 20,
+          "ttl_val": 345,
+          "ttl_txpd_igst": 424.99,
+          "ttl_txpd_sgst": 2589.87,
+          "ttl_txpd_cgst": 5423,
+          "ttl_txpd_cess": 7423,
+          "ttl_itcavld_igst": 324.99,
+          "ttl_itcavld_sgst": 67589.87,
+          "ttl_itcavld_cgst": 6423,
+          "ttl_itcavld_cess": 2123
+        }
+      ]
+    },    
+    {
+      "sec_nm": "cdn",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 10,
+          "ttl_val": 12345,
+          "ttl_txpd_igst": 124.99,
+          "ttl_txpd_sgst": 5589.87,
+          "ttl_txpd_cgst": 3423,
+          "ttl_txpd_cess": 3423,
+          "ttl_itcavld_igst": 124.99,
+          "ttl_itcavld_sgst": 5589.87,
+          "ttl_itcavld_cgst": 3423,
+          "ttl_itcavld_cess": 3423
+        }
+      ]
+    },
+    {
+      "sec_nm": "cdna",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 10,
+          "ttl_val": 12345,
+          "ttl_txpd_igst": 124.99,
+          "ttl_txpd_sgst": 5589.87,
+          "ttl_txpd_cgst": 3423,
+          "ttl_txpd_cess": 3423,
+          "ttl_itcavld_igst": 124.99,
+          "ttl_itcavld_sgst": 5589.87,
+          "ttl_itcavld_cgst": 3423,
+          "ttl_itcavld_cess": 3423
+        }
+      ]
+    },
+    {
+      "sec_nm": "isd",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 10,
+          "ttl_val": 12345,
+          "ttl_txpd_igst": 124.99,
+          "ttl_txpd_sgst": 5589.87,
+          "ttl_txpd_cgst": 3423,
+          "ttl_txpd_cess": 3423,
+          "ttl_itcavld_igst": 124.99,
+          "ttl_itcavld_sgst": 5589.87,
+          "ttl_itcavld_cgst": 3423,
+          "ttl_itcavld_cess": 3423
+        }
+      ]
+    },
+    {
+      "sec_nm": "tds",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 10,
+          "ttl_val": 12345,
+          "ttl_txpd_igst": 124.99,
+          "ttl_txpd_sgst": 5589.87,
+          "ttl_txpd_cgst": 3423,
+          "ttl_txpd_cess": 3423,
+          "ttl_itcavld_igst": 124.99,
+          "ttl_itcavld_sgst": 5589.87,
+          "ttl_itcavld_cgst": 3423,
+          "ttl_itcavld_cess": 3423
+        }
+      ]
+    },
+    {
+      "sec_nm": "tcs",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 12345,
+      "ttl_txpd_igst": 124.99,
+      "ttl_txpd_sgst": 5589.87,
+      "ttl_txpd_cgst": 3423,
+      "ttl_txpd_cess": 3423,
+      "ttl_itcavld_igst": 124.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423,
+      "cpty_sum": [
+        {
+          "ctin": "20GRRHF2562D3A3",
+          "chksum": "AflJufPlFStqKBZ",
+          "rc": 10,
+          "ttl_val": 12345,
+          "ttl_txpd_igst": 124.99,
+          "ttl_txpd_sgst": 5589.87,
+          "ttl_txpd_cgst": 3423,
+          "ttl_txpd_cess": 3423,
+          "ttl_itcavld_igst": 124.99,
+          "ttl_itcavld_sgst": 5589.87,
+          "ttl_itcavld_cgst": 3423,
+          "ttl_itcavld_cess": 3423
+        }
+      ]
+    },
+    {
+      "sec_nm": "impg",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423
+    },
+    {
+      "sec_nm": "impga",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423
+    },
+    {
+      "sec_nm": "imps",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423
+    },
+    {
+      "sec_nm": "impsa",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423
+    },
+    {
+      "sec_nm": "nil",
+      "chksum": "AflJufPlFStqKBZ",
+      "rc": 10,
+      "ttl_val": 324235,
+      "ttl_txpd_igst": 454.99,
+      "ttl_txpd_sgst": 2389.87,
+      "ttl_txpd_cgst": 8923,
+      "ttl_txpd_cess": 6723,
+      "ttl_itcavld_igst": 344.99,
+      "ttl_itcavld_sgst": 5589.87,
+      "ttl_itcavld_cgst": 3423,
+      "ttl_itcavld_cess": 3423
+    }
+  ]
+}

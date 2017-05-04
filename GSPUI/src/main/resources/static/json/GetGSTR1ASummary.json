@@ -1,0 +1,103 @@
+{
+  "gstin": "05ANNPB8449C1Z3",
+  "ret_period": "122016",
+  "chksum": "AflJuaSpoSudsf",
+  "sec_sum": [
+    {
+      "sec_nm": "B2B",
+      "chksum": "AflJuaSpoSunsfPlFStqKBZ",
+      "ttl_rec": 56,
+      "ttl_val": 1000.01,
+      "ttl_igst": 100.01,
+      "ttl_cgst": 100.02,
+      "ttl_tax": 499.99,
+      "ttl_sgst": 99.89,
+      "ttl_cess": 50.01,
+      "cpty_sum": [
+        {
+          "ctin": "05ANNPB8449C1Z3",
+          "chksum": "AflJufPlFStqKBZ",
+          "ttl_rec": 3,
+          "ttl_val": 511.23,
+          "ttl_igst": 200.02,
+          "ttl_cgst": 28.05,
+          "ttl_tax": 25.21,
+          "ttl_cess": 11.25,
+          "ttl_sgst": 21.21
+        }
+      ]
+    },
+        {
+      "sec_nm": "B2BA",
+      "chksum": "AflJuaSpoSunsfPlFStqKBZ",
+      "ttl_rec": 56,
+      "ttl_val": 1000.01,
+      "ttl_igst": 100.01,
+      "ttl_cgst": 100.02,
+      "ttl_tax": 499.99,
+      "ttl_sgst": 99.89,
+      "ttl_cess": 50.01,
+      "cpty_sum": [
+        {
+          "ctin": "05ANNPB8449C1Z3",
+          "chksum": "AflJufPlFStqKBZ",
+          "ttl_rec": 3,
+          "ttl_val": 511.23,
+          "ttl_igst": 200.02,
+          "ttl_cgst": 28.05,
+          "ttl_tax": 25.21,
+          "ttl_cess": 11.25,
+          "ttl_sgst": 21.21
+        }
+      ]
+    },
+        {
+      "sec_nm": "CDN",
+      "chksum": "AflJuaSpoSunsfPlFStqKBZ",
+      "ttl_rec": 56,
+      "ttl_val": 1000.01,
+      "ttl_igst": 100.01,
+      "ttl_cgst": 100.02,
+      "ttl_tax": 499.99,
+      "ttl_sgst": 99.89,
+      "ttl_cess": 50.01,
+      "cpty_sum": [
+        {
+          "ctin": "05ANNPB8449C1Z3",
+          "chksum": "AflJufPlFStqKBZ",
+          "ttl_rec": 3,
+          "ttl_val": 511.23,
+          "ttl_igst": 200.02,
+          "ttl_cgst": 28.05,
+          "ttl_tax": 25.21,
+          "ttl_cess": 11.25,
+          "ttl_sgst": 21.21
+        }
+      ]
+    },
+        {
+      "sec_nm": "CDNA",
+      "chksum": "AflJuaSpoSunsfPlFStqKBZ",
+      "ttl_rec": 56,
+      "ttl_val": 1000.01,
+      "ttl_igst": 100.01,
+      "ttl_cgst": 100.02,
+      "ttl_tax": 499.99,
+      "ttl_sgst": 99.89,
+      "ttl_cess": 50.01,
+      "cpty_sum": [
+        {
+          "ctin": "05ANNPB8449C1Z3",
+          "chksum": "AflJufPlFStqKBZ",
+          "ttl_rec": 3,
+          "ttl_val": 511.23,
+          "ttl_igst": 200.02,
+          "ttl_cgst": 28.05,
+          "ttl_tax": 25.21,
+          "ttl_cess": 11.25,
+          "ttl_sgst": 21.21
+        }
+      ]
+    }
+  ]
+}
