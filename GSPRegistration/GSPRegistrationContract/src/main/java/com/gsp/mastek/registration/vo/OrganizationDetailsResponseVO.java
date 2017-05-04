@@ -17,9 +17,7 @@ public class OrganizationDetailsResponseVO{
 	private Date gstnRegistrationDt;
 	private String organizationStatus;
 	private List<OrganizationAddressVO> addressDetails ;
-
 	
-
 	public List<OrganizationAddressVO> getAddressDetails() {
 		return addressDetails;
 	}
@@ -90,8 +88,6 @@ public class OrganizationDetailsResponseVO{
 				+ ", tradeName=" + tradeName + ", panNumber=" + panNumber + ", commencementDt=" + commencementDt
 				+ ", gstnRegistrationDt=" + gstnRegistrationDt + ", organizationStatus=" + organizationStatus
 				+ ", addressDetails=" + addressDetails + "]";
-	}
-
-	
+	}	
 	
 }

@@ -28,8 +28,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gsp.mastek.common.error.vo.ErrorDTO;
 import com.gsp.mastek.common.error.vo.FieldErrorVO;
@@ -63,7 +61,6 @@ public class ResponseWrapperAdvice implements ResponseBodyAdvice<Object>{
 			 Object requestBodyObj = getJSONObjectIfValidJSONString(requestStr);			
 			 baseResponse.setRequest(requestBodyObj);
 			}
-			logger.info("requestStr   " + requestStr);
 		} catch (IOException e) {
 			logger.error("Some error while writing request",e);
 		}

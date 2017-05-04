@@ -37,9 +37,7 @@ public class PartyVO extends BaseVO {
 	private String passportNumber;
 	private String aadharNumber;
 	private String dinNumber;
-	private String partyStatus;	
-	
-	/*@JsonProperty("partyAddress")*/
+	private String partyStatus;		
 	private Set<PartyAddressVO> partyAddresses = new HashSet<PartyAddressVO>(0);
 
 	public Long getPartyId() {

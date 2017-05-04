@@ -4,8 +4,9 @@ import java.util.Set;
 
 public class OrganizationGoodsResponseVO {
 
-
 	private Long organizationId;
+	
+	private Set<GoodsDtlsVO> goodsDetails ;
 	
 	public Long getOrganizationId() {
 		return organizationId;
@@ -14,10 +15,6 @@ public class OrganizationGoodsResponseVO {
 	public void setOrganizationId(Long organizationId) {
 		this.organizationId = organizationId;
 	}
-
-
-	private Set<GoodsDtlsVO> goodsDetails ;
-	
 
 	public Set<GoodsDtlsVO> getGoodsDetails() {
 		return goodsDetails;

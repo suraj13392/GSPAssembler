@@ -8,7 +8,7 @@ public class OrganizationGstnResponseVO {
 
 	private Long organizationId;
 	
-	/*@JsonProperty("GstnregistrationDtls")*/
+	@JsonProperty("GstnregistrationDtls")
 	private List<GstnregistrationDtlsVO> GstnregistrationDtlses;
 
 	public Long getOrganizationId() {

@@ -9,5 +9,7 @@
 	<changeSet id="1" author="Shiv">
 		<sqlFile path="src/main/dbschema/2017/April/25/Create_Schema_1.sql" />
 	</changeSet>
-	
+	<changeSet id="2" author="Shiv">
+		<sqlFile path="src/main/dbschema/2017/April/25/Create_Schema_2.sql" />
+	</changeSet>	
 </databaseChangeLog>
